@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/*
+ * WAHP design tokens — sourced from "West African Health Partners Brand
+ * Guidelines v1.0" (owner-supplied PDF). See docs/BRAND_IMPLEMENTATION.md.
+ * Primary: #F5F6FC, #8BC900, #003366, #00879E. Grayscale: Cloud → Black.
+ * Typeface: Manrope.
+ */
+@theme {
+  --color-paper: #f5f6fc; /* Primary 01 */
+  --color-green: #8bc900; /* Primary 02 */
+  --color-navy: #003366; /* Primary 03 */
+  --color-teal: #00879e; /* Primary 04 */
+
+  --color-cloud: #edeff7;
+  --color-smoke: #d3d6e0;
+  --color-steel: #bcbfcc;
+  --color-space: #9da2b3;
+  --color-graphite: #6e7180;
+  --color-arsenic: #40424d;
+  --color-phantom: #1e1e24;
+
+  /* Navy states: hover shade, and the watermark-emblem tone used on brand cover pages. */
+  --color-navy-900: #002447;
+  --color-navy-700: #26507a;
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 1.5rem;
+  --radius-panel: 2rem;
+
+  /* Owner type scale (Website Clarification Questionnaire): H1 48–60 bold, H2 32–40 semibold, H3 24–28 medium, body 16–18. */
+  --text-display: clamp(2.5rem, 1.9rem + 2.6vw, 3.75rem);
+  --text-display--line-height: 1.06;
+  --text-display--letter-spacing: -0.03em;
+  --text-headline: clamp(2rem, 1.7rem + 1.2vw, 2.5rem);
+  --text-headline--line-height: 1.12;
+  --text-headline--letter-spacing: -0.025em;
+  --text-title: clamp(1.5rem, 1.4rem + 0.4vw, 1.75rem);
+  --text-title--line-height: 1.25;
+  --text-title--letter-spacing: -0.015em;
+  --text-lead: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --text-lead--line-height: 1.65;
+
+  --animate-rise: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-phantom);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-navy);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-teal);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  .on-dark :focus-visible,
+  .on-dark:focus-visible {
+    outline-color: #fff;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .container-wahp {
+    width: 100%;
+    max-width: 82rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-wahp {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  /* Subtle grain used on navy surfaces, echoing the brand's textured navy background. */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.9'/></svg>");
+  }
+
+  /* Scroll reveal only applies once JS has flagged the document, so content is never hidden without JS. */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.schematic-flow path:not([stroke-dasharray]) {
+  stroke-dasharray: 3 7;
+  animation: schematic-flow 2.8s linear infinite;
+}
+@keyframes schematic-flow {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
