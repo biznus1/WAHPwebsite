@@ -39,7 +39,7 @@ for (const href of cssHrefs) {
 writeFileSync(join(out, "assets/site.css"), css);
 
 const findImage = (stem) => {
-  for (const dir of ["public/images/concepts", "public/images/team"]) {
+  for (const dir of ["public/images/concepts", "public/images/team", "public/images/photos"]) {
     const p = join(dir, `${stem}.webp`);
     if (existsSync(p)) return p;
   }
@@ -109,6 +109,16 @@ for (const route of routes) {
     { tabStates, menuHtml },
   );
   result.imgs.forEach((s) => usedImages.add(s));
+  // Tab states were captured from the live DOM: point their images at local files too.
+  tabStates = tabStates.map((html) =>
+    html
+      .replace(/ srcset="[^"]*"/gi, "")
+      .replace(/ sizes="[^"]*"/gi, "")
+      .replace(/src="[^"]*?%2Fmedia%2F([^.%"]+)\.[^"]*"/g, (_m, stem) => {
+        usedImages.add(stem);
+        return `src="img/${stem}.webp"`;
+      }),
+  );
   pages[route] = { ...result, tabStates, menuHtml };
   await page.close();
 }

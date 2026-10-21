@@ -7,6 +7,7 @@ import { AudiencePaths } from "@/components/sections/audience-paths";
 import { Comparison } from "@/components/sections/comparison";
 import { ProblemStats } from "@/components/sections/problem-stats";
 import { ButtonLink } from "@/components/ui/button";
+import { SiteImage } from "@/components/ui/site-image";
 import { Section, SectionIntro, SplitHeading, StageBadge } from "@/components/ui/primitives";
 import { pillars } from "@/content/platform";
 
@@ -120,19 +121,22 @@ export default function HomePage() {
 
       {/* 3 — The challenge */}
       <Section tone="navy" labelledBy="challenge-heading">
-        <SectionIntro
-          id="challenge-heading"
-          eyebrow="The challenge"
-          lead="Great physicians,"
-          rest="fragmented infrastructure."
-          dark
-        >
-          <p>
-            Independent outpatient practice depends on infrastructure that is expensive to assemble alone: premises,
-            equipment, staff, systems and access to diagnostics. When the system does not support doctors, doctors look
-            elsewhere.
-          </p>
-        </SectionIntro>
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <SectionIntro
+            id="challenge-heading"
+            eyebrow="The challenge"
+            lead="Great physicians,"
+            rest="fragmented infrastructure."
+            dark
+          >
+            <p>
+              Independent outpatient practice depends on infrastructure that is expensive to assemble alone: premises,
+              equipment, staff, systems and access to diagnostics. When the system does not support doctors, doctors
+              look elsewhere.
+            </p>
+          </SectionIntro>
+          <SiteImage name="hospitalCorridor" className="reveal" aspect="aspect-[16/10]" dark />
+        </div>
         <div className="mt-12">
           <ProblemStats dark />
         </div>

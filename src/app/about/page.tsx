@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { CtaBand } from "@/components/sections/cta-band";
 import { PageHero } from "@/components/sections/page-hero";
 import { Eyebrow, Section, SectionIntro } from "@/components/ui/primitives";
-import { leaders } from "@/content/leadership";
+import { SiteImage } from "@/components/ui/site-image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -32,7 +31,6 @@ const values = [
 ];
 
 export default function AboutPage() {
-  const ceo = leaders.find((l) => l.name === "Jonathan Francois" && l.publicApproved);
   return (
     <>
       <PageHero
@@ -92,17 +90,13 @@ export default function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-20">
           <div>
             <SectionIntro id="origin-heading" eyebrow="The origin" lead="Why we started" rest="WAHP." />
-            {ceo && (
-              <div className="reveal mt-10 flex items-center gap-4">
-                <span className="relative size-16 overflow-hidden rounded-full bg-cloud">
-                  <Image src={ceo.photo} alt={`Portrait of ${ceo.name}`} fill sizes="64px" className="object-cover" />
-                </span>
-                <span>
-                  <span className="block font-semibold text-navy">Jonathan Francois, MD</span>
-                  <span className="block text-sm text-arsenic">Co-Founder &amp; CEO</span>
-                </span>
-              </div>
-            )}
+            <SiteImage
+              name="founders"
+              className="reveal mt-10"
+              aspect="aspect-[3/4]"
+              sizes="(min-width: 1024px) 30vw, 100vw"
+              caption="Co-founders Jonathan Francois, MD (CEO) and Emmanuel Adomfeh, MD, MPH (COO)."
+            />
           </div>
           <blockquote className="reveal space-y-5 text-lead text-arsenic">
             <p>

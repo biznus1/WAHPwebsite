@@ -5,7 +5,7 @@ import { Faq } from "@/components/sections/faq";
 import { JourneySteps } from "@/components/sections/journey-steps";
 import { PageHero } from "@/components/sections/page-hero";
 import { ButtonLink } from "@/components/ui/button";
-import { ConceptImage } from "@/components/ui/concept-image";
+import { SiteImage } from "@/components/ui/site-image";
 import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
 import { approvedClaim } from "@/content/claims";
 import { site } from "@/content/site";
@@ -76,13 +76,7 @@ export default function PhysiciansPage() {
         rest="Don't build it alone."
         status={<StageBadge stage="pre-launch" label="Registering interest · Accra flagship in development" dark />}
         aside={
-          <ConceptImage
-            name="consultation"
-            priority
-            dark
-            aspect="aspect-[4/3]"
-            sizes="(min-width: 1024px) 40vw, 100vw"
-          />
+          <SiteImage name="consultation" priority dark aspect="aspect-[4/3]" sizes="(min-width: 1024px) 40vw, 100vw" />
         }
       >
         <p>
@@ -100,7 +94,10 @@ export default function PhysiciansPage() {
       </PageHero>
 
       <Section tone="paper" labelledBy="offer-heading">
-        <SectionIntro id="offer-heading" eyebrow="The proposition" lead="What WAHP intends" rest="to provide." />
+        <div className="grid items-end gap-10 lg:grid-cols-2 lg:gap-16">
+          <SectionIntro id="offer-heading" eyebrow="The proposition" lead="What WAHP intends" rest="to provide." />
+          <SiteImage name="physicianWithPatient" className="reveal" aspect="aspect-[16/10]" />
+        </div>
         <ul className="mt-14 grid gap-4 md:grid-cols-2">
           {offer.map((o, i) => (
             <li
@@ -125,19 +122,22 @@ export default function PhysiciansPage() {
       </Section>
 
       <Section tone="navy" id="diaspora" labelledBy="diaspora-heading" className="scroll-mt-20">
-        <SectionIntro
-          id="diaspora-heading"
-          eyebrow="Diaspora physicians"
-          lead="You've thought about going back."
-          rest="Practise. Partner. Or both."
-          dark
-        >
-          <p>
-            Diaspora physicians bring clinical expertise, global perspective and a deep connection to West Africa. WAHP
-            is designed to give you a credible path to return, collaborate, mentor and help strengthen healthcare
-            delivery back home — at whatever pace makes sense.
-          </p>
-        </SectionIntro>
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <SectionIntro
+            id="diaspora-heading"
+            eyebrow="Diaspora physicians"
+            lead="You've thought about going back."
+            rest="Practise. Partner. Or both."
+            dark
+          >
+            <p>
+              Diaspora physicians bring clinical expertise, global perspective and a deep connection to West Africa.
+              WAHP is designed to give you a credible path to return, collaborate, mentor and help strengthen healthcare
+              delivery back home — at whatever pace makes sense.
+            </p>
+          </SectionIntro>
+          <SiteImage name="diasporaPhysician" className="reveal" aspect="aspect-[4/3]" dark />
+        </div>
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           {[
             {

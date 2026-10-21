@@ -1,4 +1,5 @@
 import type { Stage } from "@/components/ui/primitives";
+import type { SiteImageName } from "@/components/ui/site-image";
 
 export interface PlatformPillar {
   id: string;
@@ -9,6 +10,7 @@ export interface PlatformPillar {
   stageLabel: string;
   summary: string;
   points: string[];
+  image: SiteImageName;
 }
 
 /**
@@ -18,6 +20,7 @@ export interface PlatformPillar {
 export const pillars: PlatformPillar[] = [
   {
     id: "clinical-suites",
+    image: "pillarSuites",
     number: "01",
     title: "Equipped clinical suites",
     short: "Clinical suites",
@@ -33,6 +36,7 @@ export const pillars: PlatformPillar[] = [
   },
   {
     id: "diagnostic-lab",
+    image: "pillarLaboratory",
     number: "02",
     title: "Integrated diagnostic laboratory",
     short: "Diagnostic lab",
@@ -48,6 +52,7 @@ export const pillars: PlatformPillar[] = [
   },
   {
     id: "imaging",
+    image: "pillarImaging",
     number: "03",
     title: "Imaging services",
     short: "Imaging",
@@ -63,6 +68,7 @@ export const pillars: PlatformPillar[] = [
   },
   {
     id: "digital-tools",
+    image: "pillarDigital",
     number: "04",
     title: "Digital tools",
     short: "Digital tools",

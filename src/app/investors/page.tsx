@@ -6,6 +6,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { Notice } from "@/components/ui/notice";
 import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
 import { approvedClaim } from "@/content/claims";
+import { SiteImage } from "@/components/ui/site-image";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -232,6 +233,17 @@ export default function InvestorsPage() {
           </div>
         )}
       </Section>
+
+      <section aria-label="Image" className="bg-paper pt-16 md:pt-24">
+        <div className="container-wahp">
+          <SiteImage
+            name="investorBanner"
+            className="reveal"
+            aspect="aspect-[16/7] md:aspect-[16/5]"
+            sizes="(min-width: 1280px) 1200px, 100vw"
+          />
+        </div>
+      </section>
 
       <Section tone="paper" id="introduction" labelledBy="intro-heading" className="scroll-mt-20">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">

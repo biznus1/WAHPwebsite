@@ -3,7 +3,7 @@ import { Building2, HeartPulse, Users } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Faq } from "@/components/sections/faq";
-import { ConceptImage } from "@/components/ui/concept-image";
+import { SiteImage } from "@/components/ui/site-image";
 import { Notice } from "@/components/ui/notice";
 import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
 
@@ -41,7 +41,13 @@ export default function PatientsPage() {
         rest="coming to Accra."
         status={<StageBadge stage="pre-launch" label="Not yet seeing patients" dark />}
         aside={
-          <ConceptImage name="lobby" priority dark aspect="aspect-[16/10]" sizes="(min-width: 1024px) 40vw, 100vw" />
+          <SiteImage
+            name="patientPortrait"
+            priority
+            dark
+            aspect="aspect-[16/10]"
+            sizes="(min-width: 1024px) 40vw, 100vw"
+          />
         }
       >
         <p>
@@ -85,11 +91,31 @@ export default function PatientsPage() {
             </li>
           ))}
         </ul>
+        <div className="mt-14 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="reveal">
+            <h3 className="text-title font-medium text-navy">One building. Complete care.</h3>
+            <p className="mt-4 text-lead text-arsenic">
+              The model is designed so consultation, diagnostics and follow-up happen in one connected place, with fewer
+              hand-offs, fewer unnecessary trips and a clearer path from first visit to next step. Laboratory and
+              imaging are later phases.
+            </p>
+          </div>
+          <SiteImage
+            name="patientJourney"
+            className="reveal"
+            fit="contain"
+            aspect="aspect-[21/20]"
+            caption="The planned patient journey. Lab and imaging steps arrive in Phases 2 and 3."
+          />
+        </div>
       </Section>
 
       <Section tone="white" labelledBy="pfaq-heading">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
-          <SectionIntro id="pfaq-heading" eyebrow="Questions" lead="Patient" rest="FAQs." />
+          <div>
+            <SectionIntro id="pfaq-heading" eyebrow="Questions" lead="Patient" rest="FAQs." />
+            <SiteImage name="familyConsultation" className="reveal mt-10" aspect="aspect-[3/2]" />
+          </div>
           <Faq
             items={[
               {

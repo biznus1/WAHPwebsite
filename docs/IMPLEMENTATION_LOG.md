@@ -43,3 +43,21 @@
   | Lobby render | `/patients` |
 
 - Platform: removed the "In detail" list, which repeated the interactive tabs, and the availability notice, which repeated the stage labels and footer.
+
+## 21 Oct 2026, photos from the source sites
+
+- Collected every image from wahp.viewyourprojecthere.com and westahp.com (`scripts/collect-images.mjs`). Selected 17 photos and diagrams into `public/images/photos/` (WebP, ≤1600px).
+- `SiteImage` replaces `ConceptImage`. Concept renders are badged and captioned, source-site photos carry an "Illustrative image" badge, and the founders photo is unbadged.
+- Placement:
+
+  | Page | Images |
+  | --- | --- |
+  | Home | Audience cards (4 photos), challenge (hospital corridor) |
+  | Platform | One photo per pillar tab, plus all three concept renders under "The spaces" |
+  | Physicians | Proposition, diaspora |
+  | Investors | Banner above the introduction form |
+  | Patients | Hero portrait, patient-journey diagram, family consultation |
+  | About | Founders photo beside the founder's letter |
+  | Contact | Clinic interior |
+
+- Excluded, with reasons, in `ASSET_INVENTORY.md`: hospital logos, an image with fake investment figures, duplicates, map tiles and masked/PPE imagery.

@@ -3,7 +3,7 @@ import { Roadmap } from "@/components/graphics/roadmap";
 import { PlatformSystem } from "@/components/graphics/platform-system";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Section, SectionIntro } from "@/components/ui/primitives";
-import { ConceptImage } from "@/components/ui/concept-image";
+import { SiteImage } from "@/components/ui/site-image";
 
 export const metadata: Metadata = {
   title: "The platform",
@@ -58,13 +58,18 @@ export default function PlatformPage() {
 
       <Section tone="white" labelledBy="spaces-heading">
         <SectionIntro id="spaces-heading" eyebrow="The spaces" lead="What the hub" rest="is designed to feel like." />
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <ConceptImage
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <SiteImage
+            name="lobby"
+            className="reveal"
+            caption="Concept rendering of the reception lobby — not an existing facility. People shown are illustrative."
+          />
+          <SiteImage
             name="consultation"
             className="reveal"
             caption="Concept rendering of a consultation suite — not an existing facility. People shown are illustrative."
           />
-          <ConceptImage
+          <SiteImage
             name="laboratory"
             className="reveal"
             caption="Concept rendering of the planned laboratory — not an operating service. People shown are illustrative."

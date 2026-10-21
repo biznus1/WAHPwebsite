@@ -4,6 +4,7 @@ import { useId, useRef, useState, type KeyboardEvent } from "react";
 import { Check } from "lucide-react";
 import { pillars } from "@/content/platform";
 import { StageBadge } from "@/components/ui/primitives";
+import { SiteImage } from "@/components/ui/site-image";
 
 const nodePos = [
   { x: 140, y: 110 },
@@ -165,18 +166,27 @@ export function PlatformSystem() {
           role="tabpanel"
           id={`${baseId}-panel`}
           aria-labelledby={`${baseId}-tab-${active}`}
-          className="mt-6 rounded-card bg-white p-6 ring-1 ring-inset ring-smoke md:p-8"
+          className="mt-6 overflow-hidden rounded-card bg-white ring-1 ring-inset ring-smoke"
         >
-          <StageBadge stage={pillar.stage} label={pillar.stageLabel} />
-          <p className="mt-4 text-lg leading-relaxed text-arsenic">{pillar.summary}</p>
-          <ul className="mt-5 space-y-3">
-            {pillar.points.map((pt) => (
-              <li key={pt} className="flex gap-3 text-arsenic">
-                <Check aria-hidden className="mt-0.5 size-5 shrink-0 text-teal" />
-                <span>{pt}</span>
-              </li>
-            ))}
-          </ul>
+          <SiteImage
+            key={pillar.id}
+            name={pillar.image}
+            rounded="rounded-none"
+            aspect="aspect-[16/9]"
+            sizes="(min-width: 1024px) 40vw, 100vw"
+          />
+          <div className="p-6 md:p-8">
+            <StageBadge stage={pillar.stage} label={pillar.stageLabel} />
+            <p className="mt-4 text-lg leading-relaxed text-arsenic">{pillar.summary}</p>
+            <ul className="mt-5 space-y-3">
+              {pillar.points.map((pt) => (
+                <li key={pt} className="flex gap-3 text-arsenic">
+                  <Check aria-hidden className="mt-0.5 size-5 shrink-0 text-teal" />
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 

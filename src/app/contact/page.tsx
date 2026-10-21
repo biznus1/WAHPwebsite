@@ -4,6 +4,7 @@ import { Mail } from "lucide-react";
 import { ContactFormFromUrl } from "@/components/forms/contact-form-from-url";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { Notice } from "@/components/ui/notice";
+import { SiteImage } from "@/components/ui/site-image";
 import { Eyebrow, SplitHeading } from "@/components/ui/primitives";
 import { site } from "@/content/site";
 
@@ -90,6 +91,13 @@ export default function ContactPage() {
               </ul>
             </div>
           )}
+
+          <SiteImage
+            name="clinicInterior"
+            className="mt-10"
+            aspect="aspect-[16/9]"
+            sizes="(min-width: 1024px) 35vw, 100vw"
+          />
 
           <div className="mt-10">
             <Notice title="Not for medical enquiries">
