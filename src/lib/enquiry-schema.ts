@@ -42,7 +42,10 @@ export const enquirySchema = z
         message: "Please tell us your city and country.",
       });
     }
-    if ((v.type === "general" || v.type === "media" || v.type === "partnership" || v.type === "vendor") && v.message.length < 10) {
+    if (
+      (v.type === "general" || v.type === "media" || v.type === "partnership" || v.type === "vendor") &&
+      v.message.length < 10
+    ) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         path: ["message"],
@@ -66,10 +69,18 @@ export const MIN_FILL_SECONDS = 3;
 
 export function parseEnquiry(form: FormData) {
   const raw = Object.fromEntries(
-    ["type", "name", "email", "organisation", "specialty", "location", "interest", "message", "consent", "acknowledge"].map((k) => [
-      k,
-      form.get(k) ?? undefined,
-    ]),
+    [
+      "type",
+      "name",
+      "email",
+      "organisation",
+      "specialty",
+      "location",
+      "interest",
+      "message",
+      "consent",
+      "acknowledge",
+    ].map((k) => [k, form.get(k) ?? undefined]),
   );
   return enquirySchema.safeParse(raw);
 }

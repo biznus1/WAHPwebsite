@@ -119,12 +119,11 @@ export const claims: Claim[] = [
   {
     id: "traction-lois",
     text: "20 physicians have signed Letters of Intent",
-    source: "WAHP site build (home, physicians, diaspora pages)",
-    status: "pending-review",
-    publicApproved: false,
-    lastVerified: null,
-    routes: [],
-    note: "Conflicts with the ~13 signed LOIs on Drive and with Questionnaire #28 (LOI counts in investor materials only). 'Early physician commitments secured' is used instead.",
+    source: "Owner confirmation 21 Oct 2026 (matches the latest WAHP site build)",
+    status: "verified",
+    publicApproved: true,
+    lastVerified: "2026-10-21",
+    routes: ["/investors", "/physicians"],
   },
   {
     id: "traction-research",

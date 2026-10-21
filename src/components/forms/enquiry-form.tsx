@@ -162,7 +162,9 @@ export function EnquiryForm({
         </div>
         <div>
           <label htmlFor="f-email" className="text-sm font-semibold text-navy">
-            {type === "physician" || type === "investor" || type === "partnership" || type === "vendor" ? "Work email" : "Email"}
+            {type === "physician" || type === "investor" || type === "partnership" || type === "vendor"
+              ? "Work email"
+              : "Email"}
           </label>
           <input
             id="f-email"

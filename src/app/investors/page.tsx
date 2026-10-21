@@ -217,7 +217,7 @@ export default function InvestorsPage() {
                 ["60+", "Physicians surveyed"],
                 ["3", "Studies completed: market, feasibility and phased rollout"],
                 ["5", "Core team members in place"],
-                ["Early", "Physician commitments secured"],
+                ["20", "Physician Letters of Intent signed"],
               ].map(([v, l]) => (
                 <div key={l} className="flex flex-col bg-white p-6 md:p-7">
                   <dt className="order-2 mt-2 text-arsenic">{l}</dt>

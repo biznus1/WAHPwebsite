@@ -22,7 +22,12 @@ export default function LeadershipPage() {
       </PageHero>
 
       <Section tone="paper" labelledBy="team-heading">
-        <SectionIntro id="team-heading" eyebrow="Core team" lead="The operating team" rest="building WAHP day to day." />
+        <SectionIntro
+          id="team-heading"
+          eyebrow="Core team"
+          lead="The operating team"
+          rest="building WAHP day to day."
+        />
         <div className="mt-14">
           <TeamGrid leaders={approvedLeaders} />
         </div>

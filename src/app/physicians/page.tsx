@@ -7,6 +7,7 @@ import { PageHero } from "@/components/sections/page-hero";
 import { ButtonLink } from "@/components/ui/button";
 import { ConceptImage } from "@/components/ui/concept-image";
 import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
+import { approvedClaim } from "@/content/claims";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -216,6 +217,14 @@ export default function PhysiciansPage() {
             <SectionIntro id="register-heading" eyebrow="Register interest" lead="Tell us about" rest="your practice.">
               <p>No patient information, please. We use your details only to follow up on your interest.</p>
             </SectionIntro>
+            {approvedClaim("traction-lois") && (
+              <div className="reveal mt-10 rounded-card bg-white p-6 ring-1 ring-inset ring-smoke">
+                <p className="text-headline font-semibold text-navy">20</p>
+                <p className="mt-1 text-arsenic">
+                  physicians have already signed Letters of Intent to practise at the first WAHP hub.
+                </p>
+              </div>
+            )}
           </div>
           <EnquiryForm defaultType="physician" lockType contactEmail={site.contactEmail} />
         </div>

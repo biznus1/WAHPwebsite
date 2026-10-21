@@ -46,9 +46,9 @@ export default function PlatformPage() {
           />
           <div className="reveal space-y-5 text-lead text-white/75 lg:pt-14">
             <p>
-              A lab on its own gives access to testing. Imaging on its own provides diagnostic information. Digital tools
-              on their own help organise care. But physicians still lose time when these services operate in separate
-              systems, locations and workflows.
+              A lab on its own gives access to testing. Imaging on its own provides diagnostic information. Digital
+              tools on their own help organise care. But physicians still lose time when these services operate in
+              separate systems, locations and workflows.
             </p>
             <p>
               WAHP is designed so a physician can see a patient, order laboratory testing or imaging, review results,

@@ -4,7 +4,6 @@ The decisions below block or shape public launch. The machine-readable register 
 
 ## A. Critical decisions (please answer before launch)
 
-1. **Contact email.** The live site and Questionnaire use **info@westahp.com**, which the site currently shows. The newer site build (wahp.viewyourprojecthere.com) uses **info@wahp.org**. Which address should be public? To switch, change one line in `src/content/claims.ts` or set `NEXT_PUBLIC_CONTACT_EMAIL`.
 2. **Hero headline.** The site currently uses *"Infrastructure for independent medicine."* Alternatives found in the owner's own materials, including the newer build's *"Revolutionizing Healthcare Infrastructure Across West Africa"*:
    - *"Grow Your Practice with West African Health Partners"* (CEO, Master Brief)
    - *"The infrastructure physicians need to practice at their highest level."* (March blueprint)
@@ -16,6 +15,8 @@ The decisions below block or shape public launch. The machine-readable register 
 5. **Legal review** of `/privacy`, `/terms`, the investor disclaimer, and the emergency number (112) used in the patient notices.
 
 ### Resolved on 21 Oct 2026
+- **Contact email:** info@westahp.com (owner confirmed).
+- **LOIs:** 20 signed Letters of Intent (owner confirmed).
 - **Leadership:** published from wahp.viewyourprojecthere.com/team on the owner's instruction:
   - Jonathan Francois, MD: CEO
   - Emmanuel Adomfeh, MD, MPH: COO
@@ -23,7 +24,7 @@ The decisions below block or shape public launch. The machine-readable register 
   - Emmanuel Oppong: Laboratory Manager
   - Nakeitheya Smith: CMO
 
-  Elizabeth Aremu is not listed (she is absent from the newer site). The advisory board is not shown because the newer site only has placeholders. Only Jonathan Francois (from the newer site) and Emmanuel Adomfeh (from westahp.com) have LinkedIn URLs; please send the others. Emmanuel Oppong's photo is only 296px wide, so a larger original would sharpen it.
+  Elizabeth Aremu is not listed (she is absent from the newer site). The advisory board is not shown because the newer site only has placeholders. LinkedIn URLs for four members come from westahp.com/founders-1. No public profile was found for Nakeitheya Smith; please send it. Emmanuel Oppong's photo is only 296px wide, so a larger original would sharpen it.
 
 ## B. Claims and copy status
 
@@ -43,7 +44,7 @@ The decisions below block or shape public launch. The machine-readable register 
 | Flexible leases (hourly/daily/monthly) | Questionnaire #10 | Used in the physician FAQ as *planned*. No rates |
 | Lab, Phase 2; imaging, Phase 3 | One-Pager, Questionnaire | Shown as *Planned* / *Future phase*. **No years shown**, because sources conflict on expansion timing |
 | Problem stats (72% emigration intent, 1:5,707, 62 km, $2B) and market sizes | March blueprint / deck | **Not used.** Unsourced; add citations if wanted |
-| "20 physicians have signed Letters of Intent" | Newer site build | **Not used.** Conflicts with ~13 signed LOIs on Drive and Questionnaire #28. "Early physician commitments secured" is shown on /investors |
+| "20 physicians have signed Letters of Intent" | Owner confirmed 21 Oct 2026 | **Used** on /investors and /physicians |
 | 60+ physicians surveyed, 3 studies completed, 5-person team | Newer site build; Questionnaire #29 | Used on /investors ("Groundwork to date") |
 | Workforce stats: 1.43 per 10,000 (WHO 2022), 1:5,707 (MoH 2021), 11,867 registered (GMDC 2024), 71.8% migration intent | Newer site, The Problem page | Used on home with sources. **The 71.8% figure needs a full citation** |
 | Market sizes ($1.21B, $214M, 42%, 36.7%) | Newer site, investors page | Not used (investor-materials territory) |

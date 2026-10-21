@@ -22,6 +22,11 @@ npm test               # Vitest unit tests (validation, spam checks, rate limit,
 npm run build && npm run test:e2e   # Playwright journeys (desktop + mobile Chromium)
 ```
 
+## Static preview
+
+`node scripts/snapshot.mjs http://localhost:3000 <outDir>` (with the production server running) writes a script-free
+copy of every page with inlined fonts and images, used for the shareable Artifact preview.
+
 ## Stack
 
 Next.js 16 (App Router, Turbopack, Cache Components), React 19, TypeScript strict, Tailwind CSS v4 with brand tokens in `src/app/globals.css`, Zod, lucide-react, self-hosted Manrope (`@fontsource-variable/manrope`). Playwright and Vitest for tests. No CMS, no analytics, no tracking cookies.

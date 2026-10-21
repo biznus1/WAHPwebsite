@@ -9,6 +9,8 @@ import nakeitheya from "../../public/images/team/nakeitheya-smith.webp";
  * Core team, copied at the owner's instruction (21 Oct 2026) from the team page of
  * the latest WAHP site build (wahp.viewyourprojecthere.com/team). That site's
  * advisory-board cards are unfilled placeholders, so no advisors are listed.
+ * LinkedIn URLs come from the founders page of westahp.com (/founders-1), except
+ * Jonathan Francois (both sites agree). No public profile was found for Nakeitheya Smith.
  * Set `publicApproved: false` to hide anyone.
  */
 export interface Leader {
@@ -40,7 +42,6 @@ export const leaders: Leader[] = [
     bio: "Physician and public health specialist with deep operational experience across West African healthcare systems. Leads operations, partnership development, and the on-the-ground execution of WAHP's first hub in Accra.",
     focus: ["Operations", "Partnerships", "Hub Development", "Public Health"],
     photo: emmanuelA,
-    // From the founders page of westahp.com; the newer site has no URL for this profile yet.
     linkedin: "https://www.linkedin.com/in/emmanuel-adomfeh-7419a918/",
     publicApproved: true,
   },
@@ -51,6 +52,7 @@ export const leaders: Leader[] = [
     bio: "Harvard T.H. Chan School of Public Health, MPH 2026. Responsible for establishing medical standards, physician onboarding protocols, and quality of care benchmarks across all WAHP facilities.",
     focus: ["Medical Standards", "Quality of Care", "Physician Onboarding"],
     photo: nanaKwame,
+    linkedin: "https://www.linkedin.com/in/nana-kwame-asare-obuobi-md-mph-07143b264/",
     publicApproved: true,
   },
   {
@@ -59,6 +61,7 @@ export const leaders: Leader[] = [
     bio: "Oversees all laboratory operations including diagnostic workflows, equipment procurement and maintenance, lab staff management, and quality assurance protocols for WAHP's integrated diagnostic facilities.",
     focus: ["Lab Operations", "Diagnostics", "Equipment", "Quality Assurance"],
     photo: emmanuelO,
+    linkedin: "https://www.linkedin.com/in/emmanuel-oppong-boakye-3838523aa/",
     publicApproved: true,
   },
   {
