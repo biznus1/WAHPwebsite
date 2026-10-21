@@ -8,6 +8,7 @@ import pillarImaging from "../../../public/images/photos/pillar-imaging.webp";
 import patientPortrait from "../../../public/images/photos/patient-portrait.webp";
 import investorLounge from "../../../public/images/photos/investor-lounge.webp";
 import physicianTealScrubs from "../../../public/images/photos/physician-teal-scrubs.webp";
+import diasporaDoctor from "../../../public/images/photos/diaspora-doctor.webp";
 import communityScreening from "../../../public/images/photos/community-bp-screening.webp";
 import clinicBpCheck from "../../../public/images/photos/clinic-bp-check.webp";
 import midwivesNewborn from "../../../public/images/photos/midwives-newborn.webp";
@@ -23,8 +24,9 @@ import communityOutreach from "../../../public/images/photos/community-outreach.
  * - concept:      owner 3D renders of the planned facility (badge + caption, always)
  * - illustrative: photos and generated images copied from the WAHP source sites;
  *                 people and places shown are not WAHP staff, patients or facilities (badge)
- * - stock:        licensed stock / Creative Commons photos of health workers in Africa (credit, no badge);
- *                 they are not WAHP staff or facilities. Full credits: /terms#image-credits
+ * - stock:        licensed stock / Creative Commons photos of health workers in Africa (no badge);
+ *                 they are not WAHP staff or facilities.
+ * Photos carry no on-image credit (owner's choice); attribution required by CC BY-SA is given on /terms#image-credits.
  * - photo:        real photographs of WAHP people (no badge)
  * - diagram:      graphics copied from the source sites (no badge)
  * Provenance: docs/ASSET_INVENTORY.md.
@@ -65,7 +67,6 @@ const images = {
   patientPortrait: {
     src: patientPortrait,
     kind: "stock",
-    credit: "Photo: Unsplash",
     alt: "An older woman in a kente head wrap and face mask.",
   },
   investorLounge: {
@@ -75,6 +76,12 @@ const images = {
     alt: "A smiling man in a navy suit and a kente patterned tie sits in a bright clinic lounge, with a reception desk behind him.",
   },
 
+  diasporaDoctor: {
+    src: diasporaDoctor,
+    kind: "stock",
+    position: "50% 25%",
+    alt: "A smiling doctor in a white coat over blue scrubs, stethoscope round her neck, holding a clipboard outside a city building.",
+  },
   physicianTealScrubs: {
     src: physicianTealScrubs,
     kind: "illustrative",
@@ -84,59 +91,50 @@ const images = {
   communityScreening: {
     src: communityScreening,
     kind: "illustrative",
-    credit: "Adapted from a photo by Kwameghana, CC BY-SA 4.0",
     alt: "A nurse in a green uniform takes a patient's blood pressure at an outdoor community health screening.",
   },
   clinicBpCheck: {
     src: clinicBpCheck,
     kind: "illustrative",
-    credit: "Adapted from a photo by Pambelle12, CC BY-SA 4.0",
     alt: "A nurse takes a woman's blood pressure at the desk of a modern consulting room.",
   },
   midwivesNewborn: {
     src: midwivesNewborn,
     kind: "illustrative",
-    credit: "Adapted from a U.S. Army photo, public domain",
     alt: "Two clinicians in gowns, caps and masks hold a newborn baby wrapped in a striped blanket.",
   },
   nurseChildWard: {
     src: nurseChildWard,
     kind: "illustrative",
-    credit: "Adapted from a photo by Speak Media Uganda / Pexels",
     alt: "A nurse takes a young boy's blood pressure on a bright children's ward while his father watches.",
   },
   villageHospitalYard: {
     src: villageHospitalYard,
     kind: "stock",
-    credit: "Photo: Pexels",
     alt: "Older patients wait on chairs in the yard of a rural hospital while a health worker attends to them.",
   },
   physicianLaptop: {
     src: physicianLaptop,
     kind: "stock",
-    credit: "Photo: Pexels",
     alt: "A smiling physician in a white coat working at a laptop.",
   },
   doctorClinicKinshasa: {
     src: doctorClinicKinshasa,
     kind: "illustrative",
     position: "50% 30%",
-    credit: "Adapted from a photo by Carmel Nsenga / Pexels",
     alt: "A laughing doctor in green scrubs with a stethoscope in a bright clinic.",
   },
   doctorStethoscope: {
     src: doctorStethoscope,
     kind: "stock",
-    credit: "Photo: Unsplash",
     alt: "A doctor in a white coat puts on her stethoscope.",
   },
   communityOutreach: {
     src: communityOutreach,
     kind: "stock",
-    credit: "Photo: Pexels",
     alt: "Health workers attend to older community members at an outdoor health outreach.",
   },
-} satisfies Record<string, { src: StaticImageData; kind: Kind; alt: string; credit?: string; position?: string }>;
+} satisfies Record<string, { src: StaticImageData; kind: Kind; alt: string; position?: string }>;
 
 export type SiteImageName = keyof typeof images;
 
@@ -166,7 +164,7 @@ export function SiteImage({
   fit?: "cover" | "contain";
   rounded?: string;
 }) {
-  const img: { src: StaticImageData; kind: Kind; alt: string; credit?: string; position?: string } = images[name];
+  const img: { src: StaticImageData; kind: Kind; alt: string; position?: string } = images[name];
   const badge = badges[img.kind];
   const text = img.kind === "concept" ? (caption ?? conceptCaption) : caption;
   return (
@@ -182,11 +180,6 @@ export function SiteImage({
           className={fit === "contain" ? "object-contain" : "object-cover"}
           style={img.position ? { objectPosition: img.position } : undefined}
         />
-        {img.credit && (
-          <span className="absolute right-2 bottom-2 rounded bg-phantom/60 px-1.5 py-0.5 text-[0.6rem] leading-tight text-white">
-            {img.credit}
-          </span>
-        )}
         {badge && (
           <span className="absolute top-3 left-3 rounded-full bg-navy/80 px-2.5 py-1 text-[0.68rem] font-semibold tracking-wide text-white backdrop-blur">
             {badge}

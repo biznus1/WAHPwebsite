@@ -26,7 +26,7 @@ const paths: {
   },
   {
     title: "Diaspora physicians",
-    image: "doctorStethoscope",
+    image: "diasporaDoctor",
     body: "See patients in Accra during your weeks home, mentor, or help us build. You set the pace.",
     cta: "Explore your options",
     href: "/diaspora-physicians",

@@ -176,3 +176,8 @@
 - The only hyphens left in visible text are in the licence name "CC BY-SA". A page crawl of all routes at desktop and mobile, covering body text, alt text, ARIA labels, SVG text, options and titles, is clean.
 - Home headline: "Healthcare infrastructure for West Africa's doctors, starting in Accra." It is editable in the admin.
 - The Home physicians card now uses the owner-supplied `physician-teal-scrubs` image; `doctor-child-consultation` and its credit were removed.
+
+## 21 Oct 2026, no on-photo credits; new diaspora card photo
+
+- At the owner's request, the small credit labels were removed from every photo. Attribution for the CC BY-SA photos (required by that licence) stays in the Terms page image credits.
+- The Home diaspora card now uses the owner-supplied `diaspora-doctor.webp`. Its licence needs confirming: the image is the size of an iStock/Getty preview.
