@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
-import { RegionalRings } from "@/components/graphics/regional-rings";
+import { ExpansionMap } from "@/components/graphics/expansion-map";
 import { PageHero } from "@/components/sections/page-hero";
 import { ButtonLink } from "@/components/ui/button";
 import { Notice } from "@/components/ui/notice";
@@ -81,8 +81,8 @@ export default function InvestorsPage() {
         lead={pageHeaders.investors.lead}
         rest={pageHeaders.investors.rest}
         aside={
-          <div className="rounded-panel bg-white/5 p-6 ring-1 ring-inset ring-white/15">
-            <RegionalRings />
+          <div className="overflow-hidden rounded-panel bg-navy/40 ring-1 ring-inset ring-white/15">
+            <ExpansionMap />
           </div>
         }
       >

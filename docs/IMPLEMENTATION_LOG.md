@@ -124,3 +124,12 @@
 - Encoding and loading: re-encoded silent at 30 fps (WebM 0.65 MB, MP4 1.1 MB) with a 24 KB poster frame. The footage loads only after page load and browser idle; it is skipped for reduced-motion and data-saver visitors. A "Pause video" control satisfies WCAG 2.2.2.
 - The hero now sits under the header: the header is transparent at the top, frosted navy while scrolling through the hero, and light after it.
 - Lighthouse (Home): Performance 95–97, Accessibility 100, Best Practices 100. Starting the video immediately had dropped Performance to 79; deferring it fixed this.
+
+## 21 Oct 2026, Investors expansion map
+
+- The Investors hero rings now sit on an animated map of West Africa (`ExpansionMap`):
+  1. It opens zoomed in on southern Ghana, marks the Accra flagship and draws a line to Kumasi (future phase).
+  2. It zooms out to the region as the 16 West African countries light up outward from Accra.
+  3. The Accra, Ghana and West Africa rings settle in, and a soft ripple keeps pulsing from Accra.
+- It plays once when it scrolls into view. Without JS, or with reduced motion, it shows the final state. Pure CSS, no new runtime dependencies.
+- Map data is Natural Earth 1:50m (public domain) via world-atlas, projected and simplified to 16.5 KB by `scripts/gen-west-africa-map.mjs`. Kumasi was added to the claims register (`expansion-kumasi`) on the owner's instruction. `regional-rings.tsx` was removed.

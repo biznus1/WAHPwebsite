@@ -126,6 +126,15 @@ export const claims: Claim[] = [
     routes: ["/investors", "/physicians"],
   },
   {
+    id: "expansion-kumasi",
+    text: "Kumasi is shown as a future phase after the Accra flagship (Investors expansion map)",
+    source: "Owner instruction 21 Oct 2026",
+    status: "verified",
+    publicApproved: true,
+    lastVerified: "2026-10-21",
+    routes: ["/investors"],
+  },
+  {
     id: "traction-research",
     text: "60+ physicians surveyed; market, feasibility and phased-rollout studies completed",
     source: "WAHP site build (home, diaspora pages); Questionnaire #29 allows aggregate survey traction",
