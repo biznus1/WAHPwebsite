@@ -162,3 +162,4 @@
 
 - Replaced `doctor-child-consultation`, `community-bp-screening` and `doctor-clinic-kinshasa` with the owner's AI-edited versions. Each is badged "Illustrative image" and credited "Adapted from a photo by …"; the Terms image credits note the edits. The `clinic-bp-check` replacement (Platform, Suites tab) is still awaited as a file.
 - Later the same day, `clinic-bp-check` (Platform, Suites tab) and `nurse-child-ward` (Home patients card) were replaced the same way, with "Adapted from a photo by …" credits.
+- `midwives-newborn` (Patients FAQ column) was then replaced with the owner's edited version too, credited "Adapted from a U.S. Army photo, public domain".

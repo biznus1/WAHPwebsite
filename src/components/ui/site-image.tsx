@@ -95,9 +95,9 @@ const images = {
   },
   midwivesNewborn: {
     src: midwivesNewborn,
-    kind: "stock",
-    credit: "U.S. Army photo, public domain",
-    alt: "Two midwives in a maternity ward in Ghana hold a newborn baby.",
+    kind: "illustrative",
+    credit: "Adapted from a U.S. Army photo, public domain",
+    alt: "Two clinicians in gowns, caps and masks hold a newborn baby wrapped in a striped blanket.",
   },
   nurseChildWard: {
     src: nurseChildWard,

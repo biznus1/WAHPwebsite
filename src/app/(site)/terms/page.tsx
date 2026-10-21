@@ -39,7 +39,7 @@ const credits = [
     href: "https://commons.wikimedia.org/wiki/File:Checking_blood_pressure.jpg",
   },
   {
-    title: "US, Ghana midwives team up in maternity ward at African Lion 2025",
+    title: "US, Ghana midwives team up in maternity ward at African Lion 2025 (shown as an edited adaptation)",
     by: "U.S. Army photo by 1st Lt. Katherine Sibilla",
     licence: "public domain, via Wikimedia Commons",
     href: "https://commons.wikimedia.org/wiki/File:US,_Ghana_midwives_team_up_in_maternity_ward_at_African_Lion_2025_(9047753).jpg",
