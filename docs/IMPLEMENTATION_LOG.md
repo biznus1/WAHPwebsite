@@ -117,3 +117,10 @@
   - **Header:** on Home it starts navy, blending into the hero, and softens to light on scroll.
 - Lighthouse (Home, local production build): Performance 97, Accessibility 100, Best Practices 100. SEO is 69 because indexing is deliberately off. LCP is 2.2 s and CLS 0.
 - The static preview replays the reveals, count-ups and header change with a small inline script.
+
+## 21 Oct 2026, Home hero video
+
+- The owner's clinic video (a doctor checking an older patient's blood pressure) now plays behind the Home hero under a deep-blue overlay. The overlay is near-solid behind the text and lets the footage show through towards the right. On mobile it is an even 80%.
+- Encoding and loading: re-encoded silent at 30 fps (WebM 0.65 MB, MP4 1.1 MB) with a 24 KB poster frame. The footage loads only after page load and browser idle; it is skipped for reduced-motion and data-saver visitors. A "Pause video" control satisfies WCAG 2.2.2.
+- The hero now sits under the header: the header is transparent at the top, frosted navy while scrolling through the hero, and light after it.
+- Lighthouse (Home): Performance 95–97, Accessibility 100, Best Practices 100. Starting the video immediately had dropped Performance to 79; deferring it fixed this.

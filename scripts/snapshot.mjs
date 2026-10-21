@@ -2,7 +2,7 @@
 // Usage: node scripts/snapshot.mjs <baseUrl> <outDir>
 // Output: index.html (body fragment for the Artifact page), <route>.html pages, assets/site.css, img/*.webp
 import { chromium } from "@playwright/test";
-import { mkdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
+import { mkdirSync, writeFileSync, readFileSync, existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
 const [base, out] = process.argv.slice(2);
@@ -98,6 +98,13 @@ for (const route of routes) {
           img.setAttribute("loading", "lazy");
         }
       });
+      // Background video: point at the copied files.
+      main.querySelectorAll("video[poster], video source").forEach((el) => {
+        for (const attr of ["poster", "src"]) {
+          const v = el.getAttribute(attr);
+          if (v && v.startsWith("/video/")) el.setAttribute(attr, v.slice(1));
+        }
+      });
       main.querySelectorAll('a[href="/keystatic"]').forEach((a) => {
         a.setAttribute("href", "#");
         a.setAttribute("data-preview-admin", "");
@@ -141,6 +148,12 @@ for (const entry of usedImages) {
   else console.warn("missing image", stem);
 }
 
+// Hero footage
+if (existsSync("public/video")) {
+  mkdirSync(join(out, "video"), { recursive: true });
+  for (const f of readdirSync("public/video")) writeFileSync(join(out, "video", f), readFileSync(join("public/video", f)));
+}
+
 const previewStyle = (fontVar) => `<style>
 :root{--font-manrope:${fontVar};color-scheme:light}
 body{background:#F5F6FC;color:#1E1E24;font-size:16px;line-height:1.5;margin:0}
@@ -148,6 +161,7 @@ header.sticky{top:env(safe-area-inset-top,0px)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:#F5F6FC}
 .preview-bar{background:#1E1E24;color:#fff;font:600 13px/1.4 var(--font-manrope),system-ui,sans-serif;text-align:center;padding-block:8px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .preview-bar a{color:#fff}
+header.preview-dim{background:rgba(0,51,102,.75)!important;backdrop-filter:blur(12px)}
 header.preview-light{background:rgba(245,246,252,.92)!important;box-shadow:0 1px 0 #D3D6E0;backdrop-filter:blur(12px)}
 header.preview-light nav a{color:#40424D!important}
 header.preview-light svg g[fill="#FFFFFF"]{fill:#003366}
@@ -165,8 +179,13 @@ const previewScript = (tabStates) => `<script>
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduce) document.querySelectorAll('[data-countup]').forEach(function(el,i){ var m=el.getAttribute('data-countup').match(/^(\D*)(\d+)(.*)$/); if(!m) return; var n=+m[2]; el.textContent=m[1]+'0'+m[3]; setTimeout(function(){ var t0=performance.now(); (function tick(now){ var t=Math.min(1,(now-t0)/1800), e=1-Math.pow(1-t,4); el.textContent=m[1]+Math.round(n*e)+m[3]; if(t<1) requestAnimationFrame(tick); })(t0); },500+i*90); });
   // Home header softens from navy to light on scroll
-  var hdr=document.querySelector('header[data-blend]');
-  if(hdr){ var onS=function(){ hdr.classList.toggle('preview-light', window.scrollY>8); }; onS(); window.addEventListener('scroll',onS,{passive:true}); }
+  var hdr=document.querySelector('header[data-blend]'), hero=document.querySelector('[data-hero]');
+  if(hdr&&hero){ var onS=function(){ var past=hero.getBoundingClientRect().bottom<=96; hdr.classList.toggle('preview-light',past); hdr.classList.toggle('preview-dim',!past&&window.scrollY>8); }; onS(); window.addEventListener('scroll',onS,{passive:true}); }
+  // Hero background video with its pause control
+  var vid=document.querySelector('[data-hero] video');
+  if(vid){ vid.muted=true; var vbtn=vid.parentElement.querySelector('button'); var setB=function(){ if(!vbtn) return; var on=!vid.paused; vbtn.querySelector('span').textContent=on?'Pause video':'Play video'; };
+    if(!reduce){ var pr=vid.play(); if(pr&&pr.then) pr.then(setB,setB); } setB();
+    if(vbtn) vbtn.addEventListener('click',function(){ if(vid.paused){ vid.play().then(setB,setB); } else { vid.pause(); setB(); } }); }
   // Mobile menu
   var btn=document.querySelector('button[aria-controls="mobile-menu"]');
   var menu=document.getElementById('mobile-menu');

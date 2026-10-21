@@ -6,6 +6,7 @@ import { ClinicalFloorSchematic } from "@/components/graphics/clinical-floor-sch
 import { HeroRings } from "@/components/graphics/hero-rings";
 import { Wave } from "@/components/graphics/wave";
 import { CountUp } from "@/components/motion/count-up";
+import { HeroVideo } from "@/components/motion/hero-video";
 import { AudiencePaths } from "@/components/sections/audience-paths";
 import { Comparison } from "@/components/sections/comparison";
 import { CtaBand } from "@/components/sections/cta-band";
@@ -42,16 +43,23 @@ export default function HomePage() {
   return (
     <>
       {/* 1 — Hero: one statement, one line of support, two actions, the groundwork in numbers. */}
-      <section className="grain on-dark relative isolate overflow-hidden bg-navy text-white">
+      {/* Pulled up under the header (which is transparent over the hero) so the footage starts at the very top. */}
+      <section data-hero className="grain on-dark relative isolate -mt-18 overflow-hidden bg-navy text-white md:-mt-20">
+        <HeroVideo />
+        {/* Deep-blue overlay: near-solid behind the text, letting the footage show through towards the right. */}
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(70%_60%_at_85%_20%,rgba(0,135,158,0.28),transparent_70%),radial-gradient(50%_50%_at_10%_100%,rgba(0,135,158,0.14),transparent_70%)]"
+          className="absolute inset-0 -z-10 bg-navy/80 md:bg-[linear-gradient(90deg,rgba(0,51,102,0.95)_0%,rgba(0,51,102,0.84)_42%,rgba(0,51,102,0.5)_100%)]"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,#003366_0%,rgba(0,51,102,0.6)_28%,transparent_55%),radial-gradient(60%_50%_at_85%_15%,rgba(0,135,158,0.25),transparent_70%)]"
         />
         <div aria-hidden className="scroll-sink pointer-events-none absolute -top-48 -right-56 -z-10 md:-right-32">
           <HeroRings className="size-[44rem] text-white/[0.07] md:size-[56rem]" />
         </div>
 
-        <div className="container-wahp relative pt-14 pb-12 md:pt-24 md:pb-16">
+        <div className="container-wahp relative pt-32 pb-12 md:pt-44 md:pb-16">
           <div className="scroll-recede max-w-4xl">
             <div className="hero-in" style={delay(0)}>
               <Eyebrow dark>West African Health Partners</Eyebrow>

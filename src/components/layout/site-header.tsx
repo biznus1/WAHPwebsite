@@ -31,12 +31,19 @@ export function SiteHeader() {
     setOpen(false);
   }
 
+  // True while the Home hero is still behind the header; the header is transparent/navy over it.
+  const [overHero, setOverHero] = useState(pathname === "/");
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+      const hero = document.querySelector("[data-hero]");
+      setOverHero(hero ? hero.getBoundingClientRect().bottom > 96 : false);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     if (!open) return;
@@ -70,8 +77,9 @@ export function SiteHeader() {
     };
   }, [open, close]);
 
-  // On Home the header starts navy, blending into the hero, and softens to light once the reader scrolls.
-  const blend = pathname === "/" && !scrolled && !open;
+  // On Home the header floats over the hero (transparent at the top, frosted navy while scrolling through it)
+  // and softens to light once the hero has scrolled away.
+  const blend = overHero && !open;
 
   return (
     <>
@@ -79,7 +87,9 @@ export function SiteHeader() {
         data-blend={blend || undefined}
         className={`sticky top-0 z-50 transition-[background-color,box-shadow] duration-700 ease-soft ${
           blend
-            ? "bg-navy"
+            ? scrolled
+              ? "bg-navy/75 backdrop-blur-md"
+              : "bg-transparent"
             : scrolled || open
               ? "bg-paper/90 shadow-[0_1px_0_var(--color-smoke)] backdrop-blur-md"
               : "bg-paper"
