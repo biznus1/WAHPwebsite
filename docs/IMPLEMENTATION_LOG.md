@@ -167,3 +167,12 @@
 ## 21 Oct 2026, Leadership in the main menu
 
 - Leadership is now a primary navigation item after About, on desktop and in the mobile menu, where it replaces the small secondary link. Nav padding tightens below 1280px, so all seven items fit from 1024px with no overflow.
+
+## 21 Oct 2026, copy rewrite in WAHP's own voice
+
+- At the owner's request, every visible string was rewritten to sound specific to WAHP and less generic, with no em dashes, en dashes or hyphens. The rewrite covers pages, editable JSON, FAQs, team bios, form labels and messages, alt text, SVG labels, metadata, legal pages and the preview bar.
+- The copy names concrete things: the Accra hub, consulting rooms by the hour, day or month, one front desk, schedule and records, the lab down the corridor in Phase 2, and the taxi between facilities that patients take today.
+- Stage meaning, the 112 emergency wording and the securities notice are kept. Stage badges now read "Not yet open" and "Long term ambition".
+- The only hyphens left in visible text are in the licence name "CC BY-SA". A page crawl of all routes at desktop and mobile, covering body text, alt text, ARIA labels, SVG text, options and titles, is clean.
+- Home headline: "Healthcare infrastructure for West Africa's doctors, starting in Accra." It is editable in the admin.
+- The Home physicians card now uses the owner-supplied `physician-teal-scrubs` image; `doctor-child-consultation` and its credit were removed.

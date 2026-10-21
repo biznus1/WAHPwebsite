@@ -4,8 +4,8 @@ import { ButtonLink } from "@/components/ui/button";
 import { SplitHeading } from "@/components/ui/primitives";
 
 export function CtaBand({
-  lead = "Build what's next",
-  rest = "with WAHP.",
+  lead = "Let's build this",
+  rest = "together.",
   children,
   primary = { href: "/contact", label: "Get in touch" },
   secondary,

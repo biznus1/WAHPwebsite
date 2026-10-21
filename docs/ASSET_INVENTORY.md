@@ -50,3 +50,5 @@
 **Not used:** stock photos showing identifiable public figures or named individuals (for example, a UK minister's hospital visit and a profile photo of a named Korle Bu nurse), and US military surgical-mission photos.
 
 **Adaptations (21 Oct 2026).** At the owner's request, `doctor-child-consultation`, `community-bp-screening` and `doctor-clinic-kinshasa` were replaced with owner-supplied AI-edited versions of the same photos, which show the same people in new settings. They are badged "Illustrative image" and credited "Adapted from a photo by …". The two CC BY-SA adaptations are shared under the same licence (see `/terms#image-credits`). **Owner to confirm** comfort with showing identifiable people in edited settings. `clinic-bp-check`, `nurse-child-ward` and `midwives-newborn` were replaced the same way later that day.
+
+**Physicians card (21 Oct 2026).** `doctor-child-consultation` was removed; the Home physicians card now uses the owner-supplied `physician-teal-scrubs.webp` (504×350, appears AI-generated, source to confirm), badged "Illustrative image".

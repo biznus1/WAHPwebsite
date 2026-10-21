@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import { site } from "@/content/site";
 import "./globals.css";
 
-// Manrope (SIL Open Font License) — the brand's primary typeface, self-hosted.
+// Manrope (SIL Open Font License): the brand's primary typeface, self-hosted.
 const manrope = localFont({
   src: [
     {
@@ -24,7 +24,7 @@ const manrope = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "West African Health Partners — Infrastructure for independent medicine",
+    default: "West African Health Partners · A shared outpatient hub for independent doctors in Accra",
     template: "%s · West African Health Partners",
   },
   description: site.description,

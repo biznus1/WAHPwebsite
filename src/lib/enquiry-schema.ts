@@ -49,7 +49,7 @@ export const enquirySchema = z
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         path: ["message"],
-        message: "Please add a short message (10+ characters).",
+        message: "Please add a short message of at least 10 characters.",
       });
     }
   });

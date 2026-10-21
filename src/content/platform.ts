@@ -27,11 +27,11 @@ export const pillars: PlatformPillar[] = [
     stage: "in-development",
     stageLabel: "Phase 1 · in development",
     summary:
-      "Fully equipped consultation and examination rooms on flexible leases, with shared reception and administrative support — so physicians can practise without buildout costs, facility management or equipment procurement.",
+      "Equipped consulting and examination rooms in the Accra hub, rented as you need them. Reception and admin are shared, so you practise without fitting out premises, running a building or buying equipment.",
     points: [
-      "Flexible lease options planned (for example by the hour, day or month)",
-      "Shared reception, patient flow and administrative support",
-      "No buildout and no long-term property commitment for the physician",
+      "Rooms planned by the hour, day or month",
+      "One reception desk, one schedule, shared admin staff",
+      "No fit out costs and no lease to sign for years",
     ],
   },
   {
@@ -43,11 +43,11 @@ export const pillars: PlatformPillar[] = [
     stage: "planned",
     stageLabel: "Phase 2 · planned",
     summary:
-      "An on-site laboratory designed so results flow digitally from the lab to the physician — building continuity of care into the workflow instead of bolting it on afterwards.",
+      "A laboratory in the same building, so a patient can give a sample after the consultation and the result reaches the physician's record digitally. No second trip across Accra for tests.",
     points: [
-      "Testing kept close to the consultation",
-      "Results designed to feed directly into the patient record",
-      "Operates only once licensed and approved",
+      "Samples taken down the corridor, not across town",
+      "Results go straight into the patient record",
+      "Opens only once licensed and approved",
     ],
   },
   {
@@ -59,11 +59,11 @@ export const pillars: PlatformPillar[] = [
     stage: "future",
     stageLabel: "Phase 3 · future",
     summary:
-      "Diagnostic imaging — such as X-ray, ultrasound and CT — introduced after core utilisation and operational workflows are established, so imaging can be coordinated alongside consultations.",
+      "CT, MRI and other scans, added once the consulting rooms and lab are busy and running well. The aim is for scans to be booked alongside the consultation, in the same building.",
     points: [
-      "Added after the clinical suites and laboratory are established",
-      "Intended to shorten imaging queues and complete the clinical picture",
-      "Timing depends on capital, licensing and utilisation",
+      "Comes after the consulting rooms and the lab",
+      "Meant to cut waits for scans",
+      "Timing depends on funding, licensing and demand",
     ],
   },
   {
@@ -75,11 +75,11 @@ export const pillars: PlatformPillar[] = [
     stage: "in-development",
     stageLabel: "Phase 1 · core platform in development",
     summary:
-      "Electronic health records, scheduling, telemedicine capability and operational management tools — the technology layer that ties the physical infrastructure together.",
+      "Electronic records, scheduling, telemedicine and the tools we use to run the hub. This is what lets several independent practices share one building without losing track of their patients.",
     points: [
-      "Patient records designed to be accessible from any suite",
-      "Lab and imaging results designed to feed the patient file",
-      "Telemedicine to extend the physician's reach beyond the hub",
+      "Your patient records open in whichever room you use",
+      "Lab and scan results land in the same file",
+      "Telemedicine for follow up with patients outside Accra",
     ],
   },
 ];
@@ -94,30 +94,30 @@ export interface RoadmapPhase {
 export const roadmap: RoadmapPhase[] = [
   {
     phase: "Phase 1",
-    title: "Clinical suites launch",
+    title: "Consulting rooms open",
     description:
-      "Equipped clinical suites, shared reception and administrative support, and the core technology platform.",
+      "Equipped consulting rooms in Accra, shared reception and admin, and the core records and scheduling system.",
     stage: "in-development",
   },
   {
     phase: "Phase 2",
-    title: "Laboratory integration",
-    description: "On-site laboratory services to increase provider utility and strengthen referral pathways.",
+    title: "Laboratory on site",
+    description: "A lab in the same building, so physicians can order tests without sending patients elsewhere.",
     stage: "planned",
   },
   {
     phase: "Phase 3",
-    title: "Imaging expansion",
-    description: "X-ray, ultrasound and CT, added after core utilisation and workflows are established.",
+    title: "Imaging added",
+    description: "CT, MRI and other scans, once the consulting rooms and lab are well used.",
     stage: "future",
   },
   {
     phase: "Phase 4",
-    title: "Replication",
-    description: "Use flagship performance data to evaluate additional Ghanaian and regional locations.",
+    title: "The next city",
+    description: "Use what we learn in Accra to decide on Kumasi and, in time, other West African cities.",
     stage: "aspiration",
   },
 ];
 
 export const roadmapCaveat =
-  "Phase sequencing reflects management's current plan. Timing depends on capital, licensing, construction and utilisation outcomes, and is subject to change.";
+  "This is our current plan. Timing depends on funding, licensing, construction and how quickly the rooms are used, and it may change.";

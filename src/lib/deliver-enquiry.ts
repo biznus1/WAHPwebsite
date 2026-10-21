@@ -29,7 +29,7 @@ export function formatEnquiry(e: Enquiry) {
     e.message || "(no message)",
     "",
     e.type === "investor" ? "Investor acknowledgement (not an offer; accredited investors only): confirmed." : null,
-    "— Sent from the WAHP website enquiry form. Consent to be contacted: yes.",
+    "Sent from the WAHP website enquiry form. Consent to be contacted: yes.",
   ];
   return lines.filter((l): l is string => typeof l === "string").join("\n");
 }
@@ -39,7 +39,7 @@ export function formatEnquiry(e: Enquiry) {
  * Returns "not_configured" when neither is set so the UI never fakes success.
  */
 export async function deliverEnquiry(e: Enquiry): Promise<DeliveryResult> {
-  const subject = `[WAHP website] ${LABELS[e.type]} enquiry — ${e.name}`;
+  const subject = `[WAHP website] ${LABELS[e.type]} enquiry from ${e.name}`;
   const body = formatEnquiry(e);
 
   const resendKey = process.env.RESEND_API_KEY;

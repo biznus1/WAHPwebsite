@@ -15,8 +15,8 @@ export default function PrivacyPage() {
       <section>
         <h2>Who we are</h2>
         <p>
-          This website is operated by West African Health Partners (&ldquo;WAHP&rdquo;). WAHP is pre-launch and does not
-          currently provide healthcare services.
+          This website is operated by West African Health Partners (&ldquo;WAHP&rdquo;). WAHP is not open yet and does
+          not provide any healthcare services.
         </p>
       </section>
       <section>
@@ -25,7 +25,7 @@ export default function PrivacyPage() {
         <ul>
           <li>Your name and email address</li>
           <li>
-            Your enquiry type and, where relevant, organisation, specialty, city/country and professional interest
+            Your enquiry type and, where relevant, organisation, specialty, city and country, and professional interest
           </li>
           <li>The content of your message</li>
         </ul>
@@ -45,9 +45,9 @@ export default function PrivacyPage() {
       <section>
         <h2>Legal basis and your rights</h2>
         <p>
-          We process enquiry data with your consent and to respond to your request. Subject to applicable law —
-          including Ghana&apos;s Data Protection Act, 2012 (Act 843) — you may ask to access, correct or delete your
-          information, or withdraw consent.
+          We process enquiry data with your consent and to respond to your request. Subject to applicable law, including
+          Ghana&apos;s Data Protection Act, 2012 (Act 843), you may ask to access, correct or delete your information,
+          or withdraw consent.
         </p>
       </section>
       <section>

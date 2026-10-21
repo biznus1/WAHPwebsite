@@ -18,8 +18,8 @@ const paths: {
 }[] = [
   {
     title: "Physicians",
-    image: "doctorChildConsultation",
-    body: "Practise independently in equipped clinical space, without the cost of building your own facility.",
+    image: "physicianTealScrubs",
+    body: "Rent an equipped consulting room in Accra and keep your own practice, without building a clinic first.",
     cta: "See how it works",
     href: "/physicians",
     accent: { bar: "bg-teal", mark: "text-teal" },
@@ -27,7 +27,7 @@ const paths: {
   {
     title: "Diaspora physicians",
     image: "doctorStethoscope",
-    body: "A credible path to practise, mentor or help build back home — at your own pace.",
+    body: "See patients in Accra during your weeks home, mentor, or help us build. You set the pace.",
     cta: "Explore your options",
     href: "/diaspora-physicians",
     accent: { bar: "bg-navy", mark: "text-navy" },
@@ -35,7 +35,7 @@ const paths: {
   {
     title: "Investors",
     image: "investorLounge",
-    body: "Back the infrastructure that independent outpatient care in West Africa can build on.",
+    body: "Back a shared outpatient hub in Accra, built so the model can move to Kumasi and beyond.",
     cta: "See the opportunity",
     href: "/investors",
     accent: { bar: "bg-navy-700", mark: "text-navy-700" },
@@ -43,7 +43,7 @@ const paths: {
   {
     title: "Partners",
     image: "communityScreening",
-    body: "Institutions, suppliers and health organisations exploring collaboration.",
+    body: "Hospitals, labs, suppliers and health organisations who want to work with us.",
     cta: "Discuss partnership",
     href: "/contact?type=partnership",
     accent: { bar: "bg-teal", mark: "text-teal" },
@@ -51,7 +51,7 @@ const paths: {
   {
     title: "Patients",
     image: "nurseChildWard",
-    body: "We are pre-launch and not yet seeing patients. See what is planned.",
+    body: "We are not open and are not seeing patients yet. Here is what we plan to offer.",
     cta: "What's planned",
     href: "/patients",
     accent: { bar: "bg-space", mark: "text-navy" },

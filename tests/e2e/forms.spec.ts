@@ -25,6 +25,6 @@ test("without a delivery integration the form says it was NOT sent (no fake succ
   await form.getByLabel("City and country").fill("Accra, Ghana");
   await form.getByRole("checkbox").check();
   await form.getByRole("button", { name: "Send enquiry" }).click();
-  await expect(page.getByText("Not sent — preview mode")).toBeVisible();
+  await expect(page.getByText("Not sent (preview mode)")).toBeVisible();
   await expect(page.getByText("Enquiry sent")).toHaveCount(0);
 });

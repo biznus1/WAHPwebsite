@@ -198,13 +198,13 @@ const previewScript = (tabStates) => `<script>
     root.querySelectorAll('[role="tab"]').forEach(function(t,i){ t.addEventListener('click',function(){ var tmp=document.createElement('div'); tmp.innerHTML=states[i]; var next=tmp.firstElementChild; next.setAttribute('data-tabs-root',''); root.replaceWith(next); bindTabs(); var nt=next.querySelectorAll('[role="tab"]')[i]; if(nt) nt.focus(); }); }); }
   bindTabs();
   // The site admin needs the deployed site
-  document.querySelectorAll('[data-preview-admin]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); if(a.nextElementSibling&&a.nextElementSibling.hasAttribute('data-admin-note')) return; var n=document.createElement('span'); n.setAttribute('data-admin-note',''); n.setAttribute('role','status'); n.className='ml-3'; n.textContent='Admin sign-in works on the deployed site, not in this preview.'; a.after(n); }); });
+  document.querySelectorAll('[data-preview-admin]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); if(a.nextElementSibling&&a.nextElementSibling.hasAttribute('data-admin-note')) return; var n=document.createElement('span'); n.setAttribute('data-admin-note',''); n.setAttribute('role','status'); n.className='ml-3'; n.textContent='Admin sign in works on the deployed site, not in this preview.'; a.after(n); }); });
   // Forms are disabled in the preview
   document.querySelectorAll('form').forEach(function(f){ f.addEventListener('submit',function(e){ e.preventDefault(); if(f.querySelector('.preview-note')) return; var n=document.createElement('p'); n.className='preview-note'; n.setAttribute('role','status'); n.textContent='Preview only: form submissions are switched off in this static preview. On the real site this form validates and routes the enquiry.'; f.appendChild(n); }); });
 })();
 </script>`;
 
-const bar = `<div class="preview-bar">WAHP website preview — static snapshot of the staging build (forms disabled). Not the live site.</div>`;
+const bar = `<div class="preview-bar">WAHP website preview: a static copy of the staging build with forms switched off. Not the live site.</div>`;
 
 const rewriteLinks = (html) =>
   html.replace(

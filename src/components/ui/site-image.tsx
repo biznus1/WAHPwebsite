@@ -7,7 +7,7 @@ import pillarLaboratory from "../../../public/images/photos/pillar-laboratory.we
 import pillarImaging from "../../../public/images/photos/pillar-imaging.webp";
 import patientPortrait from "../../../public/images/photos/patient-portrait.webp";
 import investorLounge from "../../../public/images/photos/investor-lounge.webp";
-import doctorChildConsultation from "../../../public/images/photos/doctor-child-consultation.webp";
+import physicianTealScrubs from "../../../public/images/photos/physician-teal-scrubs.webp";
 import communityScreening from "../../../public/images/photos/community-bp-screening.webp";
 import clinicBpCheck from "../../../public/images/photos/clinic-bp-check.webp";
 import midwivesNewborn from "../../../public/images/photos/midwives-newborn.webp";
@@ -50,7 +50,7 @@ const images = {
   founders: {
     src: founders,
     kind: "photo",
-    alt: "WAHP co-founders Jonathan Francois and Emmanuel Adomfeh standing together at an event.",
+    alt: "WAHP cofounders Jonathan Francois and Emmanuel Adomfeh standing together at an event.",
   },
   pillarLaboratory: {
     src: pillarLaboratory,
@@ -72,14 +72,14 @@ const images = {
     src: investorLounge,
     kind: "illustrative",
     position: "50% 35%",
-    alt: "A smiling man in a navy suit and kente-pattern tie sits in a light-filled clinic lounge with a reception desk behind him.",
+    alt: "A smiling man in a navy suit and a kente patterned tie sits in a bright clinic lounge, with a reception desk behind him.",
   },
 
-  doctorChildConsultation: {
-    src: doctorChildConsultation,
+  physicianTealScrubs: {
+    src: physicianTealScrubs,
     kind: "illustrative",
-    credit: "Adapted from a photo by Carla Keithley, CC BY-SA 2.0",
-    alt: "A doctor in a white coat and stethoscope holds a young girl in a pink wrap in a bright, modern consulting room.",
+    position: "50% 12%",
+    alt: "A smiling doctor in teal scrubs and glasses, stethoscope round his neck, arms folded.",
   },
   communityScreening: {
     src: communityScreening,
@@ -142,7 +142,7 @@ export type SiteImageName = keyof typeof images;
 
 const badges: Partial<Record<Kind, string>> = { concept: "Concept rendering", illustrative: "Illustrative image" };
 const conceptCaption =
-  "Concept rendering — illustrates the planned environment, not an existing facility. People shown are illustrative.";
+  "Concept rendering of the space we are planning. The building does not exist yet, and any people shown are illustrative.";
 
 export function SiteImage({
   name,

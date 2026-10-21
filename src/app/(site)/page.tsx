@@ -19,9 +19,9 @@ import { pageHeaders } from "@/content/editable";
 import { pillars } from "@/content/platform";
 
 export const metadata: Metadata = {
-  title: { absolute: "West African Health Partners — Infrastructure for independent medicine" },
+  title: { absolute: "West African Health Partners · Shared clinical space for independent doctors in Accra" },
   description:
-    "WAHP is developing shared clinical infrastructure for independent outpatient practice — professional clinical space, a shared operational backbone and integrated diagnostics — beginning in Accra, Ghana.",
+    "WAHP is building a shared outpatient hub in Accra, Ghana, where independent physicians rent equipped consulting rooms and share reception, scheduling and records. A lab and imaging follow in later phases.",
   alternates: { canonical: "/" },
 };
 
@@ -80,7 +80,7 @@ export default function HomePage() {
             </p>
             <div className="hero-in mt-10 flex flex-col gap-3 sm:flex-row sm:items-center" style={delay(360)}>
               <ButtonLink href="/platform" size="lg" arrow>
-                Explore the platform
+                See how it works
               </ButtonLink>
               <ButtonLink href="/contact" size="lg" variant="light">
                 Get in touch
@@ -92,7 +92,7 @@ export default function HomePage() {
           </div>
 
           {groundwork.length > 0 && (
-            <dl className="mt-16 grid grid-cols-2 gap-3 md:mt-24 md:grid-cols-4" aria-label="WAHP groundwork so far">
+            <dl className="mt-16 grid grid-cols-2 gap-3 md:mt-24 md:grid-cols-4" aria-label="Where WAHP stands today">
               {groundwork.map((s, i) => (
                 <div
                   key={s.label}
@@ -122,8 +122,8 @@ export default function HomePage() {
           id="serve-heading"
           align="center"
           eyebrow="Who we serve"
-          lead="Built for the physicians"
-          rest="shaping West African healthcare."
+          lead="For doctors in Ghana and abroad,"
+          rest="and the people who back them."
         />
         <div className="mt-14">
           <AudiencePaths />
@@ -137,12 +137,15 @@ export default function HomePage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <SectionIntro
               id="gap-heading"
-              eyebrow="The infrastructure gap"
-              lead="The talent exists."
-              rest="The infrastructure around it doesn't — yet."
+              eyebrow="The problem we're solving"
+              lead="Ghana trains good doctors."
+              rest="Too many plan to practise elsewhere."
               dark
             >
-              <p>When the system doesn&apos;t support doctors, doctors leave. WAHP is building the support.</p>
+              <p>
+                Opening a private practice here means finding premises, buying equipment and hiring staff on your own.
+                Patients still cross town for tests. We want staying to be the easier choice.
+              </p>
             </SectionIntro>
             <SiteImage
               name="villageHospitalYard"
@@ -164,19 +167,17 @@ export default function HomePage() {
         <SectionIntro
           id="platform-heading"
           align="center"
-          eyebrow="The platform"
-          lead="A platform, not just a place."
-          rest="Built for independent practice."
+          eyebrow="What we're building"
+          lead="One building."
+          rest="Many independent practices."
         >
-          <p>
-            Clinical suites, shared operations, diagnostics and digital tools — in one building, introduced in phases.
-          </p>
+          <p>Consulting rooms and a shared front desk come first. A lab follows in Phase 2, and imaging after that.</p>
         </SectionIntro>
         <div className="mt-14 grid items-center gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
           <div className="reveal rounded-panel bg-navy p-5 md:p-8">
             <ClinicalFloorSchematic className="mx-auto max-w-[36rem]" />
           </div>
-          <ul className="space-y-3" aria-label="The four pillars of the platform">
+          <ul className="space-y-3" aria-label="The four parts of the hub">
             {pillars.map((p, i) => {
               const Icon = pillarIcons[i];
               return (
@@ -198,7 +199,7 @@ export default function HomePage() {
         </div>
         <div className="reveal mt-12 text-center">
           <ButtonLink href="/platform" variant="ghost" size="lg" arrow>
-            See the full platform
+            How the hub works
           </ButtonLink>
         </div>
       </Section>
@@ -208,16 +209,16 @@ export default function HomePage() {
         <SectionIntro
           id="compare-heading"
           align="center"
-          eyebrow="A new category of practice"
-          lead="The missing middle between"
-          rest="hospitals and private practice."
+          eyebrow="Where WAHP fits"
+          lead="Between the big hospital"
+          rest="and going it alone."
         />
         <div className="reveal mt-14">
           <Comparison />
         </div>
         <p className="reveal mt-8 text-center">
           <Link href="/physicians" className="group inline-flex items-center gap-2 font-semibold text-navy">
-            What this means for physicians
+            What this means for your practice
             <ArrowRight aria-hidden className="size-4 text-teal transition-transform group-hover:translate-x-0.5" />
           </Link>
         </p>
@@ -225,8 +226,8 @@ export default function HomePage() {
 
       {/* 6 — Next step */}
       <CtaBand
-        lead="Ready to learn more?"
-        rest="Start with a conversation."
+        lead="Let's talk."
+        rest="Someone from our team will reply."
         primary={{ href: "/contact", label: "Get in touch" }}
         secondary={{ href: "/physicians#register", label: "Register as a physician" }}
       />

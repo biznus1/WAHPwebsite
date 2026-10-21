@@ -20,17 +20,17 @@ import {
 type Step = { title: string; detail: string; icon: LucideIcon; phase?: string; x: number; y: number; at: number };
 
 const R = 38;
-// Serpentine route through the step centres; `at` is each step's position along it (0–1).
+// Serpentine route through the step centres; `at` is each step's position along it (0 to 1).
 const ROUTE =
   "M110 130 H580 A40 40 0 0 1 620 170 V270 A40 40 0 0 1 580 310 H70 A40 40 0 0 0 30 350 V450 A40 40 0 0 0 70 490 H160";
 const steps: Step[] = [
-  { title: "Check-in", detail: "Digital intake", icon: ClipboardCheck, x: 110, y: 130, at: 0 },
-  { title: "Consult", detail: "Physician visit", icon: Stethoscope, x: 320, y: 130, at: 0.138 },
-  { title: "Lab", detail: "Laboratory testing", icon: FlaskConical, phase: "Phase 2", x: 530, y: 130, at: 0.276 },
-  { title: "Imaging", detail: "CT · MRI · X-ray", icon: ScanLine, phase: "Phase 3", x: 530, y: 310, at: 0.49 },
-  { title: "Results", detail: "Reviewed digitally", icon: FileText, x: 320, y: 310, at: 0.628 },
-  { title: "Treatment", detail: "Plan prescribed", icon: Pill, x: 110, y: 310, at: 0.766 },
-  { title: "Follow-up", detail: "Scheduled before exit", icon: CalendarClock, x: 160, y: 490, at: 1 },
+  { title: "Check in", detail: "At the front desk", icon: ClipboardCheck, x: 110, y: 130, at: 0 },
+  { title: "Consult", detail: "With your own doctor", icon: Stethoscope, x: 320, y: 130, at: 0.138 },
+  { title: "Lab", detail: "Samples taken on site", icon: FlaskConical, phase: "Phase 2", x: 530, y: 130, at: 0.276 },
+  { title: "Imaging", detail: "CT · MRI", icon: ScanLine, phase: "Phase 3", x: 530, y: 310, at: 0.49 },
+  { title: "Results", detail: "In the same record", icon: FileText, x: 320, y: 310, at: 0.628 },
+  { title: "Treatment", detail: "Plan agreed", icon: Pill, x: 110, y: 310, at: 0.766 },
+  { title: "Follow up", detail: "Booked before you leave", icon: CalendarClock, x: 160, y: 490, at: 1 },
 ];
 
 const DRAW = 4.5; // seconds for the route to draw
@@ -57,7 +57,7 @@ export function PatientJourney({ className = "" }: { className?: string }) {
       style={v({ "--draw": `${DRAW}s` })}
     >
       <style>{travelKeyframes}</style>
-      <p className="eyebrow flex items-center gap-3 text-teal">One building · one journey</p>
+      <p className="eyebrow flex items-center gap-3 text-teal">One building · one visit</p>
 
       {/* Phones: vertical steps. Also the accessible version on larger screens. */}
       <ol className="mt-6 space-y-5 md:sr-only">
@@ -148,7 +148,7 @@ export function PatientJourney({ className = "" }: { className?: string }) {
       </svg>
 
       <figcaption className="mt-4 text-xs text-arsenic">
-        The planned patient journey. Lab and imaging steps (dashed) arrive in Phases 2 and 3.
+        How a visit to the Accra hub is planned to work. The dashed steps, lab and imaging, come in Phases 2 and 3.
       </figcaption>
     </figure>
   );

@@ -13,7 +13,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "For diaspora physicians",
   description:
-    "For West African physicians practising abroad: a path to practise in Ghana during visits home, mentor, or help build WAHP's Accra flagship — at your own pace.",
+    "For West African doctors practising abroad. See patients in Accra during your weeks at home, mentor, or help us build the hub, at a pace that suits you.",
   alternates: { canonical: "/diaspora-physicians" },
 };
 
@@ -21,12 +21,12 @@ const paths = [
   {
     label: "The practice path",
     title: "I want to practise.",
-    body: "Equipped clinical space and shared support in Accra. Start during the weeks you are already home, and grow into more when you are ready.",
+    body: "A furnished consulting room and a front desk in Accra. Book clinics for the weeks you are already home, and add more when you are ready.",
   },
   {
     label: "The partner path",
     title: "I want to help build.",
-    body: "Contribute through your networks, advice or experience building institutions. If that describes you, we would welcome the introduction.",
+    body: "Bring your networks, your advice or what you learned building departments abroad. If that is you, we would like to talk.",
   },
 ];
 
@@ -61,7 +61,13 @@ export default function DiasporaPhysiciansPage() {
       </PageHero>
 
       <Section tone="paper" labelledBy="paths-heading">
-        <SectionIntro id="paths-heading" align="center" eyebrow="Two paths" lead="Practise, partner," rest="or both." />
+        <SectionIntro
+          id="paths-heading"
+          align="center"
+          eyebrow="Two paths"
+          lead="See patients, help us build,"
+          rest="or do both."
+        />
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           {paths.map((p, i) => (
             <div
@@ -79,14 +85,17 @@ export default function DiasporaPhysiciansPage() {
       </Section>
 
       <Section tone="white" labelledBy="how-heading">
-        <SectionIntro id="how-heading" eyebrow="How it works" lead="Start with" rest="a conversation." />
+        <SectionIntro id="how-heading" eyebrow="How it works" lead="It starts with" rest="a phone call." />
         <div className="mt-14">
           <JourneySteps
-            note="You do not need to move back tomorrow. Physicians remain responsible for meeting Ghanaian requirements to practise."
+            note="Nobody is asking you to move home. You remain responsible for meeting Ghana's requirements to practise."
             steps={[
-              { title: "Have a conversation", body: "Tell us where you are and how you hope to engage." },
-              { title: "Choose your path", body: "Practise during visits, mentor, advise or explore a deeper role." },
-              { title: "Start building", body: "Begin clinically or strategically, at the pace that suits you." },
+              { title: "Talk to us", body: "Tell us where you work now and when you are usually in Ghana." },
+              {
+                title: "Pick your path",
+                body: "Clinics during visits, mentoring, advice, or a bigger role over time.",
+              },
+              { title: "Begin", body: "Start with one trip home and see how it fits around your life abroad." },
             ]}
           />
         </div>
@@ -95,14 +104,19 @@ export default function DiasporaPhysiciansPage() {
       <Section tone="paper" id="register" labelledBy="register-heading" className="scroll-mt-20">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
           <div>
-            <SectionIntro id="register-heading" eyebrow="Register interest" lead="Tell us where" rest="you practise.">
-              <p>No patient information, please. We use your details only to follow up on your interest.</p>
+            <SectionIntro
+              id="register-heading"
+              eyebrow="Register interest"
+              lead="Tell us where"
+              rest="you practise now."
+            >
+              <p>Please leave out any patient information. We only use your details to get back to you.</p>
             </SectionIntro>
             {approvedClaim("traction-lois") && (
               <div className="reveal mt-10 rounded-card bg-white p-6 ring-1 ring-inset ring-smoke">
                 <p className="text-headline font-semibold text-navy">20</p>
                 <p className="mt-1 text-arsenic">
-                  physicians have already signed Letters of Intent to practise at the first WAHP hub.
+                  physicians have signed letters of intent to practise at our first hub in Accra.
                 </p>
               </div>
             )}
@@ -110,7 +124,7 @@ export default function DiasporaPhysiciansPage() {
           <EnquiryForm
             defaultType="physician"
             lockType
-            defaultInterest="Diaspora physician — practising in Ghana"
+            defaultInterest="Diaspora physician wanting to practise in Ghana"
             locationHint="e.g. London, United Kingdom"
             contactEmail={site.contactEmail}
           />
@@ -119,7 +133,7 @@ export default function DiasporaPhysiciansPage() {
 
       <Section tone="white" labelledBy="faq-heading">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
-          <SectionIntro id="faq-heading" eyebrow="Questions" lead="Diaspora physician" rest="FAQs." />
+          <SectionIntro id="faq-heading" eyebrow="Questions" lead="Questions from" rest="doctors abroad." />
           <Faq items={faqLists.diaspora} />
         </div>
       </Section>

@@ -6,13 +6,13 @@ const stats = [
   {
     claim: "stat-doctor-ratio",
     value: "1:5,707",
-    label: "Doctor-to-population ratio in Ghana",
+    label: "One doctor for every 5,707 people in Ghana",
     source: "Ghana Ministry of Health, 2021",
   },
   {
     claim: "stat-migration-intent",
     value: "71.8%",
-    label: "Of doctors surveyed in Ghana intended to migrate abroad",
+    label: "Of doctors surveyed in Ghana said they intend to work abroad",
     source: "Published survey of doctors working in Ghana",
   },
   {

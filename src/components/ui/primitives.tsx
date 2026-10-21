@@ -3,14 +3,14 @@ import type { ReactNode } from "react";
 export type Stage = "in-development" | "planned" | "future" | "aspiration" | "pre-launch";
 
 const stageStyles: Record<Stage, { label: string; className: string }> = {
-  "pre-launch": { label: "Pre-launch", className: "bg-white text-navy ring-navy/30" },
+  "pre-launch": { label: "Not yet open", className: "bg-white text-navy ring-navy/30" },
   "in-development": { label: "In development", className: "bg-cloud text-navy ring-teal/50" },
   planned: { label: "Planned", className: "bg-white text-navy ring-steel" },
   future: {
     label: "Future phase",
     className: "bg-transparent text-arsenic ring-0 outline-1 outline-dashed outline-space -outline-offset-1",
   },
-  aspiration: { label: "Long-term ambition", className: "bg-transparent text-arsenic ring-steel" },
+  aspiration: { label: "Long term ambition", className: "bg-transparent text-arsenic ring-steel" },
 };
 
 /** Honest status label used everywhere a capability's availability is described. */

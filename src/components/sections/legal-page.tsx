@@ -11,7 +11,7 @@ export function LegalPage({ title, updated, children }: { title: string; updated
         <h1 className="mt-6 text-display font-bold text-navy">{title}</h1>
         <p className="mt-4 text-sm text-arsenic">Last updated: {updated}</p>
         <div className="mt-8">
-          <Notice title="Draft — subject to legal review" tone="important">
+          <Notice title="Draft: subject to legal review" tone="important">
             This page is a working draft prepared for review by WAHP&apos;s legal advisers and is not yet final.
           </Notice>
         </div>

@@ -5,10 +5,10 @@ export const site = {
   shortName: "WAHP",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.westahp.com",
   description:
-    "West African Health Partners is building shared clinical infrastructure for independent outpatient medicine, beginning in Accra, Ghana.",
+    "West African Health Partners is building a shared outpatient hub in Accra, Ghana, where independent physicians rent equipped consulting rooms and share reception, records and, later, a lab.",
   locale: "en_GH",
   copyrightYear: 2026,
-  /** Public contact email — null until approved in the claims register or set via NEXT_PUBLIC_CONTACT_EMAIL. */
+  /** Public contact email: null until approved in the claims register or set via NEXT_PUBLIC_CONTACT_EMAIL. */
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || approvedClaim("contact-email")?.text || null,
   linkedin: approvedClaim("linkedin")?.text ?? null,
   youtube: approvedClaim("youtube")?.text ?? null,
@@ -30,13 +30,13 @@ export interface NavItem {
 }
 
 export const primaryNav: NavItem[] = [
-  { href: "/platform", label: "Platform", description: "How the model fits together" },
-  { href: "/physicians", label: "Physicians", description: "Practise without building alone" },
-  { href: "/diaspora-physicians", label: "Diaspora", description: "Practise, partner, or both" },
-  { href: "/investors", label: "Investors", description: "The infrastructure thesis" },
-  { href: "/patients", label: "Patients", description: "What care could feel like" },
-  { href: "/about", label: "About", description: "Mission and approach" },
-  { href: "/leadership", label: "Leadership", description: "The team building WAHP" },
+  { href: "/platform", label: "Platform", description: "Rooms, operations, lab and tools" },
+  { href: "/physicians", label: "Physicians", description: "For doctors practising in Ghana" },
+  { href: "/diaspora-physicians", label: "Diaspora", description: "Practise or help build at home" },
+  { href: "/investors", label: "Investors", description: "Why we are building the hub" },
+  { href: "/patients", label: "Patients", description: "What we plan to offer" },
+  { href: "/about", label: "About", description: "Why WAHP exists" },
+  { href: "/leadership", label: "Leadership", description: "The people behind WAHP" },
 ];
 
 export const footerNav: { heading: string; items: NavItem[] }[] = [
@@ -71,10 +71,10 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
 export type EnquiryType = "physician" | "investor" | "partnership" | "vendor" | "media" | "general";
 
 export const enquiryTypes: { value: EnquiryType; label: string; hint: string }[] = [
-  { value: "physician", label: "Physician", hint: "In Ghana or the diaspora" },
-  { value: "investor", label: "Investor", hint: "Request an introduction" },
-  { value: "partnership", label: "Strategic partner", hint: "Growth and alignment" },
-  { value: "vendor", label: "Vendor & industry", hint: "Labs, equipment, technology" },
-  { value: "media", label: "Media", hint: "Press and speaking" },
-  { value: "general", label: "General", hint: "Patients and everyone else" },
+  { value: "physician", label: "Physician", hint: "In Ghana or abroad" },
+  { value: "investor", label: "Investor", hint: "Ask to meet the founders" },
+  { value: "partnership", label: "Strategic partner", hint: "Hospitals, schools, NGOs" },
+  { value: "vendor", label: "Vendor & industry", hint: "Lab, equipment, software" },
+  { value: "media", label: "Media", hint: "Interviews and speaking" },
+  { value: "general", label: "General", hint: "Patients and anyone else" },
 ];

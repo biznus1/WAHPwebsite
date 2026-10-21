@@ -9,7 +9,7 @@ import { pageHeaders } from "@/content/editable";
 export const metadata: Metadata = {
   title: "Leadership",
   description:
-    "The core team of West African Health Partners: physicians and operators building shared clinical infrastructure for independent practice, starting in Accra.",
+    "Meet the team behind West African Health Partners: physicians and operators building a shared outpatient hub for independent doctors in Accra.",
   alternates: { canonical: "/leadership" },
 };
 
@@ -25,18 +25,13 @@ export default function LeadershipPage() {
       </PageHero>
 
       <Section tone="paper" labelledBy="team-heading">
-        <SectionIntro
-          id="team-heading"
-          eyebrow="Core team"
-          lead="The operating team"
-          rest="building WAHP day to day."
-        />
+        <SectionIntro id="team-heading" eyebrow="Core team" lead="The people building" rest="the Accra hub." />
         <div className="mt-14">
           <TeamGrid leaders={approvedLeaders} />
         </div>
       </Section>
 
-      <CtaBand lead="Speak with" rest="the team." primary={{ href: "/contact", label: "Get in touch" }} />
+      <CtaBand lead="Want to talk" rest="to the team?" primary={{ href: "/contact", label: "Get in touch" }} />
     </>
   );
 }

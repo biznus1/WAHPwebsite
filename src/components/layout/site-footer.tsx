@@ -12,7 +12,7 @@ export function SiteFooter() {
           <div>
             <Logo tone="reversed" className="h-11 w-auto" />
             <p className="mt-6 max-w-sm text-white/75">
-              Shared clinical infrastructure for independent outpatient medicine — beginning in Accra, Ghana.
+              A shared outpatient hub for independent physicians, starting in Accra, Ghana.
             </p>
             {site.contactEmail ? (
               <a
@@ -73,9 +73,9 @@ export function SiteFooter() {
 
         <div className="mt-16 grid gap-6 border-t border-white/15 pt-8 text-sm text-white/60 md:grid-cols-[2fr_1fr]">
           <p className="max-w-3xl">
-            <strong className="font-semibold text-white/80">Pre-launch notice.</strong> WAHP is in development. No
-            clinical services are currently offered and this website does not provide medical advice. In an emergency,
-            call 112 or go to the nearest emergency department. Nothing on this site is an offer of securities.
+            <strong className="font-semibold text-white/80">We are not open yet.</strong> WAHP offers no clinical
+            services today and this website does not give medical advice. In an emergency, call 112 or go to the nearest
+            emergency department. Nothing on this site is an offer of securities.
           </p>
           <p className="md:text-right">
             © {year} West African Health Partners. All rights reserved.

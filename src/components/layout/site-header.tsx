@@ -96,7 +96,7 @@ export function SiteHeader() {
         }`}
       >
         <div className="container-wahp flex h-18 items-center justify-between gap-6 md:h-20">
-          <Link href="/" className="shrink-0 rounded-md" aria-label="West African Health Partners — home">
+          <Link href="/" className="shrink-0 rounded-md" aria-label="West African Health Partners home">
             <Logo tone={blend ? "reversed" : "primary"} className="h-9 w-auto md:h-10" title={null} />
           </Link>
 
@@ -200,7 +200,7 @@ export function SiteHeader() {
               <Link href="/contact" className={buttonClasses("primary", "lg", "w-full")}>
                 Get in touch
               </Link>
-              <p className="mt-4 text-center text-sm text-white/60">WAHP is pre-launch and not yet seeing patients.</p>
+              <p className="mt-4 text-center text-sm text-white/60">WAHP is not open yet and is not seeing patients.</p>
             </div>
           </nav>
         </div>

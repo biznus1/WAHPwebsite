@@ -9,7 +9,7 @@ import { pageHeaders } from "@/content/editable";
 export const metadata: Metadata = {
   title: "The platform",
   description:
-    "How WAHP's proposed model fits together: professional clinical space, a shared operational backbone, integrated laboratory services and future imaging and digital enablement.",
+    "How the WAHP hub in Accra fits together: consulting rooms, shared reception and admin, a planned on site lab, imaging in a later phase, and the records system that links them.",
   alternates: { canonical: "/platform" },
 };
 
@@ -40,49 +40,55 @@ export default function PlatformPage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <SectionIntro
             id="integration-heading"
-            eyebrow="The integration"
-            lead="Any pillar can be built separately."
-            rest="The value is in connecting all four."
+            eyebrow="Why one building"
+            lead="Each part exists somewhere in Accra."
+            rest="The difference is having them together."
             dark
           />
           <div className="reveal space-y-5 text-lead text-white/75 lg:pt-14">
             <p>
-              A lab on its own gives access to testing. Imaging on its own provides diagnostic information. Digital
-              tools on their own help organise care. But physicians still lose time when these services operate in
-              separate systems, locations and workflows.
+              Today a patient in Accra might see a doctor in one place, queue for tests in another and come back days
+              later for the results. Each stop has its own paperwork, and the physician spends time chasing reports
+              instead of treating.
             </p>
             <p>
-              WAHP is designed so a physician can see a patient, order laboratory testing or imaging, review results,
-              update the treatment plan and arrange follow-up — without coordinating across disconnected facilities.
+              In the WAHP hub, the physician sees the patient, orders tests, reads the results in the same record,
+              adjusts the plan and books the next visit. One building, one file.
             </p>
           </div>
         </div>
       </Section>
 
       <Section tone="white" labelledBy="spaces-heading">
-        <SectionIntro id="spaces-heading" eyebrow="The spaces" lead="What the hub" rest="is designed to feel like." />
+        <SectionIntro id="spaces-heading" eyebrow="The spaces" lead="How we picture" rest="the Accra hub." />
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           <SiteImage
             name="lobby"
             className="reveal"
-            caption="Concept rendering of the reception lobby — not an existing facility. People shown are illustrative."
+            caption="Concept rendering of the reception. This is a plan, not a finished building, and the people are illustrative."
           />
           <SiteImage
             name="consultation"
             className="reveal"
-            caption="Concept rendering of a consultation suite — not an existing facility. People shown are illustrative."
+            caption="Concept rendering of a consulting room. This is a plan, not a finished building, and the people are illustrative."
           />
           <SiteImage
             name="laboratory"
             className="reveal"
-            caption="Concept rendering of the planned laboratory — not an operating service. People shown are illustrative."
+            caption="Concept rendering of the planned lab. It is not operating, and the people are illustrative."
           />
         </div>
       </Section>
 
       <Section tone="navy" id="phases" labelledBy="phases-heading" className="scroll-mt-20">
-        <SectionIntro id="phases-heading" eyebrow="Sequencing" lead="Built in phases," rest="each one earned." dark>
-          <p>Capabilities are added only once the phase before them is established.</p>
+        <SectionIntro
+          id="phases-heading"
+          eyebrow="In stages"
+          lead="One phase at a time,"
+          rest="starting with the rooms."
+          dark
+        >
+          <p>We add the next service only when the one before it is open and working.</p>
         </SectionIntro>
         <div className="mt-14">
           <Roadmap dark />
@@ -90,12 +96,12 @@ export default function PlatformPage() {
       </Section>
 
       <CtaBand
-        lead="Shape the platform"
-        rest="with us."
+        lead="Help us build"
+        rest="the Accra hub."
         primary={{ href: "/contact?type=partnership", label: "Discuss a partnership" }}
         secondary={{ href: "/physicians#register", label: "Physician interest" }}
       >
-        <p>Physicians, institutions and suppliers can speak with WAHP about participation and collaboration.</p>
+        <p>Physicians, hospitals, labs and suppliers in Ghana: tell us how you would like to work with us.</p>
       </CtaBand>
     </>
   );

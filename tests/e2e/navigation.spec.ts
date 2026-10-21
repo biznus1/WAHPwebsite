@@ -33,5 +33,5 @@ test("platform tabs are keyboard operable", async ({ page, isMobile }) => {
   const second = page.getByRole("tab", { name: /Integrated diagnostic laboratory/ });
   await expect(second).toBeFocused();
   await expect(second).toHaveAttribute("aria-selected", "true");
-  await expect(page.getByRole("tabpanel")).toContainText("results flow digitally");
+  await expect(page.getByRole("tabpanel")).toContainText("reaches the physician's record digitally");
 });

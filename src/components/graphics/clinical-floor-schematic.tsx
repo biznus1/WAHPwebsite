@@ -12,11 +12,11 @@ export function ClinicalFloorSchematic({ className = "" }: { className?: string 
   return (
     <figure className={className}>
       <svg viewBox="0 0 600 520" className="h-auto w-full" role="img" aria-labelledby="floor-title floor-desc">
-        <title id="floor-title">Conceptual schematic of a WAHP shared outpatient floor</title>
+        <title id="floor-title">Sketch of a planned WAHP outpatient floor</title>
         <desc id="floor-desc">
-          Six independent consultation suites arranged around one shared operational core for reception, patient flow,
-          records and scheduling. A laboratory space is marked as planned and an imaging space as a future phase.
-          Conceptual illustration, not an existing facility.
+          Six consulting rooms, each used by an independent doctor, around one shared front desk that handles reception,
+          patient flow, records and scheduling. The lab is marked as planned and imaging as a future phase. This is a
+          sketch of the plan, not a building that exists.
         </desc>
         <defs>
           <pattern id="floor-grid" width="16" height="16" patternUnits="userSpaceOnUse">
@@ -177,7 +177,7 @@ export function ClinicalFloorSchematic({ className = "" }: { className?: string 
         </g>
       </svg>
       <figcaption className="mt-3 text-xs tracking-wide text-white/55">
-        Conceptual schematic — illustrates the proposed model, not an existing facility.
+        A sketch of the plan, not a building that exists yet.
       </figcaption>
     </figure>
   );

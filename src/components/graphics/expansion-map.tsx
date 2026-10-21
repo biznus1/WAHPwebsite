@@ -24,9 +24,9 @@ export function ExpansionMap({ className = "" }: { className?: string }) {
       <svg viewBox={`0 0 ${MAP_W} ${MAP_H}`} className="h-auto w-full" role="img" aria-labelledby="em-title em-desc">
         <title id="em-title">From Accra to West Africa</title>
         <desc id="em-desc">
-          Animated map. It starts on southern Ghana with the Accra flagship, in development, then traces a line to
-          Kumasi, a future phase. It then zooms out to West Africa, a long-term ambition, as the region&apos;s countries
-          light up around rings centred on Accra.
+          Animated map. It starts on southern Ghana with our Accra hub, which is in development, then draws a line to
+          Kumasi, a future phase. It then zooms out to West Africa, our long term ambition, as the region&apos;s
+          countries light up around rings centred on Accra.
         </desc>
 
         {/* Map layer: zooms from southern Ghana out to the region. */}
@@ -142,7 +142,7 @@ export function ExpansionMap({ className = "" }: { className?: string }) {
         </g>
       </svg>
       <figcaption className="sr-only">
-        Schematic map. Only the Accra flagship is in development; Kumasi is a future phase and West Africa a long-term
+        Schematic map. Only the Accra hub is in development. Kumasi is a future phase and West Africa a long term
         ambition.
       </figcaption>
     </figure>

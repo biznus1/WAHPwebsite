@@ -13,34 +13,34 @@ import { pageHeaders } from "@/content/editable";
 export const metadata: Metadata = {
   title: "For investors",
   description:
-    "The WAHP thesis: shared clinical infrastructure for independent outpatient care, proven in Accra and designed to replicate across West Africa. Request an introduction.",
+    "Why WAHP: shared outpatient infrastructure for independent physicians, built first in Accra and planned for Kumasi and the wider region. Request an introduction.",
   alternates: { canonical: "/investors" },
 };
 
 const revenue = [
   {
-    title: "Clinical suite leases",
-    body: "Equipped consultation and examination rooms and outpatient suites, offered on flexible terms.",
+    title: "Consulting room rental",
+    body: "Physicians rent equipped consulting and examination rooms by the hour, day or month.",
     planned: false,
   },
   {
     title: "Laboratory services",
-    body: "Clinical testing provided directly or through operating partnerships.",
+    body: "Tests run in the hub's own lab, or with a partner laboratory.",
     planned: true,
   },
   {
     title: "Diagnostic imaging",
-    body: "X-ray, ultrasound, CT and other imaging, introduced as the facility scales.",
+    body: "CT, MRI and other scans, added once the hub is well used.",
     planned: true,
   },
   {
     title: "Technology subscriptions",
-    body: "Scheduling, billing, electronic health records, analytics and telemedicine.",
+    body: "Scheduling, billing, electronic records and telemedicine, paid for monthly by practices.",
     planned: false,
   },
   {
-    title: "Corporate & institutional programmes",
-    body: "Workforce health screening, diagnostics programmes and referral partnerships.",
+    title: "Employer and institutional programmes",
+    body: "Staff health screening for Accra employers, testing programmes and referral partnerships.",
     planned: true,
   },
 ];
@@ -48,28 +48,28 @@ const revenue = [
 const thesis = [
   {
     n: "01",
-    title: "A structural infrastructure gap",
-    body: "Independent outpatient practice depends on premises, equipment, staff and diagnostics that are costly to assemble one practice at a time.",
+    title: "The gap is the building, not the doctors",
+    body: "Ghana has skilled physicians. What they lack is affordable premises, equipment, staff and diagnostics, and few can pay for all of it alone.",
   },
   {
     n: "02",
-    title: "A differentiated model",
-    body: "Not a hospital and not a room rental: a shared clinical platform that combines space, operations and diagnostics around independent physicians.",
+    title: "Between a hospital and a rented room",
+    body: "Physicians keep their own practice and patients, and share the space, staff, systems and diagnostics that a hospital would normally provide.",
   },
   {
     n: "03",
-    title: "Phased execution",
-    body: "Each capability — clinical space, laboratory, then imaging and digital — is introduced only once the previous phase is established.",
+    title: "Built in phases",
+    body: "Consulting rooms and records first, then the lab, then imaging. Each phase opens only after the one before it is working.",
   },
   {
     n: "04",
-    title: "Disciplined replication",
-    body: "The flagship is designed as a template: prove the model in Accra, then extend it carefully to further sites over time.",
+    title: "Accra first, then Kumasi",
+    body: "The Accra hub is our test of the model. If it works there, Kumasi comes next, and other West African cities after that.",
   },
   {
     n: "05",
-    title: "Impact alongside returns",
-    body: "Better-equipped independent practice can mean more connected outpatient care for the communities physicians serve.",
+    title: "Good for patients too",
+    body: "When independent doctors are better equipped, their patients get consultations, tests and results in one place.",
   },
 ];
 
@@ -98,9 +98,9 @@ export default function InvestorsPage() {
       <Section tone="paper" labelledBy="thesis-heading">
         <SectionIntro
           id="thesis-heading"
-          eyebrow="The thesis"
-          lead="Why shared clinical"
-          rest="infrastructure, why now."
+          eyebrow="Why we are building this"
+          lead="Why shared clinics,"
+          rest="and why Ghana now."
         />
         <ol className="mt-14 grid gap-px overflow-hidden rounded-panel bg-smoke ring-1 ring-inset ring-smoke md:grid-cols-2 lg:grid-cols-3">
           {thesis.map((t, i) => (
@@ -116,7 +116,7 @@ export default function InvestorsPage() {
           ))}
           <li className="reveal flex flex-col justify-between bg-navy p-7 text-white md:p-9 on-dark">
             <p className="text-xl font-medium">
-              Detailed materials are shared privately with qualified parties on request.
+              We share detailed materials privately with qualified investors who ask.
             </p>
             <div className="mt-8">
               <ButtonLink href="#introduction" arrow>
@@ -127,7 +127,7 @@ export default function InvestorsPage() {
         </ol>
         <div className="mt-8">
           <ButtonLink href="/platform#phases" variant="ghost" arrow>
-            See the phased rollout plan
+            See the phases
           </ButtonLink>
         </div>
       </Section>
@@ -136,13 +136,13 @@ export default function InvestorsPage() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
           <SectionIntro
             id="model-heading"
-            eyebrow="Business model"
-            lead="Diversified revenue,"
-            rest="one shared platform."
+            eyebrow="How the hub earns"
+            lead="Several sources of income,"
+            rest="one building."
           >
             <p>
-              The model is designed to generate recurring and transaction-based revenue from several parts of the
-              outpatient care chain, with each stream supporting the others.
+              Income comes from monthly subscriptions and from each room booking, test and scan. A patient seen in a
+              consulting room is likely to need the lab too, so the parts support each other.
             </p>
           </SectionIntro>
           <ul className="divide-y divide-smoke border-y border-smoke">
@@ -169,21 +169,21 @@ export default function InvestorsPage() {
       <Section tone="paper" labelledBy="position-heading">
         <SectionIntro
           id="position-heading"
-          eyebrow="Differentiation"
-          lead="Where physician autonomy"
-          rest="meets integrated infrastructure."
+          eyebrow="How we differ"
+          lead="Independence for the doctor,"
+          rest="infrastructure under one roof."
         />
         <div className="mt-14 grid gap-4 lg:grid-cols-3">
           {[
             [
               "Traditional hospitals",
-              "Infrastructure without independence",
-              "Clinical infrastructure, but institutional schedules and priorities take precedence over individual clinical judgement.",
+              "Equipment, but little independence",
+              "The facilities are there, but the hospital sets the schedule and the priorities, not the physician.",
             ],
             [
               "Diagnostic chains",
-              "Testing without a practice environment",
-              "Specific testing services, but a physician still has to source space, staffing, systems and administration separately.",
+              "Tests, but nowhere to practise",
+              "They run the tests, but the physician still has to find rooms, staff, systems and admin somewhere else.",
             ],
           ].map(([k, t, b]) => (
             <div key={k} className="reveal rounded-card bg-white p-7 ring-1 ring-inset ring-smoke md:p-8">
@@ -194,14 +194,14 @@ export default function InvestorsPage() {
           ))}
           <div className="reveal on-dark rounded-card bg-navy p-7 text-white md:p-8">
             <p className="eyebrow text-steel">The WAHP platform</p>
-            <h3 className="mt-4 text-title font-medium">Designed to combine both</h3>
+            <h3 className="mt-4 text-title font-medium">Both, in one building</h3>
             <ul className="mt-4 space-y-2 text-white/80">
               {[
-                "Physician autonomy",
-                "Clinical infrastructure",
-                "Integrated diagnostics",
-                "Shared administrative support",
-                "Technology-enabled operations",
+                "The physician runs their own practice",
+                "Equipped consulting rooms",
+                "Lab and scans on site, in phases",
+                "Shared reception and admin",
+                "One records and scheduling system",
               ].map((x) => (
                 <li key={x} className="flex gap-3">
                   <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-teal" />
@@ -246,21 +246,19 @@ export default function InvestorsPage() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
           <div>
             <SectionIntro id="intro-heading" eyebrow="Introduction" lead="Arrange a" rest="conversation.">
-              <p>Tell us a little about yourself or your organisation and the WAHP team will follow up.</p>
+              <p>Tell us a little about you or your organisation. One of our cofounders will reply by email.</p>
             </SectionIntro>
             <div className="mt-8">
               <Notice title="Important notice">
                 <span className="block">
-                  This page is for information only and is not an offer to sell, or a solicitation of an offer to
-                  purchase, securities. Any offering will be made only through definitive offering and subscription
-                  documents, and only to persons verified as accredited investors pursuant to Rule 506(c) of Regulation
-                  D.
+                  This page is for information only. It is not an offer to sell securities, or a request for an offer to
+                  buy them. Any offering will be made only through formal offering and subscription documents, and only
+                  to people verified as accredited investors under Rule 506(c) of Regulation D.
                 </span>
                 <span className="mt-3 block">
-                  An investment in WAHP is speculative, involves a high degree of risk and may result in the loss of the
-                  entire investment. Statements about future events, expansion or market opportunity are forward-looking
-                  and subject to significant risks and uncertainties. No financial documents are collected on this
-                  website.
+                  An investment in WAHP is speculative and high risk, and you could lose all of it. What we say here
+                  about the future, including expansion and market size, is a forecast and carries real risks and
+                  uncertainty. This website does not collect financial documents.
                 </span>
               </Notice>
             </div>

@@ -21,12 +21,6 @@ const credits = [
     href: "https://unsplash.com/photos/9aBsCd9Fvgc",
   },
   {
-    title: "A young girl sits with a doctor receiving medical care (shown as an edited adaptation)",
-    by: "Carla Keithley",
-    licence: "CC BY-SA 2.0, via Wikimedia Commons",
-    href: "https://commons.wikimedia.org/wiki/File:A_young_girl_sits_with_a_doctor_receiving_medical_care.jpg",
-  },
-  {
     title: "A uniformed nurse listening to a patient's BP (shown as an edited adaptation)",
     by: "Kwameghana",
     licence: "CC BY-SA 4.0, via Wikimedia Commons",
@@ -82,8 +76,8 @@ export default function TermsPage() {
       <section>
         <h2>Information only</h2>
         <p>
-          This website describes the proposed WAHP model and its development. WAHP is pre-launch; descriptions of
-          facilities, services and phases describe intentions and may change.
+          This website describes the proposed WAHP model and its development. WAHP is not open yet, so anything said
+          here about facilities, services and phases describes our plans, and plans can change.
         </p>
       </section>
       <section>
@@ -119,7 +113,7 @@ export default function TermsPage() {
               <a className="font-semibold text-navy underline" href={c.href} target="_blank" rel="noopener noreferrer">
                 {c.title}
               </a>{" "}
-              — {c.by}, {c.licence}
+              by {c.by}, {c.licence}
             </li>
           ))}
         </ul>

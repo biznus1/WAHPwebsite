@@ -95,7 +95,7 @@ export function EnquiryForm({
           <div role="alert" className="mb-6 flex gap-3 rounded-xl bg-cloud p-4 text-navy ring-1 ring-inset ring-steel">
             <Info aria-hidden className="mt-0.5 size-5 shrink-0" />
             <div>
-              <p className="font-semibold">Not sent — preview mode</p>
+              <p className="font-semibold">Not sent (preview mode)</p>
               <p className="mt-1 text-arsenic">{state.message}</p>
               {contactEmail && (
                 <p className="mt-2 text-arsenic">
@@ -133,7 +133,7 @@ export function EnquiryForm({
         <input type="hidden" name="type" value={type} />
       ) : (
         <fieldset className={heading ? "mt-6" : ""}>
-          <legend className="text-sm font-semibold text-navy">I&apos;m getting in touch as…</legend>
+          <legend className="text-sm font-semibold text-navy">I am writing as…</legend>
           <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
             {enquiryTypes.map((t) => (
               <label
@@ -218,11 +218,11 @@ export function EnquiryForm({
               </label>
               <select id="f-interest" name="interest" className={field} defaultValue={defaultInterest}>
                 <option value="">Select one (optional)</option>
-                <option>Clinical space at the Accra flagship</option>
-                <option>Diaspora physician — practising in Ghana</option>
-                <option>Shared operations and support</option>
-                <option>Clinical leadership or collaboration</option>
-                <option>Keep me updated</option>
+                <option>A consulting room at the Accra hub</option>
+                <option>Diaspora physician wanting to practise in Ghana</option>
+                <option>Front desk and admin support</option>
+                <option>A clinical leadership role</option>
+                <option>Just keep me updated</option>
               </select>
             </div>
           </>
@@ -252,7 +252,7 @@ export function EnquiryForm({
           </label>
           <textarea id="f-message" name="message" rows={4} maxLength={2000} className={field} {...err("message")} />
           <p className="mt-2 text-sm text-arsenic">
-            Please do not include medical details or personal health information.
+            Please leave out medical details and any personal health information.
           </p>
           <FieldError id="err-message" message={errors.message} />
         </div>
@@ -268,7 +268,7 @@ export function EnquiryForm({
             {...err("consent")}
           />
           <span>
-            I agree that WAHP may use these details to respond to my enquiry, as described in the{" "}
+            WAHP may use these details to reply to me, as set out in the{" "}
             <Link href="/privacy" className="font-semibold text-navy underline underline-offset-2">
               privacy notice
             </Link>
@@ -289,9 +289,9 @@ export function EnquiryForm({
               {...err("acknowledge")}
             />
             <span>
-              I acknowledge that this is not an offer to sell securities, that any offering will be made only through
-              definitive offering documents to verified accredited investors, and that an investment involves a high
-              degree of risk, including possible loss of the entire investment.
+              I understand this is not an offer to sell securities. Any offering will be made only through definitive
+              offering documents to verified accredited investors, and investing carries a high degree of risk,
+              including losing the whole investment.
             </span>
           </label>
           <FieldError id="err-acknowledge" message={errors.acknowledge} />

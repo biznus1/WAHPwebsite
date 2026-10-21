@@ -8,26 +8,26 @@ import { pageHeaders } from "@/content/editable";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "WAHP's mission is to create an environment where West African physicians have the tools, technology and support to practise at their highest level — starting in Ghana.",
+    "WAHP is a team of physicians and operators building a shared outpatient hub in Accra, so doctors in Ghana have the space, diagnostics and support to practise at their best.",
   alternates: { canonical: "/about" },
 };
 
 const values = [
   {
-    title: "Physician-first design",
-    body: "Every decision starts with one question: does this make the physician's practice better? The platform exists to serve physicians, not the other way around.",
+    title: "Physicians first",
+    body: "Every decision starts with one question: does this make a doctor's practice better? The hub works for physicians, not the other way round.",
   },
   {
-    title: "Integration over isolation",
-    body: "Fragmented healthcare is the problem. Every system we build, partnership we form and tool we adopt must connect to the whole.",
+    title: "Everything connected",
+    body: "Patients in Ghana lose days moving between separate clinics, labs and offices. Whatever we build has to link up with the rest.",
   },
   {
-    title: "Build to replicate",
-    body: "Accra is not the destination. Every system, process and operational decision is designed to work in the next city, and the one after that.",
+    title: "Built to repeat",
+    body: "Accra is the first hub, not the only one. We set up every process so it can work again in Kumasi and beyond.",
   },
   {
-    title: "Radical transparency",
-    body: "With physicians, investors and partners, we share the data, the challenges and the progress honestly. Trust is earned through transparency.",
+    title: "Straight talk",
+    body: "We tell physicians, investors and partners where things really stand, including what is still only a plan.",
   },
 ];
 
@@ -45,13 +45,12 @@ export default function AboutPage() {
               Our mission
             </Eyebrow>
             <p className="mt-6 text-headline font-semibold text-navy">
-              To create an environment where West African physicians have the tools, technology and support to practise
-              at their highest level.
+              To give West African physicians the space, tools and support to practise at their best, at home.
             </p>
             <p className="mt-6 text-lead text-arsenic">
-              WAHP exists to strengthen independent medical practice by bringing clinical space, diagnostics, technology
-              and practice support into one connected environment — starting in Ghana, with a model designed to grow
-              across West Africa.
+              We are bringing consulting rooms, a shared front desk, diagnostics and digital records under one roof in
+              Accra, so independent doctors can run their own practices without building a clinic alone. Kumasi is the
+              next city we have in mind; West Africa is the long term aim.
             </p>
           </div>
           <div className="reveal space-y-10 lg:pt-14">
@@ -61,18 +60,16 @@ export default function AboutPage() {
                 Where practising in West Africa is a career advantage, not a sacrifice.
               </p>
               <p className="mt-4 text-lead text-arsenic">
-                A West Africa where physicians do not have to choose between staying home and practising well — where a
-                doctor in Accra has access to the same quality of diagnostics, imaging and operational infrastructure as
-                a doctor in Atlanta.
+                A doctor in Accra should not have to leave Ghana to practise well. We want them to have the same
+                diagnostics and support as a doctor in Atlanta, without getting on a plane.
               </p>
             </div>
             <div>
               <Eyebrow as="h2">Where we start</Eyebrow>
               <p className="mt-4 text-lead text-arsenic">
-                Phase 1 is planned for Accra. We are pre-launch: services will begin only once the facility is complete,
-                staffed, licensed and approved. WAHP will operate in full compliance with applicable Ghanaian healthcare
-                and facility regulations, and licensing and regulatory processes are being pursued in accordance with
-                national standards.
+                Phase 1 is the Accra hub. It is not open yet: services start only once the building is finished,
+                staffed, licensed and approved. We are working through Ghana&apos;s healthcare and facility licensing now,
+                and WAHP will meet every national requirement before it opens.
               </p>
             </div>
           </div>
@@ -89,7 +86,7 @@ export default function AboutPage() {
               className="reveal mt-10"
               aspect="aspect-[3/4]"
               sizes="(min-width: 1024px) 30vw, 100vw"
-              caption="Co-founders Jonathan Francois, MD (CEO) and Emmanuel Adomfeh, MD, MPH (COO)."
+              caption="Cofounders Jonathan Francois, MD (CEO) and Emmanuel Adomfeh, MD, MPH (COO)."
             />
           </div>
           <blockquote className="reveal space-y-5 text-lead text-arsenic">
@@ -98,7 +95,7 @@ export default function AboutPage() {
               vision.
             </p>
             <p>
-              My co-founder, Emmanuel Adomfeh, and I trained together during internal medicine residency, and over the
+              My cofounder, Emmanuel Adomfeh, and I trained together during internal medicine residency, and over the
               years our friendship has grown into a mission.
             </p>
             <p>
@@ -119,20 +116,13 @@ export default function AboutPage() {
               to stay connected to the motherland, but to help build it. We may have trained abroad, but we carry with
               us a responsibility to contribute, collaborate and create solutions that matter back home.
             </p>
-            <footer className="pt-2 text-base font-semibold text-navy">
-              — Jonathan Francois, MD, Co-Founder &amp; CEO
-            </footer>
+            <footer className="pt-2 text-base font-semibold text-navy">Jonathan Francois, MD, Cofounder and CEO</footer>
           </blockquote>
         </div>
       </Section>
 
       <Section tone="paper" labelledBy="values-heading">
-        <SectionIntro
-          id="values-heading"
-          eyebrow="Our values"
-          lead="Operating principles,"
-          rest="not marketing slogans."
-        />
+        <SectionIntro id="values-heading" eyebrow="Our values" lead="How we work," rest="day to day." />
         <ul className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {values.map((v, i) => (
             <li

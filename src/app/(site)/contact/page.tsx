@@ -11,7 +11,7 @@ import { pageHeaders } from "@/content/editable";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact West African Health Partners. Enquiries are routed to the right team: physicians, investors, partnerships, media and general.",
+    "Contact West African Health Partners. Physicians, investors, partners, suppliers, press and everyone else: your message goes to the right person on our team.",
   alternates: { canonical: "/contact" },
 };
 
@@ -74,9 +74,7 @@ export default function ContactPage() {
           {site.scheduling.length > 0 && (
             <div className="mt-10 rounded-card bg-white p-6 ring-1 ring-inset ring-smoke">
               <p className="font-semibold text-navy">Prefer to talk? Schedule a call.</p>
-              <p className="mt-1 text-sm text-arsenic">
-                20-minute introductory conversation. No commitment. No pressure.
-              </p>
+              <p className="mt-1 text-sm text-arsenic">A 20 minute introductory call with our team. No commitment.</p>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {site.scheduling.map((s) => (
                   <li key={s.href}>
@@ -97,8 +95,8 @@ export default function ContactPage() {
 
           <div className="mt-10">
             <Notice title="Not for medical enquiries">
-              WAHP is pre-launch and does not provide care or medical advice. In an emergency, call 112. Please do not
-              send health information through this form.
+              WAHP is not open yet and cannot give care or medical advice. In an emergency, call 112. Please do not send
+              any health information through this form.
             </Notice>
           </div>
         </div>
