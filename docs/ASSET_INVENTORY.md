@@ -45,6 +45,6 @@
 
 **Removed** (replaced by the photos above): the source-site photos `physician-consultation`, `clinic-conversation`, `pillar-suites`, `pillar-digital`, `patient-checkup`, `hospital-corridor`, `physician-with-patient`, `diaspora-physician`, `investor-banner`, `family-consultation` and `partners-meeting` (the Home investors card used `clinic-interior`, now replaced by the owner-supplied `investor-lounge`). Later, `doctor-labcoat-kinshasa` was replaced by `doctor-stethoscope` in the Physicians diaspora section.
 
-**Kept from the source sites (no doctor shown):** `pillar-laboratory`, `pillar-imaging` (technologist), `founders`, `patient-journey`.
+**Kept from the source sites (no doctor shown):** `pillar-laboratory`, `pillar-imaging` (technologist), `founders`. The `patient-journey` diagram was redrawn as an animated SVG (`components/graphics/patient-journey.tsx`) and the image removed.
 
 **Not used:** stock photos showing identifiable public figures or named individuals (for example, a UK minister's hospital visit and a profile photo of a named Korle Bu nurse), and US military surgical-mission photos.

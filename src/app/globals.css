@@ -410,6 +410,60 @@
   }
 }
 
+/* Patient journey (components/graphics/patient-journey.tsx): route draws, steps pop in, then a dot travels it. */
+.journey-map .journey-node {
+  transform-box: view-box;
+}
+.journey-map .journey-dot {
+  opacity: 0;
+  offset-rotate: 0deg;
+}
+.journey-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 23px;
+  top: 48px;
+  bottom: -20px;
+  width: 2px;
+  background: var(--color-smoke);
+}
+.js .journey-map .journey-route {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.js .journey-map .journey-node {
+  opacity: 0;
+}
+.js .journey-map .journey-step {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition:
+    opacity 0.9s var(--ease-soft),
+    transform 1s var(--ease-soft);
+  transition-delay: calc(var(--i) * 120ms + 200ms);
+}
+.js .journey-map.is-visible .journey-step {
+  opacity: 1;
+  transform: none;
+}
+.js .journey-map.is-visible .journey-route {
+  animation: em-draw var(--draw) linear 0.3s both;
+}
+.js .journey-map.is-visible .journey-node {
+  animation: em-pop 0.8s var(--ease-soft) both;
+  animation-delay: calc(0.25s + var(--at) * var(--draw));
+}
+.js .journey-map.is-visible .journey-dot {
+  animation:
+    journey-travel 11s ease-in-out calc(var(--draw) + 0.8s) infinite,
+    em-fade-in 0.6s ease calc(var(--draw) + 0.8s) both;
+}
+@supports not (offset-path: path("M0 0")) {
+  .journey-map .journey-dot {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -430,8 +484,13 @@
   .expansion-map * {
     animation-delay: 0s !important;
   }
-  .js .expansion-map .em-ripple {
+  .js .expansion-map .em-ripple,
+  .js .journey-map .journey-dot {
     animation: none !important;
+  }
+  .journey-map * {
+    animation-delay: 0s !important;
+    transition-delay: 0s !important;
   }
   .scroll-recede,
   .scroll-sink,

@@ -137,3 +137,11 @@
 ## 21 Oct 2026, investors card image
 
 - The Home investors card now uses the owner-supplied `investor-lounge` image, shown with the "Illustrative image" badge. It replaces `clinic-interior`, which was removed.
+
+## 21 Oct 2026, animated patient journey
+
+- The Patients page's patient-journey image is now a live SVG (`PatientJourney`):
+  1. The route draws from Check-in to Follow-up, and each step pops in as the line reaches it.
+  2. A dot then travels the route, pausing at each step.
+- Lab and Imaging are dashed and tagged "Phase 2" and "Phase 3". Phones get a vertical step list, which is also the accessible version on all sizes.
+- Without JS, or with reduced motion, the finished diagram shows. The static `patient-journey.webp` was removed.

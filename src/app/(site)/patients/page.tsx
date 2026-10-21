@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Building2, HeartPulse, Users } from "lucide-react";
+import { PatientJourney } from "@/components/graphics/patient-journey";
 import { PageHero } from "@/components/sections/page-hero";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Faq } from "@/components/sections/faq";
@@ -98,13 +99,7 @@ export default function PatientsPage() {
               imaging are later phases.
             </p>
           </div>
-          <SiteImage
-            name="patientJourney"
-            className="reveal"
-            fit="contain"
-            aspect="aspect-[21/20]"
-            caption="The planned patient journey. Lab and imaging steps arrive in Phases 2 and 3."
-          />
+          <PatientJourney />
         </div>
       </Section>
 

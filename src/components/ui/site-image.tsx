@@ -3,7 +3,6 @@ import lobby from "../../../public/images/concepts/lobby.webp";
 import consultation from "../../../public/images/concepts/consultation-suite.webp";
 import laboratory from "../../../public/images/concepts/laboratory.webp";
 import founders from "../../../public/images/photos/founders.webp";
-import patientJourney from "../../../public/images/photos/patient-journey.webp";
 import pillarLaboratory from "../../../public/images/photos/pillar-laboratory.webp";
 import pillarImaging from "../../../public/images/photos/pillar-imaging.webp";
 import patientPortrait from "../../../public/images/photos/patient-portrait.webp";
@@ -52,11 +51,6 @@ const images = {
     src: founders,
     kind: "photo",
     alt: "WAHP co-founders Jonathan Francois and Emmanuel Adomfeh standing together at an event.",
-  },
-  patientJourney: {
-    src: patientJourney,
-    kind: "diagram",
-    alt: "Patient journey in one building: check-in, consult, lab, imaging, results, treatment and follow-up.",
   },
   pillarLaboratory: {
     src: pillarLaboratory,
