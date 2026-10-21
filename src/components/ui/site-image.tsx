@@ -89,9 +89,9 @@ const images = {
   },
   clinicBpCheck: {
     src: clinicBpCheck,
-    kind: "stock",
-    credit: "Photo: Pambelle12, CC BY-SA 4.0",
-    alt: "A nurse checks a woman's blood pressure at a clinic desk.",
+    kind: "illustrative",
+    credit: "Adapted from a photo by Pambelle12, CC BY-SA 4.0",
+    alt: "A nurse takes a woman's blood pressure at the desk of a modern consulting room.",
   },
   midwivesNewborn: {
     src: midwivesNewborn,
@@ -101,9 +101,9 @@ const images = {
   },
   nurseChildWard: {
     src: nurseChildWard,
-    kind: "stock",
-    credit: "Photo: Speak Media Uganda / Pexels",
-    alt: "A nurse takes a young child's reading on a hospital ward while a parent watches.",
+    kind: "illustrative",
+    credit: "Adapted from a photo by Speak Media Uganda / Pexels",
+    alt: "A nurse takes a young boy's blood pressure on a bright children's ward while his father watches.",
   },
   villageHospitalYard: {
     src: villageHospitalYard,

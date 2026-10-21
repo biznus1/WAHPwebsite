@@ -33,7 +33,7 @@ const credits = [
     href: "https://commons.wikimedia.org/wiki/File:A_uniformed_nurse_listening_to_a_patient%27s_BP.jpg",
   },
   {
-    title: "Checking blood pressure",
+    title: "Checking blood pressure (shown as an edited adaptation)",
     by: "Pambelle12",
     licence: "CC BY-SA 4.0, via Wikimedia Commons",
     href: "https://commons.wikimedia.org/wiki/File:Checking_blood_pressure.jpg",
@@ -45,7 +45,7 @@ const credits = [
     href: "https://commons.wikimedia.org/wiki/File:US,_Ghana_midwives_team_up_in_maternity_ward_at_African_Lion_2025_(9047753).jpg",
   },
   {
-    title: "Nurse caring for child in hospital setting",
+    title: "Nurse caring for child in hospital setting (shown as an edited adaptation)",
     by: "Speak Media Uganda",
     licence: "Pexels licence",
     href: "https://www.pexels.com/photo/34185202/",
