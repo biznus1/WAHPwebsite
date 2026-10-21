@@ -20,7 +20,7 @@ export interface PlatformPillar {
 export const pillars: PlatformPillar[] = [
   {
     id: "clinical-suites",
-    image: "pillarSuites",
+    image: "clinicBpCheck",
     number: "01",
     title: "Equipped clinical suites",
     short: "Clinical suites",
@@ -68,7 +68,7 @@ export const pillars: PlatformPillar[] = [
   },
   {
     id: "digital-tools",
-    image: "pillarDigital",
+    image: "physicianLaptop",
     number: "04",
     title: "Digital tools",
     short: "Digital tools",

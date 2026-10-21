@@ -237,7 +237,7 @@ export default function InvestorsPage() {
       <section aria-label="Image" className="bg-paper pt-16 md:pt-24">
         <div className="container-wahp">
           <SiteImage
-            name="investorBanner"
+            name="communityOutreach"
             className="reveal"
             aspect="aspect-[16/7] md:aspect-[16/5]"
             sizes="(min-width: 1280px) 1200px, 100vw"

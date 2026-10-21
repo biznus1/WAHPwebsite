@@ -135,7 +135,7 @@ export default function HomePage() {
               look elsewhere.
             </p>
           </SectionIntro>
-          <SiteImage name="hospitalCorridor" className="reveal" aspect="aspect-[16/10]" dark />
+          <SiteImage name="villageHospitalYard" className="reveal" aspect="aspect-[16/10]" dark />
         </div>
         <div className="mt-12">
           <ProblemStats dark />

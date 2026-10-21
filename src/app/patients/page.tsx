@@ -114,7 +114,7 @@ export default function PatientsPage() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
           <div>
             <SectionIntro id="pfaq-heading" eyebrow="Questions" lead="Patient" rest="FAQs." />
-            <SiteImage name="familyConsultation" className="reveal mt-10" aspect="aspect-[3/2]" />
+            <SiteImage name="midwivesNewborn" className="reveal mt-10" aspect="aspect-[3/2]" />
           </div>
           <Faq
             items={[

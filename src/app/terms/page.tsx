@@ -7,6 +7,69 @@ export const metadata: Metadata = {
   alternates: { canonical: "/terms" },
 };
 
+const credits = [
+  {
+    title: "A young girl sits with a doctor receiving medical care",
+    by: "Carla Keithley",
+    licence: "CC BY-SA 2.0, via Wikimedia Commons",
+    href: "https://commons.wikimedia.org/wiki/File:A_young_girl_sits_with_a_doctor_receiving_medical_care.jpg",
+  },
+  {
+    title: "A uniformed nurse listening to a patient's BP",
+    by: "Kwameghana",
+    licence: "CC BY-SA 4.0, via Wikimedia Commons",
+    href: "https://commons.wikimedia.org/wiki/File:A_uniformed_nurse_listening_to_a_patient%27s_BP.jpg",
+  },
+  {
+    title: "Checking blood pressure",
+    by: "Pambelle12",
+    licence: "CC BY-SA 4.0, via Wikimedia Commons",
+    href: "https://commons.wikimedia.org/wiki/File:Checking_blood_pressure.jpg",
+  },
+  {
+    title: "US, Ghana midwives team up in maternity ward at African Lion 2025",
+    by: "U.S. Army photo by 1st Lt. Katherine Sibilla",
+    licence: "public domain, via Wikimedia Commons",
+    href: "https://commons.wikimedia.org/wiki/File:US,_Ghana_midwives_team_up_in_maternity_ward_at_African_Lion_2025_(9047753).jpg",
+  },
+  {
+    title: "Nurse caring for child in hospital setting",
+    by: "Speak Media Uganda",
+    licence: "Pexels licence",
+    href: "https://www.pexels.com/photo/34185202/",
+  },
+  {
+    title: "Smiling doctor in a lab coat and with a stethoscope",
+    by: "Carmel Nsenga",
+    licence: "Pexels licence",
+    href: "https://www.pexels.com/photo/19218034/",
+  },
+  {
+    title: "A laughing woman in a doctor's gown",
+    by: "Carmel Nsenga",
+    licence: "Pexels licence",
+    href: "https://www.pexels.com/photo/18844981/",
+  },
+  {
+    title: "Elderly people in the yard of a rural hospital",
+    by: "Pexels contributor",
+    licence: "Pexels licence",
+    href: "https://www.pexels.com/photo/4483669/",
+  },
+  {
+    title: "Community health outreach",
+    by: "Pexels contributor",
+    licence: "Pexels licence",
+    href: "https://www.pexels.com/photo/4483695/",
+  },
+  {
+    title: "Physician working at a laptop",
+    by: "Pexels contributor",
+    licence: "Pexels licence",
+    href: "https://www.pexels.com/photo/4989179/",
+  },
+];
+
 export default function TermsPage() {
   return (
     <LegalPage title="Website terms" updated="20 October 2026">
@@ -37,6 +100,23 @@ export default function TermsPage() {
           Images labelled &ldquo;concept rendering&rdquo; are illustrations of planned environments. They do not depict
           existing facilities, and people shown are illustrative.
         </p>
+      </section>
+      <section id="image-credits">
+        <h2>Image credits</h2>
+        <p>
+          Stock and Creative Commons photos show health workers in Africa. They are not WAHP staff, patients or
+          facilities. Photos were resized or cropped; adaptations of CC BY-SA images are shared under the same licence.
+        </p>
+        <ul>
+          {credits.map((c) => (
+            <li key={c.href}>
+              <a className="font-semibold text-navy underline" href={c.href} target="_blank" rel="noopener noreferrer">
+                {c.title}
+              </a>{" "}
+              — {c.by}, {c.licence}
+            </li>
+          ))}
+        </ul>
       </section>
       <section>
         <h2>Intellectual property</h2>

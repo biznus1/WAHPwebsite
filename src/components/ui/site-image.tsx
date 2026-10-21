@@ -2,34 +2,35 @@ import Image, { type StaticImageData } from "next/image";
 import lobby from "../../../public/images/concepts/lobby.webp";
 import consultation from "../../../public/images/concepts/consultation-suite.webp";
 import laboratory from "../../../public/images/concepts/laboratory.webp";
-import physicianConsultation from "../../../public/images/photos/physician-consultation.webp";
-import diasporaPhysician from "../../../public/images/photos/diaspora-physician.webp";
-import hospitalCorridor from "../../../public/images/photos/hospital-corridor.webp";
 import founders from "../../../public/images/photos/founders.webp";
 import patientJourney from "../../../public/images/photos/patient-journey.webp";
 import pillarLaboratory from "../../../public/images/photos/pillar-laboratory.webp";
-import pillarSuites from "../../../public/images/photos/pillar-suites.webp";
 import pillarImaging from "../../../public/images/photos/pillar-imaging.webp";
-import pillarDigital from "../../../public/images/photos/pillar-digital.webp";
-import patientCheckup from "../../../public/images/photos/patient-checkup.webp";
-import clinicConversation from "../../../public/images/photos/clinic-conversation.webp";
-import physicianWithPatient from "../../../public/images/photos/physician-with-patient.webp";
-import partnersMeeting from "../../../public/images/photos/partners-meeting.webp";
-import investorBanner from "../../../public/images/photos/investor-banner.webp";
-import familyConsultation from "../../../public/images/photos/family-consultation.webp";
 import patientPortrait from "../../../public/images/photos/patient-portrait.webp";
 import clinicInterior from "../../../public/images/photos/clinic-interior.webp";
+import doctorChildConsultation from "../../../public/images/photos/doctor-child-consultation.webp";
+import communityScreening from "../../../public/images/photos/community-bp-screening.webp";
+import clinicBpCheck from "../../../public/images/photos/clinic-bp-check.webp";
+import midwivesNewborn from "../../../public/images/photos/midwives-newborn.webp";
+import nurseChildWard from "../../../public/images/photos/nurse-child-ward.webp";
+import villageHospitalYard from "../../../public/images/photos/village-hospital-yard.webp";
+import physicianLaptop from "../../../public/images/photos/physician-laptop.webp";
+import doctorClinicKinshasa from "../../../public/images/photos/doctor-clinic-kinshasa.webp";
+import doctorLabcoatKinshasa from "../../../public/images/photos/doctor-labcoat-kinshasa.webp";
+import communityOutreach from "../../../public/images/photos/community-outreach.webp";
 
 /**
  * Every image on the site, with its kind:
  * - concept:      owner 3D renders of the planned facility (badge + caption, always)
  * - illustrative: photos and generated images copied from the WAHP source sites;
  *                 people and places shown are not WAHP staff, patients or facilities (badge)
+ * - stock:        licensed stock / Creative Commons photos of health workers in Africa (credit, no badge);
+ *                 they are not WAHP staff or facilities. Full credits: /terms#image-credits
  * - photo:        real photographs of WAHP people (no badge)
  * - diagram:      graphics copied from the source sites (no badge)
  * Provenance: docs/ASSET_INVENTORY.md.
  */
-type Kind = "concept" | "illustrative" | "photo" | "diagram";
+type Kind = "concept" | "illustrative" | "stock" | "photo" | "diagram";
 
 const images = {
   lobby: {
@@ -47,21 +48,6 @@ const images = {
     kind: "concept",
     alt: "Concept rendering of a bright laboratory with benches and analysers.",
   },
-  physicianConsultation: {
-    src: physicianConsultation,
-    kind: "illustrative",
-    alt: "A physician taking notes during a consultation.",
-  },
-  diasporaPhysician: {
-    src: diasporaPhysician,
-    kind: "illustrative",
-    alt: "A physician at a laptop in a home office with an Accra poster on the wall.",
-  },
-  hospitalCorridor: {
-    src: hospitalCorridor,
-    kind: "illustrative",
-    alt: "A crowded hospital corridor with patients waiting along the walls.",
-  },
   founders: {
     src: founders,
     kind: "photo",
@@ -71,11 +57,6 @@ const images = {
     src: patientJourney,
     kind: "diagram",
     alt: "Patient journey in one building: check-in, consult, lab, imaging, results, treatment and follow-up.",
-  },
-  pillarSuites: {
-    src: pillarSuites,
-    kind: "illustrative",
-    alt: "A physician consulting with a patient in a modern examination room.",
   },
   pillarLaboratory: {
     src: pillarLaboratory,
@@ -87,41 +68,6 @@ const images = {
     kind: "illustrative",
     alt: "A patient positioned in an MRI scanner with a technologist nearby.",
   },
-  pillarDigital: {
-    src: pillarDigital,
-    kind: "illustrative",
-    alt: "A physician reviewing an electronic health record during a telemedicine call.",
-  },
-  patientCheckup: {
-    src: patientCheckup,
-    kind: "illustrative",
-    alt: "A nurse listening to a young child's chest with a stethoscope.",
-  },
-  clinicConversation: {
-    src: clinicConversation,
-    kind: "illustrative",
-    alt: "Clinicians and patients talking in a busy outpatient clinic.",
-  },
-  physicianWithPatient: {
-    src: physicianWithPatient,
-    kind: "illustrative",
-    alt: "A smiling physician talking with a patient across a consultation desk.",
-  },
-  partnersMeeting: {
-    src: partnersMeeting,
-    kind: "illustrative",
-    alt: "Three professionals reviewing plans and a tablet around a table.",
-  },
-  investorBanner: {
-    src: investorBanner,
-    kind: "illustrative",
-    alt: "Two physicians walking through a bright, modern clinic atrium.",
-  },
-  familyConsultation: {
-    src: familyConsultation,
-    kind: "illustrative",
-    alt: "A physician speaking with a mother and child at a consultation desk.",
-  },
   patientPortrait: {
     src: patientPortrait,
     kind: "illustrative",
@@ -132,7 +78,70 @@ const images = {
     kind: "illustrative",
     alt: "A calm, light-filled clinic waiting area with a reception desk.",
   },
-} satisfies Record<string, { src: StaticImageData; kind: Kind; alt: string }>;
+
+  doctorChildConsultation: {
+    src: doctorChildConsultation,
+    kind: "stock",
+    credit: "Photo: Carla Keithley, CC BY-SA 2.0",
+    alt: "A doctor with a stethoscope sits with a young girl in a clinic in Nigeria.",
+  },
+  communityScreening: {
+    src: communityScreening,
+    kind: "stock",
+    credit: "Photo: Kwameghana, CC BY-SA 4.0",
+    alt: "A Ghanaian nurse in uniform measures a patient's blood pressure at a community health screening.",
+  },
+  clinicBpCheck: {
+    src: clinicBpCheck,
+    kind: "stock",
+    credit: "Photo: Pambelle12, CC BY-SA 4.0",
+    alt: "A nurse checks a woman's blood pressure at a clinic desk.",
+  },
+  midwivesNewborn: {
+    src: midwivesNewborn,
+    kind: "stock",
+    credit: "U.S. Army photo, public domain",
+    alt: "Two midwives in a maternity ward in Ghana hold a newborn baby.",
+  },
+  nurseChildWard: {
+    src: nurseChildWard,
+    kind: "stock",
+    credit: "Photo: Speak Media Uganda / Pexels",
+    alt: "A nurse takes a young child's reading on a hospital ward while a parent watches.",
+  },
+  villageHospitalYard: {
+    src: villageHospitalYard,
+    kind: "stock",
+    credit: "Photo: Pexels",
+    alt: "Older patients wait on chairs in the yard of a rural hospital while a health worker attends to them.",
+  },
+  physicianLaptop: {
+    src: physicianLaptop,
+    kind: "stock",
+    credit: "Photo: Pexels",
+    alt: "A smiling physician in a white coat working at a laptop.",
+  },
+  doctorClinicKinshasa: {
+    src: doctorClinicKinshasa,
+    kind: "stock",
+    position: "50% 22%",
+    credit: "Photo: Carmel Nsenga / Pexels",
+    alt: "A smiling doctor in green scrubs with a stethoscope in a clinic.",
+  },
+  doctorLabcoatKinshasa: {
+    src: doctorLabcoatKinshasa,
+    kind: "stock",
+    position: "50% 22%",
+    credit: "Photo: Carmel Nsenga / Pexels",
+    alt: "A doctor in a white lab coat with a stethoscope stands in a clinic.",
+  },
+  communityOutreach: {
+    src: communityOutreach,
+    kind: "stock",
+    credit: "Photo: Pexels",
+    alt: "Health workers attend to older community members at an outdoor health outreach.",
+  },
+} satisfies Record<string, { src: StaticImageData; kind: Kind; alt: string; credit?: string; position?: string }>;
 
 export type SiteImageName = keyof typeof images;
 
@@ -162,7 +171,7 @@ export function SiteImage({
   fit?: "cover" | "contain";
   rounded?: string;
 }) {
-  const img = images[name];
+  const img: { src: StaticImageData; kind: Kind; alt: string; credit?: string; position?: string } = images[name];
   const badge = badges[img.kind];
   const text = img.kind === "concept" ? (caption ?? conceptCaption) : caption;
   return (
@@ -176,7 +185,13 @@ export function SiteImage({
           priority={priority}
           placeholder="blur"
           className={fit === "contain" ? "object-contain" : "object-cover"}
+          style={img.position ? { objectPosition: img.position } : undefined}
         />
+        {img.credit && (
+          <span className="absolute right-2 bottom-2 rounded bg-phantom/60 px-1.5 py-0.5 text-[0.6rem] leading-tight text-white">
+            {img.credit}
+          </span>
+        )}
         {badge && (
           <span className="absolute top-3 left-3 rounded-full bg-navy/80 px-2.5 py-1 text-[0.68rem] font-semibold tracking-wide text-white backdrop-blur">
             {badge}

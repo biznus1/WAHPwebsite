@@ -5,7 +5,7 @@ import { SiteImage, type SiteImageName } from "@/components/ui/site-image";
 const paths = [
   {
     label: "Physicians",
-    image: "physicianConsultation" as SiteImageName,
+    image: "doctorChildConsultation" as SiteImageName,
     title: "Practise independently, without building alone.",
     body: "Register interest in clinical space and shared support at the Accra flagship.",
     cta: "Register interest",
@@ -14,7 +14,7 @@ const paths = [
   },
   {
     label: "Investors",
-    image: "partnersMeeting" as SiteImageName,
+    image: "clinicInterior" as SiteImageName,
     title: "Back infrastructure that outpatient care can build on.",
     body: "Understand the model and phased plan, and request an introduction to the team.",
     cta: "Request a conversation",
@@ -23,7 +23,7 @@ const paths = [
   },
   {
     label: "Partners",
-    image: "clinicConversation" as SiteImageName,
+    image: "communityScreening" as SiteImageName,
     title: "Help shape a connected outpatient platform.",
     body: "Institutions, suppliers and health organisations exploring collaboration.",
     cta: "Discuss partnership",
@@ -32,7 +32,7 @@ const paths = [
   },
   {
     label: "Patients",
-    image: "patientCheckup" as SiteImageName,
+    image: "nurseChildWard" as SiteImageName,
     title: "Understand what WAHP intends to offer.",
     body: "We are pre-launch and not yet seeing patients. Learn what is planned.",
     cta: "What's planned",

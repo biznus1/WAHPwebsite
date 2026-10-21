@@ -96,7 +96,7 @@ export default function PhysiciansPage() {
       <Section tone="paper" labelledBy="offer-heading">
         <div className="grid items-end gap-10 lg:grid-cols-2 lg:gap-16">
           <SectionIntro id="offer-heading" eyebrow="The proposition" lead="What WAHP intends" rest="to provide." />
-          <SiteImage name="physicianWithPatient" className="reveal" aspect="aspect-[16/10]" />
+          <SiteImage name="doctorClinicKinshasa" className="reveal" aspect="aspect-[16/10]" />
         </div>
         <ul className="mt-14 grid gap-4 md:grid-cols-2">
           {offer.map((o, i) => (
@@ -136,7 +136,7 @@ export default function PhysiciansPage() {
               delivery back home — at whatever pace makes sense.
             </p>
           </SectionIntro>
-          <SiteImage name="diasporaPhysician" className="reveal" aspect="aspect-[4/3]" dark />
+          <SiteImage name="doctorLabcoatKinshasa" className="reveal" aspect="aspect-[4/3]" dark />
         </div>
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           {[

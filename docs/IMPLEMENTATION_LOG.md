@@ -61,3 +61,20 @@
   | Contact | Clinic interior |
 
 - Excluded, with reasons, in `ASSET_INVENTORY.md`: hospital logos, an image with fake investment figures, duplicates, map tiles and masked/PPE imagery.
+
+## 21 Oct 2026, stock photos of African health workers
+
+- Per owner instruction, replaced the source-site photos of doctors with licensed stock photos of African doctors, nurses and midwives working in clinics and communities. Sources: Wikimedia Commons (CC BY-SA 2.0/4.0, public domain) and Pexels (Pexels licence).
+- New `stock` image kind in `SiteImage`: no "Illustrative" badge, a small on-image credit, and full credits at `/terms#image-credits`. People shown are not WAHP staff or patients.
+- Placement:
+
+  | Page | Photo |
+  | --- | --- |
+  | Home | Audience cards (doctor with a young girl, community BP screening, nurse with a child on a ward), challenge (rural hospital yard) |
+  | Platform | Suites tab (clinic BP check), digital tab (physician at a laptop) |
+  | Physicians | Proposition (doctor in scrubs), diaspora (doctor in a lab coat) |
+  | Investors | Banner (community health outreach) |
+  | Patients | FAQ column (midwives with a newborn) |
+
+- Kept: the laboratory and MRI pillar images, the patient portrait, the clinic interior and the founders photo. Removed the Contact page image and 11 superseded photo files.
+- Still to confirm: three Pexels photographer names (credited as "Pexels" for now); see `ASSET_INVENTORY.md`.
