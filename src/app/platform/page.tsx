@@ -35,6 +35,29 @@ export default function PlatformPage() {
         <PlatformSystem />
       </Section>
 
+      <Section tone="navy" labelledBy="integration-heading">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+          <SectionIntro
+            id="integration-heading"
+            eyebrow="The integration"
+            lead="Any pillar can be built separately."
+            rest="The value is in connecting all four."
+            dark
+          />
+          <div className="reveal space-y-5 text-lead text-white/75 lg:pt-14">
+            <p>
+              A lab on its own gives access to testing. Imaging on its own provides diagnostic information. Digital tools
+              on their own help organise care. But physicians still lose time when these services operate in separate
+              systems, locations and workflows.
+            </p>
+            <p>
+              WAHP is designed so a physician can see a patient, order laboratory testing or imaging, review results,
+              update the treatment plan and arrange follow-up — without coordinating across disconnected facilities.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       <Section tone="white" labelledBy="detail-heading">
         <SectionIntro id="detail-heading" eyebrow="In detail" lead="What each component" rest="is designed to do." />
         <div className="mt-14 divide-y divide-smoke border-y border-smoke">

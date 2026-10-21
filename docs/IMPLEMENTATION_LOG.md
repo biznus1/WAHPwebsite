@@ -15,3 +15,17 @@
 - **Static by default.** Every page is prerendered, so the client-side JS is only the header, reveal observer, platform tabs and forms.
 - **Claims register as a gate.** Copy that depends on facts is read through `approvedClaim()`, so unapproved facts cannot render by accident.
 - **No fake success.** The form reports delivery truthfully. Bots get a neutral response and nothing is delivered.
+
+## 21 Oct 2026, site review and founders
+
+- Network access opened. Crawled westahp.com and wahp.viewyourprojecthere.com; the ChatGPT concept site needs a sign-in. Audit: `research/SITE_AUDIT.md`.
+- Leadership: five core members, copied from the newer build per owner instruction, with photos, bios and focus tags. Added a home-page teaser.
+- Content from the newer build:
+  - About: mission, vision, values and founder's letter.
+  - Platform: four-pillar structure and the integration story.
+  - Diaspora: practise/partner paths.
+  - Investors: revenue streams, differentiation, groundwork stats, and the 506(c) notice with an acknowledgement checkbox.
+  - Home: cited workforce stats.
+  - Contact: vendor & industry enquiry type.
+  - Footer: LinkedIn and YouTube links.
+- Not carried over: present-tense imaging and lab claims, the "first integrated platform" claim, the 20-LOI count, market-size estimates, placeholder advisors, and typos.

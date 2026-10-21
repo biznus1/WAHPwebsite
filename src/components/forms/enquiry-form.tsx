@@ -129,7 +129,7 @@ export function EnquiryForm({
       ) : (
         <fieldset className={heading ? "mt-6" : ""}>
           <legend className="text-sm font-semibold text-navy">I&apos;m getting in touch as…</legend>
-          <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
             {enquiryTypes.map((t) => (
               <label
                 key={t.value}
@@ -162,7 +162,7 @@ export function EnquiryForm({
         </div>
         <div>
           <label htmlFor="f-email" className="text-sm font-semibold text-navy">
-            {type === "physician" || type === "investor" || type === "partnership" ? "Work email" : "Email"}
+            {type === "physician" || type === "investor" || type === "partnership" || type === "vendor" ? "Work email" : "Email"}
           </label>
           <input
             id="f-email"
@@ -221,7 +221,7 @@ export function EnquiryForm({
           </>
         )}
 
-        {(type === "investor" || type === "partnership" || type === "media") && (
+        {(type === "investor" || type === "partnership" || type === "vendor" || type === "media") && (
           <div className="md:col-span-2">
             <label htmlFor="f-org" className="text-sm font-semibold text-navy">
               Organisation <span className="font-normal text-arsenic">(optional)</span>
@@ -270,6 +270,26 @@ export function EnquiryForm({
         </label>
         <FieldError id="err-consent" message={errors.consent} />
       </div>
+
+      {type === "investor" && (
+        <div className="mt-4">
+          <label className="flex items-start gap-3 text-sm text-arsenic">
+            <input
+              type="checkbox"
+              name="acknowledge"
+              required
+              className="mt-0.5 size-5 shrink-0 rounded accent-navy"
+              {...err("acknowledge")}
+            />
+            <span>
+              I acknowledge that this is not an offer to sell securities, that any offering will be made only through
+              definitive offering documents to verified accredited investors, and that an investment involves a high
+              degree of risk, including possible loss of the entire investment.
+            </span>
+          </label>
+          <FieldError id="err-acknowledge" message={errors.acknowledge} />
+        </div>
+      )}
 
       <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
         <button type="submit" disabled={pending} className={buttonClasses("primary", "lg")}>

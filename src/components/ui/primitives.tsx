@@ -32,12 +32,22 @@ export function StageBadge({ stage, label, dark = false }: { stage: Stage; label
   );
 }
 
-export function Eyebrow({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
+export function Eyebrow({
+  children,
+  dark = false,
+  as: Tag = "p",
+  id,
+}: {
+  children: ReactNode;
+  dark?: boolean;
+  as?: "p" | "h2" | "h3";
+  id?: string;
+}) {
   return (
-    <p className={`eyebrow flex items-center gap-3 ${dark ? "text-steel" : "text-arsenic"}`}>
+    <Tag id={id} className={`eyebrow flex items-center gap-3 ${dark ? "text-steel" : "text-arsenic"}`}>
       <span aria-hidden className="h-0.5 w-8 rounded-full bg-teal" />
       {children}
-    </p>
+    </Tag>
   );
 }
 

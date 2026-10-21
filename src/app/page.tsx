@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Building2, HeartPulse, Layers, Stethoscope } from "lucide-react";
+import { ArrowRight, Building2, FlaskConical, MonitorSmartphone, ScanLine } from "lucide-react";
 import { LogoMark } from "@/components/brand/logo";
 import { ClinicalFloorSchematic } from "@/components/graphics/clinical-floor-schematic";
 import { RegionalRings } from "@/components/graphics/regional-rings";
 import { Roadmap } from "@/components/graphics/roadmap";
 import { AudiencePaths } from "@/components/sections/audience-paths";
 import { Comparison } from "@/components/sections/comparison";
+import { ProblemStats } from "@/components/sections/problem-stats";
+import { TeamGrid } from "@/components/sections/team-grid";
+import { approvedLeaders } from "@/content/leadership";
 import { CtaBand } from "@/components/sections/cta-band";
 import { ButtonLink } from "@/components/ui/button";
 import { ConceptImage } from "@/components/ui/concept-image";
@@ -27,7 +30,7 @@ const facts = [
   { label: "Stage", value: "Pre-launch" },
 ];
 
-const pillarIcons = [Building2, Layers, HeartPulse, Stethoscope];
+const pillarIcons = [Building2, FlaskConical, ScanLine, MonitorSmartphone];
 
 export default function HomePage() {
   return (
@@ -191,6 +194,10 @@ export default function HomePage() {
             ))}
           </ul>
         </div>
+        <div className="mt-14">
+          <h3 className="eyebrow mb-5 text-steel">The workforce picture in Ghana</h3>
+          <ProblemStats dark />
+        </div>
       </Section>
 
       {/* 5 — Comparison & benefits */}
@@ -298,6 +305,24 @@ export default function HomePage() {
         </div>
         <div className="mt-14">
           <Roadmap />
+        </div>
+      </Section>
+
+      {/* Leadership teaser */}
+      <Section tone="white" labelledBy="team-teaser-heading">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionIntro
+            id="team-teaser-heading"
+            eyebrow="Leadership"
+            lead="Built by physicians."
+            rest="Run by operators."
+          />
+          <ButtonLink href="/leadership" variant="ghost" arrow className="reveal self-start md:self-auto">
+            Meet the team
+          </ButtonLink>
+        </div>
+        <div className="mt-14">
+          <TeamGrid leaders={approvedLeaders} compact />
         </div>
       </Section>
 

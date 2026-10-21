@@ -124,45 +124,60 @@ export default function PhysiciansPage() {
       </Section>
 
       <Section tone="navy" id="diaspora" labelledBy="diaspora-heading" className="scroll-mt-20">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <SectionIntro
-            id="diaspora-heading"
-            eyebrow="Diaspora physicians"
-            lead="Considering practice"
-            rest="in Ghana?"
-            dark
-          >
-            <p>
-              For clinicians abroad thinking about practising in Ghana, building a facility from a distance is often the
-              hardest part. WAHP is designed so that the clinical space and operational foundation are already in place.
-            </p>
-          </SectionIntro>
-          <ul className="reveal space-y-5 self-end">
-            {[
-              [
-                "Infrastructure in place",
-                "Professional suites and shared support, rather than a facility to build on arrival.",
-              ],
-              [
-                "Flexible participation",
-                "Lease options planned to suit different schedules, including physicians who split time.",
-              ],
-              ["Your own licensing", "Physicians remain responsible for meeting Ghanaian requirements to practise."],
-            ].map(([t, b]) => (
-              <li key={t} className="flex gap-4">
-                <span aria-hidden className="mt-2 size-2 shrink-0 rounded-full bg-teal" />
-                <div>
-                  <p className="font-semibold">{t}</p>
-                  <p className="mt-1 text-white/70">{b}</p>
-                </div>
-              </li>
-            ))}
-            <li className="pt-4">
-              <ButtonLink href="#register" variant="light" arrow>
-                Register as a diaspora physician
-              </ButtonLink>
+        <SectionIntro
+          id="diaspora-heading"
+          eyebrow="Diaspora physicians"
+          lead="You've thought about going back."
+          rest="Practise. Partner. Or both."
+          dark
+        >
+          <p>
+            Diaspora physicians bring clinical expertise, global perspective and a deep connection to West Africa. WAHP
+            is designed to give you a credible path to return, collaborate, mentor and help strengthen healthcare
+            delivery back home — at whatever pace makes sense.
+          </p>
+        </SectionIntro>
+        <div className="mt-14 grid gap-4 md:grid-cols-2">
+          {[
+            {
+              label: "The practice path",
+              title: "I want to practise.",
+              body: "A ready path to practise in Ghana, with equipped clinical space and support designed to be in place. Start during the weeks you are already home, and grow into more when you are ready.",
+            },
+            {
+              label: "The partner path",
+              title: "I want to be involved beyond the exam room.",
+              body: "Some of the people who will matter most to this work will contribute through networks, governance and experience building institutions. If that describes you, we would welcome the introduction.",
+            },
+          ].map((p) => (
+            <div key={p.label} className="reveal rounded-card bg-white/5 p-7 ring-1 ring-inset ring-white/15 md:p-9">
+              <p className="eyebrow text-steel">{p.label}</p>
+              <h3 className="mt-4 text-title font-medium">{p.title}</h3>
+              <p className="mt-3 text-white/75">{p.body}</p>
+            </div>
+          ))}
+        </div>
+        <ol className="mt-4 grid gap-px overflow-hidden rounded-card bg-white/10 md:grid-cols-3">
+          {[
+            ["Have a conversation", "Tell us where you are, what interests you and how you hope to engage."],
+            ["Choose your path", "Practise during visits, mentor, advise or explore a deeper role privately."],
+            ["Start building", "Begin clinically or strategically, as part of a larger effort to strengthen care."],
+          ].map(([t, b], i) => (
+            <li key={t} className="reveal bg-navy p-6 md:p-8" style={{ transitionDelay: `${i * 60}ms` }}>
+              <span className="text-sm font-bold text-steel">0{i + 1}</span>
+              <p className="mt-3 text-lg font-semibold">{t}</p>
+              <p className="mt-1 text-white/70">{b}</p>
             </li>
-          </ul>
+          ))}
+        </ol>
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-xl text-sm text-white/60">
+            You do not need to move back tomorrow or make irreversible decisions. Physicians remain responsible for
+            meeting Ghanaian requirements to practise.
+          </p>
+          <ButtonLink href="#register" variant="light" arrow>
+            Register as a diaspora physician
+          </ButtonLink>
         </div>
       </Section>
 

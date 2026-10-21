@@ -11,6 +11,7 @@ export const site = {
   /** Public contact email — null until approved in the claims register or set via NEXT_PUBLIC_CONTACT_EMAIL. */
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || approvedClaim("contact-email")?.text || null,
   linkedin: approvedClaim("linkedin")?.text ?? null,
+  youtube: approvedClaim("youtube")?.text ?? null,
   /** Introductory-call links; rendered only once the "scheduling-links" claim is approved. */
   scheduling: approvedClaim("scheduling-links")
     ? [
@@ -64,12 +65,13 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
   },
 ];
 
-export type EnquiryType = "physician" | "investor" | "partnership" | "media" | "general";
+export type EnquiryType = "physician" | "investor" | "partnership" | "vendor" | "media" | "general";
 
 export const enquiryTypes: { value: EnquiryType; label: string; hint: string }[] = [
-  { value: "physician", label: "Physician", hint: "Clinical space or participation" },
+  { value: "physician", label: "Physician", hint: "In Ghana or the diaspora" },
   { value: "investor", label: "Investor", hint: "Request an introduction" },
-  { value: "partnership", label: "Partnership", hint: "Institutions and suppliers" },
+  { value: "partnership", label: "Strategic partner", hint: "Growth and alignment" },
+  { value: "vendor", label: "Vendor & industry", hint: "Labs, equipment, technology" },
   { value: "media", label: "Media", hint: "Press and speaking" },
   { value: "general", label: "General", hint: "Patients and everyone else" },
 ];

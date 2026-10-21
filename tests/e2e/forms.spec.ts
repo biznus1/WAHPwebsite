@@ -11,7 +11,7 @@ test("contact form shows validation errors", async ({ page }) => {
 
 test("?type= deep link pre-selects the enquiry type", async ({ page }) => {
   await page.goto("/contact?type=partnership");
-  await expect(page.getByRole("radio", { name: /Partnership/ })).toBeChecked();
+  await expect(page.getByRole("radio", { name: /Strategic partner/ })).toBeChecked();
 });
 
 test("without a delivery integration the form says it was NOT sent (no fake success)", async ({ page }) => {

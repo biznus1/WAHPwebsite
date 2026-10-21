@@ -42,6 +42,12 @@ describe("enquiry validation", () => {
     expect(paths).toContain("location");
   });
 
+  it("requires the investor acknowledgement for investor enquiries", () => {
+    const base = { ...valid, type: "investor", message: "" };
+    expect(parseEnquiry(form(base)).success).toBe(false);
+    expect(parseEnquiry(form({ ...base, acknowledge: "on" })).success).toBe(true);
+  });
+
   it("strips markup from text fields", () => {
     const r = parseEnquiry(form({ ...valid, message: "<script>alert(1)</script>Hello there team" }));
     expect(r.success && r.data.message).toBe("alert(1)Hello there team");

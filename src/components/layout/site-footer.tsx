@@ -29,6 +29,26 @@ export function SiteFooter() {
                 Contact the WAHP team
               </Link>
             )}
+            <ul className="mt-6 flex gap-3" aria-label="WAHP on social media">
+              {[
+                ["LinkedIn", site.linkedin],
+                ["YouTube", site.youtube],
+              ]
+                .filter((x): x is [string, string] => Boolean(x[1]))
+                .map(([label, href]) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-10 items-center rounded-full px-4 text-sm font-semibold text-white ring-1 ring-inset ring-white/30 hover:ring-white"
+                    >
+                      {label}
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  </li>
+                ))}
+            </ul>
           </div>
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
             {footerNav.map((group) => (

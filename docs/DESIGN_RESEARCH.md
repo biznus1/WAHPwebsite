@@ -2,12 +2,11 @@
 
 ## 1. Existing WAHP sites
 
-Both `westahp.com` and `wahp.kwasimd.chatgpt.site` were **unreachable** from the build environment (see `SOURCE_ACCESS.md`). No audit was invented. What we know comes from:
+Both sites that load were audited on 21 Oct 2026; see `research/SITE_AUDIT.md`:
+- **westahp.com**, the live site.
+- **wahp.viewyourprojecthere.com**, the newer build and the owner's reference for founders and current content.
 
-- **The owner brief.** Themes on the live homepage: "Stop Managing. Start Practicing.", "Built By Doctors. Better for Patients.", "Everything under one roof", a traditional-vs-WAHP comparison, Healthcare Professional / Investor pathways, an explicit pre-launch explanation, and the stats "95% Lower Overhead", "24/7 Access" and "1 Team / Multiple Practices".
-- **Owner Drive documents.** The Master Brief (Feb 2026) with CEO edits to the current site, and the homepage and contact blueprints (Mar–Apr 2026).
-
-`WAHP_DESIGN_COMPARISON.md` records how each theme was treated.
+The ChatGPT-hosted concept requires a sign-in, so it was not audited. `WAHP_DESIGN_COMPARISON.md` records how each element was treated.
 
 ## 2. Mobbin patterns
 

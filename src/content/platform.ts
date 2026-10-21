@@ -11,66 +11,69 @@ export interface PlatformPillar {
   points: string[];
 }
 
-/** The four components of the proposed WAHP model. Stages are deliberately conservative. */
+/**
+ * The four pillars of the WAHP platform (structure from the latest WAHP site build).
+ * Stages follow the phased plan: nothing is described as operating today.
+ */
 export const pillars: PlatformPillar[] = [
   {
-    id: "clinical-space",
+    id: "clinical-suites",
     number: "01",
-    title: "Professional clinical space",
-    short: "Clinical space",
+    title: "Equipped clinical suites",
+    short: "Clinical suites",
     stage: "in-development",
-    stageLabel: "In development · flagship",
+    stageLabel: "Phase 1 · in development",
     summary:
-      "Purpose-designed consultation and examination suites that independent physicians can use without building and equipping a practice alone.",
+      "Fully equipped consultation and examination rooms on flexible leases, with shared reception and administrative support — so physicians can practise without buildout costs, facility management or equipment procurement.",
     points: [
-      "Multi-tenant outpatient suites designed for consultation and examination",
-      "Professional, consistent patient-facing environment",
-      "Flexible participation models under discussion with physicians",
+      "Flexible lease options planned (for example by the hour, day or month)",
+      "Shared reception, patient flow and administrative support",
+      "No buildout and no long-term property commitment for the physician",
     ],
   },
   {
-    id: "shared-operations",
+    id: "diagnostic-lab",
     number: "02",
-    title: "Shared operational backbone",
-    short: "Shared operations",
-    stage: "in-development",
-    stageLabel: "In development",
-    summary:
-      "One coordinated operations layer — front desk, patient flow, scheduling support and administration — shared across practices so physicians can focus on medicine.",
-    points: [
-      "Reception, patient flow and administrative support",
-      "Shared clinical support where available and approved",
-      "Common standards for facility management and compliance",
-    ],
-  },
-  {
-    id: "laboratory",
-    number: "03",
-    title: "Integrated laboratory",
-    short: "Laboratory",
+    title: "Integrated diagnostic laboratory",
+    short: "Diagnostic lab",
     stage: "planned",
-    stageLabel: "Planned · subject to phase & approvals",
+    stageLabel: "Phase 2 · planned",
     summary:
-      "On-site laboratory services intended to shorten the distance between consultation, diagnosis and follow-up — subject to the applicable launch phase and regulatory approvals.",
+      "An on-site laboratory designed so results flow digitally from the lab to the physician — building continuity of care into the workflow instead of bolting it on afterwards.",
     points: [
-      "Designed to keep diagnostics close to the consultation",
-      "Introduced according to the phased rollout",
+      "Testing kept close to the consultation",
+      "Results designed to feed directly into the patient record",
       "Operates only once licensed and approved",
     ],
   },
   {
-    id: "imaging-digital",
-    number: "04",
-    title: "Imaging & digital enablement",
-    short: "Imaging & digital",
+    id: "imaging",
+    number: "03",
+    title: "Imaging services",
+    short: "Imaging",
     stage: "future",
-    stageLabel: "Future phase",
+    stageLabel: "Phase 3 · future",
     summary:
-      "A later stage adds diagnostic imaging and connected digital tools that help practices coordinate care across the platform.",
+      "Diagnostic imaging — such as X-ray, ultrasound and CT — introduced after core utilisation and operational workflows are established, so imaging can be coordinated alongside consultations.",
     points: [
-      "Diagnostic imaging as a future capability",
-      "Digital tools for coordination between practices",
-      "Sequenced after the core clinical platform is established",
+      "Added after the clinical suites and laboratory are established",
+      "Intended to shorten imaging queues and complete the clinical picture",
+      "Timing depends on capital, licensing and utilisation",
+    ],
+  },
+  {
+    id: "digital-tools",
+    number: "04",
+    title: "Digital tools",
+    short: "Digital tools",
+    stage: "in-development",
+    stageLabel: "Phase 1 · core platform in development",
+    summary:
+      "Electronic health records, scheduling, telemedicine capability and operational management tools — the technology layer that ties the physical infrastructure together.",
+    points: [
+      "Patient records designed to be accessible from any suite",
+      "Lab and imaging results designed to feed the patient file",
+      "Telemedicine to extend the physician's reach beyond the hub",
     ],
   },
 ];
@@ -82,30 +85,33 @@ export interface RoadmapPhase {
   stage: Stage;
 }
 
-/** No dates are published until the owner approves a timeline (docs/CONTENT_APPROVAL.md). */
 export const roadmap: RoadmapPhase[] = [
   {
     phase: "Phase 1",
-    title: "Flagship clinical infrastructure",
-    description: "Establish the first multi-tenant outpatient facility in Accra with shared operations.",
+    title: "Clinical suites launch",
+    description:
+      "Equipped clinical suites, shared reception and administrative support, and the core technology platform.",
     stage: "in-development",
   },
   {
     phase: "Phase 2",
     title: "Laboratory integration",
-    description: "Introduce integrated laboratory services, subject to approvals and the launch sequence.",
+    description: "On-site laboratory services to increase provider utility and strengthen referral pathways.",
     stage: "planned",
   },
   {
     phase: "Phase 3",
-    title: "Imaging & digital enablement",
-    description: "Add diagnostic imaging and digital coordination tools across participating practices.",
+    title: "Imaging expansion",
+    description: "X-ray, ultrasound and CT, added after core utilisation and workflows are established.",
     stage: "future",
   },
   {
-    phase: "Beyond",
-    title: "A replicable regional model",
-    description: "Apply the proven model to further sites in Ghana and, over time, across West Africa.",
+    phase: "Phase 4",
+    title: "Replication",
+    description: "Use flagship performance data to evaluate additional Ghanaian and regional locations.",
     stage: "aspiration",
   },
 ];
+
+export const roadmapCaveat =
+  "Phase sequencing reflects management's current plan. Timing depends on capital, licensing, construction and utilisation outcomes, and is subject to change.";

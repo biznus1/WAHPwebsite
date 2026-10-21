@@ -4,15 +4,8 @@ The decisions below block or shape public launch. The machine-readable register 
 
 ## A. Critical decisions (please answer before launch)
 
-1. **Leadership.** Nobody is named on the site yet. Owner direction (Master Brief) is *name, title, LinkedIn only, no bios*. Please confirm each person's public title and consent:
-   - Jonathan Francois, MD: CEO, Co-Founder
-   - Emmanuel Adomfeh, MD, MPH: COO, Co-Founder
-   - Elizabeth Aremu, MHA, MPH: the Feb deck and March blueprint say *CFO*; Team Bios (June 2026) says *Strategic Finance Advisor / Former CFO*. **Which title, and should she be listed?**
-   - Nana Kwame Asare Obuobi: *MBBS, MPH* (deck) vs *MD, MPH* (Team Bios). Medical Director.
-   - Emmanuel Oppong: Laboratory Manager. His headshot is a small 24 KB file, so it may need a higher-resolution version.
-
-   To publish, add entries to `src/content/leadership.ts` with `publicApproved: true`.
-2. **Hero headline.** The site currently uses *"Infrastructure for independent medicine."* Alternatives found in the owner's own materials:
+1. **Contact email.** The live site and Questionnaire use **info@westahp.com**, which the site currently shows. The newer site build (wahp.viewyourprojecthere.com) uses **info@wahp.org**. Which address should be public? To switch, change one line in `src/content/claims.ts` or set `NEXT_PUBLIC_CONTACT_EMAIL`.
+2. **Hero headline.** The site currently uses *"Infrastructure for independent medicine."* Alternatives found in the owner's own materials, including the newer build's *"Revolutionizing Healthcare Infrastructure Across West Africa"*:
    - *"Grow Your Practice with West African Health Partners"* (CEO, Master Brief)
    - *"The infrastructure physicians need to practice at their highest level."* (March blueprint)
    - *"The Infrastructure for Africa's Next Healthcare Revolution"* (deck)
@@ -21,6 +14,16 @@ The decisions below block or shape public launch. The machine-readable register 
 3. **Enquiry delivery.** Pick Resend email or a webhook (e.g. Zapier → Google Sheets / HubSpot) and supply credentials (`.env.example`). Until then the form clearly says *not sent*.
 4. **Scheduling links.** Owner materials want *Schedule a Call* (Calendly) as the primary CTA. The four links (`calendly.com/westahp-info/…`, including the live misspelling `diaspora-physcians`) are wired in but hidden. Confirm they are live, then approve `scheduling-links` in the claims register.
 5. **Legal review** of `/privacy`, `/terms`, the investor disclaimer, and the emergency number (112) used in the patient notices.
+
+### Resolved on 21 Oct 2026
+- **Leadership:** published from wahp.viewyourprojecthere.com/team on the owner's instruction:
+  - Jonathan Francois, MD: CEO
+  - Emmanuel Adomfeh, MD, MPH: COO
+  - Nana Kwame Obuobi, MBBS, MPH: Medical Director
+  - Emmanuel Oppong: Laboratory Manager
+  - Nakeitheya Smith: CMO
+
+  Elizabeth Aremu is not listed (she is absent from the newer site). The advisory board is not shown because the newer site only has placeholders. Only Jonathan Francois (from the newer site) and Emmanuel Adomfeh (from westahp.com) have LinkedIn URLs; please send the others. Emmanuel Oppong's photo is only 296px wide, so a larger original would sharpen it.
 
 ## B. Claims and copy status
 
@@ -40,7 +43,12 @@ The decisions below block or shape public launch. The machine-readable register 
 | Flexible leases (hourly/daily/monthly) | Questionnaire #10 | Used in the physician FAQ as *planned*. No rates |
 | Lab, Phase 2; imaging, Phase 3 | One-Pager, Questionnaire | Shown as *Planned* / *Future phase*. **No years shown**, because sources conflict on expansion timing |
 | Problem stats (72% emigration intent, 1:5,707, 62 km, $2B) and market sizes | March blueprint / deck | **Not used.** Unsourced; add citations if wanted |
-| Traction (LOIs, physicians surveyed, studies) | March blueprint | **Not used.** Questionnaire #28: say "Early physician commitments secured" publicly. Owner may approve that line |
+| "20 physicians have signed Letters of Intent" | Newer site build | **Not used.** Conflicts with ~13 signed LOIs on Drive and Questionnaire #28. "Early physician commitments secured" is shown on /investors |
+| 60+ physicians surveyed, 3 studies completed, 5-person team | Newer site build; Questionnaire #29 | Used on /investors ("Groundwork to date") |
+| Workforce stats: 1.43 per 10,000 (WHO 2022), 1:5,707 (MoH 2021), 11,867 registered (GMDC 2024), 71.8% migration intent | Newer site, The Problem page | Used on home with sources. **The 71.8% figure needs a full citation** |
+| Market sizes ($1.21B, $214M, 42%, 36.7%) | Newer site, investors page | Not used (investor-materials territory) |
+| Rule 506(c) accredited-investor notice + acknowledgement | Newer site, investors page | Used on /investors and in the investor form. **Counsel to confirm** |
+| Imaging "within the same facility", on-site lab "results flow digitally" | Newer site | Reframed as Phase 2/3 *planned/future* |
 | info@westahp.com | Questionnaire / contact blueprint | **Used.** Confirm the inbox is monitored |
 | LinkedIn company page | Contact blueprint | Used in footer and contact page |
 | Phone numbers (+1 / +233) | LOI letterhead only | Not used. Confirm before adding |

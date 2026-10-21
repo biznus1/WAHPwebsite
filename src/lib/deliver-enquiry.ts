@@ -7,6 +7,7 @@ const LABELS: Record<Enquiry["type"], string> = {
   physician: "Physician",
   investor: "Investor",
   partnership: "Partnership",
+  vendor: "Vendor & industry",
   media: "Media",
   general: "General",
 };
@@ -27,6 +28,7 @@ export function formatEnquiry(e: Enquiry) {
     "",
     e.message || "(no message)",
     "",
+    e.type === "investor" ? "Investor acknowledgement (not an offer; accredited investors only): confirmed." : null,
     "— Sent from the WAHP website enquiry form. Consent to be contacted: yes.",
   ];
   return lines.filter((l): l is string => typeof l === "string").join("\n");

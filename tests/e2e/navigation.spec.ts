@@ -27,11 +27,11 @@ test("desktop nav marks the active page", async ({ page, isMobile }) => {
 test("platform tabs are keyboard operable", async ({ page, isMobile }) => {
   test.skip(isMobile, "desktop only");
   await page.goto("/platform");
-  const first = page.getByRole("tab", { name: /Professional clinical space/ });
+  const first = page.getByRole("tab", { name: /Equipped clinical suites/ });
   await first.focus();
   await page.keyboard.press("ArrowDown");
-  const second = page.getByRole("tab", { name: /Shared operational backbone/ });
+  const second = page.getByRole("tab", { name: /Integrated diagnostic laboratory/ });
   await expect(second).toBeFocused();
   await expect(second).toHaveAttribute("aria-selected", "true");
-  await expect(page.getByRole("tabpanel")).toContainText("operations layer");
+  await expect(page.getByRole("tabpanel")).toContainText("results flow digitally");
 });

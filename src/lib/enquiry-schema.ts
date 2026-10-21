@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const ENQUIRY_TYPES = ["physician", "investor", "partnership", "media", "general"] as const;
+export const ENQUIRY_TYPES = ["physician", "investor", "partnership", "vendor", "media", "general"] as const;
 export type EnquiryTypeValue = (typeof ENQUIRY_TYPES)[number];
 
 const text = (max: number) =>
@@ -22,8 +22,16 @@ export const enquirySchema = z
     interest: text(120).optional().default(""),
     message: text(2000).optional().default(""),
     consent: z.literal("on", { errorMap: () => ({ message: "Please confirm consent so we can respond." }) }),
+    acknowledge: z.string().optional().default(""),
   })
   .superRefine((v, ctx) => {
+    if (v.type === "investor" && v.acknowledge !== "on") {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["acknowledge"],
+        message: "Please confirm you have read the investor acknowledgement.",
+      });
+    }
     if (v.type === "physician" && v.specialty.length < 2) {
       ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["specialty"], message: "Please tell us your specialty." });
     }
@@ -34,7 +42,7 @@ export const enquirySchema = z
         message: "Please tell us your city and country.",
       });
     }
-    if ((v.type === "general" || v.type === "media" || v.type === "partnership") && v.message.length < 10) {
+    if ((v.type === "general" || v.type === "media" || v.type === "partnership" || v.type === "vendor") && v.message.length < 10) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         path: ["message"],
@@ -58,7 +66,7 @@ export const MIN_FILL_SECONDS = 3;
 
 export function parseEnquiry(form: FormData) {
   const raw = Object.fromEntries(
-    ["type", "name", "email", "organisation", "specialty", "location", "interest", "message", "consent"].map((k) => [
+    ["type", "name", "email", "organisation", "specialty", "location", "interest", "message", "consent", "acknowledge"].map((k) => [
       k,
       form.get(k) ?? undefined,
     ]),
