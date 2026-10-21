@@ -75,7 +75,7 @@ for (const route of routes) {
   await mobile.close();
 
   const result = await page.evaluate(
-    ({ tabStates, menuHtml }) => {
+    ({ tabStates }) => {
       document.querySelectorAll(".reveal").forEach((e) => e.classList.add("is-visible"));
       const fontVar = getComputedStyle(document.documentElement).getPropertyValue("--font-manrope");
       const main = document.body.cloneNode(true);
