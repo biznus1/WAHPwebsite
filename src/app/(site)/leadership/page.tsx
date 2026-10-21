@@ -4,6 +4,7 @@ import { PageHero } from "@/components/sections/page-hero";
 import { TeamGrid } from "@/components/sections/team-grid";
 import { Section, SectionIntro } from "@/components/ui/primitives";
 import { approvedLeaders } from "@/content/leadership";
+import { pageHeaders } from "@/content/editable";
 
 export const metadata: Metadata = {
   title: "Leadership",
@@ -15,10 +16,12 @@ export const metadata: Metadata = {
 export default function LeadershipPage() {
   return (
     <>
-      <PageHero eyebrow="Leadership" lead="Born at the bedside." rest="Built for the continent.">
-        <p>
-          WAHP is led by physicians and operators who have worked inside the system they are building the solution for.
-        </p>
+      <PageHero
+        eyebrow={pageHeaders.leadership.eyebrow}
+        lead={pageHeaders.leadership.lead}
+        rest={pageHeaders.leadership.rest}
+      >
+        <p>{pageHeaders.leadership.intro}</p>
       </PageHero>
 
       <Section tone="paper" labelledBy="team-heading">

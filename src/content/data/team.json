@@ -1,0 +1,90 @@
+{
+  "members": [
+    {
+      "name": {
+        "name": "Jonathan Francois",
+        "slug": "jonathan-francois"
+      },
+      "credentials": "MD",
+      "role": "Co-Founder & Chief Executive Officer",
+      "bio": "Physician. Founded WAHP to solve the infrastructure gap he saw firsthand working across healthcare systems in Haiti, the US, and West Africa. Leads strategy, fundraising, and the vision for building a replicable healthcare infrastructure platform across the region.",
+      "focus": [
+        "Strategy",
+        "Fundraising",
+        "Vision",
+        "Physician"
+      ],
+      "photo": "/images/team/members/jonathan-francois/photo.webp",
+      "linkedin": "https://www.linkedin.com/in/jofrancoismd",
+      "show": true
+    },
+    {
+      "name": {
+        "name": "Emmanuel Adomfeh",
+        "slug": "emmanuel-adomfeh"
+      },
+      "credentials": "MD, MPH",
+      "role": "Co-Founder & Chief Operating Officer",
+      "bio": "Physician and public health specialist with deep operational experience across West African healthcare systems. Leads operations, partnership development, and the on-the-ground execution of WAHP's first hub in Accra.",
+      "focus": [
+        "Operations",
+        "Partnerships",
+        "Hub Development",
+        "Public Health"
+      ],
+      "photo": "/images/team/members/emmanuel-adomfeh/photo.webp",
+      "linkedin": "https://www.linkedin.com/in/emmanuel-adomfeh-7419a918/",
+      "show": true
+    },
+    {
+      "name": {
+        "name": "Nana Kwame Obuobi",
+        "slug": "nana-kwame-obuobi"
+      },
+      "credentials": "MBBS, MPH",
+      "role": "Medical Director",
+      "bio": "Harvard T.H. Chan School of Public Health, MPH 2026. Responsible for establishing medical standards, physician onboarding protocols, and quality of care benchmarks across all WAHP facilities.",
+      "focus": [
+        "Medical Standards",
+        "Quality of Care",
+        "Physician Onboarding"
+      ],
+      "photo": "/images/team/members/nana-kwame-obuobi/photo.webp",
+      "linkedin": "https://www.linkedin.com/in/nana-kwame-asare-obuobi-md-mph-07143b264/",
+      "show": true
+    },
+    {
+      "name": {
+        "name": "Emmanuel Oppong",
+        "slug": "emmanuel-oppong"
+      },
+      "role": "Laboratory Manager",
+      "bio": "Oversees all laboratory operations including diagnostic workflows, equipment procurement and maintenance, lab staff management, and quality assurance protocols for WAHP's integrated diagnostic facilities.",
+      "focus": [
+        "Lab Operations",
+        "Diagnostics",
+        "Equipment",
+        "Quality Assurance"
+      ],
+      "photo": "/images/team/members/emmanuel-oppong/photo.webp",
+      "linkedin": "https://www.linkedin.com/in/emmanuel-oppong-boakye-3838523aa/",
+      "show": true
+    },
+    {
+      "name": {
+        "name": "Nakeitheya Smith",
+        "slug": "nakeitheya-smith"
+      },
+      "role": "Chief Marketing Officer",
+      "bio": "Leads brand strategy, physician engagement, investor communications, and strategic partnerships at West African Health Partners. Dedicated to positioning WAHP as the premier platform empowering physicians to build and grow modern, technology-enabled practices across West Africa.",
+      "focus": [
+        "Brand Strategy",
+        "Physician Engagement",
+        "Investor Communications",
+        "Strategic Partnerships"
+      ],
+      "photo": "/images/team/members/nakeitheya-smith/photo.webp",
+      "show": true
+    }
+  ]
+}

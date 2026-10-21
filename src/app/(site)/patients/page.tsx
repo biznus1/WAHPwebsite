@@ -6,6 +6,7 @@ import { Faq } from "@/components/sections/faq";
 import { SiteImage } from "@/components/ui/site-image";
 import { Notice } from "@/components/ui/notice";
 import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
+import { faqLists, pageHeaders } from "@/content/editable";
 
 export const metadata: Metadata = {
   title: "For patients",
@@ -36,9 +37,9 @@ export default function PatientsPage() {
   return (
     <>
       <PageHero
-        eyebrow="For patients"
-        lead="More connected care,"
-        rest="coming to Accra."
+        eyebrow={pageHeaders.patients.eyebrow}
+        lead={pageHeaders.patients.lead}
+        rest={pageHeaders.patients.rest}
         status={<StageBadge stage="pre-launch" label="Not yet seeing patients" dark />}
         aside={
           <SiteImage
@@ -50,10 +51,7 @@ export default function PatientsPage() {
           />
         }
       >
-        <p>
-          WAHP is building a shared outpatient facility in Accra where independent physicians can practise with the
-          support of shared operations and, in a later phase, an on-site laboratory.
-        </p>
+        <p>{pageHeaders.patients.intro}</p>
       </PageHero>
 
       <Section tone="paper" className="!pt-12 !pb-0">
@@ -116,26 +114,7 @@ export default function PatientsPage() {
             <SectionIntro id="pfaq-heading" eyebrow="Questions" lead="Patient" rest="FAQs." />
             <SiteImage name="midwivesNewborn" className="reveal mt-10" aspect="aspect-[3/2]" />
           </div>
-          <Faq
-            items={[
-              {
-                q: "Can I book an appointment?",
-                a: "Not yet. WAHP is pre-launch and is not seeing patients. We will announce clearly when services are available.",
-              },
-              {
-                q: "Where will WAHP be?",
-                a: "The first facility is planned for Accra, Ghana. We will share the location once it is confirmed.",
-              },
-              {
-                q: "Will WAHP replace my doctor?",
-                a: "No. WAHP provides infrastructure for independent physicians. Patients will see independent physicians who practise from the facility.",
-              },
-              {
-                q: "How can I stay informed?",
-                a: "Use the general enquiry option on our contact page. Please don't include any health information.",
-              },
-            ]}
-          />
+          <Faq items={faqLists.patients} />
         </div>
       </Section>
 

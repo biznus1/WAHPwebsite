@@ -85,3 +85,12 @@
   - `doctor-stethoscope`: a doctor putting on her stethoscope. It replaces the Kinshasa lab-coat photo in the Physicians diaspora section.
   - `patient-portrait`: the Patients hero portrait, re-encoded from the 2500px original. Reclassified from "illustrative" to "stock", so it now shows a credit instead of the badge.
 - Both are listed on `/terms#image-credits`. Photographer names are still to confirm, because unsplash.com blocks automated lookups.
+
+## 21 Oct 2026, site admin
+
+- Added a site admin built on Keystatic (`keystatic.config.ts`, `/keystatic`), linked discreetly as "Admin" in the footer. `/admin` redirects to it.
+- Editable now: the page headers on eight pages, the leadership team (including photo uploads) and the Physicians and Patients FAQs. The content moved to `src/content/data/*.json`; `src/content/editable.ts` validates it at build time, allowing https-only LinkedIn links and team-folder photo paths only.
+- Public pages moved into the `(site)` route group, so the admin renders without the site header and footer. The 404 page renders the chrome itself.
+- Security: Keystatic's local mode has no login, so outside `next dev` the admin page and API are off unless GitHub mode is configured. The e2e tests check that the API returns 404. The admin has its own CSP and is `noindex`.
+- Team photos now live in `public/images/team/members/<slug>/photo.webp`, the layout Keystatic writes, so the first admin save doesn't rename them all.
+- Setup for the live site: `docs/ADMIN.md`.

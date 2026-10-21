@@ -10,6 +10,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { SiteImage } from "@/components/ui/site-image";
 import { Section, SectionIntro, SplitHeading, StageBadge } from "@/components/ui/primitives";
 import { pillars } from "@/content/platform";
+import { pageHeaders } from "@/content/editable";
 
 export const metadata: Metadata = {
   title: { absolute: "West African Health Partners — Infrastructure for independent medicine" },
@@ -35,16 +36,12 @@ export default function HomePage() {
         <LogoMark className="pointer-events-none absolute -right-48 -bottom-72 size-[44rem] text-navy-700/35" />
         <div className="container-wahp relative grid items-center gap-14 pt-16 pb-20 md:pt-24 md:pb-28 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:gap-10">
           <div>
-            <StageBadge stage="pre-launch" label="Pre-launch · Accra, Ghana" dark />
+            <StageBadge stage="pre-launch" label={pageHeaders.home.badge} dark />
             <h1 className="mt-7 text-display font-bold text-white">
-              <span className="block text-steel">Infrastructure for</span>
-              <span className="block">independent medicine.</span>
+              <span className="block text-steel">{pageHeaders.home.lead}</span>
+              <span className="block">{pageHeaders.home.rest}</span>
             </h1>
-            <p className="mt-8 max-w-xl text-lead text-white/78">
-              West African Health Partners is building a shared clinical platform for outpatient care — professional
-              clinical space, one operational backbone and integrated diagnostics — so independent physicians can focus
-              on medicine.
-            </p>
+            <p className="mt-8 max-w-xl text-lead text-white/78">{pageHeaders.home.intro}</p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/platform" size="lg" arrow>
                 Explore the platform

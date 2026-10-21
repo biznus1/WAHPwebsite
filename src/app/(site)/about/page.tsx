@@ -3,6 +3,7 @@ import { CtaBand } from "@/components/sections/cta-band";
 import { PageHero } from "@/components/sections/page-hero";
 import { Eyebrow, Section, SectionIntro } from "@/components/ui/primitives";
 import { SiteImage } from "@/components/ui/site-image";
+import { pageHeaders } from "@/content/editable";
 
 export const metadata: Metadata = {
   title: "About",
@@ -33,15 +34,8 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="About WAHP"
-        lead="Built around physicians."
-        rest="Designed to transform how care is delivered."
-      >
-        <p>
-          West Africa does not lack talented physicians. It lacks the infrastructure for them to practise well. We are a
-          team of physicians and operators building that infrastructure.
-        </p>
+      <PageHero eyebrow={pageHeaders.about.eyebrow} lead={pageHeaders.about.lead} rest={pageHeaders.about.rest}>
+        <p>{pageHeaders.about.intro}</p>
       </PageHero>
 
       <Section tone="paper" labelledBy="mission-heading">

@@ -77,7 +77,13 @@ export function SiteFooter() {
             clinical services are currently offered and this website does not provide medical advice. In an emergency,
             call 112 or go to the nearest emergency department. Nothing on this site is an offer of securities.
           </p>
-          <p className="md:text-right">© {year} West African Health Partners. All rights reserved.</p>
+          <p className="md:text-right">
+            © {year} West African Health Partners. All rights reserved.
+            {/* Discreet entry to the site admin; not prefetched, so visitors never download the admin app. */}
+            <Link href="/keystatic" prefetch={false} rel="nofollow" className="ml-3 hover:text-white hover:underline">
+              Admin
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

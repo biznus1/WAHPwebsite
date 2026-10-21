@@ -8,6 +8,7 @@ import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
 import { approvedClaim } from "@/content/claims";
 import { SiteImage } from "@/components/ui/site-image";
 import { site } from "@/content/site";
+import { pageHeaders } from "@/content/editable";
 
 export const metadata: Metadata = {
   title: "For investors",
@@ -76,20 +77,16 @@ export default function InvestorsPage() {
   return (
     <>
       <PageHero
-        eyebrow="For investors"
-        lead="Infrastructure first."
-        rest="Built to scale with discipline."
+        eyebrow={pageHeaders.investors.eyebrow}
+        lead={pageHeaders.investors.lead}
+        rest={pageHeaders.investors.rest}
         aside={
           <div className="rounded-panel bg-white/5 p-6 ring-1 ring-inset ring-white/15">
             <RegionalRings />
           </div>
         }
       >
-        <p>
-          WAHP is building a scalable medical infrastructure platform that gives physicians access to modern clinical
-          space, integrated diagnostics, technology and operational support — starting in Ghana and designed for
-          expansion across West Africa.
-        </p>
+        <p>{pageHeaders.investors.intro}</p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
           <ButtonLink href="#introduction" size="lg" arrow>
             Request an introduction

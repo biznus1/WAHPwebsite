@@ -1,8 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { SiteHeader } from "@/components/layout/site-header";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { RevealObserver } from "@/components/layout/reveal-observer";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -67,20 +64,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
       </head>
-      <body className="flex min-h-dvh flex-col">
-        <a
-          href="#main"
-          className="sr-only z-[60] rounded-full bg-navy px-5 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
-        >
-          Skip to main content
-        </a>
-        <SiteHeader />
-        <main id="main" className="flex-1" tabIndex={-1}>
-          {children}
-        </main>
-        <SiteFooter />
-        <RevealObserver />
-      </body>
+      {/* Site chrome lives in (site)/layout.tsx so the admin at /keystatic renders without it. */}
+      <body className="flex min-h-dvh flex-col">{children}</body>
     </html>
   );
 }

@@ -4,6 +4,7 @@ import { PlatformSystem } from "@/components/graphics/platform-system";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Section, SectionIntro } from "@/components/ui/primitives";
 import { SiteImage } from "@/components/ui/site-image";
+import { pageHeaders } from "@/content/editable";
 
 export const metadata: Metadata = {
   title: "The platform",
@@ -17,11 +18,13 @@ export default function PlatformPage() {
     <>
       <section className="bg-paper pt-16 pb-6 md:pt-24">
         <div className="container-wahp">
-          <SectionIntro as="h1" eyebrow="The platform" lead="One shared foundation," rest="many independent practices.">
-            <p>
-              WAHP brings together the components an outpatient practice depends on and makes them shared. Each is
-              introduced in sequence — and each is labelled here by its actual stage.
-            </p>
+          <SectionIntro
+            as="h1"
+            eyebrow={pageHeaders.platform.eyebrow}
+            lead={pageHeaders.platform.lead}
+            rest={pageHeaders.platform.rest}
+          >
+            <p>{pageHeaders.platform.intro}</p>
           </SectionIntro>
         </div>
       </section>

@@ -6,6 +6,7 @@ import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { Notice } from "@/components/ui/notice";
 import { Eyebrow, SplitHeading } from "@/components/ui/primitives";
 import { site } from "@/content/site";
+import { pageHeaders } from "@/content/editable";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -19,12 +20,15 @@ export default function ContactPage() {
     <section className="bg-paper py-16 md:py-24">
       <div className="container-wahp grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
         <div>
-          <Eyebrow>Contact</Eyebrow>
-          <SplitHeading as="h1" size="display" lead="Let's talk." rest="Tell us who you are." className="mt-6" />
-          <p className="mt-6 text-lead text-arsenic">
-            Choose your enquiry type and we&apos;ll route it to the right person at WAHP. A member of the team will
-            follow up by email.
-          </p>
+          <Eyebrow>{pageHeaders.contact.eyebrow}</Eyebrow>
+          <SplitHeading
+            as="h1"
+            size="display"
+            lead={pageHeaders.contact.lead}
+            rest={pageHeaders.contact.rest}
+            className="mt-6"
+          />
+          <p className="mt-6 text-lead text-arsenic">{pageHeaders.contact.intro}</p>
 
           <ul className="mt-10 space-y-6" aria-label="Other ways to reach WAHP">
             {site.contactEmail && (

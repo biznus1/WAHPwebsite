@@ -83,14 +83,22 @@ for (const route of routes) {
       const imgs = [];
       main.querySelectorAll("img").forEach((img) => {
         const src = img.getAttribute("src") || "";
-        const m = decodeURIComponent(src).match(/\/_next\/static\/media\/([^.?&]+)\./);
-        if (m) {
-          imgs.push(m[1]);
-          img.setAttribute("src", `img/${m[1]}.webp`);
+        const decoded = decodeURIComponent(src);
+        const m = decoded.match(/\/_next\/static\/media\/([^.?&]+)\./);
+        // Admin-managed images are referenced by public path, e.g. /images/team/members/<slug>/photo.webp.
+        const pub = decoded.match(/url=(\/images\/[^&]+)\.webp/);
+        const name = m ? m[1] : pub ? pub[1].slice(1).replaceAll("/", "-") : null;
+        if (name) {
+          imgs.push(pub && !m ? `${name}|public${pub[1]}.webp` : name);
+          img.setAttribute("src", `img/${name}.webp`);
           img.removeAttribute("srcset");
           img.removeAttribute("sizes");
           img.setAttribute("loading", "lazy");
         }
+      });
+      main.querySelectorAll('a[href="/keystatic"]').forEach((a) => {
+        a.setAttribute("href", "#");
+        a.setAttribute("data-preview-admin", "");
       });
       main.querySelectorAll("a[href]").forEach((a) => {
         const href = a.getAttribute("href");
@@ -124,8 +132,9 @@ for (const route of routes) {
 }
 await browser.close();
 
-for (const stem of usedImages) {
-  const p = findImage(stem);
+for (const entry of usedImages) {
+  const [stem, publicPath] = entry.split("|");
+  const p = publicPath && existsSync(publicPath) ? publicPath : findImage(stem);
   if (p) writeFileSync(join(out, "img", `${stem}.webp`), readFileSync(p));
   else console.warn("missing image", stem);
 }
@@ -152,6 +161,8 @@ const previewScript = (tabStates) => `<script>
   function bindTabs(){ var root=document.querySelector('[data-tabs-root]')||document.querySelector('[role="tablist"]')&&document.querySelector('[role="tablist"]').closest('.grid'); if(!root||!states.length) return; root.setAttribute('data-tabs-root','');
     root.querySelectorAll('[role="tab"]').forEach(function(t,i){ t.addEventListener('click',function(){ var tmp=document.createElement('div'); tmp.innerHTML=states[i]; var next=tmp.firstElementChild; next.setAttribute('data-tabs-root',''); root.replaceWith(next); bindTabs(); var nt=next.querySelectorAll('[role="tab"]')[i]; if(nt) nt.focus(); }); }); }
   bindTabs();
+  // The site admin needs the deployed site
+  document.querySelectorAll('[data-preview-admin]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); if(a.nextElementSibling&&a.nextElementSibling.hasAttribute('data-admin-note')) return; var n=document.createElement('span'); n.setAttribute('data-admin-note',''); n.setAttribute('role','status'); n.className='ml-3'; n.textContent='Admin sign-in works on the deployed site, not in this preview.'; a.after(n); }); });
   // Forms are disabled in the preview
   document.querySelectorAll('form').forEach(function(f){ f.addEventListener('submit',function(e){ e.preventDefault(); if(f.querySelector('.preview-note')) return; var n=document.createElement('p'); n.className='preview-note'; n.setAttribute('role','status'); n.textContent='Preview only: form submissions are switched off in this static preview. On the real site this form validates and routes the enquiry.'; f.appendChild(n); }); });
 })();

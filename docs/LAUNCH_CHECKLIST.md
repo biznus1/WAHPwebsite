@@ -14,6 +14,7 @@ Nothing below has been done. **No production site, domain, DNS or Squarespace se
 - [ ] Send a real test enquiry of each type and confirm receipt
 - [ ] If deploying to many serverless instances: move the rate limiter to a shared store
 - [ ] Analytics: only if wanted, with a consent banner and privacy-notice update
+- [ ] Site admin: create the Keystatic GitHub App, set its env vars and `NEXT_PUBLIC_KEYSTATIC_STORAGE=github` on the host, add the production callback URL, and test a save (`docs/ADMIN.md`)
 
 ## Legal
 - [ ] Privacy notice, website terms and investor disclaimer reviewed by counsel (Ghana Data Protection Act 2012, Act 843; securities rules in the target jurisdictions)

@@ -9,6 +9,7 @@ import { SiteImage } from "@/components/ui/site-image";
 import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
 import { approvedClaim } from "@/content/claims";
 import { site } from "@/content/site";
+import { faqLists, pageHeaders } from "@/content/editable";
 
 export const metadata: Metadata = {
   title: "For physicians",
@@ -36,53 +37,19 @@ const offer = [
   },
 ];
 
-const faqs = [
-  {
-    q: "Who is WAHP designed for?",
-    a: "Independent physicians and specialists in outpatient practice — including Ghanaian physicians already practising in Accra and diaspora clinicians considering practising in Ghana.",
-  },
-  {
-    q: "Is WAHP open yet?",
-    a: "No. WAHP is pre-launch and the Accra flagship is in development. Registering interest helps us plan suites and support around real physician needs; it is not a booking or a commitment.",
-  },
-  {
-    q: "Which specialties can participate?",
-    a: "The flagship is designed for outpatient specialties that work from consultation and examination rooms. Specialty mix will be confirmed as planning progresses — tell us yours when you register.",
-  },
-  {
-    q: "What will participation cost, and how will it work?",
-    a: "Flexible lease options — for example by the hour, day or month — are planned. Rates and terms are not yet published; we will share details directly with interested physicians once they are confirmed.",
-  },
-  {
-    q: "What support will be shared?",
-    a: "The proposed model includes reception and patient flow, administrative support and common facility standards. Integrated laboratory services are planned for a later phase, subject to approvals.",
-  },
-  {
-    q: "Is WAHP licensed?",
-    a: "WAHP will operate in full compliance with applicable Ghanaian healthcare and facility regulations. Licensing and regulatory processes are being pursued in accordance with national standards.",
-  },
-  {
-    q: "What happens after I register interest?",
-    a: "A member of the WAHP team reviews your details and follows up by email to understand your practice and keep you informed as the flagship develops.",
-  },
-];
-
 export default function PhysiciansPage() {
   return (
     <>
       <PageHero
-        eyebrow="For physicians"
-        lead="Practise independently."
-        rest="Don't build it alone."
+        eyebrow={pageHeaders.physicians.eyebrow}
+        lead={pageHeaders.physicians.lead}
+        rest={pageHeaders.physicians.rest}
         status={<StageBadge stage="pre-launch" label="Registering interest · Accra flagship in development" dark />}
         aside={
           <SiteImage name="consultation" priority dark aspect="aspect-[4/3]" sizes="(min-width: 1024px) 40vw, 100vw" />
         }
       >
-        <p>
-          WAHP is building professional clinical space and a shared operational backbone for independent physicians — so
-          more of your time goes to patients, and less to running a facility.
-        </p>
+        <p>{pageHeaders.physicians.intro}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <ButtonLink href="#register" size="lg" arrow>
             Register interest
@@ -233,7 +200,7 @@ export default function PhysiciansPage() {
       <Section tone="white" labelledBy="faq-heading">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
           <SectionIntro id="faq-heading" eyebrow="Questions" lead="Physician" rest="FAQs." />
-          <Faq items={faqs} />
+          <Faq items={faqLists.physicians} />
         </div>
       </Section>
     </>
