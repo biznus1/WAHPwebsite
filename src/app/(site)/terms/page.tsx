@@ -21,13 +21,13 @@ const credits = [
     href: "https://unsplash.com/photos/9aBsCd9Fvgc",
   },
   {
-    title: "A young girl sits with a doctor receiving medical care",
+    title: "A young girl sits with a doctor receiving medical care (shown as an edited adaptation)",
     by: "Carla Keithley",
     licence: "CC BY-SA 2.0, via Wikimedia Commons",
     href: "https://commons.wikimedia.org/wiki/File:A_young_girl_sits_with_a_doctor_receiving_medical_care.jpg",
   },
   {
-    title: "A uniformed nurse listening to a patient's BP",
+    title: "A uniformed nurse listening to a patient's BP (shown as an edited adaptation)",
     by: "Kwameghana",
     licence: "CC BY-SA 4.0, via Wikimedia Commons",
     href: "https://commons.wikimedia.org/wiki/File:A_uniformed_nurse_listening_to_a_patient%27s_BP.jpg",
@@ -51,7 +51,7 @@ const credits = [
     href: "https://www.pexels.com/photo/34185202/",
   },
   {
-    title: "A laughing woman in a doctor's gown",
+    title: "A laughing woman in a doctor's gown (shown as an edited adaptation)",
     by: "Carmel Nsenga",
     licence: "Pexels licence",
     href: "https://www.pexels.com/photo/18844981/",

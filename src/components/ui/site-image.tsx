@@ -77,15 +77,15 @@ const images = {
 
   doctorChildConsultation: {
     src: doctorChildConsultation,
-    kind: "stock",
-    credit: "Photo: Carla Keithley, CC BY-SA 2.0",
-    alt: "A doctor with a stethoscope sits with a young girl in a clinic in Nigeria.",
+    kind: "illustrative",
+    credit: "Adapted from a photo by Carla Keithley, CC BY-SA 2.0",
+    alt: "A doctor in a white coat and stethoscope holds a young girl in a pink wrap in a bright, modern consulting room.",
   },
   communityScreening: {
     src: communityScreening,
-    kind: "stock",
-    credit: "Photo: Kwameghana, CC BY-SA 4.0",
-    alt: "A Ghanaian nurse in uniform measures a patient's blood pressure at a community health screening.",
+    kind: "illustrative",
+    credit: "Adapted from a photo by Kwameghana, CC BY-SA 4.0",
+    alt: "A nurse in a green uniform takes a patient's blood pressure at an outdoor community health screening.",
   },
   clinicBpCheck: {
     src: clinicBpCheck,
@@ -119,10 +119,10 @@ const images = {
   },
   doctorClinicKinshasa: {
     src: doctorClinicKinshasa,
-    kind: "stock",
-    position: "50% 22%",
-    credit: "Photo: Carmel Nsenga / Pexels",
-    alt: "A smiling doctor in green scrubs with a stethoscope in a clinic.",
+    kind: "illustrative",
+    position: "50% 30%",
+    credit: "Adapted from a photo by Carmel Nsenga / Pexels",
+    alt: "A laughing doctor in green scrubs with a stethoscope in a bright clinic.",
   },
   doctorStethoscope: {
     src: doctorStethoscope,

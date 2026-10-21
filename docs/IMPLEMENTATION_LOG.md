@@ -157,3 +157,7 @@
 - Its header and FAQs are editable in the site admin.
 - Navigation, footer, sitemap and e2e routes include the new page.
 - Home "Who we serve" cards follow the newer build's card style: accent top edge, WAHP mark on the photo, one line of copy, a divider and one call to action. Diaspora physicians get their own card, so there are five cards: three leading, two wide. Accents use brand teal and navy, since green stays reserved for buttons.
+
+## 21 Oct 2026, owner-supplied photo adaptations
+
+- Replaced `doctor-child-consultation`, `community-bp-screening` and `doctor-clinic-kinshasa` with the owner's AI-edited versions. Each is badged "Illustrative image" and credited "Adapted from a photo by …"; the Terms image credits note the edits. The `clinic-bp-check` replacement (Platform, Suites tab) is still awaited as a file.
