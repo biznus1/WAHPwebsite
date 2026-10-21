@@ -4,7 +4,7 @@ The decisions below block or shape public launch. The machine-readable register 
 
 ## A. Critical decisions (please answer before launch)
 
-2. **Hero headline.** The site currently uses *"Infrastructure for independent medicine."* Alternatives found in the owner's own materials, including the newer build's *"Revolutionizing Healthcare Infrastructure Across West Africa"*:
+2. **Hero headline.** *Update 21 Oct 2026:* the owner asked for the Home page to follow the newer build. It now reads *"Reimagining healthcare infrastructure for West Africa."* This is a softened form of that build's *"Revolutionizing Healthcare Infrastructure Across West Africa"*, which reads as already operating region-wide while WAHP is pre-launch in Accra. Either wording can be set in the site admin (Home page header). Earlier the site used *"Infrastructure for independent medicine."* Alternatives found in the owner's own materials, including the newer build's *"Revolutionizing Healthcare Infrastructure Across West Africa"*:
    - *"Grow Your Practice with West African Health Partners"* (CEO, Master Brief)
    - *"The infrastructure physicians need to practice at their highest level."* (March blueprint)
    - *"The Infrastructure for Africa's Next Healthcare Revolution"* (deck)

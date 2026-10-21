@@ -70,16 +70,24 @@ export function SiteHeader() {
     };
   }, [open, close]);
 
+  // On Home the header starts navy, blending into the hero, and softens to light once the reader scrolls.
+  const blend = pathname === "/" && !scrolled && !open;
+
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-[background-color,box-shadow] duration-300 ${
-          scrolled || open ? "bg-paper/90 shadow-[0_1px_0_var(--color-smoke)] backdrop-blur-md" : "bg-paper"
+        data-blend={blend || undefined}
+        className={`sticky top-0 z-50 transition-[background-color,box-shadow] duration-700 ease-soft ${
+          blend
+            ? "bg-navy"
+            : scrolled || open
+              ? "bg-paper/90 shadow-[0_1px_0_var(--color-smoke)] backdrop-blur-md"
+              : "bg-paper"
         }`}
       >
         <div className="container-wahp flex h-18 items-center justify-between gap-6 md:h-20">
           <Link href="/" className="shrink-0 rounded-md" aria-label="West African Health Partners — home">
-            <Logo className="h-9 w-auto md:h-10" title={null} />
+            <Logo tone={blend ? "reversed" : "primary"} className="h-9 w-auto md:h-10" title={null} />
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:block">
@@ -91,8 +99,14 @@ export function SiteHeader() {
                     <Link
                       href={item.href}
                       aria-current={active ? "page" : undefined}
-                      className={`relative rounded-full px-4 py-2 text-[0.95rem] font-medium transition-colors ${
-                        active ? "text-navy" : "text-arsenic hover:text-navy"
+                      className={`relative rounded-full px-4 py-2 text-[0.95rem] font-medium transition-colors duration-500 ${
+                        blend
+                          ? active
+                            ? "text-white"
+                            : "text-white/80 hover:text-white"
+                          : active
+                            ? "text-navy"
+                            : "text-arsenic hover:text-navy"
                       }`}
                     >
                       {item.label}
@@ -119,7 +133,9 @@ export function SiteHeader() {
             <button
               ref={toggleRef}
               type="button"
-              className="inline-flex size-11 items-center justify-center rounded-full text-navy ring-1 ring-inset ring-steel lg:hidden"
+              className={`inline-flex size-11 items-center justify-center rounded-full ring-1 ring-inset transition-colors duration-500 lg:hidden ${
+                blend ? "text-white ring-white/40" : "text-navy ring-steel"
+              }`}
               aria-expanded={open}
               aria-controls="mobile-menu"
               onClick={() => (open ? close() : setOpen(true))}

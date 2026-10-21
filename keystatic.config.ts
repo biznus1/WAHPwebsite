@@ -69,9 +69,13 @@ export default config({
       format: { data: "json" },
       schema: {
         badge: text("Status badge", "Keep the pre-launch status visible, e.g. “Pre-launch · Accra, Ghana”."),
-        lead: headerSchema.lead,
-        rest: headerSchema.rest,
-        intro: headerSchema.intro,
+        lead: text("Headline, main part", "Shown in white."),
+        rest: text("Headline, last line", "Shown in the light-teal accent."),
+        intro: fields.text({
+          label: "One-line intro",
+          description: "Keep it to one short sentence.",
+          validation: { length: { min: 1, max: 160 } },
+        }),
       },
     }),
     ...pageSingletons,

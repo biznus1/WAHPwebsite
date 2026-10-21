@@ -94,3 +94,26 @@
 - Security: Keystatic's local mode has no login, so outside `next dev` the admin page and API are off unless GitHub mode is configured. The e2e tests check that the API returns 404. The admin has its own CSP and is `noindex`.
 - Team photos now live in `public/images/team/members/<slug>/photo.webp`, the layout Keystatic writes, so the first admin save doesn't rename them all.
 - Setup for the live site: `docs/ADMIN.md`.
+
+## 21 Oct 2026, Home page redesign and soft motion
+
+- At the owner's request, Home follows the layout of wahp.viewyourprojecthere.com, with shorter copy:
+
+  | # | Section | Content |
+  | --- | --- | --- |
+  | 1 | Hero | Eyebrow, headline, one-line intro, two buttons and the pre-launch badge, plus four groundwork figures from approved claims (20 LOIs, 60+ surveyed, 5-person team, 3 studies) |
+  | 2 | Who we serve | Audience cards |
+  | 3 | The infrastructure gap | Navy: one sentence, a photo, the sourced statistics |
+  | 4 | The platform | Schematic and the four pillars with their stage badges |
+  | 5 | The missing middle | Comparison table |
+  | 6 | Closing call to action | |
+
+  Wave dividers join the sections. The facts strip and the "Not a hospital" text were removed.
+- Motion, all switched off under `prefers-reduced-motion`:
+  - **Scroll reveals:** softer, with a longer expo-out ease. Images settle from a slight zoom.
+  - **Hero entrance:** staggered; the headline moves but never fades, so LCP is unaffected. The figures count up and their underline bars draw in.
+  - **Hero rings:** drift slowly.
+  - **Hero scroll effect:** where scroll-driven animations are supported, the hero content softly recedes and the rings sink as you scroll.
+  - **Header:** on Home it starts navy, blending into the hero, and softens to light on scroll.
+- Lighthouse (Home, local production build): Performance 97, Accessibility 100, Best Practices 100. SEO is 69 because indexing is deliberately off. LCP is 2.2 s and CLS 0.
+- The static preview replays the reveals, count-ups and header change with a small inline script.

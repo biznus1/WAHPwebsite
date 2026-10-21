@@ -1,16 +1,21 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Building2, FlaskConical, MonitorSmartphone, ScanLine } from "lucide-react";
-import { LogoMark } from "@/components/brand/logo";
 import { ClinicalFloorSchematic } from "@/components/graphics/clinical-floor-schematic";
+import { HeroRings } from "@/components/graphics/hero-rings";
+import { Wave } from "@/components/graphics/wave";
+import { CountUp } from "@/components/motion/count-up";
 import { AudiencePaths } from "@/components/sections/audience-paths";
 import { Comparison } from "@/components/sections/comparison";
+import { CtaBand } from "@/components/sections/cta-band";
 import { ProblemStats } from "@/components/sections/problem-stats";
 import { ButtonLink } from "@/components/ui/button";
 import { SiteImage } from "@/components/ui/site-image";
-import { Section, SectionIntro, SplitHeading, StageBadge } from "@/components/ui/primitives";
-import { pillars } from "@/content/platform";
+import { Eyebrow, Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
+import { approvedClaim } from "@/content/claims";
 import { pageHeaders } from "@/content/editable";
+import { pillars } from "@/content/platform";
 
 export const metadata: Metadata = {
   title: { absolute: "West African Health Partners — Infrastructure for independent medicine" },
@@ -19,151 +24,204 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const facts = [
-  { label: "Flagship", value: "Accra, Ghana" },
-  { label: "Model", value: "Shared outpatient infrastructure" },
-  { label: "Built around", value: "Independent physicians" },
-  { label: "Stage", value: "Pre-launch" },
-];
+/** Groundwork figures; each renders only while its claim is approved in the claims register. */
+const groundwork = [
+  { claim: "traction-lois", value: "20", label: "Physician letters of intent" },
+  { claim: "traction-research", value: "60+", label: "Physicians surveyed" },
+  { claim: "leadership-profiles", value: "5", label: "Leadership team" },
+  { claim: "traction-research", value: "3", label: "Studies completed" },
+].filter((s) => approvedClaim(s.claim));
 
 const pillarIcons = [Building2, FlaskConical, ScanLine, MonitorSmartphone];
 
+/** Entrance delay for `.hero-in` / `.hero-line` / `.hero-bar`. */
+const delay = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
+
 export default function HomePage() {
+  const hero = pageHeaders.home;
   return (
     <>
-      {/* 1 — Hero */}
-      <section className="grain on-dark relative overflow-hidden bg-navy text-white">
-        <LogoMark className="pointer-events-none absolute -right-48 -bottom-72 size-[44rem] text-navy-700/35" />
-        <div className="container-wahp relative grid items-center gap-14 pt-16 pb-20 md:pt-24 md:pb-28 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:gap-10">
-          <div>
-            <StageBadge stage="pre-launch" label={pageHeaders.home.badge} dark />
+      {/* 1 — Hero: one statement, one line of support, two actions, the groundwork in numbers. */}
+      <section className="grain on-dark relative isolate overflow-hidden bg-navy text-white">
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-[radial-gradient(70%_60%_at_85%_20%,rgba(0,135,158,0.28),transparent_70%),radial-gradient(50%_50%_at_10%_100%,rgba(0,135,158,0.14),transparent_70%)]"
+        />
+        <div aria-hidden className="scroll-sink pointer-events-none absolute -top-48 -right-56 -z-10 md:-right-32">
+          <HeroRings className="size-[44rem] text-white/[0.07] md:size-[56rem]" />
+        </div>
+
+        <div className="container-wahp relative pt-14 pb-12 md:pt-24 md:pb-16">
+          <div className="scroll-recede max-w-4xl">
+            <div className="hero-in" style={delay(0)}>
+              <Eyebrow dark>West African Health Partners</Eyebrow>
+            </div>
             <h1 className="mt-7 text-display font-bold text-white">
-              <span className="block text-steel">{pageHeaders.home.lead}</span>
-              <span className="block">{pageHeaders.home.rest}</span>
+              <span className="hero-line block" style={delay(80)}>
+                {hero.lead}
+              </span>
+              <span
+                className="hero-line block bg-gradient-to-r from-[#7fd3e1] to-steel bg-clip-text text-transparent"
+                style={delay(160)}
+              >
+                {hero.rest}
+              </span>
             </h1>
-            <p className="mt-8 max-w-xl text-lead text-white/78">{pageHeaders.home.intro}</p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <p className="hero-in mt-7 max-w-xl text-lead text-white/75" style={delay(260)}>
+              {hero.intro}
+            </p>
+            <div className="hero-in mt-10 flex flex-col gap-3 sm:flex-row sm:items-center" style={delay(360)}>
               <ButtonLink href="/platform" size="lg" arrow>
                 Explore the platform
               </ButtonLink>
               <ButtonLink href="/contact" size="lg" variant="light">
-                Partner or enquire
+                Get in touch
               </ButtonLink>
+              <span className="sm:ml-3">
+                <StageBadge stage="pre-launch" label={hero.badge} dark />
+              </span>
             </div>
           </div>
-          <div className="animate-rise [animation-delay:150ms]">
-            <ClinicalFloorSchematic className="mx-auto max-w-[36rem]" />
-          </div>
-        </div>
-      </section>
 
-      {/* Fact strip */}
-      <section aria-label="WAHP at a glance" className="border-b border-smoke bg-white">
-        <dl className="container-wahp grid grid-cols-2 divide-smoke md:grid-cols-4 md:divide-x">
-          {facts.map((f) => (
-            <div key={f.label} className="py-6 md:px-8 md:first:pl-0">
-              <dt className="eyebrow text-arsenic">{f.label}</dt>
-              <dd className="mt-2 font-semibold text-navy">{f.value}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
-
-      {/* 2 — What WAHP is, with a one-line view of the four pillars */}
-      <Section tone="paper" labelledBy="what-heading">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <SectionIntro id="what-heading" eyebrow="What WAHP is" lead="Not a hospital." rest="Not a room rental." />
-          <div className="reveal space-y-6 text-lead text-arsenic lg:pt-14">
-            <p>
-              WAHP is developing a{" "}
-              <strong className="font-semibold text-navy">healthcare infrastructure platform</strong>: multi-tenant
-              outpatient space where independent physicians practise under their own names, supported by shared
-              operations and diagnostics.
-            </p>
-            <blockquote className="border-l-2 border-teal pl-5 text-navy">
-              Hospitals have infrastructure but no autonomy. Clinics have autonomy but no infrastructure. WAHP is
-              designed to combine both.
-            </blockquote>
-          </div>
-        </div>
-        <ul className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="The four pillars of the platform">
-          {pillars.map((p, i) => {
-            const Icon = pillarIcons[i];
-            return (
-              <li key={p.id} className="reveal" style={{ transitionDelay: `${i * 60}ms` }}>
-                <Link
-                  href="/platform"
-                  className="group flex h-full flex-col gap-4 rounded-card bg-white p-5 ring-1 ring-inset ring-smoke transition-shadow hover:ring-steel"
+          {groundwork.length > 0 && (
+            <dl className="mt-16 grid grid-cols-2 gap-3 md:mt-24 md:grid-cols-4" aria-label="WAHP groundwork so far">
+              {groundwork.map((s, i) => (
+                <div
+                  key={s.label}
+                  className="hero-in relative overflow-hidden rounded-card bg-white/[0.05] px-5 py-6 ring-1 ring-inset ring-white/10 backdrop-blur-sm md:px-7 md:py-8"
+                  style={delay(480 + i * 90)}
                 >
-                  <span className="flex items-center justify-between">
-                    <span className="flex size-10 items-center justify-center rounded-xl bg-cloud text-teal">
-                      <Icon aria-hidden className="size-5" strokeWidth={1.75} />
-                    </span>
-                    <span className="text-sm font-bold text-navy">{p.number}</span>
-                  </span>
-                  <span className="text-lg font-semibold text-navy">{p.title}</span>
-                  <span className="mt-auto">
-                    <StageBadge stage={p.stage} />
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-        <Link href="/platform" className="group mt-8 inline-flex items-center gap-2 font-semibold text-navy">
-          How the platform fits together
-          <ArrowRight aria-hidden className="size-4 text-teal transition-transform group-hover:translate-x-0.5" />
-        </Link>
-      </Section>
-
-      {/* 3 — The challenge */}
-      <Section tone="navy" labelledBy="challenge-heading">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <SectionIntro
-            id="challenge-heading"
-            eyebrow="The challenge"
-            lead="Great physicians,"
-            rest="fragmented infrastructure."
-            dark
-          >
-            <p>
-              Independent outpatient practice depends on infrastructure that is expensive to assemble alone: premises,
-              equipment, staff, systems and access to diagnostics. When the system does not support doctors, doctors
-              look elsewhere.
-            </p>
-          </SectionIntro>
-          <SiteImage name="villageHospitalYard" className="reveal" aspect="aspect-[16/10]" dark />
+                  <dd className="text-4xl font-bold tracking-tight text-white md:text-5xl">
+                    <CountUp value={s.value} delay={500 + i * 90} />
+                  </dd>
+                  <dt className="mt-2 text-sm text-white/70">{s.label}</dt>
+                  <span
+                    aria-hidden
+                    className="hero-bar absolute inset-x-5 bottom-0 h-0.5 rounded-full bg-gradient-to-r from-teal to-steel/60 md:inset-x-7"
+                    style={delay(700 + i * 90)}
+                  />
+                </div>
+              ))}
+            </dl>
+          )}
         </div>
-        <div className="mt-12">
-          <ProblemStats dark />
-        </div>
-      </Section>
+        <Wave className="-mb-px text-paper" />
+      </section>
 
-      {/* 4 — Comparison */}
-      <Section tone="paper" labelledBy="compare-heading">
+      {/* 2 — Who we serve */}
+      <Section tone="paper" labelledBy="serve-heading" className="!pt-12 md:!pt-16">
         <SectionIntro
-          id="compare-heading"
-          eyebrow="Why shared infrastructure"
-          lead="Stop managing."
-          rest="Start practising."
+          id="serve-heading"
+          align="center"
+          eyebrow="Who we serve"
+          lead="Built for the physicians"
+          rest="shaping West African healthcare."
+        />
+        <div className="mt-14">
+          <AudiencePaths />
+        </div>
+      </Section>
+
+      {/* 3 — The infrastructure gap */}
+      <section aria-labelledby="gap-heading" className="grain on-dark relative bg-navy text-white">
+        <Wave flip className="-mt-px text-paper" />
+        <div className="container-wahp py-16 md:py-24">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <SectionIntro
+              id="gap-heading"
+              eyebrow="The infrastructure gap"
+              lead="The talent exists."
+              rest="The infrastructure around it doesn't — yet."
+              dark
+            >
+              <p>When the system doesn&apos;t support doctors, doctors leave. WAHP is building the support.</p>
+            </SectionIntro>
+            <SiteImage
+              name="villageHospitalYard"
+              className="reveal reveal-media"
+              aspect="aspect-[16/10]"
+              dark
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          </div>
+          <div className="mt-14">
+            <ProblemStats dark />
+          </div>
+        </div>
+        <Wave className="-mb-px text-paper" />
+      </section>
+
+      {/* 4 — The platform */}
+      <Section tone="paper" labelledBy="platform-heading">
+        <SectionIntro
+          id="platform-heading"
+          align="center"
+          eyebrow="The platform"
+          lead="A platform, not just a place."
+          rest="Built for independent practice."
         >
           <p>
-            The proposed model moves the heaviest operational burdens onto one shared platform, so physicians keep their
-            independence while gaining the foundation of a larger institution.
+            Clinical suites, shared operations, diagnostics and digital tools — in one building, introduced in phases.
           </p>
         </SectionIntro>
-        <div className="mt-12">
-          <Comparison />
+        <div className="mt-14 grid items-center gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
+          <div className="reveal rounded-panel bg-navy p-5 md:p-8">
+            <ClinicalFloorSchematic className="mx-auto max-w-[36rem]" />
+          </div>
+          <ul className="space-y-3" aria-label="The four pillars of the platform">
+            {pillars.map((p, i) => {
+              const Icon = pillarIcons[i];
+              return (
+                <li key={p.id} className="reveal" style={{ transitionDelay: `${i * 90}ms` }}>
+                  <Link
+                    href="/platform"
+                    className="group flex items-center gap-4 rounded-card bg-white p-4 ring-1 ring-inset ring-smoke transition-[box-shadow,transform] duration-500 ease-soft hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-28px_rgba(0,51,102,0.5)] md:p-5"
+                  >
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-cloud text-teal">
+                      <Icon aria-hidden className="size-5" strokeWidth={1.75} />
+                    </span>
+                    <span className="flex-1 font-semibold text-navy">{p.title}</span>
+                    <StageBadge stage={p.stage} />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="reveal mt-12 text-center">
+          <ButtonLink href="/platform" variant="ghost" size="lg" arrow>
+            See the full platform
+          </ButtonLink>
         </div>
       </Section>
 
-      {/* 5 — Pathways (closing call to action) */}
-      <Section tone="white" labelledBy="paths-heading">
-        <div className="mb-12">
-          <SplitHeading id="paths-heading" lead="Where do you fit?" rest="Choose your next step." className="reveal" />
+      {/* 5 — The missing middle */}
+      <Section tone="white" labelledBy="compare-heading">
+        <SectionIntro
+          id="compare-heading"
+          align="center"
+          eyebrow="A new category of practice"
+          lead="The missing middle between"
+          rest="hospitals and private practice."
+        />
+        <div className="reveal mt-14">
+          <Comparison />
         </div>
-        <AudiencePaths />
+        <p className="reveal mt-8 text-center">
+          <Link href="/physicians" className="group inline-flex items-center gap-2 font-semibold text-navy">
+            What this means for physicians
+            <ArrowRight aria-hidden className="size-4 text-teal transition-transform group-hover:translate-x-0.5" />
+          </Link>
+        </p>
       </Section>
+
+      {/* 6 — Next step */}
+      <CtaBand
+        lead="Ready to learn more?"
+        rest="Start with a conversation."
+        primary={{ href: "/contact", label: "Get in touch" }}
+        secondary={{ href: "/physicians#register", label: "Register as a physician" }}
+      />
     </>
   );
 }

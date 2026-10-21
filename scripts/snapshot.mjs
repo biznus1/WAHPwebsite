@@ -79,6 +79,8 @@ for (const route of routes) {
       document.querySelectorAll(".reveal").forEach((e) => e.classList.add("is-visible"));
       const fontVar = getComputedStyle(document.documentElement).getPropertyValue("--font-manrope");
       const main = document.body.cloneNode(true);
+      // Reveals were forced visible for capture; reset them so the preview's own observer animates them in.
+      main.querySelectorAll(".reveal.is-visible").forEach((e) => e.classList.remove("is-visible"));
       main.querySelectorAll("script, next-route-announcer, nextjs-portal").forEach((e) => e.remove());
       const imgs = [];
       main.querySelectorAll("img").forEach((img) => {
@@ -146,11 +148,25 @@ header.sticky{top:env(safe-area-inset-top,0px)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:#F5F6FC}
 .preview-bar{background:#1E1E24;color:#fff;font:600 13px/1.4 var(--font-manrope),system-ui,sans-serif;text-align:center;padding-block:8px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .preview-bar a{color:#fff}
+header.preview-light{background:rgba(245,246,252,.92)!important;box-shadow:0 1px 0 #D3D6E0;backdrop-filter:blur(12px)}
+header.preview-light nav a{color:#40424D!important}
+header.preview-light svg g[fill="#FFFFFF"]{fill:#003366}
+header.preview-light button[aria-controls]{color:#003366;--tw-ring-color:#BCBFCC}
 .preview-note{margin-top:12px;border-radius:12px;background:#EDEFF7;color:#003366;padding:12px 14px;font-size:14px;font-weight:600}
 </style>`;
 
 const previewScript = (tabStates) => `<script>
 (function(){
+  // Scroll reveals (the live site does this in React; content stays visible if this script never runs)
+  document.documentElement.classList.add('js');
+  var reveals=[].slice.call(document.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px',threshold:0.08}); reveals.forEach(function(el){ io.observe(el); }); } else { reveals.forEach(function(el){ el.classList.add('is-visible'); }); }
+  // Count-up figures
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce) document.querySelectorAll('[data-countup]').forEach(function(el,i){ var m=el.getAttribute('data-countup').match(/^(\D*)(\d+)(.*)$/); if(!m) return; var n=+m[2]; el.textContent=m[1]+'0'+m[3]; setTimeout(function(){ var t0=performance.now(); (function tick(now){ var t=Math.min(1,(now-t0)/1800), e=1-Math.pow(1-t,4); el.textContent=m[1]+Math.round(n*e)+m[3]; if(t<1) requestAnimationFrame(tick); })(t0); },500+i*90); });
+  // Home header softens from navy to light on scroll
+  var hdr=document.querySelector('header[data-blend]');
+  if(hdr){ var onS=function(){ hdr.classList.toggle('preview-light', window.scrollY>8); }; onS(); window.addEventListener('scroll',onS,{passive:true}); }
   // Mobile menu
   var btn=document.querySelector('button[aria-controls="mobile-menu"]');
   var menu=document.getElementById('mobile-menu');
