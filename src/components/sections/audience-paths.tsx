@@ -1,80 +1,113 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { LogoMark } from "@/components/brand/logo";
 import { SiteImage, type SiteImageName } from "@/components/ui/site-image";
 
-const paths = [
+/**
+ * "Who we serve" cards, after the card style of WAHP's newer site build: an accent edge, the WAHP mark on the
+ * photo, one line of copy and a single next step. The three main audiences lead; partners and patients follow.
+ */
+const paths: {
+  title: string;
+  image: SiteImageName;
+  body: string;
+  cta: string;
+  href: string;
+  /** Accent edge and mark colour. */
+  accent: { bar: string; mark: string };
+}[] = [
   {
-    label: "Physicians",
-    image: "doctorChildConsultation" as SiteImageName,
-    title: "Practise independently, without building alone.",
-    body: "Register interest in clinical space and shared support at the Accra flagship.",
-    cta: "Register interest",
-    href: "/physicians#register",
-    accent: "bg-teal",
+    title: "Physicians",
+    image: "doctorChildConsultation",
+    body: "Practise independently in equipped clinical space, without the cost of building your own facility.",
+    cta: "See how it works",
+    href: "/physicians",
+    accent: { bar: "bg-teal", mark: "text-teal" },
   },
   {
-    label: "Investors",
-    image: "investorLounge" as SiteImageName,
-    title: "Back infrastructure that outpatient care can build on.",
-    body: "Understand the model and phased plan, and request an introduction to the team.",
-    cta: "Request a conversation",
-    href: "/investors#introduction",
-    accent: "bg-navy",
+    title: "Diaspora physicians",
+    image: "doctorStethoscope",
+    body: "A credible path to practise, mentor or help build back home — at your own pace.",
+    cta: "Explore your options",
+    href: "/diaspora-physicians",
+    accent: { bar: "bg-navy", mark: "text-navy" },
   },
   {
-    label: "Partners",
-    image: "communityScreening" as SiteImageName,
-    title: "Help shape a connected outpatient platform.",
+    title: "Investors",
+    image: "investorLounge",
+    body: "Back the infrastructure that independent outpatient care in West Africa can build on.",
+    cta: "See the opportunity",
+    href: "/investors",
+    accent: { bar: "bg-navy-700", mark: "text-navy-700" },
+  },
+  {
+    title: "Partners",
+    image: "communityScreening",
     body: "Institutions, suppliers and health organisations exploring collaboration.",
     cta: "Discuss partnership",
     href: "/contact?type=partnership",
-    accent: "bg-space",
+    accent: { bar: "bg-teal", mark: "text-teal" },
   },
   {
-    label: "Patients",
-    image: "nurseChildWard" as SiteImageName,
-    title: "Understand what WAHP intends to offer.",
-    body: "We are pre-launch and not yet seeing patients. Learn what is planned.",
+    title: "Patients",
+    image: "nurseChildWard",
+    body: "We are pre-launch and not yet seeing patients. See what is planned.",
     cta: "What's planned",
     href: "/patients",
-    accent: "bg-smoke",
+    accent: { bar: "bg-space", mark: "text-navy" },
   },
 ];
 
-/** Audience-segmented pathways — each with its own explicit next step. */
 export function AudiencePaths() {
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {paths.map((p, i) => (
-        <li key={p.label} className="reveal" style={{ transitionDelay: `${i * 70}ms` }}>
-          <Link
-            href={p.href}
-            className="group flex h-full flex-col overflow-hidden rounded-card bg-white ring-1 ring-inset ring-smoke transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-28px_rgba(0,51,102,0.45)] hover:ring-steel"
+    <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
+      {paths.map((p, i) => {
+        const lead = i < 3;
+        return (
+          <li
+            key={p.title}
+            className={`reveal ${lead ? "lg:col-span-2" : "lg:col-span-3"} ${i === 4 ? "sm:col-span-2 lg:col-span-3" : ""}`}
+            style={{ transitionDelay: `${(i % 3) * 90}ms` }}
           >
-            <SiteImage
-              name={p.image}
-              rounded="rounded-none"
-              aspect="aspect-[3/2]"
-              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-            />
-            <span className="flex flex-1 flex-col p-6 md:p-7">
-              <span className="flex items-center gap-2 text-sm font-semibold text-arsenic">
-                <span aria-hidden className={`size-2.5 rounded-full ${p.accent}`} />
-                {p.label}
-              </span>
-              <span className="mt-6 block text-xl font-semibold tracking-tight text-navy">{p.title}</span>
-              <span className="mt-3 block flex-1 text-arsenic">{p.body}</span>
-              <span className="mt-8 inline-flex items-center gap-2 font-semibold text-navy">
-                {p.cta}
-                <ArrowUpRight
-                  aria-hidden
-                  className="size-4 text-teal transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            <Link
+              href={p.href}
+              className="group relative flex h-full flex-col overflow-hidden rounded-card bg-white shadow-[0_18px_40px_-32px_rgba(0,51,102,0.45)] ring-1 ring-inset ring-smoke transition-[box-shadow,transform] duration-500 ease-soft hover:-translate-y-1 hover:shadow-[0_28px_56px_-30px_rgba(0,51,102,0.5)]"
+            >
+              <span aria-hidden className={`absolute inset-x-0 top-0 z-10 h-1.5 ${p.accent.bar}`} />
+              <span className="relative block">
+                <SiteImage
+                  name={p.image}
+                  rounded="rounded-none"
+                  aspect={lead ? "aspect-[3/2]" : "aspect-[2/1]"}
+                  className="reveal-media"
+                  sizes={
+                    lead
+                      ? "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      : "(min-width: 1024px) 50vw, 100vw"
+                  }
                 />
+                <span
+                  aria-hidden
+                  className="absolute top-4 right-4 flex size-12 items-center justify-center rounded-2xl bg-white shadow-md"
+                >
+                  <LogoMark className={`size-7 ${p.accent.mark}`} />
+                </span>
               </span>
-            </span>
-          </Link>
-        </li>
-      ))}
+              <span className="flex flex-1 flex-col p-6 md:p-7">
+                <span className="block text-title font-semibold text-navy">{p.title}</span>
+                <span className="mt-3 block flex-1 text-arsenic">{p.body}</span>
+                <span className="mt-6 flex items-center gap-2 border-t border-smoke pt-5 font-semibold text-navy">
+                  {p.cta}
+                  <ArrowRight
+                    aria-hidden
+                    className={`size-4 transition-transform duration-300 group-hover:translate-x-1 ${p.accent.mark}`}
+                  />
+                </span>
+              </span>
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 }

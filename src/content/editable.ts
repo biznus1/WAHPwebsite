@@ -7,6 +7,7 @@ import patients from "./data/pages/patients.json";
 import about from "./data/pages/about.json";
 import leadership from "./data/pages/leadership.json";
 import contact from "./data/pages/contact.json";
+import diaspora from "./data/pages/diaspora.json";
 import team from "./data/team.json";
 import faqs from "./data/faqs.json";
 
@@ -25,6 +26,7 @@ export const pageHeaders = {
   home: homeHeader.parse(home),
   platform: header.parse(platform),
   physicians: header.parse(physicians),
+  diaspora: header.parse(diaspora),
   investors: header.parse(investors),
   patients: header.parse(patients),
   about: header.parse(about),
@@ -55,4 +57,6 @@ export const teamMembers = z.object({ members: z.array(memberSchema) }).parse(te
 
 const faq = z.object({ q: line, a: line });
 
-export const faqLists = z.object({ physicians: z.array(faq), patients: z.array(faq) }).parse(faqs);
+export const faqLists = z
+  .object({ physicians: z.array(faq), diaspora: z.array(faq), patients: z.array(faq) })
+  .parse(faqs);

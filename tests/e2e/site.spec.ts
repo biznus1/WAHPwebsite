@@ -4,6 +4,7 @@ const routes = [
   "/",
   "/platform",
   "/physicians",
+  "/diaspora-physicians",
   "/investors",
   "/patients",
   "/about",

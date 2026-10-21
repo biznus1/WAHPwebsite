@@ -32,6 +32,7 @@ export interface NavItem {
 export const primaryNav: NavItem[] = [
   { href: "/platform", label: "Platform", description: "How the model fits together" },
   { href: "/physicians", label: "Physicians", description: "Practise without building alone" },
+  { href: "/diaspora-physicians", label: "Diaspora", description: "Practise, partner, or both" },
   { href: "/investors", label: "Investors", description: "The infrastructure thesis" },
   { href: "/patients", label: "Patients", description: "What care could feel like" },
   { href: "/about", label: "About", description: "Mission and approach" },
@@ -42,6 +43,7 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
     heading: "Audiences",
     items: [
       { href: "/physicians", label: "For physicians" },
+      { href: "/diaspora-physicians", label: "For diaspora physicians" },
       { href: "/investors", label: "For investors" },
       { href: "/patients", label: "For patients" },
       { href: "/contact?type=partnership", label: "For partners" },

@@ -7,7 +7,7 @@ export interface JourneyStep {
 export function JourneySteps({ steps, note }: { steps: JourneyStep[]; note?: string }) {
   return (
     <div>
-      <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <ol className={`grid gap-4 ${steps.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2 lg:grid-cols-4"}`}>
         {steps.map((step, i) => (
           <li
             key={step.title}

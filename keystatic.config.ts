@@ -25,6 +25,7 @@ const headerSchema = {
 const pages = {
   platform: "Platform",
   physicians: "Physicians",
+  diaspora: "Diaspora physicians",
   investors: "Investors",
   patients: "Patients",
   about: "About",
@@ -121,6 +122,7 @@ export default config({
       format: { data: "json" },
       schema: {
         physicians: faqList("Physicians page FAQs"),
+        diaspora: faqList("Diaspora physicians page FAQs"),
         patients: faqList("Patients page FAQs"),
       },
     }),

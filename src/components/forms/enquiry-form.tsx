@@ -26,11 +26,16 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 export function EnquiryForm({
   defaultType = "general",
   lockType = false,
+  defaultInterest = "",
+  locationHint = "e.g. Accra, Ghana",
   contactEmail,
   heading,
 }: {
   defaultType?: EnquiryTypeValue;
   lockType?: boolean;
+  /** Pre-selects the physician "Professional interest" option (must match an option's text). */
+  defaultInterest?: string;
+  locationHint?: string;
   contactEmail: string | null;
   heading?: string;
 }) {
@@ -200,7 +205,7 @@ export function EnquiryForm({
               <input
                 id="f-location"
                 name="location"
-                placeholder="e.g. Accra, Ghana"
+                placeholder={locationHint}
                 autoComplete="address-level2"
                 className={field}
                 {...err("location")}
@@ -211,7 +216,7 @@ export function EnquiryForm({
               <label htmlFor="f-interest" className="text-sm font-semibold text-navy">
                 Professional interest
               </label>
-              <select id="f-interest" name="interest" className={field} defaultValue="">
+              <select id="f-interest" name="interest" className={field} defaultValue={defaultInterest}>
                 <option value="">Select one (optional)</option>
                 <option>Clinical space at the Accra flagship</option>
                 <option>Diaspora physician — practising in Ghana</option>

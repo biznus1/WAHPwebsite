@@ -145,3 +145,15 @@
   2. A dot then travels the route, pausing at each step.
 - Lab and Imaging are dashed and tagged "Phase 2" and "Phase 3". Phones get a vertical step list, which is also the accessible version on all sizes.
 - Without JS, or with reduced motion, the finished diagram shows. The static `patient-journey.webp` was removed.
+
+## 21 Oct 2026, physicians split into two pages
+
+- `/physicians` is now for physicians in Ghana: hero, what WAHP intends to provide, how it works, registration and FAQs, plus a navy pointer to the diaspora page.
+- New `/diaspora-physicians` (`/diaspora` redirects to it):
+  - Hero and the two paths (practise or help build).
+  - Three steps.
+  - Registration form with the diaspora interest pre-selected and an overseas location hint.
+  - Its own FAQs, written honestly: no relocation required; Ghanaian registration stays the physician's responsibility; investment goes through the investor page.
+- Its header and FAQs are editable in the site admin.
+- Navigation, footer, sitemap and e2e routes include the new page.
+- Home "Who we serve" cards follow the newer build's card style: accent top edge, WAHP mark on the photo, one line of copy, a divider and one call to action. Diaspora physicians get their own card, so there are five cards: three leading, two wide. Accents use brand teal and navy, since green stays reserved for buttons.

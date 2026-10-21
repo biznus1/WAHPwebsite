@@ -46,5 +46,23 @@
       "q": "How can I stay informed?",
       "a": "Use the general enquiry option on our contact page. Please don't include any health information."
     }
+  ],
+  "diaspora": [
+    {
+      "q": "Do I need to move back to Ghana?",
+      "a": "No. The practice path is designed so you could start during the weeks you are already home and grow from there. Nothing here asks for an irreversible decision."
+    },
+    {
+      "q": "Can I practise in Ghana with a licence from abroad?",
+      "a": "Physicians remain responsible for meeting Ghanaian requirements to practise, including registration with the Medical and Dental Council. WAHP does not handle registration on your behalf."
+    },
+    {
+      "q": "What does the partner path involve?",
+      "a": "Contributing through networks, advice or experience building institutions. Any formal role is discussed privately and individually. Investment enquiries go through the investor page; nothing on this site is an offer of securities."
+    },
+    {
+      "q": "Is WAHP open yet?",
+      "a": "No. WAHP is pre-launch and the Accra flagship is in development. Registering interest helps us plan around real physician needs; it is not a booking or a commitment."
+    }
   ]
 }

@@ -53,6 +53,7 @@ const nextConfig: NextConfig = {
       { source: "/contact-us", destination: "/contact", permanent: true },
       { source: "/what-we-do", destination: "/platform", permanent: true },
       { source: "/admin", destination: "/keystatic", permanent: false },
+      { source: "/diaspora", destination: "/diaspora-physicians", permanent: true },
     ];
   },
   async headers() {
