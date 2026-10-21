@@ -7,7 +7,7 @@ import patientJourney from "../../../public/images/photos/patient-journey.webp";
 import pillarLaboratory from "../../../public/images/photos/pillar-laboratory.webp";
 import pillarImaging from "../../../public/images/photos/pillar-imaging.webp";
 import patientPortrait from "../../../public/images/photos/patient-portrait.webp";
-import clinicInterior from "../../../public/images/photos/clinic-interior.webp";
+import investorLounge from "../../../public/images/photos/investor-lounge.webp";
 import doctorChildConsultation from "../../../public/images/photos/doctor-child-consultation.webp";
 import communityScreening from "../../../public/images/photos/community-bp-screening.webp";
 import clinicBpCheck from "../../../public/images/photos/clinic-bp-check.webp";
@@ -74,10 +74,11 @@ const images = {
     credit: "Photo: Unsplash",
     alt: "An older woman in a kente head wrap and face mask.",
   },
-  clinicInterior: {
-    src: clinicInterior,
+  investorLounge: {
+    src: investorLounge,
     kind: "illustrative",
-    alt: "A calm, light-filled clinic waiting area with a reception desk.",
+    position: "50% 35%",
+    alt: "A smiling man in a navy suit and kente-pattern tie sits in a light-filled clinic lounge with a reception desk behind him.",
   },
 
   doctorChildConsultation: {

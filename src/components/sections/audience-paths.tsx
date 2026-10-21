@@ -14,7 +14,7 @@ const paths = [
   },
   {
     label: "Investors",
-    image: "clinicInterior" as SiteImageName,
+    image: "investorLounge" as SiteImageName,
     title: "Back infrastructure that outpatient care can build on.",
     body: "Understand the model and phased plan, and request an introduction to the team.",
     cta: "Request a conversation",

@@ -133,3 +133,7 @@
   3. The Accra, Ghana and West Africa rings settle in, and a soft ripple keeps pulsing from Accra.
 - It plays once when it scrolls into view. Without JS, or with reduced motion, it shows the final state. Pure CSS, no new runtime dependencies.
 - Map data is Natural Earth 1:50m (public domain) via world-atlas, projected and simplified to 16.5 KB by `scripts/gen-west-africa-map.mjs`. Kumasi was added to the claims register (`expansion-kumasi`) on the owner's instruction. `regional-rings.tsx` was removed.
+
+## 21 Oct 2026, investors card image
+
+- The Home investors card now uses the owner-supplied `investor-lounge` image, shown with the "Illustrative image" badge. It replaces `clinic-interior`, which was removed.
