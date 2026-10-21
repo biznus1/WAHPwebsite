@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Roadmap } from "@/components/graphics/roadmap";
 import { CtaBand } from "@/components/sections/cta-band";
 import { PageHero } from "@/components/sections/page-hero";
-import { ConceptImage } from "@/components/ui/concept-image";
 import { Eyebrow, Section, SectionIntro } from "@/components/ui/primitives";
 import { leaders } from "@/content/leadership";
 
@@ -140,15 +138,6 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section tone="paper" className="!pb-0">
-        <ConceptImage
-          name="lobby"
-          aspect="aspect-[4/3] md:aspect-[21/9]"
-          sizes="(min-width: 1280px) 1200px, 100vw"
-          className="reveal"
-        />
-      </Section>
-
       <Section tone="paper" labelledBy="values-heading">
         <SectionIntro
           id="values-heading"
@@ -169,24 +158,6 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-      </Section>
-
-      <Section tone="navy" labelledBy="strategy-heading">
-        <SectionIntro
-          id="strategy-heading"
-          eyebrow="Development strategy"
-          lead="Validate first."
-          rest="Scale with discipline."
-          dark
-        >
-          <p>
-            Each hub follows the same model, validates it further and helps accelerate the next — towards a regional
-            network for independent physician practice.
-          </p>
-        </SectionIntro>
-        <div className="mt-14">
-          <Roadmap dark />
-        </div>
       </Section>
 
       <CtaBand

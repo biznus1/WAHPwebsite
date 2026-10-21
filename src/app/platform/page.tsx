@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import { Roadmap } from "@/components/graphics/roadmap";
 import { PlatformSystem } from "@/components/graphics/platform-system";
 import { CtaBand } from "@/components/sections/cta-band";
-import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
-import { Notice } from "@/components/ui/notice";
+import { Section, SectionIntro } from "@/components/ui/primitives";
 import { ConceptImage } from "@/components/ui/concept-image";
-import { pillars } from "@/content/platform";
 
 export const metadata: Metadata = {
   title: "The platform",
@@ -58,34 +56,9 @@ export default function PlatformPage() {
         </div>
       </Section>
 
-      <Section tone="white" labelledBy="detail-heading">
-        <SectionIntro id="detail-heading" eyebrow="In detail" lead="What each component" rest="is designed to do." />
-        <div className="mt-14 divide-y divide-smoke border-y border-smoke">
-          {pillars.map((p) => (
-            <article
-              key={p.id}
-              id={p.id}
-              className="reveal grid gap-6 py-10 md:grid-cols-[8rem_minmax(0,1fr)_minmax(0,1fr)] md:gap-10"
-            >
-              <p className="text-headline font-semibold text-teal">{p.number}</p>
-              <div>
-                <h3 className="text-title font-medium text-navy">{p.title}</h3>
-                <div className="mt-4">
-                  <StageBadge stage={p.stage} label={p.stageLabel} />
-                </div>
-              </div>
-              <div>
-                <p className="text-lg text-arsenic">{p.summary}</p>
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-arsenic marker:text-teal">
-                  {p.points.map((pt) => (
-                    <li key={pt}>{pt}</li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
-        </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+      <Section tone="white" labelledBy="spaces-heading">
+        <SectionIntro id="spaces-heading" eyebrow="The spaces" lead="What the hub" rest="is designed to feel like." />
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           <ConceptImage
             name="consultation"
             className="reveal"
@@ -97,15 +70,9 @@ export default function PlatformPage() {
             caption="Concept rendering of the planned laboratory — not an operating service. People shown are illustrative."
           />
         </div>
-        <div className="mt-10 max-w-3xl">
-          <Notice title="About availability">
-            WAHP is pre-launch. No clinical, laboratory or imaging services are operating today. Services will begin
-            only once facilities are complete, staffed, licensed and approved.
-          </Notice>
-        </div>
       </Section>
 
-      <Section tone="navy" labelledBy="phases-heading">
+      <Section tone="navy" id="phases" labelledBy="phases-heading" className="scroll-mt-20">
         <SectionIntro id="phases-heading" eyebrow="Sequencing" lead="Built in phases," rest="each one earned." dark>
           <p>Capabilities are added only once the phase before them is established.</p>
         </SectionIntro>

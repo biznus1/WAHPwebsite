@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { RegionalRings } from "@/components/graphics/regional-rings";
-import { Roadmap } from "@/components/graphics/roadmap";
 import { PageHero } from "@/components/sections/page-hero";
 import { ButtonLink } from "@/components/ui/button";
 import { Notice } from "@/components/ui/notice";
@@ -128,6 +127,11 @@ export default function InvestorsPage() {
             </div>
           </li>
         </ol>
+        <div className="mt-8">
+          <ButtonLink href="/platform#phases" variant="ghost" arrow>
+            See the phased rollout plan
+          </ButtonLink>
+        </div>
       </Section>
 
       <Section tone="white" labelledBy="model-heading">
@@ -227,18 +231,6 @@ export default function InvestorsPage() {
             </dl>
           </div>
         )}
-      </Section>
-
-      <Section tone="navy" labelledBy="exec-heading">
-        <SectionIntro id="exec-heading" eyebrow="Execution" lead="Validate first." rest="Scale with discipline." dark>
-          <p>
-            WAHP&apos;s feasibility work recommends a phased approach with location-sensitive budgeting, resilient
-            infrastructure, qualified staffing, regulatory planning and careful equipment procurement.
-          </p>
-        </SectionIntro>
-        <div className="mt-14">
-          <Roadmap dark />
-        </div>
       </Section>
 
       <Section tone="paper" id="introduction" labelledBy="intro-heading" className="scroll-mt-20">

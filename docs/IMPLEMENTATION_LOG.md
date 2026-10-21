@@ -29,3 +29,17 @@
   - Contact: vendor & industry enquiry type.
   - Footer: LinkedIn and YouTube links.
 - Not carried over: present-tense imaging and lab claims, the "first integrated platform" claim, the 20-LOI count, market-size estimates, placeholder advisors, and typos.
+
+## 21 Oct 2026, shorter home page and less repetition
+
+- Home reduced from nine sections to five: hero and fact strip, what WAHP is (with a one-line view of the four pillars), the challenge with sourced statistics, the comparison, and audience pathways. Desktop length went from about 9,400px to 4,600px.
+- Each topic now has one home:
+
+  | Topic | Page |
+  | --- | --- |
+  | Roadmap | `/platform#phases` (removed from Home, Investors, About) |
+  | Investor thesis and regional rings | `/investors` |
+  | Team grid | `/leadership` |
+  | Lobby render | `/patients` |
+
+- Platform: removed the "In detail" list, which repeated the interactive tabs, and the availability notice, which repeated the stage labels and footer.
