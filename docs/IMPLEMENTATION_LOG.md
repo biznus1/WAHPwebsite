@@ -163,3 +163,7 @@
 - Replaced `doctor-child-consultation`, `community-bp-screening` and `doctor-clinic-kinshasa` with the owner's AI-edited versions. Each is badged "Illustrative image" and credited "Adapted from a photo by …"; the Terms image credits note the edits. The `clinic-bp-check` replacement (Platform, Suites tab) is still awaited as a file.
 - Later the same day, `clinic-bp-check` (Platform, Suites tab) and `nurse-child-ward` (Home patients card) were replaced the same way, with "Adapted from a photo by …" credits.
 - `midwives-newborn` (Patients FAQ column) was then replaced with the owner's edited version too, credited "Adapted from a U.S. Army photo, public domain".
+
+## 21 Oct 2026, Leadership in the main menu
+
+- Leadership is now a primary navigation item after About, on desktop and in the mobile menu, where it replaces the small secondary link. Nav padding tightens below 1280px, so all seven items fit from 1024px with no overflow.

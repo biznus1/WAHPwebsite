@@ -36,6 +36,7 @@ export const primaryNav: NavItem[] = [
   { href: "/investors", label: "Investors", description: "The infrastructure thesis" },
   { href: "/patients", label: "Patients", description: "What care could feel like" },
   { href: "/about", label: "About", description: "Mission and approach" },
+  { href: "/leadership", label: "Leadership", description: "The team building WAHP" },
 ];
 
 export const footerNav: { heading: string; items: NavItem[] }[] = [
