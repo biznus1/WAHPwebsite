@@ -54,3 +54,5 @@
 **Physicians card (21 Oct 2026).** `doctor-child-consultation` was removed; the Home physicians card now uses the owner-supplied `physician-teal-scrubs.webp` (504×350, appears AI-generated, source to confirm), badged "Illustrative image".
 
 **Home diaspora card (21 Oct 2026).** Owner-supplied `diaspora-doctor.webp` (612×431). **Licence to confirm:** the size matches an iStock/Getty preview, which needs a paid licence for web use. The Diaspora page hero still uses `doctor-stethoscope` (Unsplash).
+
+**Hub lobby video (21 Oct 2026).** Owner-supplied `gemini_generated_video_dec9a5dd.mp4`, AI-generated (Veo), showing a concept of the planned lobby with the WAHP logo. It was cropped to remove the Veo watermark, played forward then reversed into a seamless 16 s loop, made silent and saved as `public/video/hub-lobby.{webm,mp4}` (1.0 MB and 1.4 MB) with a poster frame. It is shown untinted on Home with a "Concept rendering of the planned hub" label. **Owner to confirm usage rights.**

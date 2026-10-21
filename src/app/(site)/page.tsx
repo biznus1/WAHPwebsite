@@ -6,14 +6,14 @@ import { ClinicalFloorSchematic } from "@/components/graphics/clinical-floor-sch
 import { HeroRings } from "@/components/graphics/hero-rings";
 import { Wave } from "@/components/graphics/wave";
 import { CountUp } from "@/components/motion/count-up";
-import { HeroVideo } from "@/components/motion/hero-video";
+import { LoopVideo } from "@/components/motion/loop-video";
 import { AudiencePaths } from "@/components/sections/audience-paths";
 import { Comparison } from "@/components/sections/comparison";
 import { CtaBand } from "@/components/sections/cta-band";
 import { ProblemStats } from "@/components/sections/problem-stats";
 import { ButtonLink } from "@/components/ui/button";
 import { SiteImage } from "@/components/ui/site-image";
-import { Eyebrow, Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
+import { Eyebrow, Section, SectionIntro, SplitHeading, StageBadge } from "@/components/ui/primitives";
 import { approvedClaim } from "@/content/claims";
 import { pageHeaders } from "@/content/editable";
 import { pillars } from "@/content/platform";
@@ -45,7 +45,11 @@ export default function HomePage() {
       {/* 1 — Hero: one statement, one line of support, two actions, the groundwork in numbers. */}
       {/* Pulled up under the header (which is transparent over the hero) so the footage starts at the very top. */}
       <section data-hero className="grain on-dark relative isolate -mt-18 overflow-hidden bg-navy text-white md:-mt-20">
-        <HeroVideo />
+        <LoopVideo
+          src="/video/hero-clinic"
+          className="-z-20 object-[38%_30%]"
+          controlClassName="right-4 bottom-20 md:right-8 md:bottom-28"
+        />
         {/* Deep-blue overlay: near-solid behind the text, letting the footage show through towards the right. */}
         <div
           aria-hidden
@@ -203,6 +207,43 @@ export default function HomePage() {
           </ButtonLink>
         </div>
       </Section>
+
+      {/* Inside the hub: concept footage of the planned lobby, shown untinted, with the text on its own card. */}
+      <section aria-labelledby="lobby-heading" className="relative isolate overflow-hidden bg-cloud">
+        {/* Phones: the footage gets its own space above the card. Larger screens: it fills the band behind the card. */}
+        <div className="absolute inset-x-0 top-0 -z-10 h-[30rem] md:inset-0 md:h-auto">
+          <LoopVideo
+            src="/video/hub-lobby"
+            start="visible"
+            controlTone="light"
+            className="object-[68%_55%] md:object-center"
+            controlClassName="top-4 right-4 md:top-8 md:right-8"
+          />
+        </div>
+        <span className="absolute top-4 left-4 z-10 rounded-full bg-white/85 px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide text-navy backdrop-blur-sm md:top-8 md:left-8">
+          Concept rendering of the planned hub
+        </span>
+        <div className="container-wahp flex items-end pt-[26rem] pb-8 md:min-h-[46rem] md:pt-24 md:pb-12">
+          <div className="reveal max-w-md rounded-panel bg-white/95 p-7 shadow-[0_30px_60px_-30px_rgba(0,51,102,0.45)] md:p-9">
+            <Eyebrow>Inside the Accra hub</Eyebrow>
+            <SplitHeading
+              id="lobby-heading"
+              lead="One front desk"
+              rest="for every practice in the building."
+              className="mt-4"
+            />
+            <p className="mt-4 text-arsenic">
+              This is a concept of the reception we are planning in Accra. Patients check in once, wait in one calm room
+              and are called through by their own doctor.
+            </p>
+            <div className="mt-7">
+              <ButtonLink href="/platform" arrow>
+                See the platform
+              </ButtonLink>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 5 — The missing middle */}
       <Section tone="white" labelledBy="compare-heading">

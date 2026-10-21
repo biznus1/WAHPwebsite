@@ -181,3 +181,10 @@
 
 - At the owner's request, the small credit labels were removed from every photo. Attribution for the CC BY-SA photos (required by that licence) stays in the Terms page image credits.
 - The Home diaspora card now uses the owner-supplied `diaspora-doctor.webp`. Its licence needs confirming: the image is the size of an iStock/Getty preview.
+
+## 21 Oct 2026, hub lobby video band on Home
+
+- New full-width band between "The platform" and "The missing middle". The owner's lobby video plays untinted (no navy overlay, per the owner), and the text sits on its own white card. The band is labelled "Concept rendering of the planned hub" and has a pause control.
+- On phones the video gets its own space above the card. On larger screens it fills the band behind the card.
+- `HeroVideo` became the reusable `LoopVideo`. `start="idle"` (hero) waits for page load. `start="visible"` (lobby) plays only while on screen and pauses when scrolled away, without restarting after the visitor pauses it. Both respect reduced motion and data saver.
+- Lighthouse on Home: Performance 94 and 98 across two runs, Accessibility 100, Best Practices 100. Only the lobby's 46 KB poster loads up front.
