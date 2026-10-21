@@ -69,11 +69,11 @@ export default config({
       path: "src/content/data/pages/home",
       format: { data: "json" },
       schema: {
-        badge: text("Status badge", "Keep the pre-launch status visible, e.g. “Pre-launch · Accra, Ghana”."),
+        badge: text("Status badge", "Keep our opening status visible, for example “Not yet open · Accra, Ghana”."),
         lead: text("Headline, main part", "Shown in white."),
-        rest: text("Headline, last line", "Shown in the light-teal accent."),
+        rest: text("Headline, last line", "Shown in the light teal accent."),
         intro: fields.text({
-          label: "One-line intro",
+          label: "One line intro",
           description: "Keep it to one short sentence.",
           validation: { length: { min: 1, max: 160 } },
         }),
