@@ -78,3 +78,10 @@
 
 - Kept: the laboratory and MRI pillar images, the patient portrait, the clinic interior and the founders photo. Removed the Contact page image and 11 superseded photo files.
 - Still to confirm: three Pexels photographer names (credited as "Pexels" for now); see `ASSET_INVENTORY.md`.
+
+## 21 Oct 2026, owner-supplied Unsplash photos
+
+- Added two photos the owner linked from westahp.com (both Unsplash, Unsplash licence):
+  - `doctor-stethoscope`: a doctor putting on her stethoscope. It replaces the Kinshasa lab-coat photo in the Physicians diaspora section.
+  - `patient-portrait`: the Patients hero portrait, re-encoded from the 2500px original. Reclassified from "illustrative" to "stock", so it now shows a credit instead of the badge.
+- Both are listed on `/terms#image-credits`. Photographer names are still to confirm, because unsplash.com blocks automated lookups.

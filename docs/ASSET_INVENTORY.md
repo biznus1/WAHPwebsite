@@ -34,13 +34,14 @@
 | `midwives-newborn.webp` | Wikimedia Commons, "US, Ghana midwives team up in maternity ward at African Lion 2025" | Public domain (U.S. Government) | U.S. Army, 1st Lt. Katherine Sibilla |
 | `nurse-child-ward.webp` | Pexels 34185202 | Pexels licence | Speak Media Uganda |
 | `doctor-clinic-kinshasa.webp` | Pexels 18844981 (Kinshasa) | Pexels licence | Carmel Nsenga |
-| `doctor-labcoat-kinshasa.webp` | Pexels 19218034 (Kinshasa) | Pexels licence | Carmel Nsenga |
+| `doctor-stethoscope.webp` | Unsplash 9aBsCd9Fvgc, supplied by the owner from westahp.com (Squarespace CDN) | Unsplash licence | Unsplash contributor (name to confirm) |
+| `patient-portrait.webp` | Unsplash gi3Jox2cdrI, supplied by the owner from westahp.com; re-encoded from the 2500px original | Unsplash licence | Unsplash contributor (name to confirm) |
 | `village-hospital-yard.webp` | Pexels 4483669 | Pexels licence | Pexels contributor (name to confirm) |
 | `community-outreach.webp` | Pexels 4483695 | Pexels licence | Pexels contributor (name to confirm) |
 | `physician-laptop.webp` | Pexels 4989179 | Pexels licence | Pexels contributor (name to confirm) |
 
-**Removed** (replaced by the photos above): the source-site photos `physician-consultation`, `clinic-conversation`, `pillar-suites`, `pillar-digital`, `patient-checkup`, `hospital-corridor`, `physician-with-patient`, `diaspora-physician`, `investor-banner`, `family-consultation` and `partners-meeting` (Home investors card now uses `clinic-interior`).
+**Removed** (replaced by the photos above): the source-site photos `physician-consultation`, `clinic-conversation`, `pillar-suites`, `pillar-digital`, `patient-checkup`, `hospital-corridor`, `physician-with-patient`, `diaspora-physician`, `investor-banner`, `family-consultation` and `partners-meeting` (Home investors card now uses `clinic-interior`). Later, `doctor-labcoat-kinshasa` was replaced by `doctor-stethoscope` in the Physicians diaspora section.
 
-**Kept from the source sites (no doctor shown):** `pillar-laboratory`, `pillar-imaging` (technologist), `patient-portrait`, `clinic-interior`, `founders`, `patient-journey`.
+**Kept from the source sites (no doctor shown):** `pillar-laboratory`, `pillar-imaging` (technologist), `clinic-interior`, `founders`, `patient-journey`.
 
 **Not used:** stock photos showing identifiable public figures or named individuals (for example, a UK minister's hospital visit and a profile photo of a named Korle Bu nurse), and US military surgical-mission photos.

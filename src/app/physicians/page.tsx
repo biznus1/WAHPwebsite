@@ -136,7 +136,7 @@ export default function PhysiciansPage() {
               delivery back home — at whatever pace makes sense.
             </p>
           </SectionIntro>
-          <SiteImage name="doctorLabcoatKinshasa" className="reveal" aspect="aspect-[4/3]" dark />
+          <SiteImage name="doctorStethoscope" className="reveal" aspect="aspect-[4/3]" dark />
         </div>
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           {[

@@ -16,7 +16,7 @@ import nurseChildWard from "../../../public/images/photos/nurse-child-ward.webp"
 import villageHospitalYard from "../../../public/images/photos/village-hospital-yard.webp";
 import physicianLaptop from "../../../public/images/photos/physician-laptop.webp";
 import doctorClinicKinshasa from "../../../public/images/photos/doctor-clinic-kinshasa.webp";
-import doctorLabcoatKinshasa from "../../../public/images/photos/doctor-labcoat-kinshasa.webp";
+import doctorStethoscope from "../../../public/images/photos/doctor-stethoscope.webp";
 import communityOutreach from "../../../public/images/photos/community-outreach.webp";
 
 /**
@@ -70,7 +70,8 @@ const images = {
   },
   patientPortrait: {
     src: patientPortrait,
-    kind: "illustrative",
+    kind: "stock",
+    credit: "Photo: Unsplash",
     alt: "An older woman in a kente head wrap and face mask.",
   },
   clinicInterior: {
@@ -128,12 +129,11 @@ const images = {
     credit: "Photo: Carmel Nsenga / Pexels",
     alt: "A smiling doctor in green scrubs with a stethoscope in a clinic.",
   },
-  doctorLabcoatKinshasa: {
-    src: doctorLabcoatKinshasa,
+  doctorStethoscope: {
+    src: doctorStethoscope,
     kind: "stock",
-    position: "50% 22%",
-    credit: "Photo: Carmel Nsenga / Pexels",
-    alt: "A doctor in a white lab coat with a stethoscope stands in a clinic.",
+    credit: "Photo: Unsplash",
+    alt: "A doctor in a white coat puts on her stethoscope.",
   },
   communityOutreach: {
     src: communityOutreach,

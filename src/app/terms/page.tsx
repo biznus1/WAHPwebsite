@@ -9,6 +9,18 @@ export const metadata: Metadata = {
 
 const credits = [
   {
+    title: "Woman in a kente head wrap and face mask",
+    by: "Unsplash contributor",
+    licence: "Unsplash licence",
+    href: "https://unsplash.com/photos/gi3Jox2cdrI",
+  },
+  {
+    title: "Doctor putting on a stethoscope",
+    by: "Unsplash contributor",
+    licence: "Unsplash licence",
+    href: "https://unsplash.com/photos/9aBsCd9Fvgc",
+  },
+  {
     title: "A young girl sits with a doctor receiving medical care",
     by: "Carla Keithley",
     licence: "CC BY-SA 2.0, via Wikimedia Commons",
@@ -37,12 +49,6 @@ const credits = [
     by: "Speak Media Uganda",
     licence: "Pexels licence",
     href: "https://www.pexels.com/photo/34185202/",
-  },
-  {
-    title: "Smiling doctor in a lab coat and with a stethoscope",
-    by: "Carmel Nsenga",
-    licence: "Pexels licence",
-    href: "https://www.pexels.com/photo/19218034/",
   },
   {
     title: "A laughing woman in a doctor's gown",
