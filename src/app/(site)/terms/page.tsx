@@ -45,12 +45,6 @@ const credits = [
     href: "https://www.pexels.com/photo/34185202/",
   },
   {
-    title: "Community health outreach",
-    by: "Pexels contributor",
-    licence: "Pexels licence",
-    href: "https://www.pexels.com/photo/4483695/",
-  },
-  {
     title: "Physician working at a laptop",
     by: "Pexels contributor",
     licence: "Pexels licence",

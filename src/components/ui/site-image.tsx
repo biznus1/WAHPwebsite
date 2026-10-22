@@ -17,7 +17,7 @@ import doctorsMeeting from "../../../public/images/photos/doctors-meeting.webp";
 import physicianLaptop from "../../../public/images/photos/physician-laptop.webp";
 import physicianStethoscopeGreen from "../../../public/images/photos/physician-stethoscope-green.webp";
 import doctorStethoscope from "../../../public/images/photos/doctor-stethoscope.webp";
-import communityOutreach from "../../../public/images/photos/community-outreach.webp";
+import teamLaptopCelebration from "../../../public/images/photos/team-laptop-celebration.webp";
 
 /**
  * Every image on the site, with its kind:
@@ -130,10 +130,11 @@ const images = {
     kind: "stock",
     alt: "A doctor in a white coat puts on her stethoscope.",
   },
-  communityOutreach: {
-    src: communityOutreach,
+  teamLaptopCelebration: {
+    src: teamLaptopCelebration,
     kind: "stock",
-    alt: "Health workers attend to older community members at an outdoor health outreach.",
+    position: "50% 35%",
+    alt: "Two young professionals high five over a laptop at an outdoor café table.",
   },
 } satisfies Record<string, { src: StaticImageData; kind: Kind; alt: string; position?: string }>;
 

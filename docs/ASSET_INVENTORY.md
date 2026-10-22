@@ -60,3 +60,5 @@
 **Physicians page photo (22 Oct 2026).** `doctor-clinic-kinshasa` was removed. The proposition section now uses the owner-supplied `physician-stethoscope-green.webp` (740×492). **Licence to confirm:** the size matches a Freepik download, and Freepik's free licence requires an attribution line unless the image was bought.
 
 **Home infrastructure gap photo (22 Oct 2026).** `village-hospital-yard` was removed. The section now uses the owner-supplied `doctors-meeting.webp` (738×416). **Licence to confirm before launch:** it looks like a news agency photograph, and those are almost always licensed per use.
+
+**Investors banner photo (22 Oct 2026).** `community-outreach` was removed. The banner above the introduction form now uses the owner-supplied `team-laptop-celebration.webp` (678×452). **Licence to confirm:** the source is unknown.
