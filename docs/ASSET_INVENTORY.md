@@ -58,3 +58,5 @@
 **Hub lobby video (21 Oct 2026).** Owner-supplied `gemini_generated_video_dec9a5dd.mp4`, AI-generated (Veo), showing a concept of the planned lobby with the WAHP logo. It was cropped to remove the Veo watermark, played forward then reversed into a seamless 16 s loop, made silent and saved as `public/video/hub-lobby.{webm,mp4}` (1.0 MB and 1.4 MB) with a poster frame. It is shown untinted on Home with a "Concept rendering of the planned hub" label. **Owner to confirm usage rights.**
 
 **Physicians page photo (22 Oct 2026).** `doctor-clinic-kinshasa` was removed. The proposition section now uses the owner-supplied `physician-stethoscope-green.webp` (740×492). **Licence to confirm:** the size matches a Freepik download, and Freepik's free licence requires an attribution line unless the image was bought.
+
+**Home infrastructure gap photo (22 Oct 2026).** `village-hospital-yard` was removed. The section now uses the owner-supplied `doctors-meeting.webp` (738×416). **Licence to confirm before launch:** it looks like a news agency photograph, and those are almost always licensed per use.

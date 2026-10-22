@@ -204,3 +204,4 @@
 ## 22 Oct 2026, new Physicians page photo
 
 - The proposition section on `/physicians` now uses the owner-supplied `physician-stethoscope-green.webp`, framed from the top so the face and stethoscope stay in view. The old `doctor-clinic-kinshasa` photo and its Terms credit were removed. Licence to confirm (see `ASSET_INVENTORY.md`).
+- The Home "infrastructure gap" photo was replaced with the owner-supplied `doctors-meeting.webp`. `village-hospital-yard` and its Terms credit were removed. Licence to confirm: it looks like a news agency photo.

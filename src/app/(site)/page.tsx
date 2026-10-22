@@ -154,7 +154,7 @@ export default function HomePage() {
               </p>
             </SectionIntro>
             <SiteImage
-              name="villageHospitalYard"
+              name="doctorsMeeting"
               className="reveal reveal-media"
               aspect="aspect-[16/10]"
               dark

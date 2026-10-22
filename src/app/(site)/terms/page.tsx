@@ -45,12 +45,6 @@ const credits = [
     href: "https://www.pexels.com/photo/34185202/",
   },
   {
-    title: "Elderly people in the yard of a rural hospital",
-    by: "Pexels contributor",
-    licence: "Pexels licence",
-    href: "https://www.pexels.com/photo/4483669/",
-  },
-  {
     title: "Community health outreach",
     by: "Pexels contributor",
     licence: "Pexels licence",

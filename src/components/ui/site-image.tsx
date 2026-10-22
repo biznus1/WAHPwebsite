@@ -13,7 +13,7 @@ import communityScreening from "../../../public/images/photos/community-bp-scree
 import clinicBpCheck from "../../../public/images/photos/clinic-bp-check.webp";
 import midwivesNewborn from "../../../public/images/photos/midwives-newborn.webp";
 import nurseChildWard from "../../../public/images/photos/nurse-child-ward.webp";
-import villageHospitalYard from "../../../public/images/photos/village-hospital-yard.webp";
+import doctorsMeeting from "../../../public/images/photos/doctors-meeting.webp";
 import physicianLaptop from "../../../public/images/photos/physician-laptop.webp";
 import physicianStethoscopeGreen from "../../../public/images/photos/physician-stethoscope-green.webp";
 import doctorStethoscope from "../../../public/images/photos/doctor-stethoscope.webp";
@@ -108,10 +108,11 @@ const images = {
     kind: "illustrative",
     alt: "A nurse takes a young boy's blood pressure on a bright children's ward while his father watches.",
   },
-  villageHospitalYard: {
-    src: villageHospitalYard,
+  doctorsMeeting: {
+    src: doctorsMeeting,
     kind: "stock",
-    alt: "Older patients wait on chairs in the yard of a rural hospital while a health worker attends to them.",
+    position: "50% 30%",
+    alt: "Doctors in white coats seated at a table during a meeting, with colleagues behind them.",
   },
   physicianLaptop: {
     src: physicianLaptop,
