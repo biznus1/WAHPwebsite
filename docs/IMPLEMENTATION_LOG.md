@@ -188,3 +188,10 @@
 - On phones the video gets its own space above the card. On larger screens it fills the band behind the card.
 - `HeroVideo` became the reusable `LoopVideo`. `start="idle"` (hero) waits for page load. `start="visible"` (lobby) plays only while on screen and pauses when scrolled away, without restarting after the visitor pauses it. Both respect reduced motion and data saver.
 - Lighthouse on Home: Performance 94 and 98 across two runs, Accessibility 100, Best Practices 100. Only the lobby's 46 KB poster loads up front.
+
+## 22 Oct 2026, hero stat cards animate on view
+
+- The four groundwork cards now animate when they scroll into view, not on page load. On phones they sit below the fold, so the old entrance played unseen.
+- The cards rise in a stagger, the numbers count up from zero, the teal underline draws in and one soft light sweep crosses each card. The preview script now starts the count up on view too.
+- The hero content's scroll fade (`scroll-recede`) now runs only from 768px up. On phones it made the buttons look washed out.
+- With reduced motion the cards show their final state.

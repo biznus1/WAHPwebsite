@@ -164,11 +164,6 @@
   animation: hero-line 1.2s var(--ease-soft) both;
   animation-delay: var(--d, 0ms);
 }
-.hero-bar {
-  transform-origin: left;
-  animation: hero-bar 1.6s var(--ease-soft) both;
-  animation-delay: var(--d, 0ms);
-}
 @keyframes hero-in {
   from {
     opacity: 0;
@@ -180,9 +175,31 @@
     transform: translate3d(0, 0.28em, 0);
   }
 }
-@keyframes hero-bar {
-  from {
-    transform: scaleX(0);
+
+/* Hero stat cards: underline draws in and a soft light sweeps across once they are in view. */
+.js .stat-bar {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.6s var(--ease-soft);
+}
+.js .is-visible .stat-bar {
+  transform: none;
+}
+.stat-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.14) 50%, transparent 70%);
+  transform: translateX(-120%);
+}
+.js .stat-card.is-visible::after {
+  animation: stat-glint 1.6s ease-out both;
+  animation-delay: calc(var(--d, 0ms) + 900ms);
+}
+@keyframes stat-glint {
+  to {
+    transform: translateX(120%);
   }
 }
 
@@ -199,10 +216,13 @@
 
 /* Scroll-linked motion where supported (progressive enhancement; static elsewhere). */
 @supports (animation-timeline: scroll()) {
-  .scroll-recede {
-    animation: scroll-recede linear both;
-    animation-timeline: scroll(root);
-    animation-range: 0 90vh;
+  /* Wide screens only: on phones the hero is taller than the screen and fading it reads as washed out. */
+  @media (min-width: 768px) {
+    .scroll-recede {
+      animation: scroll-recede linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 90vh;
+    }
   }
   .scroll-sink {
     animation: scroll-sink linear both;
@@ -492,6 +512,10 @@
     animation-delay: 0s !important;
     transition-delay: 0s !important;
   }
+  .js .stat-bar {
+    transform: none;
+  }
+  .stat-card::after,
   .scroll-recede,
   .scroll-sink,
   .parallax img,

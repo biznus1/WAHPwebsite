@@ -35,7 +35,7 @@ const groundwork = [
 
 const pillarIcons = [Building2, FlaskConical, ScanLine, MonitorSmartphone];
 
-/** Entrance delay for `.hero-in` / `.hero-line` / `.hero-bar`. */
+/** Entrance delay for `.hero-in` / `.hero-line`, and the stat cards' light sweep. */
 const delay = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
 export default function HomePage() {
@@ -98,19 +98,21 @@ export default function HomePage() {
           {groundwork.length > 0 && (
             <dl className="mt-16 grid grid-cols-2 gap-3 md:mt-24 md:grid-cols-4" aria-label="Where WAHP stands today">
               {groundwork.map((s, i) => (
+                // Each card animates when it scrolls into view (on phones they start below the fold):
+                // a staggered rise, the count up, the underline drawing in, then one soft light sweep.
                 <div
                   key={s.label}
-                  className="hero-in relative overflow-hidden rounded-card bg-white/[0.05] px-5 py-6 ring-1 ring-inset ring-white/10 backdrop-blur-sm md:px-7 md:py-8"
-                  style={delay(480 + i * 90)}
+                  className="reveal stat-card relative overflow-hidden rounded-card bg-white/[0.05] px-5 py-6 ring-1 ring-inset ring-white/10 backdrop-blur-sm md:px-7 md:py-8"
+                  style={{ ...delay(i * 110), transitionDelay: `${i * 110}ms` }}
                 >
                   <dd className="text-4xl font-bold tracking-tight text-white md:text-5xl">
-                    <CountUp value={s.value} delay={500 + i * 90} />
+                    <CountUp value={s.value} delay={250 + i * 110} />
                   </dd>
                   <dt className="mt-2 text-sm text-white/70">{s.label}</dt>
                   <span
                     aria-hidden
-                    className="hero-bar absolute inset-x-5 bottom-0 h-0.5 rounded-full bg-gradient-to-r from-teal to-steel/60 md:inset-x-7"
-                    style={delay(700 + i * 90)}
+                    className="stat-bar absolute inset-x-5 bottom-0 h-0.5 rounded-full bg-gradient-to-r from-teal to-steel/60 md:inset-x-7"
+                    style={{ transitionDelay: `${450 + i * 110}ms` }}
                   />
                 </div>
               ))}
