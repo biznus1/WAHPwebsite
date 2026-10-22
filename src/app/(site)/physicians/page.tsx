@@ -69,7 +69,7 @@ export default function PhysiciansPage() {
             lead="What you would get"
             rest="at the Accra hub."
           />
-          <SiteImage name="doctorClinicKinshasa" className="reveal" aspect="aspect-[16/10]" />
+          <SiteImage name="physicianStethoscopeGreen" className="reveal" aspect="aspect-[16/10]" />
         </div>
         <ul className="mt-14 grid gap-4 md:grid-cols-2">
           {offer.map((o, i) => (

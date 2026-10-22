@@ -45,12 +45,6 @@ const credits = [
     href: "https://www.pexels.com/photo/34185202/",
   },
   {
-    title: "A laughing woman in a doctor's gown (shown as an edited adaptation)",
-    by: "Carmel Nsenga",
-    licence: "Pexels licence",
-    href: "https://www.pexels.com/photo/18844981/",
-  },
-  {
     title: "Elderly people in the yard of a rural hospital",
     by: "Pexels contributor",
     licence: "Pexels licence",

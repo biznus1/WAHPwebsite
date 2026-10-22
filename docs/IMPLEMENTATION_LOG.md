@@ -200,3 +200,7 @@
 
 - The static preview script only started the hero video, so the lobby band showed its poster. It now starts every background video: the hero at once, the others when scrolled into view. Each keeps its own pause control.
 - `LoopVideo` also sets the `muted` attribute itself before playing, because some mobile browsers only allow autoplay when that attribute is present.
+
+## 22 Oct 2026, new Physicians page photo
+
+- The proposition section on `/physicians` now uses the owner-supplied `physician-stethoscope-green.webp`, framed from the top so the face and stethoscope stay in view. The old `doctor-clinic-kinshasa` photo and its Terms credit were removed. Licence to confirm (see `ASSET_INVENTORY.md`).

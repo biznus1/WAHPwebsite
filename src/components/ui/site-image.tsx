@@ -15,7 +15,7 @@ import midwivesNewborn from "../../../public/images/photos/midwives-newborn.webp
 import nurseChildWard from "../../../public/images/photos/nurse-child-ward.webp";
 import villageHospitalYard from "../../../public/images/photos/village-hospital-yard.webp";
 import physicianLaptop from "../../../public/images/photos/physician-laptop.webp";
-import doctorClinicKinshasa from "../../../public/images/photos/doctor-clinic-kinshasa.webp";
+import physicianStethoscopeGreen from "../../../public/images/photos/physician-stethoscope-green.webp";
 import doctorStethoscope from "../../../public/images/photos/doctor-stethoscope.webp";
 import communityOutreach from "../../../public/images/photos/community-outreach.webp";
 
@@ -118,11 +118,11 @@ const images = {
     kind: "stock",
     alt: "A smiling physician in a white coat working at a laptop.",
   },
-  doctorClinicKinshasa: {
-    src: doctorClinicKinshasa,
-    kind: "illustrative",
-    position: "50% 30%",
-    alt: "A laughing doctor in green scrubs with a stethoscope in a bright clinic.",
+  physicianStethoscopeGreen: {
+    src: physicianStethoscopeGreen,
+    kind: "stock",
+    position: "50% 0%",
+    alt: "A smiling doctor in a white coat and teal scrubs holds a stethoscope out towards the camera.",
   },
   doctorStethoscope: {
     src: doctorStethoscope,
