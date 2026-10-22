@@ -195,3 +195,8 @@
 - The cards rise in a stagger, the numbers count up from zero, the teal underline draws in and one soft light sweep crosses each card. The preview script now starts the count up on view too.
 - The hero content's scroll fade (`scroll-recede`) now runs only from 768px up. On phones it made the buttons look washed out.
 - With reduced motion the cards show their final state.
+
+## 22 Oct 2026, lobby video autoplays in the preview
+
+- The static preview script only started the hero video, so the lobby band showed its poster. It now starts every background video: the hero at once, the others when scrolled into view. Each keeps its own pause control.
+- `LoopVideo` also sets the `muted` attribute itself before playing, because some mobile browsers only allow autoplay when that attribute is present.

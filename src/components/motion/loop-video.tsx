@@ -33,7 +33,9 @@ export function LoopVideo({
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
+    // Some mobile browsers only allow autoplay when the muted attribute itself is present.
     video.muted = true;
+    video.setAttribute("muted", "");
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if ((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData) return;
 

@@ -182,11 +182,13 @@ const previewScript = (tabStates) => `<script>
   // Home header softens from navy to light on scroll
   var hdr=document.querySelector('header[data-blend]'), hero=document.querySelector('[data-hero]');
   if(hdr&&hero){ var onS=function(){ var past=hero.getBoundingClientRect().bottom<=96; hdr.classList.toggle('preview-light',past); hdr.classList.toggle('preview-dim',!past&&window.scrollY>8); }; onS(); window.addEventListener('scroll',onS,{passive:true}); }
-  // Hero background video with its pause control
-  var vid=document.querySelector('[data-hero] video');
-  if(vid){ vid.muted=true; var vbtn=vid.parentElement.querySelector('button'); var setB=function(){ if(!vbtn) return; var on=!vid.paused; vbtn.querySelector('span').textContent=on?'Pause video':'Play video'; };
-    if(!reduce){ var pr=vid.play(); if(pr&&pr.then) pr.then(setB,setB); } setB();
-    if(vbtn) vbtn.addEventListener('click',function(){ if(vid.paused){ vid.play().then(setB,setB); } else { vid.pause(); setB(); } }); }
+  // Background videos with their pause controls: the hero starts at once, the others when scrolled into view
+  document.querySelectorAll('video').forEach(function(vid){ vid.muted=true; vid.setAttribute('muted',''); var vbtn=vid.nextElementSibling&&vid.nextElementSibling.tagName==='BUTTON'?vid.nextElementSibling:null; var userPaused=false;
+    var setB=function(){ if(!vbtn) return; vbtn.querySelector('span').textContent=vid.paused?'Play video':'Pause video'; };
+    var play=function(){ var pr=vid.play(); if(pr&&pr.then) pr.then(setB,setB); else setB(); };
+    if(!reduce){ if(vid.closest('[data-hero]')||!('IntersectionObserver' in window)) play(); else new IntersectionObserver(function(es){ if(userPaused) return; if(es[0].isIntersecting) play(); else { vid.pause(); setB(); } },{threshold:0.25}).observe(vid); }
+    setB();
+    if(vbtn) vbtn.addEventListener('click',function(){ if(vid.paused){ userPaused=false; play(); } else { userPaused=true; vid.pause(); setB(); } }); });
   // Mobile menu
   var btn=document.querySelector('button[aria-controls="mobile-menu"]');
   var menu=document.getElementById('mobile-menu');
