@@ -8,7 +8,7 @@ No domain, DNS or Squarespace setting has been changed.
 - [ ] Leadership names, titles and consent (+ LinkedIn URLs)
 - [ ] Hero headline choice
 - [ ] Mission/vision wording checked against the One-Pager
-- [ ] Calendly links confirmed live → approve `scheduling-links`
+- [x] Calendly links confirmed live → approve `scheduling-links` (5 Nov 2026)
 - [ ] Concept-render rights confirmed (who produced them, licence)
 
 ## Integrations

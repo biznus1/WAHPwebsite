@@ -11,21 +11,21 @@ const cards = [
     title: "I am a physician in Ghana",
     body: "Rent an equipped consulting room in Accra and keep your own practice.",
     cta: "Talk to our team",
-    href: "/contact?type=physician",
+    href: "/contact?call=physician#schedule",
     more: { href: "/physicians", label: "For physicians" },
   },
   {
     title: "I am a diaspora physician",
     body: "See patients in Accra during your weeks home, mentor, or help us build.",
     cta: "Talk about your plans",
-    href: "/contact?type=physician",
+    href: "/contact?call=diaspora#schedule",
     more: { href: "/diaspora-physicians", label: "For diaspora physicians" },
   },
   {
     title: "I am an investor",
     body: "Meet the founders and see how the Accra hub is planned, phase by phase.",
     cta: "Request an introduction",
-    href: "/contact?type=investor",
+    href: "/contact?call=investor#schedule",
     more: { href: "/investors", label: "For investors" },
   },
 ];
@@ -48,7 +48,9 @@ export function AudienceCta() {
         <div className="reveal mx-auto max-w-2xl text-center [&_.eyebrow]:justify-center">
           <Eyebrow dark>Take the next step</Eyebrow>
           <SplitHeading id="next-step-heading" lead="Let's talk." rest="Tell us where you fit." dark className="mt-5" />
-          <p className="mt-6 text-lead text-white/75">Choose who you are below. Someone from our team will reply.</p>
+          <p className="mt-6 text-lead text-white/75">
+            Choose who you are below and book a 30 minute introductory call with our team.
+          </p>
         </div>
 
         <ul className="mt-12 grid gap-4 md:mt-14 md:grid-cols-3 md:gap-5">
@@ -79,7 +81,7 @@ export function AudienceCta() {
         <p className="reveal mt-10 text-center text-white/70">
           Partner, supplier or journalist?{" "}
           <Link
-            href="/contact"
+            href="/contact#message"
             className="font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
           >
             Use the contact form

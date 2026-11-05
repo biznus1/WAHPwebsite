@@ -28,3 +28,31 @@ test("without a delivery integration the form says it was NOT sent (no fake succ
   await expect(page.getByText("Not sent (preview mode)")).toBeVisible();
   await expect(page.getByText("Enquiry sent")).toHaveCount(0);
 });
+
+test("call booking: choosing who you are switches the Calendly booking, loaded only on request", async ({ page }) => {
+  await page.goto("/contact");
+  const scheduler = page.locator("#schedule");
+  const open = scheduler.getByRole("link", { name: /Open in Calendly/ });
+  await expect(scheduler.getByRole("radio", { name: /Physician in Ghana/ })).toBeChecked();
+  await expect(open).toHaveAttribute("href", "https://calendly.com/westahp-info/physician-call");
+
+  await scheduler.getByText("Investor", { exact: true }).click();
+  await expect(open).toHaveAttribute("href", "https://calendly.com/westahp-info/investor-call");
+
+  await expect(scheduler.locator("iframe")).toHaveCount(0);
+  await scheduler.getByRole("button", { name: "Show available times" }).click();
+  await expect(scheduler.locator("iframe")).toHaveAttribute(
+    "src",
+    /^https:\/\/calendly\.com\/westahp-info\/investor-call\?.*embed_type=Inline/,
+  );
+});
+
+test("?call= deep link pre-selects the booking", async ({ page }) => {
+  await page.goto("/contact?call=diaspora#schedule");
+  const scheduler = page.locator("#schedule");
+  await expect(scheduler.getByRole("radio", { name: /Diaspora physician/ })).toBeChecked();
+  await expect(scheduler.getByRole("link", { name: /Open in Calendly/ })).toHaveAttribute(
+    "href",
+    "https://calendly.com/westahp-info/diaspora-physcians",
+  );
+});

@@ -11,8 +11,8 @@ The decisions below block or shape public launch. The machine-readable register 
 
    Please choose one.
 3. **Enquiry delivery.** Pick Resend email or a webhook (e.g. Zapier → Google Sheets / HubSpot) and supply credentials (`.env.example`). Until then the form clearly says *not sent*.
-4. **Scheduling links.** Owner materials want *Schedule a Call* (Calendly) as the primary CTA. The four links (`calendly.com/westahp-info/…`, including the live misspelling `diaspora-physcians`) are wired in but hidden. Confirm they are live, then approve `scheduling-links` in the claims register.
-5. **Legal review** of `/privacy`, `/terms`, the investor disclaimer, and the emergency number (112) used in the patient notices.
+4. **Scheduling links.** *Resolved 5 Nov 2026:* at the owner's request the Contact page has the older build's Calendly booking ("Every partnership starts with a conversation", "I am a…", "Schedule your call"), and the header button reads *Schedule a call*. All four links were checked live that day; each is a 30 minute Zoom call (Physicians Call, Diaspora Physicians, Investors Call, Partners Call), so the page says 30 minutes, not the older build's 20. The diaspora link keeps the live misspelling `diaspora-physcians` (the correct spelling returns 404); fixing the slug in Calendly would need the site updated too. The calendar loads inline only when a visitor asks, and the privacy notice has a new "Booking a call" section. The older build's "Get WAHP Updates" newsletter is **not** included: it needs a mailing list provider (see D).
+5. **Legal review** of `/privacy` (including the new "Booking a call" section on Calendly and Zoom), `/terms`, the investor disclaimer, and the emergency number (112) used in the patient notices.
 
 ### Resolved on 21 Oct 2026
 - **Contact email:** info@westahp.com (owner confirmed).
@@ -66,5 +66,5 @@ Fundraising targets, valuation, use of funds, projections, physician LOIs and na
 
 - **Google Analytics / Meta Pixel** (Master Brief). These need a cookie-consent banner and privacy-notice updates; omitted for now.
 - **Investor auto-email with pitch deck** (Master Brief). Excluded: distributing the deck automatically needs counsel review.
-- **HubSpot newsletter form.** Can be added once the form ID is supplied (and the CSP updated).
+- **Newsletter sign up** ("Get WAHP Updates" on the older build's Contact page; HubSpot in the Master Brief). Can be added once a provider and form ID are supplied (and the CSP updated).
 - **Separate "The Problem" and "For Partners" pages** (April blueprint). The problem is covered on the home page and partners are routed to `/contact?type=partnership`; both can become full pages.

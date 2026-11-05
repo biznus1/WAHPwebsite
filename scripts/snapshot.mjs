@@ -84,7 +84,7 @@ for (const route of routes) {
       const main = document.body.cloneNode(true);
       // Reveals were forced visible for capture; reset them so the preview's own observer animates them in.
       main.querySelectorAll(".reveal.is-visible").forEach((e) => e.classList.remove("is-visible"));
-      main.querySelectorAll("script, next-route-announcer, nextjs-portal").forEach((e) => e.remove());
+      main.querySelectorAll("script, next-route-announcer, nextjs-portal, [data-js-only]").forEach((e) => e.remove());
       const imgs = [];
       main.querySelectorAll("img").forEach((img) => {
         const src = img.getAttribute("src") || "";

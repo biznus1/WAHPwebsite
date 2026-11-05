@@ -283,6 +283,18 @@
       display: block;
       animation: rise 0.5s var(--ease-soft) both;
     }
+
+    /* Contact page booking: the "I am a…" choice picks which Calendly booking panel is shown. */
+    .call-scheduler .call-panel {
+      display: none;
+    }
+    .call-scheduler:has(input[value="physician"]:checked) .call-panel[data-call="physician"],
+    .call-scheduler:has(input[value="diaspora"]:checked) .call-panel[data-call="diaspora"],
+    .call-scheduler:has(input[value="investor"]:checked) .call-panel[data-call="investor"],
+    .call-scheduler:has(input[value="partner"]:checked) .call-panel[data-call="partner"] {
+      display: block;
+      animation: rise 0.5s var(--ease-soft) both;
+    }
   }
 }
 

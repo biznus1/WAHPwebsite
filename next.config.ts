@@ -11,6 +11,8 @@ const csp = [
   "img-src 'self' data: blob:",
   "font-src 'self'",
   `connect-src 'self'${isDev ? " ws:" : ""}`,
+  // Calendly's booking calendar, loaded inline on /contact only when the visitor asks for it.
+  "frame-src https://calendly.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

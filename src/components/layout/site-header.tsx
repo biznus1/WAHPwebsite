@@ -6,7 +6,13 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/logo";
 import { buttonClasses } from "@/components/ui/button";
-import { primaryNav } from "@/content/site";
+import { callTypes, primaryNav } from "@/content/site";
+
+/** Header call to action: book a call once the Calendly links are approved, as on the older site. */
+const cta =
+  callTypes.length > 0
+    ? { href: "/contact#schedule", label: "Schedule a call", short: "Book a call" }
+    : { href: "/contact", label: "Get in touch", short: "Get in touch" };
 
 function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -134,16 +140,18 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-2">
-            {/* Under 360px wide this button would push the header off screen; the menu has its own "Get in touch". */}
+            {/* Under 360px wide this button would push the header off screen; the menu has its own copy. */}
             <Link
-              href="/contact"
+              href={cta.href}
               className={buttonClasses(
                 "primary",
                 "md",
                 "!h-10 !px-4 text-sm max-[359px]:hidden sm:!h-11 sm:!px-5 sm:text-[0.95rem]",
               )}
             >
-              Get in touch
+              {/* The full label does not fit beside the logo and menu button on phones. */}
+              <span className="sm:hidden">{cta.short}</span>
+              <span className="max-sm:hidden">{cta.label}</span>
             </Link>
             <button
               ref={toggleRef}
@@ -202,8 +210,8 @@ export function SiteHeader() {
               </li>
             </ul>
             <div className="mt-auto pt-10">
-              <Link href="/contact" className={buttonClasses("primary", "lg", "w-full")}>
-                Get in touch
+              <Link href={cta.href} className={buttonClasses("primary", "lg", "w-full")}>
+                {cta.label}
               </Link>
               <p className="mt-4 text-center text-sm text-white/60">WAHP is not open yet and is not seeing patients.</p>
             </div>

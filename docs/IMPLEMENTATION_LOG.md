@@ -280,3 +280,12 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 - At the owner's request the site is live at https://wahp-website.vercel.app (Vercel project `wahp-website`, Node 22, built from `ccr-01d11262-1nlrsu` at `5c205bf`). Deployment protection is Vercel's "Standard": the production address is public, preview and per-deployment URLs need a Vercel login.
 - Checked on the live site: all 11 pages return 200, `robots.txt` disallows indexing, the hero video plays on desktop and phone, no console errors, no sideways scroll.
 - The project is not linked to Git, because GitHub's default branch is the older `ccr-3f23f1ac-xtw4sr` and would become production. See `LAUNCH_CHECKLIST.md`.
+
+## 5 Nov 2026, Calendly booking and the older build's contact flow
+
+- At the owner's request the Contact page follows the older WordPress build: "Every partnership starts with a conversation", then "I am a…" (Physician in Ghana, Diaspora physician, Investor, Partner or supplier) beside "Schedule your call", which shows the booking type, "30 minutes", "Video call on Zoom", "Show available times" and "Open in Calendly". Below it, "Prefer to write? Reach us directly." keeps the routed enquiry form, email, LinkedIn and the medical notice.
+- The four Calendly links were checked live: each is a 30 minute Zoom call, so the page says 30 minutes (the older build said 20). The `scheduling-links` claim is now approved. The diaspora link keeps the live misspelling `diaspora-physcians`.
+- Calendly sets its own cookies, so its calendar loads inline (an iframe) only after "Show available times". Without script, or in the static preview, "Open in Calendly" opens the booking page instead. The CSP allows frames from `https://calendly.com` only. The privacy notice has a new "Booking a call" section (`/privacy#booking`).
+- The option shown is picked with CSS (`.call-scheduler`, `:has`), like the Home comparison switch. `?call=physician|diaspora|investor|partner` pre-selects it; the enquiry `?type=` does too where it maps onto a call.
+- The header button now reads "Schedule a call" (as on the older build), "Book a call" under 640px so it fits beside the logo and menu from 360px. It links to `/contact#schedule`. The Home closing band's three cards link straight to the matching booking.
+- Not included: the older build's "Get WAHP Updates" newsletter form, which needs a mailing list provider (`CONTENT_APPROVAL.md` D).

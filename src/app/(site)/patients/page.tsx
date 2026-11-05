@@ -116,7 +116,7 @@ export default function PatientsPage() {
       <CtaBand
         lead="Want to know more"
         rest="about our plans?"
-        primary={{ href: "/contact?type=general", label: "Send a general enquiry" }}
+        primary={{ href: "/contact?type=general#message", label: "Send a general enquiry" }}
       >
         <p>This is for general questions only. Please do not share medical details.</p>
       </CtaBand>

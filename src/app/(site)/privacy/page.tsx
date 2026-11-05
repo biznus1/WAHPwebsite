@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Privacy notice" updated="20 October 2026">
+    <LegalPage title="Privacy notice" updated="5 November 2026">
       <section>
         <h2>Who we are</h2>
         <p>
@@ -34,10 +34,24 @@ export default function PrivacyPage() {
           Our hosting provider may process technical data such as IP addresses to deliver and secure the site.
         </p>
       </section>
+      <section id="booking" className="scroll-mt-24">
+        <h2>Booking a call</h2>
+        <p>
+          Introductory calls are booked through Calendly, our scheduling service, and held on Zoom. When you book,
+          Calendly collects the details you enter, such as your name, email address and any answers you give, and shares
+          them with us so we can prepare for the call.
+        </p>
+        <p>
+          On our Contact page, Calendly&apos;s calendar loads only when you choose &ldquo;Show available times&rdquo;.
+          From then on Calendly may set its own cookies. You can also book on Calendly&apos;s own site with &ldquo;Open
+          in Calendly&rdquo;. Calendly and Zoom handle what they collect under their own privacy policies.
+        </p>
+      </section>
       <section>
         <h2>How we use it</h2>
         <ul>
           <li>To respond to your enquiry and follow up on your stated interest</li>
+          <li>To arrange and hold a call you have booked with us</li>
           <li>To protect the website against abuse (for example, rate limiting)</li>
         </ul>
         <p>We do not sell your personal information.</p>
@@ -45,14 +59,17 @@ export default function PrivacyPage() {
       <section>
         <h2>Legal basis and your rights</h2>
         <p>
-          We process enquiry data with your consent and to respond to your request. Subject to applicable law, including
-          Ghana&apos;s Data Protection Act, 2012 (Act 843), you may ask to access, correct or delete your information,
-          or withdraw consent.
+          We process enquiry and booking data with your consent and to respond to your request. Subject to applicable
+          law, including Ghana&apos;s Data Protection Act, 2012 (Act 843), you may ask to access, correct or delete your
+          information, or withdraw consent.
         </p>
       </section>
       <section>
         <h2>Retention</h2>
-        <p>We keep enquiry information only as long as needed to respond and maintain a record of the conversation.</p>
+        <p>
+          We keep enquiry and booking information only as long as needed to respond and maintain a record of the
+          conversation.
+        </p>
       </section>
       <section>
         <h2>Contact</h2>
