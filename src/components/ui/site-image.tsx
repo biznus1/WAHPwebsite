@@ -23,9 +23,10 @@ import partnersPresentation from "../../../public/images/photos/partners-present
 
 /**
  * Every image on the site, with its kind:
- * - concept:      owner 3D renders of the planned facility (badge + caption, always)
+ * - concept:      owner 3D renders of the planned facility (caption below, always)
  * - illustrative: photos and generated images copied from the WAHP source sites;
- *                 people and places shown are not WAHP staff, patients or facilities (badge)
+ *                 people and places shown are not WAHP staff, patients or facilities (no badge, owner's choice;
+ *                 stated on /terms#images)
  * - stock:        licensed stock / Creative Commons photos of health workers in Africa (no badge);
  *                 they are not WAHP staff or facilities.
  * Photos carry no on-image credit (owner's choice); attribution required by CC BY-SA is given on /terms#image-credits.
@@ -154,7 +155,10 @@ const images = {
 
 export type SiteImageName = keyof typeof images;
 
-const badges: Partial<Record<Kind, string>> = { concept: "Concept rendering", illustrative: "Illustrative image" };
+/*
+ * No on-image badges (owner's choice, 5 Nov 2026): the "Illustrative image" and "Concept rendering" pills were
+ * removed. Concept renders keep their caption below the image, and /terms#images covers the rest.
+ */
 const conceptCaption =
   "Concept rendering of the space we are planning. The building does not exist yet, and any people shown are illustrative.";
 
@@ -181,7 +185,6 @@ export function SiteImage({
   rounded?: string;
 }) {
   const img: { src: StaticImageData; kind: Kind; alt: string; position?: string } = images[name];
-  const badge = badges[img.kind];
   const text = img.kind === "concept" ? (caption ?? conceptCaption) : caption;
   return (
     <figure className={className}>
@@ -196,11 +199,6 @@ export function SiteImage({
           className={fit === "contain" ? "object-contain" : "object-cover"}
           style={img.position ? { objectPosition: img.position } : undefined}
         />
-        {badge && (
-          <span className="absolute top-3 left-3 rounded-full bg-navy/80 px-2.5 py-1 text-[0.68rem] font-semibold tracking-wide text-white backdrop-blur">
-            {badge}
-          </span>
-        )}
       </div>
       {text && <figcaption className={`mt-3 text-xs ${dark ? "text-white/60" : "text-arsenic"}`}>{text}</figcaption>}
     </figure>

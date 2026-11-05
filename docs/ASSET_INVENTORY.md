@@ -72,3 +72,5 @@
 | `public/images/photos/partners-presentation.webp` | Older build upload `2026/04/file_00000000f17872089c870b44cdd56662.png` (1448×1086, the "Capital Partners" card); appears AI-generated | As above | Home Partners card, titled "Partners" (not "Capital Partners", owner instruction). The on-screen amounts, percentages and dates were blurred so they cannot be read as WAHP investment figures; the chart shapes and legend labels remain. Badged "Illustrative image" |
 
 `community-bp-screening.webp` (the previous Partners card photo) was removed with its Terms credit, as it is no longer used.
+
+**Badges removed (5 Nov 2026).** At the owner's request, images no longer carry the "Illustrative image" or "Concept rendering" badges, and the Home lobby video no longer carries its "Concept rendering of the planned hub" label. Where this file says an image is "badged" or "shown with a badge", read it as history. Concept renders keep their caption below the image, the lobby card says the reception is a concept, and `/terms#images` now states that other photos are illustrative and that people and places shown are not WAHP staff, patients or facilities unless named.

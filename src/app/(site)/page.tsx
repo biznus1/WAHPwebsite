@@ -223,9 +223,6 @@ export default function HomePage() {
             controlClassName="top-4 right-4 md:top-8 md:right-8"
           />
         </div>
-        <span className="absolute top-4 left-4 z-10 rounded-full bg-white/85 px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide text-navy backdrop-blur-sm md:top-8 md:left-8">
-          Concept rendering of the planned hub
-        </span>
         <div className="container-wahp flex items-end pt-[26rem] pb-8 md:min-h-[46rem] md:pt-24 md:pb-12">
           <div className="reveal max-w-md rounded-panel bg-white/95 p-7 shadow-[0_30px_60px_-30px_rgba(0,51,102,0.45)] md:p-9">
             <Eyebrow>Inside the Accra hub</Eyebrow>

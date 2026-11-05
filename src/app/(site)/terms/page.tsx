@@ -70,11 +70,15 @@ export default function TermsPage() {
           investment, in any jurisdiction.
         </p>
       </section>
-      <section>
+      <section id="images">
         <h2>Images</h2>
         <p>
-          Images labelled &ldquo;concept rendering&rdquo; are illustrations of planned environments. They do not depict
-          existing facilities, and people shown are illustrative.
+          Images captioned as concept renderings, and the lobby video on the home page, are illustrations of planned
+          environments. They do not depict existing facilities, and people shown are illustrative.
+        </p>
+        <p>
+          Other photos on this site are illustrative too. Unless a person is named, the people and places shown are not
+          WAHP staff, patients or facilities.
         </p>
       </section>
       <section id="image-credits">
