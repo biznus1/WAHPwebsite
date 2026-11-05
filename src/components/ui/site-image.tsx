@@ -9,7 +9,6 @@ import patientPortrait from "../../../public/images/photos/patient-portrait.webp
 import investorLounge from "../../../public/images/photos/investor-lounge.webp";
 import physicianTealScrubs from "../../../public/images/photos/physician-teal-scrubs.webp";
 import diasporaDoctor from "../../../public/images/photos/diaspora-doctor.webp";
-import communityScreening from "../../../public/images/photos/community-bp-screening.webp";
 import clinicBpCheck from "../../../public/images/photos/clinic-bp-check.webp";
 import midwivesNewborn from "../../../public/images/photos/midwives-newborn.webp";
 import nurseChildWard from "../../../public/images/photos/nurse-child-ward.webp";
@@ -18,6 +17,9 @@ import physicianLaptop from "../../../public/images/photos/physician-laptop.webp
 import physicianStethoscopeGreen from "../../../public/images/photos/physician-stethoscope-green.webp";
 import doctorStethoscope from "../../../public/images/photos/doctor-stethoscope.webp";
 import teamLaptopCelebration from "../../../public/images/photos/team-laptop-celebration.webp";
+import hospitalCorridor from "../../../public/images/photos/hospital-corridor.webp";
+import doctorWindow from "../../../public/images/photos/doctor-window.webp";
+import partnersPresentation from "../../../public/images/photos/partners-presentation.webp";
 
 /**
  * Every image on the site, with its kind:
@@ -88,10 +90,11 @@ const images = {
     position: "50% 12%",
     alt: "A smiling doctor in teal scrubs and glasses, stethoscope round his neck, arms folded.",
   },
-  communityScreening: {
-    src: communityScreening,
+  partnersPresentation: {
+    src: partnersPresentation,
     kind: "illustrative",
-    alt: "A nurse in a green uniform takes a patient's blood pressure at an outdoor community health screening.",
+    position: "50% 30%",
+    alt: "A woman in a navy suit presents charts on a wall screen to colleagues in a high rise meeting room.",
   },
   clinicBpCheck: {
     src: clinicBpCheck,
@@ -135,6 +138,17 @@ const images = {
     kind: "stock",
     position: "50% 35%",
     alt: "Two young professionals high five over a laptop at an outdoor café table.",
+  },
+  hospitalCorridor: {
+    src: hospitalCorridor,
+    kind: "illustrative",
+    alt: "A crowded hospital corridor: patients wait on benches and beds line the wall while a doctor walks through.",
+  },
+  doctorWindow: {
+    src: doctorWindow,
+    kind: "illustrative",
+    position: "60% 30%",
+    alt: "A young doctor in a white coat looks out of a louvred window on a hospital ward.",
   },
 } satisfies Record<string, { src: StaticImageData; kind: Kind; alt: string; position?: string }>;
 

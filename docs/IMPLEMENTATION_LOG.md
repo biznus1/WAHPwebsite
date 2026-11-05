@@ -218,3 +218,9 @@ A WordPress export of wahp.viewyourprojecthere.com arrived by WeTransfer (dated 
 - **Sharper headshots.** The five team photos were re-encoded from the original uploads in the export (same framing, quality 90). Nakeitheya Smith's is now 1080px.
 - **Not brought over:** the green headline words (owner rule), the hospital logo strip (implies affiliations), the crowded corridor photo (removed earlier at the owner's request), market size figures and the advisory board placeholders.
 - **Security note.** The export and the live WordPress site contain injected malware. Only the five headshots were taken from the export, and they were decoded and re-encoded rather than copied.
+
+## 5 Nov 2026, "The infrastructure gap" on About; new Partners card photo
+
+- **About page:** the older build's "The infrastructure gap" section is back as a navy band between "Our mission" and the founder's letter (owner request: anywhere but Home). Headline with highlighted words ("talent", "infrastructure", "transformation", in light teal), the hospital corridor image, and a card with the doctor at the window, "71.8% intend to work abroad" and an animated bar. It uses the sourced 71.8% (claim `stat-migration-intent`; the stat parts hide if that claim is withdrawn), not the older "72%", and leaves out the unsourced "WHO Target 15%" bar and "accelerated since 2018" line. Component: `components/sections/infrastructure-gap.tsx`.
+- **Home Partners card:** now uses the older build's "Capital Partners" picture (owner request), still titled "Partners". The amounts, percentages and dates on the pictured screen are blurred so they cannot be read as WAHP's investment figures. `community-bp-screening` and its Terms credit were removed.
+- Both new images and the corridor image appear AI-generated and carry the "Illustrative image" badge; usage rights to confirm (see `ASSET_INVENTORY.md`).

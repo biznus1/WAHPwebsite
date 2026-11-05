@@ -18,7 +18,7 @@
 
 **Not used from the source sites:**
 - Seven hospital and university logos (Corewell, NYU Langone, Sanford, Michigan Medicine, IU Health, Columbia Mailman, Yale New Haven). They appear as an unlabelled strip and would imply affiliations.
-- The "capital partners" image with a dashboard showing "$245.7M", which would read as investment figures.
+- ~~The "capital partners" image with a dashboard showing "$245.7M", which would read as investment figures.~~ Used since 5 Nov 2026 at the owner's request, with the figures blurred (see below).
 - Duplicates of the three concept renders, and duplicate headshots.
 - Google Maps tiles, the loading GIF, and screenshots of UI mock-ups.
 - Clinicians in surgical masks or PPE, which look like pandemic-era imagery.
@@ -62,3 +62,13 @@
 **Home infrastructure gap photo (22 Oct 2026).** `village-hospital-yard` was removed. The section now uses the owner-supplied `doctors-meeting.webp` (738×416). **Licence to confirm before launch:** it looks like a news agency photograph, and those are almost always licensed per use.
 
 **Investors banner photo (22 Oct 2026).** `community-outreach` was removed. The banner above the introduction form now uses the owner-supplied `team-laptop-celebration.webp` (678×452). **Licence to confirm:** the source is unknown.
+
+**Infrastructure gap section and Partners card (5 Nov 2026).** At the owner's request, after reviewing the older WordPress build:
+
+| File | Origin | Rights / approval | Notes |
+| --- | --- | --- | --- |
+| `public/images/photos/hospital-corridor.webp` | Older build upload `2026/04/file_000000002a04720b98457feae843b609.png`; appears AI-generated (ChatGPT naming). Restored from this repo's own 21 Oct copy | Owner-supplied; **owner to confirm usage rights** | About page, "The infrastructure gap". Badged "Illustrative image". Not a WAHP facility; its signs (laboratory, X-ray) belong to the pictured hospital, not to WAHP |
+| `public/images/photos/doctor-window.webp` | Older build upload `2026/04/file_00000000fbc0720b8324a0c010bfaace.png` (1536×1024); appears AI-generated | As above | About page emigration card. Decoded and re-encoded from the WordPress export. Badged "Illustrative image" |
+| `public/images/photos/partners-presentation.webp` | Older build upload `2026/04/file_00000000f17872089c870b44cdd56662.png` (1448×1086, the "Capital Partners" card); appears AI-generated | As above | Home Partners card, titled "Partners" (not "Capital Partners", owner instruction). The on-screen amounts, percentages and dates were blurred so they cannot be read as WAHP investment figures; the chart shapes and legend labels remain. Badged "Illustrative image" |
+
+`community-bp-screening.webp` (the previous Partners card photo) was removed with its Terms credit, as it is no longer used.

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/sections/cta-band";
+import { InfrastructureGap } from "@/components/sections/infrastructure-gap";
 import { PageHero } from "@/components/sections/page-hero";
 import { Eyebrow, Section, SectionIntro } from "@/components/ui/primitives";
 import { SiteImage } from "@/components/ui/site-image";
@@ -68,13 +69,16 @@ export default function AboutPage() {
               <Eyebrow as="h2">Where we start</Eyebrow>
               <p className="mt-4 text-lead text-arsenic">
                 Phase 1 is the Accra hub. It is not open yet: services start only once the building is finished,
-                staffed, licensed and approved. We are working through Ghana&apos;s healthcare and facility licensing now,
-                and WAHP will meet every national requirement before it opens.
+                staffed, licensed and approved. We are working through Ghana&apos;s healthcare and facility licensing
+                now, and WAHP will meet every national requirement before it opens.
               </p>
             </div>
           </div>
         </div>
       </Section>
+
+      {/* The infrastructure gap, after the older WordPress build's section of the same name. */}
+      <InfrastructureGap above="text-paper" below="text-white" />
 
       {/* Founder's letter */}
       <Section tone="white" labelledBy="origin-heading">

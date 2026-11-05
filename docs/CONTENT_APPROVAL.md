@@ -48,6 +48,7 @@ The decisions below block or shape public launch. The machine-readable register 
 | "20 physicians have signed Letters of Intent" | Owner confirmed 21 Oct 2026 | **Used** on /investors and /physicians |
 | 60+ physicians surveyed, 3 studies completed, 5-person team | Newer site build; Questionnaire #29 | Used on /investors ("Groundwork to date") |
 | Workforce stats: 1.43 per 10,000 (WHO 2022), 1:5,707 (MoH 2021), 11,867 registered (GMDC 2024), 71.8% migration intent | Newer site, The Problem page | Used on home with sources. **The 71.8% figure needs a full citation** |
+| "The talent exists. The infrastructure around it is fragmented, inefficient and ready for transformation." | Older WordPress build, Home | Used on /about (5 Nov 2026, owner request), with the 71.8% figure and the line "We do not believe it is because they want to leave", stated as WAHP's view. The older build's "72% … Ghana Medical Association surveys", "accelerated since 2018" and "WHO Target 15%" are **not used** (unsourced) |
 | Market sizes ($1.21B, $214M, 42%, 36.7%) | Newer site, investors page | Not used (investor-materials territory) |
 | Rule 506(c) accredited-investor notice + acknowledgement | Newer site, investors page | Used on /investors and in the investor form. **Counsel to confirm** |
 | Imaging "within the same facility", on-site lab "results flow digitally" | Newer site | Reframed as Phase 2/3 *planned/future* |

@@ -21,12 +21,6 @@ const credits = [
     href: "https://unsplash.com/photos/9aBsCd9Fvgc",
   },
   {
-    title: "A uniformed nurse listening to a patient's BP (shown as an edited adaptation)",
-    by: "Kwameghana",
-    licence: "CC BY-SA 4.0, via Wikimedia Commons",
-    href: "https://commons.wikimedia.org/wiki/File:A_uniformed_nurse_listening_to_a_patient%27s_BP.jpg",
-  },
-  {
     title: "Checking blood pressure (shown as an edited adaptation)",
     by: "Pambelle12",
     licence: "CC BY-SA 4.0, via Wikimedia Commons",
