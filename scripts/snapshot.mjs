@@ -177,9 +177,9 @@ header.preview-light button[aria-controls]{color:#003366;--tw-ring-color:#BCBFCC
 
 const previewScript = (tabStates) => `<script>
 (function(){
-  // Loading screen lifts once the page has loaded (at least 700ms), as on the live site
+  // Loading screen lifts once the page has loaded (shown at least 650ms), as on the live site
   var pl=document.getElementById('wahp-preloader');
-  if(pl){ var lift=function(){ setTimeout(function(){ pl.setAttribute('data-state','done'); },Math.max(0,700-performance.now())); }; if(document.readyState==='complete') lift(); else addEventListener('load',lift); }
+  if(pl){ var lift=function(){ setTimeout(function(){ pl.setAttribute('data-state','done'); },650); }; if(document.readyState==='complete') lift(); else addEventListener('load',lift); }
   // Scroll reveals (the live site does this in React; content stays visible if this script never runs)
   document.documentElement.classList.add('js');
   var reveals=[].slice.call(document.querySelectorAll('.reveal'));

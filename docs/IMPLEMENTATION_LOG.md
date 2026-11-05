@@ -293,7 +293,8 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 ## 5 Nov 2026, page loading screen with the WAHP emblem
 
 - At the owner's request every page has a loading screen, after the older WordPress build's (its plugin showed a developer's "KinetiTEC" GIF, and its page transition a green ring with the company name). Ours shows the WAHP emblem in white with a soft double beat, inside a turning ring with a green arc, and "West African Health Partners" in spaced capitals, on brand navy.
-- First load: the screen lifts once the page has loaded, after at least 700ms so it never just flickers, and after 3 seconds at most (an inline script, with a CSS timeout as a backstop). Between pages inside the site it covers the new page for 450ms and fades. It does not show for changes within a page (a booking option, a tab, `#schedule`).
+- First load: the screen lifts once the page has loaded, shown for at least 650ms so it never just flickers, and for 3 seconds at most (an inline script, with a CSS timeout as a backstop).
+- Between pages inside the site, as on the older build: it fades in as soon as a link to another page is tapped (so a slow connection still gets instant feedback), stays while the page loads, and lifts 350ms after the new page appears. Back and forward show it too. It does not show for changes within a page (a booking option, a tab, `#schedule`) or for links that open a new tab, and it gives up after 6 seconds if a tap leads nowhere.
 - The hero's entrance, scroll reveals and number count ups wait until it lifts, so they play where people can see them.
 - It is decorative: hidden from screen readers and never blocks clicks. Without script it never appears; with reduced motion it does not spin or beat, and the between pages version is skipped.
 - `scripts/shoot.mjs` waits for it to lift; the static preview shows it on each page.

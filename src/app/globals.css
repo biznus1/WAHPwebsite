@@ -301,8 +301,9 @@
 /*
  * Page loading screen (owner request, after the older build's page transition): the WAHP emblem in a
  * turning ring on navy. Shown only when script runs; lifted by an inline script once the page has
- * loaded (at least 700ms), and by the CSS timeout below after 3.2s whatever happens.
- * data-state: loading (first load) → done; route (between pages, shown at once) → done.
+ * loaded (shown at least 650ms), and by the CSS timeout below after 3.2s whatever happens.
+ * data-state: loading (first load) → done; leaving (a link to another page was tapped: fades in)
+ * → route (the new page has arrived: shown at once) → done.
  */
 .preloader {
   display: none;
@@ -323,6 +324,9 @@
 }
 .js .preloader[data-state="loading"] {
   animation: preloader-timeout 0.55s var(--ease-soft) 3.2s forwards;
+}
+.js .preloader[data-state="leaving"] {
+  transition: opacity 0.2s ease-out;
 }
 .js .preloader[data-state="route"] {
   transition: none;

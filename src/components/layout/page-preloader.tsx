@@ -3,11 +3,11 @@ import { PRELOADER_ID } from "@/lib/preloader";
 import { RouteTransition } from "./route-transition";
 
 /**
- * Lifts the loading screen once the page has loaded, after at least 700ms so it never just flickers.
- * Inline so it does not wait for the app's script. After 3s it lifts regardless (CSS does the same
- * if no script runs). Without script the screen is never shown at all (see `.js .preloader`).
+ * Lifts the loading screen once the page has loaded, and no sooner than 650ms after it appeared, so it
+ * never just flickers. Inline so it does not wait for the app's script. After 3s it lifts regardless
+ * (CSS does the same if no script runs). Without script it is never shown at all (see `.js .preloader`).
  */
-const lift = `(function(){var el=document.getElementById("${PRELOADER_ID}");if(!el)return;function done(){el.setAttribute("data-state","done")}function hide(){setTimeout(done,Math.max(0,700-performance.now()))}if(document.readyState==="complete")hide();else addEventListener("load",hide,{once:true});setTimeout(done,3000)})();`;
+const lift = `(function(){var el=document.getElementById("${PRELOADER_ID}");if(!el)return;var t0=performance.now();function done(){if(el.getAttribute("data-state")==="loading")el.setAttribute("data-state","done")}function hide(){setTimeout(done,Math.max(0,650-(performance.now()-t0)))}if(document.readyState==="complete")hide();else addEventListener("load",hide,{once:true});setTimeout(done,3000)})();`;
 
 /**
  * Page loading screen, after the older build's: the WAHP emblem in a turning ring on brand navy.
