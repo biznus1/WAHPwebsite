@@ -235,3 +235,10 @@ A WordPress export of wahp.viewyourprojecthere.com arrived by WeTransfer (dated 
 - At the owner's request, the "Pause video" / "Play video" button is gone from all three background videos (Home hero, lobby band, closing audience band). `LoopVideo` keeps its playback rules: the hero starts after load and idle, the other two play only while in view, and nothing plays for reduced motion or data saver. Note: WCAG 2.2.2 asks for a way to pause moving content that runs longer than five seconds; the reduced motion setting is now the only way to stop it.
 - The captions under the four concept renders (three on `/platform`, one on `/physicians`) are removed, so no photo carries "Concept rendering" text. Their alt text still says so for screen readers, and `/terms#images` now reads: "Images of the inside of the Accra hub, and the lobby video on the home page, are concept renderings of planned environments."
 - The floor schematic diagram on Home keeps its caption ("A sketch of the plan, not a building that exists yet"), as it is a diagram rather than a photo.
+
+## 5 Nov 2026, animated workforce figures; "large hospital"
+
+- The four workforce figures on Home (1.43, 1:5,707, 71.8%, 11,867) now count up when they scroll into view, in a stagger, in light teal on navy, each with a teal bar that draws in underneath. Sources are in Steel. With reduced motion they show their final values.
+- `CountUp` now handles decimals, ratios and thousands separators (`parseFigure` / `formatFigure`, unit tested), so "1:5,707" counts as 1:0 → 1:5,707 and "71.8%" as 0.0% → 71.8%.
+- Fixed the static preview's count up: its pattern sat in a template literal, which dropped the backslashes, so the preview never animated any figure. The new code uses no backslashes.
+- The Home comparison says "large hospital" instead of "big hospital" (heading, phone switch, column title), at the owner's request.

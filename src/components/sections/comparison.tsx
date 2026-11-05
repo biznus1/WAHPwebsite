@@ -2,9 +2,9 @@ import { Check, Minus } from "lucide-react";
 
 type OptionId = "hospital" | "wahp" | "own";
 
-/** Columns in reading order: WAHP sits between the big hospital and going it alone, as the heading says. */
+/** Columns in reading order: WAHP sits between the large hospital and going it alone, as the heading says. */
 const options: { id: OptionId; label: string; short: string }[] = [
-  { id: "hospital", label: "In a big hospital", short: "Big hospital" },
+  { id: "hospital", label: "In a large hospital", short: "Large hospital" },
   { id: "wahp", label: "Planned at WAHP", short: "WAHP" },
   { id: "own", label: "On your own", short: "On your own" },
 ];
@@ -55,7 +55,7 @@ const rows: { topic: string; cells: Record<OptionId, Cell> }[] = [
   },
 ];
 
-const caption = "Practising in a big hospital, at WAHP and on your own, compared";
+const caption = "Practising in a large hospital, at WAHP and on your own, compared";
 
 function Mark({ good, dark = false }: { good: boolean; dark?: boolean }) {
   return good ? (

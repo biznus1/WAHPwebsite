@@ -152,7 +152,8 @@ for (const entry of usedImages) {
 // Hero footage
 if (existsSync("public/video")) {
   mkdirSync(join(out, "video"), { recursive: true });
-  for (const f of readdirSync("public/video")) writeFileSync(join(out, "video", f), readFileSync(join("public/video", f)));
+  for (const f of readdirSync("public/video"))
+    writeFileSync(join(out, "video", f), readFileSync(join("public/video", f)));
 }
 
 const previewStyle = (fontVar) => `<style>
@@ -178,7 +179,8 @@ const previewScript = (tabStates) => `<script>
   if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px',threshold:0.08}); reveals.forEach(function(el){ io.observe(el); }); } else { reveals.forEach(function(el){ el.classList.add('is-visible'); }); }
   // Count-up figures
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!reduce&&'IntersectionObserver' in window) document.querySelectorAll('[data-countup]').forEach(function(el,i){ var m=el.getAttribute('data-countup').match(/^(\D*)(\d+)(.*)$/); if(!m) return; var n=+m[2]; el.textContent=m[1]+'0'+m[3]; var o=new IntersectionObserver(function(es){ if(!es[0].isIntersecting) return; o.disconnect(); setTimeout(function(){ var t0=performance.now(); (function tick(now){ var t=Math.min(1,(now-t0)/1800), e=1-Math.pow(1-t,4); el.textContent=m[1]+Math.round(n*e)+m[3]; if(t<1) requestAnimationFrame(tick); })(t0); },250+(i%2)*110); },{threshold:0.4}); o.observe(el); });
+  // (No backslashes here: this script lives in a template literal, which would drop them.)
+  if(!reduce&&'IntersectionObserver' in window) document.querySelectorAll('[data-countup]').forEach(function(el,i){ var v=el.getAttribute('data-countup'); var m=v.match(/^(.*?)([0-9][0-9,]*(?:[.][0-9]+)?)([^0-9]*)$/); if(!m) return; var d=m[2].indexOf('.')>-1?m[2].split('.')[1].length:0, g=m[2].indexOf(',')>-1, n=+m[2].split(',').join(''); var f=function(x){ return m[1]+x.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d,useGrouping:g})+m[3]; }; el.textContent=f(0); var o=new IntersectionObserver(function(es){ if(!es[0].isIntersecting) return; o.disconnect(); setTimeout(function(){ var t0=performance.now(); (function tick(now){ var t=Math.min(1,(now-t0)/1800), e=1-Math.pow(1-t,4); el.textContent=t<1?f(n*e):v; if(t<1) requestAnimationFrame(tick); })(t0); },150+(i%4)*140); },{threshold:0.4}); o.observe(el); });
   // Home header softens from navy to light on scroll
   var hdr=document.querySelector('header[data-blend]'), hero=document.querySelector('[data-hero]');
   if(hdr&&hero){ var onS=function(){ var past=hero.getBoundingClientRect().bottom<=96; hdr.classList.toggle('preview-light',past); hdr.classList.toggle('preview-dim',!past&&window.scrollY>8); }; onS(); window.addEventListener('scroll',onS,{passive:true}); }

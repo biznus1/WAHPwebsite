@@ -1,6 +1,8 @@
+import { CountUp } from "@/components/motion/count-up";
 import { approvedClaim } from "@/content/claims";
 
-/** Cited workforce statistics (from WAHP's own research pages). Each renders only if its claim is approved. */
+/** Cited workforce statistics (from WAHP's own research pages). Each renders only if its claim is approved.
+ *  Figures count up when they scroll into view. */
 const stats = [
   { claim: "stat-doctor-density", value: "1.43", label: "Doctors per 10,000 people in Ghana", source: "WHO, 2022" },
   {
@@ -36,9 +38,17 @@ export function ProblemStats({ dark = false }: { dark?: boolean }) {
           className={`reveal flex flex-col p-6 md:p-7 ${dark ? "bg-navy" : "bg-white"}`}
           style={{ transitionDelay: `${i * 60}ms` }}
         >
-          <dt className={`order-2 mt-3 ${dark ? "text-white/80" : "text-arsenic"}`}>{s.label}</dt>
-          <dd className={`order-1 text-headline font-semibold ${dark ? "text-white" : "text-navy"}`}>{s.value}</dd>
-          <dd className={`order-3 mt-4 text-xs ${dark ? "text-white/60" : "text-arsenic"}`}>Source: {s.source}</dd>
+          <dt className={`order-2 mt-4 ${dark ? "text-white/85" : "text-arsenic"}`}>{s.label}</dt>
+          {/* Brand accents: light teal figures on navy (navy on light), and a teal bar that draws in under each. */}
+          <dd className={`order-1 text-headline font-semibold ${dark ? "text-teal-300" : "text-navy"}`}>
+            <CountUp value={s.value} delay={150 + i * 140} />
+            <span
+              aria-hidden
+              className="stat-bar mt-4 block h-1 w-14 rounded-full bg-gradient-to-r from-teal to-teal-300"
+              style={{ transitionDelay: `${300 + i * 140}ms` }}
+            />
+          </dd>
+          <dd className={`order-3 mt-4 text-xs ${dark ? "text-steel" : "text-arsenic"}`}>Source: {s.source}</dd>
         </div>
       ))}
     </dl>

@@ -39,7 +39,7 @@ The decisions below block or shape public launch. The machine-readable register 
 | Mission and vision | One-Pager (Jul 2026) | Used on /about. Wording was reconstructed from PDF text, so **please check it word-for-word** |
 | Regulatory sentence ("full compliance with applicable Ghanaian … regulations") | Questionnaire #27 | Used on /about and the physician FAQ. No agencies are named |
 | "Hospitals have infrastructure but no autonomy. Clinics have autonomy but no infrastructure." | March blueprint / deck | Used on home ("…WAHP is designed to combine both."), as the intro to the three way comparison |
-| "In a big hospital" column of the Home comparison (premises, equipment, admin, diagnostics, focus) | Written 5 Nov 2026 from the line above and the older build's Hospital / WAHP / Private Clinic toggle | Qualitative, no figures. **Please check the wording** |
+| "In a large hospital" column of the Home comparison (renamed from "big hospital", 5 Nov 2026) (premises, equipment, admin, diagnostics, focus) | Written 5 Nov 2026 from the line above and the older build's Hospital / WAHP / Private Clinic toggle | Qualitative, no figures. **Please check the wording** |
 | "Accra is the starting point, not the destination." | March blueprint | Used on home |
 | "Stop managing. Start practising." / "Everything under one roof" | westahp.com themes (per brief) | Used as section headings. British spelling *practising* (en-GB). Confirm |
 | Flexible leases (hourly/daily/monthly) | Questionnaire #10 | Used in the physician FAQ as *planned*. No rates |

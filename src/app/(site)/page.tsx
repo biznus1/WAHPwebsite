@@ -241,7 +241,7 @@ export default function HomePage() {
           id="compare-heading"
           align="center"
           eyebrow="Where WAHP fits"
-          lead="Between the big hospital"
+          lead="Between the large hospital"
           rest="and going it alone."
         >
           <p>
