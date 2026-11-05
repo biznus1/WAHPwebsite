@@ -251,3 +251,9 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 - **Home floor plan** (`components/graphics/clinical-floor-schematic.tsx`): glowing tiles on a navy grid, and each of the six suites is a small illustrated exam room, furnished a little differently (couch, cabinet, monitor, curtain, window, desk, plant, lamp, stool). Reception and records have icons, the planned lab has a test tube rack and the future imaging tile a scanner. Animation: the core pops, the rooms pop in one by one, the links fade in and flow to the core, the lab tubes fill and bob, the service pills slide up, the core glows and the imaging tile's dashed border marches.
 - Green appears in small accents in both diagrams because the owner's mockups use it; see `BRAND_IMPLEMENTATION.md`.
 - Static preview: the diagram's parts now select their tabs, and tab states are captured already revealed.
+
+## 5 Nov 2026, more of the hero video
+
+- At the owner's request the Home hero shows more of its footage. The navy overlay is lighter: 66% on phones (was 75%), and on desktop it fades from 82% behind the text to 12% on the right (was 93% to 32%). The dark band at the bottom is shorter, and the four stat cards have darker glass so they stay readable.
+- The headline and intro have a soft navy shadow. On phones the intro is full white and the statement line uses a paler teal (`teal-200`), because the footage sits behind all the text there.
+- Contrast was measured on the footage itself, with the text hidden and shadows off, at six points in the loop (95th percentile of background brightness). Worst case: phones, headline 4.7:1, teal line 3.2:1, intro 4.6:1; desktop, 7.0:1, 3.9:1 and 7.9:1. All meet WCAG AA (3:1 for large text, 4.5:1 for body text).

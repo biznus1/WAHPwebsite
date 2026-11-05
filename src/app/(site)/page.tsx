@@ -46,15 +46,15 @@ export default function HomePage() {
       {/* Pulled up under the header (which is transparent over the hero) so the footage starts at the very top. */}
       <section data-hero className="grain on-dark relative isolate -mt-18 overflow-hidden bg-navy text-white md:-mt-20">
         <LoopVideo src="/video/hero-clinic" className="-z-20 object-[38%_30%]" />
-        {/* Deep-blue overlay: dense behind the text, opening up towards the right so the footage carries the hero,
-            as it did on the older site. */}
+        {/* Deep-blue overlay: light enough for the footage to carry the hero (owner request, 5 Nov 2026), with a
+            soft shadow on the text and darker glass on the stat cards to keep them readable. */}
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-navy/75 md:bg-[linear-gradient(90deg,rgba(0,51,102,0.93)_0%,rgba(0,51,102,0.74)_45%,rgba(0,51,102,0.32)_100%)]"
+          className="absolute inset-0 -z-10 bg-navy/[0.66] md:bg-[linear-gradient(90deg,rgba(0,51,102,0.82)_0%,rgba(0,51,102,0.55)_45%,rgba(0,51,102,0.12)_100%)]"
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,#003366_0%,rgba(0,51,102,0.6)_28%,transparent_55%),radial-gradient(60%_50%_at_85%_15%,rgba(0,135,158,0.25),transparent_70%)]"
+          className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,#003366_0%,rgba(0,51,102,0.5)_18%,transparent_40%),radial-gradient(60%_50%_at_85%_15%,rgba(0,135,158,0.2),transparent_70%)]"
         />
         <div aria-hidden className="scroll-sink pointer-events-none absolute -top-48 -right-56 -z-10 md:-right-32">
           <HeroRings className="size-[44rem] text-white/[0.07] md:size-[56rem]" />
@@ -65,18 +65,21 @@ export default function HomePage() {
             <div className="hero-in" style={delay(0)}>
               <Eyebrow dark>West African Health Partners</Eyebrow>
             </div>
-            <h1 className="mt-7 text-display font-bold text-white">
+            <h1 className="mt-7 text-display font-bold text-white [filter:drop-shadow(0_2px_18px_rgba(0,25,51,0.55))]">
               <span className="hero-line block" style={delay(80)}>
                 {hero.lead}
               </span>
               <span
-                className="hero-line block bg-gradient-to-r from-teal-300 to-steel bg-clip-text text-transparent"
+                className="hero-line block bg-gradient-to-r from-teal-200 to-smoke bg-clip-text text-transparent md:from-teal-300 md:to-steel"
                 style={delay(160)}
               >
                 {hero.rest}
               </span>
             </h1>
-            <p className="hero-in mt-7 max-w-xl text-lead text-white/75" style={delay(260)}>
+            <p
+              className="hero-in mt-7 max-w-xl text-lead text-white md:text-white/90 [text-shadow:0_1px_14px_rgba(0,25,51,0.75)]"
+              style={delay(260)}
+            >
               {hero.intro}
             </p>
             <div className="hero-in mt-10 flex flex-col gap-3 sm:flex-row sm:items-center" style={delay(360)}>
@@ -99,7 +102,7 @@ export default function HomePage() {
                 // a staggered rise, the count up, the underline drawing in, then one soft light sweep.
                 <div
                   key={s.label}
-                  className="reveal stat-card relative overflow-hidden rounded-card bg-white/[0.05] px-5 py-6 ring-1 ring-inset ring-white/10 backdrop-blur-sm md:px-7 md:py-8"
+                  className="reveal stat-card relative overflow-hidden rounded-card bg-navy/45 px-5 py-6 ring-1 ring-inset ring-white/15 backdrop-blur-md md:px-7 md:py-8"
                   style={{ ...delay(i * 110), transitionDelay: `${i * 110}ms` }}
                 >
                   <dd className="text-4xl font-bold tracking-tight text-white md:text-5xl">
