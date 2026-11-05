@@ -269,3 +269,8 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 - At the owner's request the phone hero has the video behind the text again, under the original 75% navy, rather than in a band above it. It now covers the first screen (header to buttons, `100svh`, 40 to 56rem) instead of the whole tall hero, which halves the zoom, and it is framed on the doctor (`object-position: 63% 50%`). It fades into navy above the stat cards. The text starts where it did originally.
 - Correction to the earlier desktop change: measured on the brightest frames (a close up of the doctor's white coat), the end of the headline sat where the overlay was only about 50% navy, under 3:1. The desktop overlay now stays dense behind the whole text block (86% to 78% to 62% at 58% of the width) and opens to 15% on the right, where the doctor shows.
 - Contrast measured behind the words themselves (tight text boxes, text hidden, shadows off), at six points in the loop: phones, headline 5.8:1, teal line 3.2:1, intro 5.9:1; desktop, 4.9:1, 3.7:1 and 6.6:1.
+
+## 5 Nov 2026, the older build's hero wording
+
+- At the owner's request the Home hero now reads "Revolutionizing healthcare infrastructure / across West Africa." with "Reimagined. For West Africa. One platform. Infinite possibilities." below, the wording of the older WordPress build (sentence case to match the site). Set in `content/data/pages/home.json`, so it stays editable in the site admin.
+- The "Not yet open · Accra, Ghana" badge stays beside the buttons. Hero contrast re-measured with the new line lengths: still AA on phones and desktop.
