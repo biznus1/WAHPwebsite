@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { afterPreloader } from "@/lib/preloader";
 
 /**
  * Splits a figure into the number that animates and the text around it, keeping its decimals and thousands
@@ -64,8 +65,9 @@ export function CountUp({ value, duration = 1800, delay = 0 }: { value: string; 
       },
       { threshold: 0.4 },
     );
-    io.observe(el);
+    const cancel = afterPreloader(() => io.observe(el));
     return () => {
+      cancel();
       io.disconnect();
       cancelAnimationFrame(frame);
       if (timer) clearTimeout(timer);

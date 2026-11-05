@@ -2,8 +2,9 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { afterPreloader } from "@/lib/preloader";
 
-/** Adds `.is-visible` to `.reveal` elements as they enter the viewport. */
+/** Adds `.is-visible` to `.reveal` elements as they enter the viewport, once the loading screen lifts. */
 export function RevealObserver() {
   const pathname = usePathname();
   useEffect(() => {
@@ -23,8 +24,11 @@ export function RevealObserver() {
       },
       { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
     );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    const cancel = afterPreloader(() => els.forEach((el) => io.observe(el)));
+    return () => {
+      cancel();
+      io.disconnect();
+    };
   }, [pathname]);
   return null;
 }

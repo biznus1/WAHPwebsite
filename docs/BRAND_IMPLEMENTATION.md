@@ -20,13 +20,14 @@ The inline `<Logo>` component (`src/components/brand/logo.tsx`) renders the exac
 - Clear space: the "W" cap height on all sides (owner rule). The header gives ≥ 18px of clear space at 36–40px height.
 - Minimum width: 120px (owner rule). The header logo renders at about 160–180px wide.
 - The large, faint emblem on navy panels reproduces the watermark treatment on the guideline cover and section pages (navy-700 tone, `#26507A`).
+- Page loading screen (5 Nov 2026, owner request): the emblem alone, white on navy, inside a turning ring, with "West African Health Partners" set in spaced capitals below. The emblem is not recombined with the wordmark, so no new lockup is created.
 
 ## Colour
 
 | Token | Hex | Source | Website role |
 | --- | --- | --- | --- |
 | `paper` | `#F5F6FC` | Primary 01 | Page / section background |
-| `green` | `#8BC900` | Primary 02 | **CTA buttons only** (owner directive) and the logo. Exception (owner mockups, 5 Nov 2026): small accents inside the Platform diagram icons and its active number, and the plants in the Home floor plan |
+| `green` | `#8BC900` | Primary 02 | **CTA buttons only** (owner directive) and the logo. Exception (owner mockups, 5 Nov 2026): small accents inside the Platform diagram icons and its active number, the plants in the Home floor plan, and the turning arc of the page loading screen (after the older build's green loader) |
 | `navy` | `#003366` | Primary 03 | Headings, dark sections, primary brand surface |
 | `teal` | `#00879E` | Primary 04 | Accent icons, rules, diagram lines, focus rings |
 | `cloud` … `phantom` | `#EDEFF7` `#D3D6E0` `#BCBFCC` `#9DA2B3` `#6E7180` `#40424D` `#1E1E24` | Grayscale 01–07 | Surfaces, borders, text |

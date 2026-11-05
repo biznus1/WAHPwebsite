@@ -60,3 +60,27 @@ test("skip link moves focus to main content", async ({ page }) => {
   const skip = page.getByRole("link", { name: "Skip to main content" });
   await expect(skip).toBeFocused();
 });
+
+test("loading screen lifts after the page loads, never blocks clicks, and returns between pages", async ({ page }) => {
+  await page.goto("/");
+  const screen = page.locator("#wahp-preloader");
+  await expect(screen).toHaveAttribute("aria-hidden", "true");
+  await expect(screen).toHaveCSS("pointer-events", "none");
+  await expect(screen).toHaveAttribute("data-state", "done", { timeout: 5000 });
+  await expect(screen).toBeHidden();
+  // Moving to another page inside the site shows it briefly again.
+  await page.evaluate(() => {
+    const el = document.getElementById("wahp-preloader")!;
+    new MutationObserver(() => el.dataset.state === "route" && el.setAttribute("data-seen-route", "")).observe(el, {
+      attributes: true,
+      attributeFilter: ["data-state"],
+    });
+  });
+  await page
+    .getByRole("link", { name: /Get in touch|Schedule a call|Book a call/ })
+    .first()
+    .click();
+  await expect(page).toHaveURL(/\/contact/);
+  await expect(screen).toHaveAttribute("data-seen-route", "");
+  await expect(screen).toBeHidden();
+});

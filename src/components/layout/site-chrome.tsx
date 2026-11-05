@@ -2,11 +2,13 @@ import type { ReactNode } from "react";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import { RevealObserver } from "./reveal-observer";
+import { PagePreloader } from "./page-preloader";
 
-/** Skip link, header, main landmark and footer shared by every public page (not the site admin). */
+/** Loading screen, skip link, header, main landmark and footer shared by every public page (not the site admin). */
 export function SiteChrome({ children }: { children: ReactNode }) {
   return (
     <>
+      <PagePreloader />
       <a
         href="#main"
         className="sr-only z-[60] rounded-full bg-navy px-5 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3"

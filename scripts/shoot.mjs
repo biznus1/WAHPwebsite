@@ -11,6 +11,12 @@ for (const route of routes) {
     page.on("response", (r) => r.status() >= 400 && errors.push(r.status() + " " + r.url()));
     page.on("pageerror", (e) => errors.push(String(e)));
     await page.goto(base + route, { waitUntil: "networkidle" });
+    // Wait for the page loading screen to lift.
+    await page
+      .waitForFunction(() => document.getElementById("wahp-preloader")?.dataset.state !== "loading", null, {
+        timeout: 5000,
+      })
+      .catch(() => {});
     await page.evaluate(() => document.querySelectorAll(".reveal").forEach((e) => e.classList.add("is-visible")));
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     const slug = route === "/" ? "home" : route.replace(/^\//, "").replace(/\//g, "-");

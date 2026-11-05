@@ -298,6 +298,95 @@
   }
 }
 
+/*
+ * Page loading screen (owner request, after the older build's page transition): the WAHP emblem in a
+ * turning ring on navy. Shown only when script runs; lifted by an inline script once the page has
+ * loaded (at least 700ms), and by the CSS timeout below after 3.2s whatever happens.
+ * data-state: loading (first load) → done; route (between pages, shown at once) → done.
+ */
+.preloader {
+  display: none;
+}
+.js .preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-navy);
+  color: #fff;
+  pointer-events: none;
+  transition:
+    opacity 0.55s var(--ease-soft),
+    visibility 0s linear 0.55s;
+}
+.js .preloader[data-state="loading"] {
+  animation: preloader-timeout 0.55s var(--ease-soft) 3.2s forwards;
+}
+.js .preloader[data-state="route"] {
+  transition: none;
+}
+.js .preloader[data-state="done"] {
+  opacity: 0;
+  visibility: hidden;
+}
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: preloader-in 0.35s var(--ease-soft) both;
+  transition: transform 0.55s var(--ease-soft);
+}
+.preloader[data-state="done"] .preloader-content {
+  transform: scale(1.06);
+}
+.preloader-ring {
+  animation: preloader-spin 1.1s linear infinite;
+}
+.preloader-arc {
+  stroke-dasharray: 26 74;
+}
+.preloader-mark {
+  animation: preloader-beat 1.6s ease-in-out infinite;
+}
+@keyframes preloader-timeout {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes preloader-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+@keyframes preloader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* A soft double beat: the emblem is a heart. */
+@keyframes preloader-beat {
+  0%,
+  30%,
+  60%,
+  100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.08);
+  }
+  45% {
+    transform: scale(1.05);
+  }
+}
+/* The hero's entrance waits under the loading screen and plays as it lifts. */
+html.js:has(#wahp-preloader:not([data-state="done"])) :is(.hero-in, .hero-line) {
+  animation-play-state: paused;
+}
+
 /* Hero entrance on first paint (CSS only). The headline moves but never fades, so it still paints immediately (LCP). */
 .hero-in {
   animation: hero-in 1.2s var(--ease-soft) both;

@@ -85,6 +85,8 @@ for (const route of routes) {
       // Reveals were forced visible for capture; reset them so the preview's own observer animates them in.
       main.querySelectorAll(".reveal.is-visible").forEach((e) => e.classList.remove("is-visible"));
       main.querySelectorAll("script, next-route-announcer, nextjs-portal, [data-js-only]").forEach((e) => e.remove());
+      // The loading screen had lifted when captured; the preview shows it again on each page.
+      main.querySelector("#wahp-preloader")?.setAttribute("data-state", "loading");
       const imgs = [];
       main.querySelectorAll("img").forEach((img) => {
         const src = img.getAttribute("src") || "";
@@ -175,6 +177,9 @@ header.preview-light button[aria-controls]{color:#003366;--tw-ring-color:#BCBFCC
 
 const previewScript = (tabStates) => `<script>
 (function(){
+  // Loading screen lifts once the page has loaded (at least 700ms), as on the live site
+  var pl=document.getElementById('wahp-preloader');
+  if(pl){ var lift=function(){ setTimeout(function(){ pl.setAttribute('data-state','done'); },Math.max(0,700-performance.now())); }; if(document.readyState==='complete') lift(); else addEventListener('load',lift); }
   // Scroll reveals (the live site does this in React; content stays visible if this script never runs)
   document.documentElement.classList.add('js');
   var reveals=[].slice.call(document.querySelectorAll('.reveal'));
@@ -226,7 +231,7 @@ for (const route of routes) {
     .replaceAll("animate-rise", "")
     .replace(/ style="animation-delay:[^"]*"/g, "");
   const body = `${bar}<div class="${p.bodyClass}">${p.html}${p.menuHtml.replace('id="mobile-menu"', 'id="mobile-menu" hidden')}</div>${previewScript(p.tabStates)}`;
-  const doc = `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>${p.title}</title><link rel="stylesheet" href="assets/site.css">${previewStyle(p.fontVar)}</head><body>${body}</body></html>`;
+  const doc = `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>${p.title}</title><script>document.documentElement.classList.add('js')</script><link rel="stylesheet" href="assets/site.css">${previewStyle(p.fontVar)}</head><body>${body}</body></html>`;
   writeFileSync(join(out, fileFor(route)), doc);
   if (route === "/") {
     // Artifact page: content only (the publisher adds the document skeleton).
