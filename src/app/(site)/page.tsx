@@ -8,8 +8,8 @@ import { Wave } from "@/components/graphics/wave";
 import { CountUp } from "@/components/motion/count-up";
 import { LoopVideo } from "@/components/motion/loop-video";
 import { AudiencePaths } from "@/components/sections/audience-paths";
+import { AudienceCta } from "@/components/sections/audience-cta";
 import { Comparison } from "@/components/sections/comparison";
-import { CtaBand } from "@/components/sections/cta-band";
 import { ProblemStats } from "@/components/sections/problem-stats";
 import { ButtonLink } from "@/components/ui/button";
 import { SiteImage } from "@/components/ui/site-image";
@@ -50,10 +50,11 @@ export default function HomePage() {
           className="-z-20 object-[38%_30%]"
           controlClassName="right-4 bottom-20 md:right-8 md:bottom-28"
         />
-        {/* Deep-blue overlay: near-solid behind the text, letting the footage show through towards the right. */}
+        {/* Deep-blue overlay: dense behind the text, opening up towards the right so the footage carries the hero,
+            as it did on the older site. */}
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-navy/80 md:bg-[linear-gradient(90deg,rgba(0,51,102,0.95)_0%,rgba(0,51,102,0.84)_42%,rgba(0,51,102,0.5)_100%)]"
+          className="absolute inset-0 -z-10 bg-navy/75 md:bg-[linear-gradient(90deg,rgba(0,51,102,0.93)_0%,rgba(0,51,102,0.74)_45%,rgba(0,51,102,0.32)_100%)]"
         />
         <div
           aria-hidden
@@ -73,7 +74,7 @@ export default function HomePage() {
                 {hero.lead}
               </span>
               <span
-                className="hero-line block bg-gradient-to-r from-[#7fd3e1] to-steel bg-clip-text text-transparent"
+                className="hero-line block bg-gradient-to-r from-teal-300 to-steel bg-clip-text text-transparent"
                 style={delay(160)}
               >
                 {hero.rest}
@@ -255,7 +256,12 @@ export default function HomePage() {
           eyebrow="Where WAHP fits"
           lead="Between the big hospital"
           rest="and going it alone."
-        />
+        >
+          <p>
+            Hospitals have infrastructure but no autonomy. Clinics have autonomy but no infrastructure. WAHP is designed
+            to combine both.
+          </p>
+        </SectionIntro>
         <div className="reveal mt-14">
           <Comparison />
         </div>
@@ -267,13 +273,8 @@ export default function HomePage() {
         </p>
       </Section>
 
-      {/* 6 — Next step */}
-      <CtaBand
-        lead="Let's talk."
-        rest="Someone from our team will reply."
-        primary={{ href: "/contact", label: "Get in touch" }}
-        secondary={{ href: "/physicians#register", label: "Register as a physician" }}
-      />
+      {/* 6 — Next step: one door per audience, over the hero footage. */}
+      <AudienceCta />
     </>
   );
 }

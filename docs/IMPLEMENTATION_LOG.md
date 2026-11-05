@@ -206,3 +206,15 @@
 - The proposition section on `/physicians` now uses the owner-supplied `physician-stethoscope-green.webp`, framed from the top so the face and stethoscope stay in view. The old `doctor-clinic-kinshasa` photo and its Terms credit were removed. Licence to confirm (see `ASSET_INVENTORY.md`).
 - The Home "infrastructure gap" photo was replaced with the owner-supplied `doctors-meeting.webp`. `village-hospital-yard` and its Terms credit were removed. Licence to confirm: it looks like a news agency photo.
 - The Investors banner above the introduction form now uses the owner-supplied `team-laptop-celebration.webp`. `community-outreach` and its Terms credit were removed. Licence to confirm.
+
+## 5 Nov 2026, the best of the older WordPress build
+
+A WordPress export of wahp.viewyourprojecthere.com arrived by WeTransfer (dated 2 Nov 2026), and the owner asked for one site that takes the best of both. A side by side review found the new build stronger on layout, type and phones, and the older build stronger on energy and interaction. These parts were brought over; its copy, claims and stock imagery were not.
+
+- **Highlighted statements on navy.** Every two tone heading on navy now sets the first line in white and the statement line in light teal (`teal-300`, 7.4:1 on navy), as the Home hero already did. The older build used green words; green stays reserved for CTAs.
+- **Three way comparison.** "Where WAHP fits" now compares a big hospital, WAHP and going it alone, with WAHP in the middle column, matching its heading. The intro is the approved line "Hospitals have infrastructure but no autonomy…". On phones a three way switch (radio buttons, no script, so it also works in the static preview) shows one option at a time, after the older build's Hospital / WAHP / Private Clinic toggle. The hospital column is new qualitative copy for the owner to check.
+- **Audience doors at the end of Home.** The inset "Let's talk" card is replaced by a full width band over the hero footage (navy overlay, pause control) with three cards: physician in Ghana, diaspora physician, investor. Each goes straight to the matching enquiry type, with a link to its audience page. Partners and press get a line below.
+- **More of the hero footage.** The hero overlay is lighter on the right so the video carries the hero, as it did on the older build. It stays dense behind the text.
+- **Sharper headshots.** The five team photos were re-encoded from the original uploads in the export (same framing, quality 90). Nakeitheya Smith's is now 1080px.
+- **Not brought over:** the green headline words (owner rule), the hospital logo strip (implies affiliations), the crowded corridor photo (removed earlier at the owner's request), market size figures and the advisory board placeholders.
+- **Security note.** The export and the live WordPress site contain injected malware. Only the five headshots were taken from the export, and they were decoded and re-encoded rather than copied.

@@ -54,7 +54,8 @@ export function Eyebrow({
 /**
  * Two-tone heading, the typographic device of the brand guidelines
  * ("Lockup / Logo."): a muted grey first line, then the statement in full colour.
- * Green is reserved for CTAs on the website (owner questionnaire), so it is not used here.
+ * On navy the first line is white and the statement is light teal, as in the Home hero. This keeps the older
+ * site's highlighted phrases (it used green) while green stays reserved for CTAs (owner questionnaire).
  */
 export function SplitHeading({
   lead,
@@ -81,8 +82,8 @@ export function SplitHeading({
         : "text-title font-medium";
   return (
     <Tag id={id} className={`${sizeCls} ${dark ? "text-white" : "text-navy"} ${className}`}>
-      <span className={`block ${dark ? "text-steel" : "text-graphite"}`}>{lead}</span>
-      <span className="block">{rest}</span>
+      <span className={`block ${dark ? "text-white" : "text-graphite"}`}>{lead}</span>
+      <span className={`block ${dark ? "text-teal-300" : ""}`}>{rest}</span>
     </Tag>
   );
 }

@@ -23,6 +23,9 @@
   /* Navy states: hover shade, and the watermark-emblem tone used on brand cover pages. */
   --color-navy-900: #002447;
   --color-navy-700: #26507a;
+  /* Light teal for the statement line of headings on navy (teal itself is under 3:1 there; this is 7.4:1).
+     The Home hero already used it; it plays the part the older site gave to green words. */
+  --color-teal-300: #7fd3e1;
 
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 
@@ -152,6 +155,22 @@
   .js .is-visible.reveal-media img,
   .js .is-visible .reveal-media img {
     transform: none;
+  }
+
+  /*
+   * Three way comparison on phones (Home, "Where WAHP fits"): radio buttons pick which option is shown.
+   * Pure CSS, so it also works in the script free preview. Browsers without :has() show all three panels.
+   */
+  @supports selector(:has(*)) {
+    .compare-switch .compare-panel {
+      display: none;
+    }
+    .compare-switch:has(input[value="hospital"]:checked) .compare-panel[data-option="hospital"],
+    .compare-switch:has(input[value="wahp"]:checked) .compare-panel[data-option="wahp"],
+    .compare-switch:has(input[value="own"]:checked) .compare-panel[data-option="own"] {
+      display: block;
+      animation: rise 0.5s var(--ease-soft) both;
+    }
   }
 }
 
