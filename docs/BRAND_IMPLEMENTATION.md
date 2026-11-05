@@ -33,7 +33,6 @@ The inline `<Logo>` component (`src/components/brand/logo.tsx`) renders the exac
 | `navy-900` | `#002447` | Derived shade | Hover state of navy buttons only |
 | `navy-700` | `#26507A` | Guideline covers | Watermark emblem only |
 | `teal-300` | `#7FD3E1` | Derived light tint of teal | Statement line of headings on navy (7.4:1 on navy), and checkmarks on navy |
-| `teal-200` | `#A7E3ED` | Paler tint of teal | Home hero statement line on phones only, where the footage sits behind all the text |
 
 There are no gradients and no colours outside this list.
 

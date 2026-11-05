@@ -257,3 +257,9 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 - At the owner's request the Home hero shows more of its footage. The navy overlay is lighter: 66% on phones (was 75%), and on desktop it fades from 82% behind the text to 12% on the right (was 93% to 32%). The dark band at the bottom is shorter, and the four stat cards have darker glass so they stay readable.
 - The headline and intro have a soft navy shadow. On phones the intro is full white and the statement line uses a paler teal (`teal-200`), because the footage sits behind all the text there.
 - Contrast was measured on the footage itself, with the text hidden and shadows off, at six points in the loop (95th percentile of background brightness). Worst case: phones, headline 4.7:1, teal line 3.2:1, intro 4.6:1; desktop, 7.0:1, 3.9:1 and 7.9:1. All meet WCAG AA (3:1 for large text, 4.5:1 for body text).
+
+## 5 Nov 2026, phone hero shows the whole scene; header fits small phones
+
+- The owner meant the crop, not the overlay. On phones the hero video used to fill the whole tall hero, which zoomed it to about 15% of the frame's width. It now has its own 17rem band under the header that shows about 80% of the frame (both people), lightly tinted, fading into navy where the eyebrow starts. The headline and intro sit on the original deep navy again.
+- This replaces the phone part of the previous entry: the 66% overlay, the white intro and the `teal-200` token are gone. The desktop overlay (82% to 12%) stays.
+- Header: the logo, "Get in touch" and the menu button overflowed 360px screens by 16px on every page (since 21 Oct). Under 380px the logo is now 32px tall (142px wide, above the 120px minimum) with a smaller gap, and under 360px the header's "Get in touch" is hidden (the menu has one). No page scrolls sideways from 320px to 430px.

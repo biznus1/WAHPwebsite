@@ -95,9 +95,9 @@ export function SiteHeader() {
               : "bg-paper"
         }`}
       >
-        <div className="container-wahp flex h-18 items-center justify-between gap-6 md:h-20">
+        <div className="container-wahp flex h-18 items-center justify-between gap-3 min-[380px]:gap-6 md:h-20">
           <Link href="/" className="shrink-0 rounded-md" aria-label="West African Health Partners home">
-            <Logo tone={blend ? "reversed" : "primary"} className="h-9 w-auto md:h-10" title={null} />
+            <Logo tone={blend ? "reversed" : "primary"} className="h-8 w-auto min-[380px]:h-9 md:h-10" title={null} />
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:block">
@@ -134,9 +134,14 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-2">
+            {/* Under 360px wide this button would push the header off screen; the menu has its own "Get in touch". */}
             <Link
               href="/contact"
-              className={buttonClasses("primary", "md", "!h-10 !px-4 text-sm sm:!h-11 sm:!px-5 sm:text-[0.95rem]")}
+              className={buttonClasses(
+                "primary",
+                "md",
+                "!h-10 !px-4 text-sm max-[359px]:hidden sm:!h-11 sm:!px-5 sm:text-[0.95rem]",
+              )}
             >
               Get in touch
             </Link>

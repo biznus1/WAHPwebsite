@@ -45,12 +45,19 @@ export default function HomePage() {
       {/* 1 — Hero: one statement, one line of support, two actions, the groundwork in numbers. */}
       {/* Pulled up under the header (which is transparent over the hero) so the footage starts at the very top. */}
       <section data-hero className="grain on-dark relative isolate -mt-18 overflow-hidden bg-navy text-white md:-mt-20">
-        <LoopVideo src="/video/hero-clinic" className="-z-20 object-[38%_30%]" />
-        {/* Deep-blue overlay: light enough for the footage to carry the hero (owner request, 5 Nov 2026), with a
-            soft shadow on the text and darker glass on the stat cards to keep them readable. */}
+        {/* Phones: the footage gets its own band under the header, wide enough to show the whole scene rather
+            than a zoomed slice, and fades into navy where the text starts (owner request, 5 Nov 2026).
+            Larger screens: it fills the hero behind a navy overlay that opens up towards the right. */}
+        <div aria-hidden className="absolute inset-x-0 top-18 -z-20 h-[17rem] md:inset-0 md:h-auto">
+          <LoopVideo src="/video/hero-clinic" className="object-[25%_50%] md:object-[38%_30%]" />
+        </div>
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-navy/[0.66] md:bg-[linear-gradient(90deg,rgba(0,51,102,0.82)_0%,rgba(0,51,102,0.55)_45%,rgba(0,51,102,0.12)_100%)]"
+          className="absolute inset-x-0 top-18 -z-10 h-[17rem] bg-[linear-gradient(to_bottom,rgba(0,51,102,0.25)_0%,rgba(0,51,102,0.05)_25%,rgba(0,51,102,0.12)_62%,#003366_100%)] md:hidden"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 md:bg-[linear-gradient(90deg,rgba(0,51,102,0.82)_0%,rgba(0,51,102,0.55)_45%,rgba(0,51,102,0.12)_100%)]"
         />
         <div
           aria-hidden
@@ -60,7 +67,7 @@ export default function HomePage() {
           <HeroRings className="size-[44rem] text-white/[0.07] md:size-[56rem]" />
         </div>
 
-        <div className="container-wahp relative pt-32 pb-12 md:pt-44 md:pb-16">
+        <div className="container-wahp relative pt-[21rem] pb-12 md:pt-44 md:pb-16">
           <div className="scroll-recede max-w-4xl">
             <div className="hero-in" style={delay(0)}>
               <Eyebrow dark>West African Health Partners</Eyebrow>
@@ -70,14 +77,14 @@ export default function HomePage() {
                 {hero.lead}
               </span>
               <span
-                className="hero-line block bg-gradient-to-r from-teal-200 to-smoke bg-clip-text text-transparent md:from-teal-300 md:to-steel"
+                className="hero-line block bg-gradient-to-r from-teal-300 to-steel bg-clip-text text-transparent"
                 style={delay(160)}
               >
                 {hero.rest}
               </span>
             </h1>
             <p
-              className="hero-in mt-7 max-w-xl text-lead text-white md:text-white/90 [text-shadow:0_1px_14px_rgba(0,25,51,0.75)]"
+              className="hero-in mt-7 max-w-xl text-lead text-white/80 md:text-white/90 [text-shadow:0_1px_14px_rgba(0,25,51,0.75)]"
               style={delay(260)}
             >
               {hero.intro}

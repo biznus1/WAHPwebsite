@@ -26,8 +26,6 @@
   /* Light teal for the statement line of headings on navy (teal itself is under 3:1 there; this is 7.4:1).
      The Home hero already used it; it plays the part the older site gave to green words. */
   --color-teal-300: #7fd3e1;
-  /* Paler tint for the hero statement line on phones, where the footage sits behind all the text (3:1 or more). */
-  --color-teal-200: #a7e3ed;
 
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 
