@@ -62,21 +62,9 @@ export default function PlatformPage() {
       <Section tone="white" labelledBy="spaces-heading">
         <SectionIntro id="spaces-heading" eyebrow="The spaces" lead="How we picture" rest="the Accra hub." />
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          <SiteImage
-            name="lobby"
-            className="reveal"
-            caption="Concept rendering of the reception. This is a plan, not a finished building, and the people are illustrative."
-          />
-          <SiteImage
-            name="consultation"
-            className="reveal"
-            caption="Concept rendering of a consulting room. This is a plan, not a finished building, and the people are illustrative."
-          />
-          <SiteImage
-            name="laboratory"
-            className="reveal"
-            caption="Concept rendering of the planned lab. It is not operating, and the people are illustrative."
-          />
+          <SiteImage name="lobby" className="reveal" />
+          <SiteImage name="consultation" className="reveal" />
+          <SiteImage name="laboratory" className="reveal" />
         </div>
       </Section>
 

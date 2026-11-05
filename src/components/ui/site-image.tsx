@@ -23,7 +23,7 @@ import partnersPresentation from "../../../public/images/photos/partners-present
 
 /**
  * Every image on the site, with its kind:
- * - concept:      owner 3D renders of the planned facility (caption below, always)
+ * - concept:      owner 3D renders of the planned facility (no badge or caption, owner's choice; stated on /terms)
  * - illustrative: photos and generated images copied from the WAHP source sites;
  *                 people and places shown are not WAHP staff, patients or facilities (no badge, owner's choice;
  *                 stated on /terms#images)
@@ -156,11 +156,9 @@ const images = {
 export type SiteImageName = keyof typeof images;
 
 /*
- * No on-image badges (owner's choice, 5 Nov 2026): the "Illustrative image" and "Concept rendering" pills were
- * removed. Concept renders keep their caption below the image, and /terms#images covers the rest.
+ * No on-image badges and no automatic concept captions (owner's choice, 5 Nov 2026). The Terms page says that
+ * interior images of the hub are concept renderings and that other photos are illustrative.
  */
-const conceptCaption =
-  "Concept rendering of the space we are planning. The building does not exist yet, and any people shown are illustrative.";
 
 export function SiteImage({
   name,
@@ -177,7 +175,7 @@ export function SiteImage({
   className?: string;
   sizes?: string;
   priority?: boolean;
-  /** Overrides the default caption; pass null to hide it. Concept renders always keep a caption. */
+  /** Optional caption under the image. */
   caption?: string | null;
   aspect?: string;
   dark?: boolean;
@@ -185,7 +183,7 @@ export function SiteImage({
   rounded?: string;
 }) {
   const img: { src: StaticImageData; kind: Kind; alt: string; position?: string } = images[name];
-  const text = img.kind === "concept" ? (caption ?? conceptCaption) : caption;
+  const text = caption;
   return (
     <figure className={className}>
       <div className={`relative overflow-hidden bg-cloud ${rounded} ${aspect}`}>

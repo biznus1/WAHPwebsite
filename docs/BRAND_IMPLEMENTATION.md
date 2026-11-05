@@ -52,7 +52,7 @@ There are no gradients and no colours outside this list.
 ## Imagery
 
 - Original vector graphics: the floor schematic, platform system diagram, roadmap rail and regional rings. All are captioned or described as conceptual.
-- Owner concept renders (lobby, consultation suite, laboratory) carry a caption on every use saying the building does not exist yet. The on-image "Concept rendering" and "Illustrative image" badges were removed on 5 Nov 2026 (owner's choice); the Terms page explains that photos are illustrative. Details are in `ASSET_INVENTORY.md`.
+- Owner concept renders (lobby, consultation suite, laboratory) are shown without a badge or caption since 5 Nov 2026 (owner's choice). Their alt text still says "Concept rendering", nearby copy describes the hub as planned, and the Terms page (`/terms#images`) states that interior images of the hub and the lobby video are concept renderings and that other photos are illustrative. Details are in `ASSET_INVENTORY.md`.
 - No stock photography, testimonials or headshots.
 
 ## Voice

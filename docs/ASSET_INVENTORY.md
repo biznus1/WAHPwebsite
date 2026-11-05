@@ -74,3 +74,5 @@
 `community-bp-screening.webp` (the previous Partners card photo) was removed with its Terms credit, as it is no longer used.
 
 **Badges removed (5 Nov 2026).** At the owner's request, images no longer carry the "Illustrative image" or "Concept rendering" badges, and the Home lobby video no longer carries its "Concept rendering of the planned hub" label. Where this file says an image is "badged" or "shown with a badge", read it as history. Concept renders keep their caption below the image, the lobby card says the reception is a concept, and `/terms#images` now states that other photos are illustrative and that people and places shown are not WAHP staff, patients or facilities unless named.
+
+**Captions and video controls removed (5 Nov 2026).** At the owner's request, the concept renders no longer have a caption under them, and the three background videos no longer have a pause button. Alt text for the renders still begins "Concept rendering"; the disclosure is on `/terms#images`.

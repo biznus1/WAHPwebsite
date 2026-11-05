@@ -40,12 +40,7 @@ export function AudienceCta() {
       aria-labelledby="next-step-heading"
       className="grain on-dark relative isolate overflow-hidden border-b border-white/10 bg-navy text-white"
     >
-      <LoopVideo
-        src="/video/hero-clinic"
-        start="visible"
-        className="-z-20 object-[38%_30%]"
-        controlClassName="right-4 bottom-4 md:right-8 md:bottom-8"
-      />
+      <LoopVideo src="/video/hero-clinic" start="visible" className="-z-20 object-[38%_30%]" />
       <div aria-hidden className="absolute inset-0 -z-10 bg-navy/[0.86]" />
       <Wave flip className="-mt-px text-white" />
 

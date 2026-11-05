@@ -229,3 +229,9 @@ A WordPress export of wahp.viewyourprojecthere.com arrived by WeTransfer (dated 
 
 - At the owner's request, the "Illustrative image" and "Concept rendering" badges are gone from every image, along with the "Concept rendering of the planned hub" label on the Home lobby video.
 - What still tells visitors these are not real WAHP people or a finished building: the captions under the four concept renders ("…The building does not exist yet…"), the lobby card ("This is a concept of the reception we are planning"), and a new sentence on `/terms#images`: other photos are illustrative, and unless a person is named, the people and places shown are not WAHP staff, patients or facilities.
+
+## 5 Nov 2026, no video buttons; no concept captions
+
+- At the owner's request, the "Pause video" / "Play video" button is gone from all three background videos (Home hero, lobby band, closing audience band). `LoopVideo` keeps its playback rules: the hero starts after load and idle, the other two play only while in view, and nothing plays for reduced motion or data saver. Note: WCAG 2.2.2 asks for a way to pause moving content that runs longer than five seconds; the reduced motion setting is now the only way to stop it.
+- The captions under the four concept renders (three on `/platform`, one on `/physicians`) are removed, so no photo carries "Concept rendering" text. Their alt text still says so for screen readers, and `/terms#images` now reads: "Images of the inside of the Accra hub, and the lobby video on the home page, are concept renderings of planned environments."
+- The floor schematic diagram on Home keeps its caption ("A sketch of the plan, not a building that exists yet"), as it is a diagram rather than a photo.

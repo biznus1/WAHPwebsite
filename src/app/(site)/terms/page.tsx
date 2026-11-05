@@ -73,7 +73,7 @@ export default function TermsPage() {
       <section id="images">
         <h2>Images</h2>
         <p>
-          Images captioned as concept renderings, and the lobby video on the home page, are illustrations of planned
+          Images of the inside of the Accra hub, and the lobby video on the home page, are concept renderings of planned
           environments. They do not depict existing facilities, and people shown are illustrative.
         </p>
         <p>
