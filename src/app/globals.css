@@ -158,6 +158,118 @@
   }
 
   /*
+   * Platform diagram (/platform, `.sys-*`): entrance when the card scrolls into view (centre pops, connectors draw,
+   * parts pop in), then slow ambient motion. Without JS nothing is hidden or moving.
+   */
+  .sys-diagram .sys-orbit {
+    transform-box: view-box;
+    transform-origin: 300px 240px;
+  }
+  .sys-diagram .sys-glow,
+  .sys-diagram .sys-center,
+  .sys-diagram .sys-node,
+  .sys-diagram .sys-node-in {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .sys-diagram .sys-node {
+    transition: transform 0.45s var(--ease-soft);
+  }
+  .sys-diagram .sys-node:hover,
+  .sys-diagram .sys-node.is-active {
+    transform: scale(1.06);
+  }
+  .sys-diagram .sys-disc,
+  .sys-diagram .sys-node text {
+    transition:
+      fill 0.3s,
+      stroke 0.3s;
+  }
+  .sys-diagram .sys-flow {
+    opacity: 0;
+  }
+  .js .sys-diagram.is-visible .sys-center {
+    animation: sys-pop 0.9s var(--ease-soft) both;
+  }
+  .js .sys-diagram.is-visible .sys-link {
+    stroke-dasharray: 1;
+    animation: sys-draw 1s var(--ease-soft) both;
+    animation-delay: calc(350ms + var(--i) * 120ms);
+  }
+  .js .sys-diagram.is-visible .sys-link-dashed {
+    animation: sys-fade 0.8s ease-out both;
+    animation-delay: calc(350ms + var(--i) * 120ms);
+  }
+  .js .sys-diagram.is-visible .sys-node-in {
+    animation: sys-pop 0.8s var(--ease-soft) both;
+    animation-delay: calc(550ms + var(--i) * 130ms);
+  }
+  .js .sys-diagram.is-visible .sys-orbit {
+    animation:
+      sys-fade 1.2s ease-out both,
+      sys-spin 90s linear 1.2s infinite;
+  }
+  .js .sys-diagram.is-visible .sys-glow {
+    animation: sys-breathe 4.5s ease-in-out 1s infinite alternate;
+  }
+  .js .sys-diagram.is-visible .sys-dash {
+    animation: sys-march 1.8s linear infinite;
+  }
+  .js .sys-diagram.is-visible .sys-flow {
+    animation: sys-flow 3.2s ease-in infinite;
+    animation-delay: calc(1.6s + var(--i) * 0.8s);
+  }
+
+  /*
+   * Home floor plan (`.floor-*`, components/graphics/clinical-floor-schematic.tsx): when its panel scrolls into
+   * view the core pops, the rooms pop in one by one, the links fade in and flow, the lab tubes fill and the
+   * services slide up; then the core glows and the future imaging tile's border marches.
+   */
+  .floor-plan .floor-tile,
+  .floor-plan .floor-core,
+  .floor-plan .floor-core-glow,
+  .floor-plan .floor-check {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .floor-plan .floor-liquid {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+  }
+  .js .is-visible .floor-plan .floor-core {
+    animation: sys-pop 0.9s var(--ease-soft) both;
+  }
+  .js .is-visible .floor-plan .floor-tile {
+    animation: sys-pop 0.8s var(--ease-soft) both;
+    animation-delay: calc(250ms + var(--i) * 90ms);
+  }
+  .js .is-visible .floor-plan .floor-links {
+    animation: sys-fade 1s ease-out 0.9s both;
+  }
+  .js .is-visible .floor-plan .floor-pill {
+    animation: floor-rise 0.8s var(--ease-soft) both;
+    animation-delay: calc(1s + var(--i) * 150ms);
+  }
+  .js .is-visible .floor-plan .floor-liquid {
+    animation:
+      floor-fill 1.4s var(--ease-soft) both,
+      floor-bob 3s ease-in-out infinite alternate;
+    animation-delay: calc(1.1s + var(--i) * 150ms), calc(2.6s + var(--i) * 400ms);
+  }
+  .js .is-visible .floor-plan .floor-core-glow {
+    animation: sys-breathe 4.5s ease-in-out 1s infinite alternate;
+  }
+  .js .is-visible .floor-plan .floor-dash {
+    animation: sys-march 1.8s linear infinite;
+  }
+  .js .is-visible .floor-plan .floor-check {
+    animation: sys-pop 0.6s var(--ease-soft) 1.5s both;
+  }
+  .js .is-visible .floor-plan .floor-scan {
+    animation: floor-blink 2.4s ease-in-out infinite;
+  }
+
+  /*
    * Three way comparison on phones (Home, "Where WAHP fits"): radio buttons pick which option is shown.
    * Pure CSS, so it also works in the script free preview. Browsers without :has() show all three panels.
    */
@@ -503,7 +615,95 @@
   }
 }
 
+/* Home floor plan keyframes (see `.floor-*` above). */
+@keyframes floor-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+@keyframes floor-fill {
+  from {
+    transform: scaleY(0);
+  }
+}
+@keyframes floor-bob {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0.88);
+  }
+}
+@keyframes floor-blink {
+  0%,
+  100% {
+    stroke-opacity: 0.3;
+  }
+  50% {
+    stroke-opacity: 1;
+  }
+}
+
+/* Platform diagram keyframes (see `.sys-*` above). */
+@keyframes sys-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+@keyframes sys-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes sys-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes sys-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes sys-breathe {
+  from {
+    opacity: 0.55;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+@keyframes sys-march {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+@keyframes sys-flow {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  15%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .sys-diagram .sys-flow {
+    display: none;
+  }
   html {
     scroll-behavior: auto;
   }

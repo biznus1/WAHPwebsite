@@ -57,6 +57,8 @@ for (const route of routes) {
   // Platform tabs: capture every tab state of the interactive component.
   let tabStates = [];
   if (route === "/platform") {
+    // Capture each tab state already revealed, so a swapped-in state shows at once in the preview.
+    await page.evaluate(() => document.querySelectorAll(".reveal").forEach((e) => e.classList.add("is-visible")));
     const tabs = page.getByRole("tab");
     const n = await tabs.count();
     for (let i = 0; i < n; i++) {
@@ -199,7 +201,9 @@ const previewScript = (tabStates) => `<script>
   // Platform tabs
   var states=${JSON.stringify(tabStates)};
   function bindTabs(){ var root=document.querySelector('[data-tabs-root]')||document.querySelector('[role="tablist"]')&&document.querySelector('[role="tablist"]').closest('.grid'); if(!root||!states.length) return; root.setAttribute('data-tabs-root','');
-    root.querySelectorAll('[role="tab"]').forEach(function(t,i){ t.addEventListener('click',function(){ var tmp=document.createElement('div'); tmp.innerHTML=states[i]; var next=tmp.firstElementChild; next.setAttribute('data-tabs-root',''); root.replaceWith(next); bindTabs(); var nt=next.querySelectorAll('[role="tab"]')[i]; if(nt) nt.focus(); }); }); }
+    root.querySelectorAll('[role="tab"]').forEach(function(t,i){ t.addEventListener('click',function(){ var tmp=document.createElement('div'); tmp.innerHTML=states[i]; var next=tmp.firstElementChild; next.setAttribute('data-tabs-root',''); root.replaceWith(next); bindTabs(); var nt=next.querySelectorAll('[role="tab"]')[i]; if(nt) nt.focus(); }); });
+    // The platform diagram's parts select the same tabs.
+    root.querySelectorAll('[data-tab-index]').forEach(function(n){ n.addEventListener('click',function(){ var t=root.querySelectorAll('[role="tab"]')[+n.getAttribute('data-tab-index')]; if(t) t.click(); }); }); }
   bindTabs();
   // The site admin needs the deployed site
   document.querySelectorAll('[data-preview-admin]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); if(a.nextElementSibling&&a.nextElementSibling.hasAttribute('data-admin-note')) return; var n=document.createElement('span'); n.setAttribute('data-admin-note',''); n.setAttribute('role','status'); n.className='ml-3'; n.textContent='Admin sign in works on the deployed site, not in this preview.'; a.after(n); }); });

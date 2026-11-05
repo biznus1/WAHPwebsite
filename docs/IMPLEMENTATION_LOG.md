@@ -242,3 +242,12 @@ A WordPress export of wahp.viewyourprojecthere.com arrived by WeTransfer (dated 
 - `CountUp` now handles decimals, ratios and thousands separators (`parseFigure` / `formatFigure`, unit tested), so "1:5,707" counts as 1:0 → 1:5,707 and "71.8%" as 0.0% → 71.8%.
 - Fixed the static preview's count up: its pattern sat in a template literal, which dropped the backslashes, so the preview never animated any figure. The new code uses no backslashes.
 - The Home comparison says "large hospital" instead of "big hospital" (heading, phone switch, column title), at the owner's request.
+
+## 5 Nov 2026, new Platform diagram and Home floor plan, both animated
+
+Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep their meaning and can animate. Styles are in `globals.css` (`.sys-*` and `.floor-*`); nothing is hidden without JS, and nothing moves for reduced motion.
+
+- **Platform diagram** (`components/graphics/platform-system.tsx`): larger parts with icons (stethoscope, flask, laptop, scanner; lucide paths, ISC), a doctor and patient at the centre, a glowing centre ring, a dotted orbit and a soft teal background. Unchanged: connector style shows the stage (navy in development, teal planned, dashed a later phase) and clicking a part selects its tab. Animation: when the card scrolls into view the centre pops in, connectors draw outward and the parts pop in one by one; then the orbit turns slowly, the centre glow breathes, dots flow along the live connectors into the centre, and the dashed future part marches.
+- **Home floor plan** (`components/graphics/clinical-floor-schematic.tsx`): glowing tiles on a navy grid, and each of the six suites is a small illustrated exam room, furnished a little differently (couch, cabinet, monitor, curtain, window, desk, plant, lamp, stool). Reception and records have icons, the planned lab has a test tube rack and the future imaging tile a scanner. Animation: the core pops, the rooms pop in one by one, the links fade in and flow to the core, the lab tubes fill and bob, the service pills slide up, the core glows and the imaging tile's dashed border marches.
+- Green appears in small accents in both diagrams because the owner's mockups use it; see `BRAND_IMPLEMENTATION.md`.
+- Static preview: the diagram's parts now select their tabs, and tab states are captured already revealed.
