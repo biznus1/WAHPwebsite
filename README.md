@@ -2,7 +2,7 @@
 
 A marketing site for West African Health Partners (WAHP): shared clinical infrastructure for independent outpatient medicine, beginning in Accra, Ghana.
 
-**Status: staging build for owner review. Not deployed. Search indexing is off by default.**
+**Status: staging build for owner review, live on Vercel at https://wahp-website.vercel.app (not on westahp.com). Search indexing is off.**
 
 ## Run it
 

@@ -274,3 +274,9 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 
 - At the owner's request the Home hero now reads "Revolutionizing healthcare infrastructure / across West Africa." with "Reimagined. For West Africa. One platform. Infinite possibilities." below, the wording of the older WordPress build (sentence case to match the site). Set in `content/data/pages/home.json`, so it stays editable in the site admin.
 - The "Not yet open · Accra, Ghana" badge stays beside the buttons. Hero contrast re-measured with the new line lengths: still AA on phones and desktop.
+
+## 5 Nov 2026, staging deployment on Vercel
+
+- At the owner's request the site is live at https://wahp-website.vercel.app (Vercel project `wahp-website`, Node 22, built from `ccr-01d11262-1nlrsu` at `5c205bf`). Deployment protection is Vercel's "Standard": the production address is public, preview and per-deployment URLs need a Vercel login.
+- Checked on the live site: all 11 pages return 200, `robots.txt` disallows indexing, the hero video plays on desktop and phone, no console errors, no sideways scroll.
+- The project is not linked to Git, because GitHub's default branch is the older `ccr-3f23f1ac-xtw4sr` and would become production. See `LAUNCH_CHECKLIST.md`.
