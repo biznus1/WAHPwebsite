@@ -120,6 +120,17 @@ export const claims: Claim[] = [
     note: "Self-reported income band ('What is your monthly income in cedis?'), not defined as net or gross; online convenience sample shared in doctors' WhatsApp and Telegram groups, March 2024. Present as reported income, never as Ghana's average physician salary.",
   },
   {
+    id: "pay-usd-conversion",
+    text: "GH₵10,000 to 15,000 a month is about $790 to $1,180 at GH₵12.67 to the US dollar",
+    source:
+      "Bank of Ghana, Monthly Exchange Rates Indicators (GHC/US$), March 2024: Inter-Bank Exchange Rate, Month Average 12.67 (End Period 12.88). https://www.bog.gov.gh/monetary-policy/exchange-rate/",
+    status: "verified",
+    publicApproved: true,
+    lastVerified: "2026-11-06",
+    routes: ["/the-problem"],
+    note: "Converts stat-physician-income at the March 2024 month average, the month the survey ran (1 to 15 March 2024); the study itself gives no dollar figures. 10,000 / 12.67 = 789, 15,000 / 12.67 = 1,184, rounded to the nearest $10. Today's rate would give a different figure; keep 'March 2024' with it.",
+  },
+  {
     id: "stat-facility-internet",
     text: "28% of health facilities assessed in Ghana had a computer with internet",
     source:

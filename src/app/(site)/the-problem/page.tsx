@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { Building2, Microscope, Quote, Unplug } from "lucide-react";
 import { CountUp } from "@/components/motion/count-up";
+import { CurrencyFlip } from "@/components/motion/currency-flip";
 import { CtaBand } from "@/components/sections/cta-band";
 import { InfrastructureGap } from "@/components/sections/infrastructure-gap";
 import { StatCards, type StatCard } from "@/components/sections/stat-cards";
@@ -138,6 +139,7 @@ export default function TheProblemPage() {
   const migration = approvedClaim("stat-migration-intent");
   const factors = approvedClaim("migration-factors");
   const income = approvedClaim("stat-physician-income");
+  const usd = approvedClaim("pay-usd-conversion");
   const comparison = approvedClaim("stat-doctor-density-comparison");
   const registered = approvedClaim("stat-registered-doctors") && approvedClaim("stat-registered-doctors-caveat");
   const diagnostics = approvedClaim("feasibility-diagnostics");
@@ -288,13 +290,34 @@ export default function TheProblemPage() {
             {/* The figures in a navy panel, green on navy as on the older build's stat cards. */}
             <div className="reveal grain on-dark relative overflow-hidden rounded-panel bg-navy p-8 text-white md:p-10">
               <Eyebrow accent="green">Physician compensation</Eyebrow>
-              <p className="mt-8 text-[clamp(2.25rem,9vw,3rem)] leading-none font-bold tracking-tight whitespace-nowrap text-green">
-                GH₵10K to 15K
-              </p>
-              <p className="mt-3 text-xl font-semibold text-white">a month</p>
+              {/* Switches back and forth between cedis (green) and US dollars (red), owner's request, 6 Nov 2026. */}
+              {usd ? (
+                <CurrencyFlip
+                  first="GH₵10K to 15K"
+                  second="$790 to $1,180"
+                  label="GH₵10,000 to 15,000, about $790 to $1,180 in US dollars"
+                  caption="a month"
+                  figureClassName="mt-8 text-[clamp(2.25rem,9vw,3rem)] leading-none font-bold tracking-tight whitespace-nowrap text-green"
+                  secondClassName="text-red"
+                  captionClassName="text-xl font-semibold text-white"
+                />
+              ) : (
+                <>
+                  <p className="mt-8 text-[clamp(2.25rem,9vw,3rem)] leading-none font-bold tracking-tight whitespace-nowrap text-green">
+                    GH₵10K to 15K
+                  </p>
+                  <p className="mt-3 text-xl font-semibold text-white">a month</p>
+                </>
+              )}
               <p className="mt-6 text-lead text-white/85">
                 51% of the 641 physicians surveyed in Ghana in March 2024 reported monthly incomes within this range.
               </p>
+              {usd && (
+                <p className="mt-4 text-white/75">
+                  That is about <span className="font-semibold whitespace-nowrap text-red">$790 to $1,180</span> a month
+                  at the Bank of Ghana&apos;s average rate for March 2024, GH₵12.67 to the US dollar.
+                </p>
+              )}
               <NavySource href={STUDY_URL} className="mt-6">
                 Wutor et al., BMC Health Services Research, 2024 (641 doctors)
               </NavySource>

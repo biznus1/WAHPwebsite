@@ -107,6 +107,12 @@ test("the problem page cites the migration study, shows the window photo and pin
     await expect(link).toHaveAttribute("href", "https://doi.org/10.1186/s12913-024-11977-y");
   }
   await expect(page.getByText("GH₵10K to 15K")).toBeVisible();
+  // The pay figure switches between cedis and US dollars; a toggle pauses it.
+  await expect(page.locator(".currency-flip .currency-second")).toHaveText("$790 to $1,180");
+  const pause = page.getByRole("button", { name: /Pause the switch between cedis and US dollars/ });
+  await pause.click();
+  await expect(pause).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator(".currency-flip")).toHaveAttribute("data-paused", "");
   // The older build's figures, each linked to its source; its unsourced "72% of clinics" line stays out.
   for (const [name, href] of [
     [/Vujicic et al/, "https://doi.org/10.1186/1478-4491-2-3"],

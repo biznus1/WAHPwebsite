@@ -364,3 +364,10 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 - **Checked against the primary sources** (claims `stat-doctor-density-comparison`, `stat-registered-doctors-caveat`, `stat-wage-gap`, `stat-critical-care-staff`, `stat-emigration-cost`); the feasibility study line is the owner's (`feasibility-diagnostics`, pending review).
 - **Left out:** "72% of clinics in Ghana cannot provide the full range of expected services due to a lack of personnel". No source could be found (the HHFA national report and annex, Ministry of Health slides and a web search); recorded as `stat-clinics-personnel-72`, unsupported. "This is not a statistic about staffing. It is a statement about access." now follows the verified 78.3% figure instead. "The loss of a single doctor means the nearest provider is hours away" is softened to "can mean".
 
+## 6 Nov 2026, The Problem: pay in cedis and US dollars
+
+- At the owner's request the "GH₵10K to 15K a month" figure now switches back and forth with **$790 to $1,180** in red, rolling up to dollars and back down to cedis, about every 3.5 seconds.
+- **Conversion:** the Bank of Ghana's interbank month average for March 2024, GH₵12.67 to the US dollar (claim `pay-usd-conversion`), because the survey ran in March 2024 and the study gives no dollar figures. A line under the study sentence states the dollar range and the rate, so the figure is never only in the animation.
+- **How it works:** a CSS animation (`.currency-flip` in `globals.css`), so the script-free preview runs it too. Both values share one grid cell, so nothing moves around them. It starts when the panel scrolls into view. On the live site a small pause toggle sits beside "a month" (WCAG 2.2.2). With reduced motion the cedi figure stays and the toggle is hidden. Screen readers hear both values once.
+- **Colour:** `--color-red` (#FF6B6B, 4.5:1 on navy) is not a brand colour and is used only here (see `BRAND_IMPLEMENTATION.md`).
+

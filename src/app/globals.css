@@ -26,6 +26,8 @@
   /* Light teal for the statement line of headings on navy (teal itself is under 3:1 there; this is 7.4:1).
      The Home hero already used it; it plays the part the older site gave to green words. */
   --color-teal-300: #7fd3e1;
+  /* Not a brand colour: red for the US dollar pay figure on The Problem (owner's request, 6 Nov 2026). 4.5:1 on navy. */
+  --color-red: #ff6b6b;
 
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 
@@ -430,6 +432,69 @@ details[open] > .menu-sub {
 @keyframes hero-line {
   from {
     transform: translate3d(0, 0.28em, 0);
+  }
+}
+
+/*
+ * The Problem: physician pay switching back and forth between cedis and US dollars (owner's request, 6 Nov 2026).
+ * Both values share one grid cell so nothing around them moves. Pure CSS, so the static preview runs it too; it
+ * starts once its panel has revealed, pauses with [data-paused], and shows the cedi figure alone for reduced motion.
+ * Forward the figure rolls up; on the way back it rolls down.
+ */
+.currency-flip {
+  display: inline-grid;
+}
+.currency-flip > span {
+  grid-area: 1 / 1;
+  animation: 7s var(--ease-soft) infinite both;
+}
+.currency-flip > .currency-first {
+  animation-name: currency-first;
+}
+.currency-flip > .currency-second {
+  opacity: 0;
+  animation-name: currency-second;
+}
+.js .reveal:not(.is-visible) .currency-flip > span,
+.currency-flip[data-paused] > span {
+  animation-play-state: paused;
+}
+@keyframes currency-first {
+  0%,
+  40% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  50%,
+  90% {
+    opacity: 0;
+    transform: translateY(-0.3em) scale(0.96);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+@keyframes currency-second {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translateY(0.3em) scale(0.96);
+    filter: blur(6px);
+  }
+  50%,
+  90% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0.3em) scale(0.96);
+    filter: blur(6px);
   }
 }
 
@@ -864,7 +929,8 @@ details[open] > .menu-sub {
   .scroll-recede,
   .scroll-sink,
   .parallax img,
-  .ambient-drift {
+  .ambient-drift,
+  .currency-flip > span {
     animation: none !important;
   }
 }

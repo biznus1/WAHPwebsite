@@ -34,6 +34,7 @@ The inline `<Logo>` component (`src/components/brand/logo.tsx`) renders the exac
 | `navy-900` | `#002447` | Derived shade | Hover state of navy buttons only |
 | `navy-700` | `#26507A` | Guideline covers | Watermark emblem only |
 | `teal-300` | `#7FD3E1` | Derived light tint of teal | Statement line of headings on navy (7.4:1 on navy), and checkmarks on navy |
+| `red` | `#FF6B6B` | **Not a brand colour** (owner request, 6 Nov 2026) | Only the US dollar pay figure on The Problem, on navy (4.5:1). Do not use it elsewhere |
 
 There are no gradients and no colours outside this list.
 
