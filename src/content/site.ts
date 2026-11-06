@@ -52,7 +52,7 @@ export const callTypes: CallType[] = approvedClaim("scheduling-links")
       {
         id: "investor",
         label: "Investor",
-        hint: "Exploring the thesis, traction, and team behind WAHP.",
+        hint: "See the thesis, traction and team behind the platform.",
         event: "Investors Call",
         href: "https://calendly.com/westahp-info/investor-call",
       },

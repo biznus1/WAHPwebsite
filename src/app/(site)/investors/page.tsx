@@ -305,8 +305,7 @@ export default function InvestorsPage() {
 
       <BookCallSection call="investor" lead="Connect with our team." rest="Book a 30 minute call." tone="white">
         <p>
-          See the thesis, traction and team, and how WAHP plans to validate first and scale with discipline. Prefer to
-          write?{" "}
+          See the thesis, traction and team behind the platform. Prefer to write?{" "}
           <a
             href="#introduction"
             className="font-semibold text-navy underline decoration-teal decoration-2 underline-offset-4"

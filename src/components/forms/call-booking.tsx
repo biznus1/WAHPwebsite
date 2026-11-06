@@ -95,7 +95,8 @@ export function BookingPanel({
           </a>
         ) : (
           <>
-            Available time slots load from Calendly, our booking service, only when you ask. See our{" "}
+            Available time slots load directly on the page from Calendly, our booking service, only when you ask. See
+            our{" "}
             <Link href="/privacy#booking" className="font-semibold text-navy underline">
               privacy notice
             </Link>

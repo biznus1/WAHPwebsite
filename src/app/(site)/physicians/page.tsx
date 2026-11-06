@@ -35,7 +35,7 @@ const offer = [
   },
   {
     title: "Your practice. Your patients. Your future.",
-    body: "Your patients stay your patients and you make the clinical decisions. Commit less capital to setup, spend less time managing operations and keep more of your attention on practice growth.",
+    body: "Your patients stay your patients and you make the clinical decisions. Commit less capital to setup. Spend less time managing operations. Keep more of your attention on patients and practice growth.",
   },
 ];
 
@@ -174,9 +174,7 @@ export default function PhysiciansPage() {
             {approvedClaim("traction-lois") && (
               <div className="reveal mt-10 rounded-card bg-white p-6 ring-1 ring-inset ring-smoke">
                 <p className="text-headline font-semibold text-navy">20</p>
-                <p className="mt-1 text-arsenic">
-                  physicians have already signed letters of intent to practise at the first WAHP hub in Accra.
-                </p>
+                <p className="mt-1 text-arsenic">physicians have already signed letters of intent with WAHP.</p>
               </div>
             )}
           </div>

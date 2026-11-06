@@ -132,9 +132,7 @@ export default function DiasporaPhysiciansPage() {
             {approvedClaim("traction-lois") && (
               <div className="reveal mt-10 rounded-card bg-white p-6 ring-1 ring-inset ring-smoke">
                 <p className="text-headline font-semibold text-navy">20</p>
-                <p className="mt-1 text-arsenic">
-                  physicians have signed letters of intent to practise at the first WAHP hub in Accra.
-                </p>
+                <p className="mt-1 text-arsenic">physicians have signed letters of intent to practise at WAHP.</p>
               </div>
             )}
           </div>

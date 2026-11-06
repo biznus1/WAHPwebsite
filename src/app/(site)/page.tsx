@@ -266,9 +266,9 @@ export default function HomePage() {
             <Eyebrow>The patient experience</Eyebrow>
             <SplitHeading id="lobby-heading" lead="One building." rest="Complete care." className="mt-4" />
             <p className="mt-4 text-arsenic">
-              A patient should not have to carry the burden of a fragmented healthcare system. This is a concept of the
-              reception we are planning in Accra, where consultation, diagnostics and follow up are designed to come
-              together in one connected environment.
+              A patient should not have to carry the burden of a fragmented healthcare system. At WAHP, consultation,
+              diagnostics and follow up are designed to come together in one connected environment. This footage is a
+              concept of the reception we are planning in Accra.
             </p>
             <div className="mt-7">
               <ButtonLink href="/platform" arrow>

@@ -43,7 +43,7 @@ const paths: {
   {
     title: "Partners",
     image: "partnersPresentation",
-    body: "Hospitals, labs, suppliers and health organisations exploring growth, expansion or strategic alignment with WAHP.",
+    body: "Exploring growth, expansion or strategic alignment with our network: hospitals, labs, suppliers and health organisations.",
     cta: "Discuss partnership",
     href: "/contact?type=partnership#schedule",
     accent: { bar: "bg-teal", mark: "text-teal" },

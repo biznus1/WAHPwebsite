@@ -61,6 +61,8 @@ The decisions below block or shape public launch. The machine-readable register 
 | Canonical domain: westahp.com vs westafricanhealthpartners.com | UI doc vs blueprint | `NEXT_PUBLIC_SITE_URL` defaults to westahp.com. Confirm |
 | Instagram / X | Brand guide mock-ups | Not used. No confirmed handles; blueprint says no X |
 
+| Site copy in the older build's wording (6 Nov 2026, owner request) | Older WordPress build, all pages | About 75% of the words on Home, Platform, The Problem, Physicians, Diaspora, Investors, About and Contact now come from it (see `IMPLEMENTATION_LOG.md`). **Please check:** Physicians heading "Lower overhead. More control. Greater potential."; About mission ending "at their highest level, at home"; Investors hero "Building the infrastructure for Africa's next healthcare revolution" |
+
 ## C. Confidential material deliberately excluded
 
 Fundraising targets, valuation, use of funds, projections, physician LOIs and names, survey responses, vendor, architect and lab-partner names, competitor names, candidate neighbourhoods and lease terms, data-room documents, and personnel changes. None of this appears in the repository or on the site.
