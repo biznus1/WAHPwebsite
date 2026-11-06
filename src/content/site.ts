@@ -37,14 +37,14 @@ export const callTypes: CallType[] = approvedClaim("scheduling-links")
       {
         id: "physician",
         label: "Physician in Ghana",
-        hint: "Practising in Ghana and interested in a consulting room at the hub.",
+        hint: "Practising physician interested in the WAHP shared practice model.",
         event: "Physicians Call",
         href: "https://calendly.com/westahp-info/physician-call",
       },
       {
         id: "diaspora",
         label: "Diaspora physician",
-        hint: "Practising abroad and exploring how to practise at home, partner, or both.",
+        hint: "Practising abroad, exploring how to practise, partner, or both.",
         event: "Diaspora Physicians",
         // The live Calendly slug is misspelt; the correctly spelled one does not exist.
         href: "https://calendly.com/westahp-info/diaspora-physcians",
@@ -52,14 +52,14 @@ export const callTypes: CallType[] = approvedClaim("scheduling-links")
       {
         id: "investor",
         label: "Investor",
-        hint: "Interested in meeting the founders and how the hub is planned.",
+        hint: "Exploring the thesis, traction, and team behind WAHP.",
         event: "Investors Call",
         href: "https://calendly.com/westahp-info/investor-call",
       },
       {
         id: "partner",
-        label: "Partner or supplier",
-        hint: "Hospitals, schools, labs, equipment and technology providers.",
+        label: "Partner or vendor",
+        hint: "Exploring growth, expansion or strategic alignment with our network, including labs, equipment, tech systems or services.",
         event: "Partners Call",
         href: "https://calendly.com/westahp-info/partners-call",
       },

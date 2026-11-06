@@ -20,7 +20,8 @@ export function CallScheduler({ callTypes, defaultCall }: { callTypes: CallType[
       <fieldset className="border-b border-smoke p-6 md:p-10 lg:border-r lg:border-b-0">
         <legend className="float-left w-full text-title font-medium text-navy">I am a…</legend>
         <p className="clear-left pt-2 text-arsenic">
-          Choose the option that fits you best. It helps us prepare, so we make the most of the call.
+          Select the option that best describes you. This helps us prepare for your call so we can make the most of the
+          30 minutes together.
         </p>
         <div className="mt-6 grid gap-3">
           {callTypes.map((c, i) => (

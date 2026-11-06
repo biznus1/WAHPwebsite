@@ -26,7 +26,7 @@ const workforce: (StatCard & { claim: string })[] = [
   {
     claim: "stat-doctor-ratio",
     value: "1:5,707",
-    label: "One doctor for every 5,707 people in Ghana",
+    label: "Doctor to population ratio in Ghana",
     source: "Ghana Ministry of Health, 2021",
   },
   {
@@ -79,7 +79,7 @@ export default function TheProblemPage() {
             </h1>
             <p className="mt-8 text-lead text-white/85">
               Across the region, talented doctors are expected to deliver excellent care with limited diagnostics,
-              outdated systems, too little clinical space and too many barriers outside the consulting room.
+              outdated systems, inadequate clinical space and too many barriers outside the exam room.
             </p>
             <p className="mt-6 text-lead text-white italic">
               WAHP is building the clinical environment that makes better care possible.
@@ -88,7 +88,7 @@ export default function TheProblemPage() {
 
           {figures.length > 0 && (
             <div className="mt-16 md:mt-20">
-              <h2 className="eyebrow text-steel">Ghana&apos;s doctors in numbers</h2>
+              <h2 className="eyebrow text-steel">The consequences are measurable</h2>
               <StatCards items={figures} className="mt-6 md:grid-cols-3" />
             </div>
           )}
@@ -115,15 +115,14 @@ export default function TheProblemPage() {
               </h2>
               <div className="mt-6 space-y-5 text-lead text-arsenic">
                 <p>
-                  In a 2024 survey of 641 doctors working in Ghana, 71.8% said they intended to migrate to practise
-                  abroad.
+                  A 2024 study of 641 doctors working in Ghana found that 71.8% intended to migrate abroad.
                   {factors &&
-                    " The strongest push factors included economic challenges, the lack of a conducive working environment, slow career progression, excessive workload and poor postgraduate training. The strongest pull factors included better working conditions, better pay, a better quality of life and better postgraduate training abroad."}
+                    " The strongest push factors included economic challenges, the lack of a conducive working environment, slow career progression, excessive workload and poor postgraduate training. The strongest pull factors included better working conditions, better remuneration, a better quality of life and better postgraduate training abroad."}
                 </p>
                 <p>
                   This is not simply a salary issue. It is a systems issue. Physicians are more likely to stay where
-                  they can grow, practise well, use diagnostics, work in organised environments and deliver the quality
-                  of care they were trained to provide.
+                  they can grow, practise well, access diagnostics, work in organised environments and deliver the
+                  quality of care they were trained to provide.
                 </p>
               </div>
               <p className="mt-6 text-sm text-arsenic">
@@ -147,13 +146,17 @@ export default function TheProblemPage() {
 
       <div data-sticky-stop>
         <CtaBand
-          lead="Help us build"
-          rest="the system doctors deserve."
+          lead="WAHP is built to close"
+          rest="the infrastructure gap."
           primary={call}
-          secondary={{ href: "/platform", label: "See how it works" }}
+          secondary={{ href: "/platform", label: "Discover the platform" }}
           greenAccent
         >
-          <p>Physicians, investors and partners: a 30 minute call is the best place to start.</p>
+          <p>
+            West African Health Partners is not building another traditional hospital. We are creating the
+            infrastructure physicians need to practise optimally and the access patients need to receive timely,
+            reliable care.
+          </p>
         </CtaBand>
       </div>
 

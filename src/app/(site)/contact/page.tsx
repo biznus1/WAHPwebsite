@@ -52,10 +52,11 @@ export default function ContactPage() {
       >
         <div className="container-wahp grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
           <div>
-            <SplitHeading id="message-heading" lead="Prefer to write?" rest="Reach us directly." />
+            <SplitHeading id="message-heading" lead="Prefer email?" rest="Reach us directly." />
             <p className="mt-6 text-lead text-arsenic">
-              Whatever your question, pick the option that fits you and your message goes straight to the right person
-              on our team. We reply by email.
+              Whatever your question, whether you are a physician, diaspora doctor, investor or strategic partner, one
+              message gets it to the right person on our team. We read every message and look forward to speaking with
+              you.
             </p>
 
             <ul className="mt-10 space-y-6" aria-label="Other ways to reach WAHP">
@@ -65,7 +66,7 @@ export default function ContactPage() {
                     <Mail aria-hidden className="size-5" />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-arsenic">Email</p>
+                    <p className="text-sm font-semibold text-arsenic">Email us</p>
                     <p>
                       <a
                         href={`mailto:${site.contactEmail}`}
@@ -83,7 +84,7 @@ export default function ContactPage() {
                     in
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-arsenic">LinkedIn</p>
+                    <p className="text-sm font-semibold text-arsenic">Follow on LinkedIn</p>
                     <p>
                       <a
                         href={site.linkedin}
@@ -94,7 +95,7 @@ export default function ContactPage() {
                         West African Health Partners<span className="sr-only"> (opens in a new tab)</span>
                       </a>
                     </p>
-                    <p className="mt-1 text-sm text-arsenic">Updates as the hub gets built.</p>
+                    <p className="mt-1 text-sm text-arsenic">Stay in the loop as the platform gets built.</p>
                   </div>
                 </li>
               )}

@@ -26,8 +26,8 @@ export function InfrastructureGap({ above = "text-white", below = "text-paper" }
               <span className="text-green">transformation.</span>
             </h2>
             <p className="mt-6 text-lead text-white/80">
-              We do not believe doctors leave because they want to. Too often the infrastructure to practise at their
-              best is simply not there.
+              We believe doctors do not leave because they want to. They leave because the infrastructure to practise at
+              their highest level is not there.
             </p>
           </div>
           <SiteImage

@@ -95,7 +95,7 @@ export function BookingPanel({
           </a>
         ) : (
           <>
-            Times load from Calendly, our booking service, only when you ask. See our{" "}
+            Available time slots load from Calendly, our booking service, only when you ask. See our{" "}
             <Link href="/privacy#booking" className="font-semibold text-navy underline">
               privacy notice
             </Link>
@@ -110,8 +110,8 @@ export function BookingPanel({
 export function IntroCallNote() {
   return (
     <p className="mt-8 border-t border-smoke pt-6 text-arsenic">
-      This is a <strong className="font-semibold text-navy">30 minute introductory conversation</strong>. No commitment,
-      no pressure. We want to understand your goals and share how WAHP might fit.
+      This is a <strong className="font-semibold text-navy">30 minute introductory conversation</strong>. No commitment.
+      No pressure. We just want to understand your goals and share how WAHP might fit.
     </p>
   );
 }

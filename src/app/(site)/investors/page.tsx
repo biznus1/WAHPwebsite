@@ -21,28 +21,28 @@ export const metadata: Metadata = {
 
 const revenue = [
   {
-    title: "Consulting room rental",
-    body: "Physicians rent equipped consulting and examination rooms by the hour, day or month.",
+    title: "Shared clinical suite leases",
+    body: "Revenue from equipped consultation rooms, examination rooms, offices and outpatient suites, to be offered on flexible terms.",
     planned: false,
   },
   {
     title: "Laboratory services",
-    body: "Tests run in the hub's own lab, or with a partner laboratory.",
+    body: "Revenue generated from clinical testing provided directly or through operating partnerships.",
     planned: true,
   },
   {
     title: "Diagnostic imaging",
-    body: "CT, MRI and other scans, added once the hub is well used.",
+    body: "Planned revenue from ultrasound, CT and other imaging services introduced as the facility scales.",
     planned: true,
   },
   {
     title: "Technology subscriptions",
-    body: "Scheduling, billing, electronic records and telemedicine, paid for monthly by practices.",
+    body: "Recurring access to scheduling, billing, electronic health records, analytics and telemedicine capabilities.",
     planned: false,
   },
   {
-    title: "Employer and institutional programmes",
-    body: "Staff health screening for Accra employers, testing programmes and referral partnerships.",
+    title: "Corporate and institutional programmes",
+    body: "Workforce health screenings, diagnostics programmes, referral partnerships and potential public and private healthcare initiatives.",
     planned: true,
   },
 ];
@@ -50,28 +50,28 @@ const revenue = [
 const thesis = [
   {
     n: "01",
-    title: "The gap is the building, not the doctors",
-    body: "Ghana has skilled physicians. What they lack is affordable premises, equipment, staff and diagnostics, and few can pay for all of it alone.",
+    title: "A structural healthcare gap",
+    body: "Across West Africa, talented physicians face major barriers to independent medical practice: high startup costs, limited access to modern diagnostic services, fragmented technology and inadequate clinical infrastructure.",
   },
   {
     n: "02",
-    title: "Between a hospital and a rented room",
-    body: "Physicians keep their own practice and patients, and share the space, staff, systems and diagnostics that a hospital would normally provide.",
+    title: "Large and growing healthcare demand",
+    body: "Rapid urbanisation, population growth, rising healthcare expectations and expanding private healthcare demand are increasing the need for dependable outpatient infrastructure.",
   },
   {
     n: "03",
-    title: "Built in phases",
-    body: "Consulting rooms and records first, then the lab, then imaging. Each phase opens only after the one before it is working.",
+    title: "Multiple complementary revenue streams",
+    body: "WAHP is designed to generate revenue through shared clinical suite leases, diagnostics and laboratory services, technology subscriptions, and corporate or institutional contracts.",
   },
   {
     n: "04",
-    title: "Accra first, then Kumasi",
-    body: "The Accra hub is our test of the model. If it works there, Kumasi comes next, and other West African cities after that.",
+    title: "Phased, capital disciplined launch",
+    body: "WAHP will begin with shared clinical suites, expand laboratory operations, and introduce imaging services after validating utilisation and operational performance.",
   },
   {
     n: "05",
-    title: "Good for patients too",
-    body: "When independent doctors are better equipped, their patients get consultations, tests and results in one place.",
+    title: "Regional replication potential",
+    body: "The initial Ghana location is intended to validate a repeatable model that can later expand to additional Ghanaian and West African urban markets.",
   },
 ];
 
@@ -121,7 +121,7 @@ export default function InvestorsPage() {
         <p>{pageHeaders.investors.intro}</p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
           <ButtonLink href={canBook ? `#${BOOK_CALL_ID}` : "#introduction"} size="lg" arrow>
-            {canBook ? "Book a call" : "Request an introduction"}
+            {canBook ? "Book a call" : "Connect with our team"}
           </ButtonLink>
           <p className="text-sm text-white/70">Accredited investors only. Verification required.</p>
         </div>
@@ -130,9 +130,9 @@ export default function InvestorsPage() {
       <Section tone="paper" labelledBy="thesis-heading">
         <SectionIntro
           id="thesis-heading"
-          eyebrow="Why we are building this"
-          lead="Why shared clinics,"
-          rest="and why they work."
+          eyebrow="WAHP at a glance"
+          lead="A scalable platform addressing"
+          rest="a structural healthcare gap."
         />
         <ol className="mt-14 grid gap-px overflow-hidden rounded-panel bg-smoke ring-1 ring-inset ring-smoke md:grid-cols-2 lg:grid-cols-3">
           {thesis.map((t, i) => (
@@ -148,7 +148,8 @@ export default function InvestorsPage() {
           ))}
           <li className="reveal flex flex-col justify-between bg-navy p-7 text-white md:p-9 on-dark">
             <p className="text-xl font-medium">
-              We share detailed materials privately with qualified investors who ask.
+              WAHP is designed to bring these components together in one integrated platform. Detailed materials are
+              available to verified accredited investors.
             </p>
             <div className="mt-8">
               <ButtonLink href="#introduction" arrow>
@@ -159,7 +160,7 @@ export default function InvestorsPage() {
         </ol>
         <div className="mt-8">
           <ButtonLink href="/platform#phases" variant="ghost" arrow>
-            See the phases
+            See the phased plan
           </ButtonLink>
         </div>
       </Section>
@@ -207,13 +208,13 @@ export default function InvestorsPage() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
           <SectionIntro
             id="model-heading"
-            eyebrow="How the hub earns"
-            lead="Several sources of income,"
-            rest="one building."
+            eyebrow="Business model"
+            lead="Diversified revenue built around"
+            rest="a shared healthcare platform."
           >
             <p>
-              Income comes from monthly subscriptions and from each room booking, test and scan. A patient seen in a
-              consulting room is likely to need the lab too, so the parts support each other.
+              WAHP&apos;s model is designed to generate recurring and transaction based revenue from multiple parts of
+              the healthcare delivery chain. Each revenue stream supports the others.
             </p>
           </SectionIntro>
           <ul className="divide-y divide-smoke border-y border-smoke">
@@ -240,21 +241,21 @@ export default function InvestorsPage() {
       <Section tone="paper" labelledBy="position-heading">
         <SectionIntro
           id="position-heading"
-          eyebrow="How we differ"
-          lead="Independence for the doctor,"
-          rest="infrastructure under one roof."
+          eyebrow="Competitive differentiation"
+          lead="Where physician autonomy meets"
+          rest="integrated infrastructure."
         />
         <div className="mt-14 grid gap-4 lg:grid-cols-3">
           {[
             [
               "Traditional hospitals",
-              "Equipment, but little independence",
-              "The facilities are there, but the hospital sets the schedule and the priorities, not the physician.",
+              "Infrastructure without independence",
+              "They provide clinical infrastructure but limited physician independence. Institutional schedules and priorities take precedence over individual clinical judgement.",
             ],
             [
               "Diagnostic chains",
-              "Tests, but nowhere to practise",
-              "They run the tests, but the physician still has to find rooms, staff, systems and admin somewhere else.",
+              "Testing without a practice environment",
+              "They provide specific testing services but not a complete practice environment. A physician still needs to source space, staffing, systems and administration separately.",
             ],
           ].map(([k, t, b]) => (
             <div key={k} className="reveal rounded-card bg-white p-7 ring-1 ring-inset ring-smoke md:p-8">
@@ -265,14 +266,14 @@ export default function InvestorsPage() {
           ))}
           <div className="reveal on-dark rounded-card bg-navy p-7 text-white md:p-8">
             <p className="eyebrow text-steel">The WAHP platform</p>
-            <h3 className="mt-4 text-title font-medium">Both, in one building</h3>
+            <h3 className="mt-4 text-title font-medium">Designed to combine both</h3>
             <ul className="mt-4 space-y-2 text-white/80">
               {[
-                "The physician runs their own practice",
-                "Equipped consulting rooms",
-                "Lab and scans on site, in phases",
-                "Shared reception and admin",
-                "One records and scheduling system",
+                "Physician autonomy",
+                "Clinical infrastructure",
+                "Integrated diagnostics, in phases",
+                "Shared administrative support",
+                "Technology enabled operations",
               ].map((x) => (
                 <li key={x} className="flex gap-3">
                   <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-teal" />
@@ -284,13 +285,13 @@ export default function InvestorsPage() {
         </div>
         {approvedClaim("traction-research") && (
           <div className="mt-14">
-            <h3 className="eyebrow mb-5 text-arsenic">Groundwork to date</h3>
+            <h3 className="eyebrow mb-5 text-arsenic">Traction and team</h3>
             <dl className="grid gap-px overflow-hidden rounded-card bg-smoke sm:grid-cols-2 lg:grid-cols-4">
               {[
                 ["60+", "Physicians surveyed"],
                 ["3", "Studies completed: market, feasibility and phased rollout"],
-                ["5", "Core team members in place"],
-                ["20", "Physician Letters of Intent signed"],
+                ["5", "Leadership team members"],
+                ["20", "Physician letters of intent signed"],
               ].map(([v, l]) => (
                 <div key={l} className="flex flex-col bg-white p-6 md:p-7">
                   <dt className="order-2 mt-2 text-arsenic">{l}</dt>
@@ -302,9 +303,10 @@ export default function InvestorsPage() {
         )}
       </Section>
 
-      <BookCallSection call="investor" lead="Meet the founders." rest="Book a 30 minute call." tone="white">
+      <BookCallSection call="investor" lead="Connect with our team." rest="Book a 30 minute call." tone="white">
         <p>
-          An introductory video call about the Accra hub and how it is planned, phase by phase. Prefer to write?{" "}
+          See the thesis, traction and team, and how WAHP plans to validate first and scale with discipline. Prefer to
+          write?{" "}
           <a
             href="#introduction"
             className="font-semibold text-navy underline decoration-teal decoration-2 underline-offset-4"
