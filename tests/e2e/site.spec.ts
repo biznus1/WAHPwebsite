@@ -100,13 +100,23 @@ test("the problem page cites the migration study, shows the window photo and pin
 }) => {
   await page.goto("/the-problem");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("a broken system alone");
-  // Cited twice: the pay section and the migration section.
+  // Cited three times: the workforce, pay and migration sections.
   const study = page.getByRole("link", { name: /Wutor et al/ });
-  await expect(study).toHaveCount(2);
+  await expect(study).toHaveCount(3);
   for (const link of await study.all()) {
     await expect(link).toHaveAttribute("href", "https://doi.org/10.1186/s12913-024-11977-y");
   }
   await expect(page.getByText("GH₵10K to 15K")).toBeVisible();
+  // The older build's figures, each linked to its source; its unsourced "72% of clinics" line stays out.
+  for (const [name, href] of [
+    [/Vujicic et al/, "https://doi.org/10.1186/1478-4491-2-3"],
+    [/Mills et al/, "https://doi.org/10.1136/bmj.d7031"],
+    [/Afrifa-Yamoah et al/, "https://doi.org/10.1007/s11739-024-03607-6"],
+  ] as const) {
+    await expect(page.getByRole("link", { name })).toHaveAttribute("href", href);
+  }
+  await expect(page.getByRole("heading", { name: "Three system gaps holding healthcare back" })).toBeVisible();
+  await expect(page.getByText(/72% of clinics/)).toHaveCount(0);
   await expect(page.getByRole("img", { name: /watching a plane take off/ })).toBeAttached();
   const bar = page.locator("[data-sticky-call]");
   if (isMobile) {
