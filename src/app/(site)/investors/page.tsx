@@ -332,11 +332,11 @@ export default function InvestorsPage() {
             </h2>
           </div>
           <SiteImage
-            name="investorsLobby"
-            className="reveal reveal-media mt-12"
-            aspect="aspect-[16/9] md:aspect-[16/5]"
+            name="teamLaptopCelebration"
+            className="reveal reveal-media mx-auto mt-12 max-w-4xl"
+            aspect="aspect-[16/9] md:aspect-[2/1]"
             dark
-            sizes="(min-width: 1280px) 1200px, 100vw"
+            sizes="(min-width: 960px) 896px, 100vw"
           />
           <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
             <div>

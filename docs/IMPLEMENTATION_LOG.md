@@ -333,3 +333,7 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 - Links: "The Problem" in the phone menu (now the page), the desktop menu from 1280px (it does not fit beside the other items below that), the footer, and "Why doctors leave" on Home's problem section.
 - Fixes found on the way: desktop menu links no longer drop their text a line at 1024 to 1100px (the hidden underline wrapped), and "Rule 506(c)" no longer shows as "506©" (Manrope's contextual alternates are switched off for it).
 
+## 6 Nov 2026, coffee photo back on Investors
+
+- At the owner's request the "Who may invest" banner is the photo of a young man and woman with a laptop and coffee (`team-laptop-celebration.webp`, the photo that sat above the introduction before), instead of the older build's lobby banner, which is removed from the repo. 16:9 on phones and 2:1 from tablet up, at most 896px wide, framed to keep both faces and the coffee cup. The file is only 678px wide, so the banner is kept narrower than the page to limit enlargement; a larger original would sharpen it.
+
