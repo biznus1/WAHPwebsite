@@ -14,20 +14,20 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    title: "Physicians first",
-    body: "Every decision starts with one question: does this make a doctor's practice better? The hub works for physicians, not the other way round.",
+    title: "Physician first design",
+    body: "Every decision starts with the question: does this make the physician's practice better? If the answer is no, we do not build it. The platform exists to serve physicians, not the other way around.",
   },
   {
-    title: "Everything connected",
-    body: "Patients in Ghana lose days moving between separate clinics, labs and offices. Whatever we build has to link up with the rest.",
+    title: "Integration over isolation",
+    body: "Fragmented healthcare is the problem. Every system we build, every partnership we form, every tool we adopt must connect to the whole. Standalone solutions are not solutions at all.",
   },
   {
-    title: "Built to repeat",
-    body: "Accra is the first hub, not the only one. We set up every process so it can work again in Kumasi and beyond.",
+    title: "Build to replicate",
+    body: "Accra is not the destination. Every system, process and operational decision is designed to work in the next city and the one after that. Scalability is a present constraint on every choice we make.",
   },
   {
-    title: "Straight talk",
-    body: "We tell physicians, investors and partners where things really stand, including what is still only a plan.",
+    title: "Radical transparency",
+    body: "With physicians, with investors, with partners. We share the data, the challenges and the progress honestly, including what is still only a plan. Trust is the foundation of every relationship in healthcare. We earn it through transparency.",
   },
 ];
 
@@ -45,12 +45,13 @@ export default function AboutPage() {
               Our mission
             </Eyebrow>
             <p className="mt-6 text-headline font-semibold text-navy">
-              To give West African physicians the space, tools and support to practise at their best, at home.
+              To create an environment where West African physicians have the space, tools and support to practise at
+              their highest level, at home.
             </p>
             <p className="mt-6 text-lead text-arsenic">
-              We are bringing consulting rooms, a shared front desk, diagnostics and digital records under one roof in
-              Accra, so independent doctors can run their own practices without building a clinic alone. Kumasi is the
-              next city we have in mind; West Africa is the long term aim.
+              WAHP exists to strengthen independent medical practice by bringing clinical space, diagnostics, technology
+              and practice support into one connected environment. We are starting in Ghana with a model designed to
+              grow across West Africa.
             </p>
           </div>
           <div className="reveal space-y-10 lg:pt-14">
@@ -60,16 +61,17 @@ export default function AboutPage() {
                 Where practising in West Africa is a career advantage, not a sacrifice.
               </p>
               <p className="mt-4 text-lead text-arsenic">
-                A doctor in Accra should not have to leave Ghana to practise well. We want them to have the same
-                diagnostics and support as a doctor in Atlanta, without getting on a plane.
+                A West Africa where physicians do not have to choose between staying home and practising well. Where a
+                doctor in Accra has access to the same quality of diagnostics, imaging and operational infrastructure as
+                a doctor in Atlanta.
               </p>
             </div>
             <div>
               <Eyebrow as="h2">Where we start</Eyebrow>
               <p className="mt-4 text-lead text-arsenic">
-                Phase 1 is the Accra hub. It is not open yet: services start only once the building is finished,
-                staffed, licensed and approved. We are working through Ghana&apos;s healthcare and facility licensing
-                now, and WAHP will meet every national requirement before it opens.
+                Phase 1 will launch in Accra with WAHP&apos;s first integrated hub. It is not open yet: services start
+                only once the building is finished, staffed, licensed and approved. We are working through Ghana&apos;s
+                healthcare and facility licensing now, and WAHP will meet every national requirement before it opens.
               </p>
             </div>
           </div>
@@ -116,13 +118,20 @@ export default function AboutPage() {
               to stay connected to the motherland, but to help build it. We may have trained abroad, but we carry with
               us a responsibility to contribute, collaborate and create solutions that matter back home.
             </p>
-            <footer className="pt-2 text-base font-semibold text-navy">Jonathan Francois, MD, Cofounder and CEO</footer>
+            <footer className="pt-2 text-base font-semibold text-navy">
+              Jonathan Francois, MD, Cofounder and CEO, West African Health Partners
+            </footer>
           </blockquote>
         </div>
       </Section>
 
       <Section tone="paper" labelledBy="values-heading">
-        <SectionIntro id="values-heading" eyebrow="Our values" lead="How we work," rest="day to day." />
+        <SectionIntro
+          id="values-heading"
+          eyebrow="Our values"
+          lead="Operating principles,"
+          rest="not marketing slogans."
+        />
         <ul className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {values.map((v, i) => (
             <li
@@ -139,9 +148,9 @@ export default function AboutPage() {
       </Section>
 
       <CtaBand
-        lead="Meet the team"
-        rest="behind WAHP."
-        primary={{ href: "/leadership", label: "Leadership" }}
+        lead="Born at the bedside."
+        rest="Built for the continent."
+        primary={{ href: "/leadership", label: "Meet the full team" }}
         secondary={{ href: "/contact", label: "Contact us" }}
       />
     </>

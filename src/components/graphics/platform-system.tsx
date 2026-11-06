@@ -340,7 +340,7 @@ export function PlatformSystem() {
       <div className="reveal sys-diagram rounded-panel bg-paper p-4 ring-1 ring-inset ring-steel/70 md:p-8 lg:sticky lg:top-28">
         <SystemDiagram active={active} onSelect={setActive} />
         <p className="mt-2 px-2 text-xs text-arsenic">
-          Navy: in development · Teal: planned · Dashed: a later phase. Choose a part to read more.
+          Navy: in development · Teal: planned · Dashed: a later phase. Choose a pillar to read more.
         </p>
       </div>
     </div>

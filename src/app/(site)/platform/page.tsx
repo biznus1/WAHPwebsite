@@ -31,7 +31,7 @@ export default function PlatformPage() {
 
       <Section tone="paper" className="!pt-10" labelledBy="system-heading">
         <h2 id="system-heading" className="sr-only">
-          Platform components
+          The four pillars
         </h2>
         <PlatformSystem />
       </Section>
@@ -40,27 +40,34 @@ export default function PlatformPage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <SectionIntro
             id="integration-heading"
-            eyebrow="Why one building"
-            lead="Each part exists somewhere in Accra."
-            rest="The difference is having them together."
+            eyebrow="The integration"
+            lead="Any single pillar can be built separately."
+            rest="The value is in connecting all four."
             dark
           />
           <div className="reveal space-y-5 text-lead text-white/75 lg:pt-14">
             <p>
-              Today a patient in Accra might see a doctor in one place, queue for tests in another and come back days
-              later for the results. Each stop has its own paperwork, and the physician spends time chasing reports
-              instead of treating.
+              A lab on its own gives physicians access to testing. Imaging on its own provides diagnostic information.
+              Digital tools on their own help organise care. But physicians still lose time when these services operate
+              in separate systems, locations and workflows.
             </p>
             <p>
-              In the WAHP hub, the physician sees the patient, orders tests, reads the results in the same record,
-              adjusts the plan and books the next visit. One building, one file.
+              WAHP is designed to bring the core tools of outpatient practice into one connected environment. A
+              physician will be able to see a patient, order laboratory testing or, in a later phase, imaging, review
+              available results, update the treatment plan and arrange follow up without having to coordinate across
+              multiple disconnected facilities.
             </p>
           </div>
         </div>
       </Section>
 
       <Section tone="white" labelledBy="spaces-heading">
-        <SectionIntro id="spaces-heading" eyebrow="The spaces" lead="How we picture" rest="the Accra hub." />
+        <SectionIntro
+          id="spaces-heading"
+          eyebrow="The patient experience"
+          lead="One building. Complete care."
+          rest="How we picture the Accra hub."
+        />
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           <SiteImage name="lobby" className="reveal" />
           <SiteImage name="consultation" className="reveal" />
@@ -72,11 +79,11 @@ export default function PlatformPage() {
         <SectionIntro
           id="phases-heading"
           eyebrow="In stages"
-          lead="One phase at a time,"
-          rest="starting with the rooms."
+          lead="Four pillars,"
+          rest="added one phase at a time."
           dark
         >
-          <p>We add the next service only when the one before it is open and working.</p>
+          <p>We add the next pillar only when the one before it is open and working, starting with the suites.</p>
         </SectionIntro>
         <div className="mt-14">
           <Roadmap dark />
@@ -84,12 +91,12 @@ export default function PlatformPage() {
       </Section>
 
       <CtaBand
-        lead="Help us build"
-        rest="the Accra hub."
+        lead="The platform is being built."
+        rest="The question is where you fit."
         primary={{ href: "/contact?type=partnership#schedule", label: "Discuss a partnership" }}
-        secondary={{ href: "/physicians#register", label: "Physician interest" }}
+        secondary={{ href: "/physicians#register", label: "I am a physician" }}
       >
-        <p>Physicians, hospitals, labs and suppliers in Ghana: tell us how you would like to work with us.</p>
+        <p>Physicians, hospitals, labs and suppliers in Ghana: pick the path that matches you.</p>
       </CtaBand>
     </>
   );
