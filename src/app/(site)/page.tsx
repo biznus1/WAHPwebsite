@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Building2, FlaskConical, MonitorSmartphone, ScanLine } from "lucide-react";
+import { ArrowRight, Building2, FlaskConical, MonitorSmartphone, Play, ScanLine } from "lucide-react";
 import { ClinicalFloorSchematic } from "@/components/graphics/clinical-floor-schematic";
 import { HeroRings } from "@/components/graphics/hero-rings";
 import { Wave } from "@/components/graphics/wave";
@@ -17,6 +17,7 @@ import { Eyebrow, Section, SectionIntro, SplitHeading, StageBadge } from "@/comp
 import { approvedClaim } from "@/content/claims";
 import { pageHeaders } from "@/content/editable";
 import { pillars } from "@/content/platform";
+import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: { absolute: "West African Health Partners · Shared clinical space for independent doctors in Accra" },
@@ -104,6 +105,27 @@ export default function HomePage() {
                 <StageBadge stage="pre-launch" label={hero.badge} dark />
               </span>
             </div>
+            {site.overviewVideo && (
+              <a
+                href={site.overviewVideo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-in group mt-8 inline-flex items-center gap-3 rounded-full pr-3 text-white [text-shadow:0_1px_14px_rgba(0,25,51,0.75)]"
+                style={delay(440)}
+              >
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/40 backdrop-blur-sm transition-colors ring-inset group-hover:bg-white/20 group-hover:ring-white">
+                  <Play aria-hidden className="ml-0.5 size-4 fill-current" />
+                </span>
+                <span>
+                  <span className="block font-semibold underline decoration-white/0 underline-offset-4 transition-colors group-hover:decoration-white/60">
+                    Watch the overview
+                  </span>
+                  <span className="block text-sm text-white/80">
+                    On YouTube<span className="sr-only"> (opens in a new tab)</span>
+                  </span>
+                </span>
+              </a>
+            )}
           </div>
 
           {groundwork.length > 0 && (

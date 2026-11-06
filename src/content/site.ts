@@ -12,6 +12,8 @@ export const site = {
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || approvedClaim("contact-email")?.text || null,
   linkedin: approvedClaim("linkedin")?.text ?? null,
   youtube: approvedClaim("youtube")?.text ?? null,
+  /** WAHP overview video on YouTube, linked from the Home hero. */
+  overviewVideo: approvedClaim("overview-video")?.text ?? null,
 };
 
 export type CallTypeId = "physician" | "diaspora" | "investor" | "partner";

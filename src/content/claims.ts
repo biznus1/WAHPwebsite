@@ -153,6 +153,17 @@ export const claims: Claim[] = [
     routes: ["footer"],
   },
   {
+    id: "overview-video",
+    text: "https://www.youtube.com/watch?v=CBGQphpdUyk",
+    source:
+      "Owner, 6 Nov 2026 (shared as youtu.be/CBGQphpdUyk); YouTube lists it as 'West African Health Partners Overview' on the WAHP channel",
+    status: "verified",
+    publicApproved: true,
+    lastVerified: "2026-11-06",
+    routes: ["/"],
+    note: "Linked, not embedded: it opens on YouTube, so no YouTube cookies are set on this site. The tracking parameter from the share link is left off.",
+  },
+  {
     id: "first-claim",
     text: "The first integrated medical co-sharing and diagnostics infrastructure platform in West Africa.",
     source: "Website Clarification Questionnaire #34 (owner-approved wording)",

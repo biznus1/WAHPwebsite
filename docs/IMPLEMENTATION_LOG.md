@@ -311,3 +311,7 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 
 - At the owner's request the Diaspora page hero uses the owner's retouched version of the same photo (the doctor putting on her stethoscope): brighter, sharper and cropped to 4:3, which is the hero's own shape. The file came with a thin navy rounded frame drawn into it; 18px was trimmed from each side so only the site's own rounded corners show. Saved over `doctor-stethoscope.webp` (1409×1052, 77 KB), so nothing else changed. Alt text unchanged.
 
+## 6 Nov 2026, overview video link on Home
+
+- At the owner's request the Home hero has a "Watch the overview / On YouTube" link with a play button, under the main buttons. It opens WAHP's "West African Health Partners Overview" video (https://www.youtube.com/watch?v=CBGQphpdUyk, on the WAHP channel) in a new tab. The tracking parameter from the shared link is left off.
+- It is a link, not an embedded player, so YouTube sets no cookies on this site and the privacy notice and CSP are unchanged. Registered as the `overview-video` claim; set to null there and the link disappears.

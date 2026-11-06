@@ -84,3 +84,11 @@ test("loading screen lifts after the page loads, never blocks clicks, and return
   await expect(screen).toHaveAttribute("data-seen-route", "");
   await expect(screen).toBeHidden();
 });
+
+test("home links to the overview video on YouTube in a new tab", async ({ page }) => {
+  await page.goto("/");
+  const link = page.getByRole("link", { name: /Watch the overview/ });
+  await expect(link).toHaveAttribute("href", "https://www.youtube.com/watch?v=CBGQphpdUyk");
+  await expect(link).toHaveAttribute("target", "_blank");
+  await expect(link).toHaveAttribute("rel", /noopener/);
+});
