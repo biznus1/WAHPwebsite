@@ -8,23 +8,23 @@ import { Eyebrow, SplitHeading } from "@/components/ui/primitives";
 /** One card per main audience, each going straight to the right enquiry path. */
 const cards = [
   {
-    title: "I am a physician in Ghana",
-    body: "Rent an equipped consulting room in Accra and keep your own practice.",
-    cta: "Talk to our team",
+    title: "I am a physician",
+    body: "See how the shared practice model works and what practising at WAHP will look like.",
+    cta: "Book a call",
     href: "/contact?call=physician#schedule",
     more: { href: "/physicians", label: "For physicians" },
   },
   {
     title: "I am a diaspora physician",
-    body: "See patients in Accra during your weeks home, mentor, or help us build.",
-    cta: "Talk about your plans",
+    body: "Explore how to practise, partner, or both through WAHP.",
+    cta: "Explore options",
     href: "/contact?call=diaspora#schedule",
     more: { href: "/diaspora-physicians", label: "For diaspora physicians" },
   },
   {
     title: "I am an investor",
-    body: "Meet the founders and see how the Accra hub is planned, phase by phase.",
-    cta: "Request an introduction",
+    body: "See the full thesis, traction and team behind the platform.",
+    cta: "Book an investor call",
     href: "/contact?call=investor#schedule",
     more: { href: "/investors", label: "For investors" },
   },
@@ -47,9 +47,16 @@ export function AudienceCta() {
       <div className="container-wahp pt-12 pb-20 md:pt-16 md:pb-28">
         <div className="reveal mx-auto max-w-2xl text-center [&_.eyebrow]:justify-center">
           <Eyebrow dark>Take the next step</Eyebrow>
-          <SplitHeading id="next-step-heading" lead="Let's talk." rest="Tell us where you fit." dark className="mt-5" />
+          <SplitHeading
+            id="next-step-heading"
+            lead="Ready to learn more?"
+            rest="Start with a conversation."
+            dark
+            className="mt-5"
+          />
           <p className="mt-6 text-lead text-white/75">
-            Choose who you are below and book a 30 minute introductory call with our team.
+            Different next steps for different audiences. Pick the path that matches you and book a 30 minute call with
+            our team.
           </p>
         </div>
 

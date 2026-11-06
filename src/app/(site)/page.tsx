@@ -161,8 +161,8 @@ export default function HomePage() {
           id="serve-heading"
           align="center"
           eyebrow="Who we serve"
-          lead="For doctors in Ghana and abroad,"
-          rest="and the people who back them."
+          lead="Built for the physicians shaping"
+          rest="the future of African healthcare."
         />
         <div className="mt-14">
           <AudiencePaths />
@@ -176,14 +176,15 @@ export default function HomePage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <SectionIntro
               id="gap-heading"
-              eyebrow="The problem we're solving"
-              lead="Ghana trains good doctors."
-              rest="Too many plan to practise elsewhere."
+              eyebrow="The infrastructure gap"
+              lead="The talent exists."
+              rest="The infrastructure around it is fragmented, inefficient and ready for transformation."
               dark
             >
               <p>
-                Opening a private practice here means finding premises, buying equipment and hiring staff on your own.
-                Patients still cross town for tests. We want staying to be the easier choice.
+                Many of Ghana&apos;s physicians intend to emigrate. We believe it is not because they want to leave, but
+                because the infrastructure to practise at their highest level isn&apos;t there. WAHP is building the
+                clinical environment that makes better care possible.
               </p>
               <Link
                 href="/the-problem"
@@ -213,11 +214,15 @@ export default function HomePage() {
         <SectionIntro
           id="platform-heading"
           align="center"
-          eyebrow="What we're building"
-          lead="One building."
-          rest="Many independent practices."
+          eyebrow="The platform"
+          lead="A platform, not just a place."
+          rest="Built for independent practice."
         >
-          <p>Consulting rooms and a shared front desk come first. A lab follows in Phase 2, and imaging after that.</p>
+          <p>
+            WAHP is designed to bring together the space, diagnostics, technology and support physicians need to
+            practise efficiently and with confidence. Clinical suites come first; the lab follows in Phase 2, and
+            imaging after that.
+          </p>
         </SectionIntro>
         <div className="mt-14 grid items-center gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
           <div className="reveal rounded-panel bg-navy p-5 md:p-8">
@@ -245,7 +250,7 @@ export default function HomePage() {
         </div>
         <div className="reveal mt-12 text-center">
           <ButtonLink href="/platform" variant="ghost" size="lg" arrow>
-            How the hub works
+            See the full platform
           </ButtonLink>
         </div>
       </Section>
@@ -258,16 +263,12 @@ export default function HomePage() {
         </div>
         <div className="container-wahp flex items-end pt-[26rem] pb-8 md:min-h-[46rem] md:pt-24 md:pb-12">
           <div className="reveal max-w-md rounded-panel bg-white/95 p-7 shadow-[0_30px_60px_-30px_rgba(0,51,102,0.45)] md:p-9">
-            <Eyebrow>Inside the Accra hub</Eyebrow>
-            <SplitHeading
-              id="lobby-heading"
-              lead="One front desk"
-              rest="for every practice in the building."
-              className="mt-4"
-            />
+            <Eyebrow>The patient experience</Eyebrow>
+            <SplitHeading id="lobby-heading" lead="One building." rest="Complete care." className="mt-4" />
             <p className="mt-4 text-arsenic">
-              This is a concept of the reception we are planning in Accra. Patients check in once, wait in one calm room
-              and are called through by their own doctor.
+              A patient should not have to carry the burden of a fragmented healthcare system. This is a concept of the
+              reception we are planning in Accra, where consultation, diagnostics and follow up are designed to come
+              together in one connected environment.
             </p>
             <div className="mt-7">
               <ButtonLink href="/platform" arrow>
@@ -283,13 +284,14 @@ export default function HomePage() {
         <SectionIntro
           id="compare-heading"
           align="center"
-          eyebrow="Where WAHP fits"
-          lead="Between the large hospital"
-          rest="and going it alone."
+          eyebrow="A new category of practice"
+          lead="The missing middle"
+          rest="between the large hospital and private practice."
         >
           <p>
-            Hospitals have infrastructure but no autonomy. Clinics have autonomy but no infrastructure. WAHP is designed
-            to combine both.
+            Hospitals have infrastructure but no physician autonomy. Private clinics have full autonomy, but the
+            physician builds everything from scratch. WAHP is designed to give you full autonomy with shared
+            infrastructure.
           </p>
         </SectionIntro>
         <div className="reveal mt-14">
@@ -297,7 +299,7 @@ export default function HomePage() {
         </div>
         <p className="reveal mt-8 text-center">
           <Link href="/physicians" className="group inline-flex items-center gap-2 font-semibold text-navy">
-            What this means for your practice
+            A different approach to private practice
             <ArrowRight aria-hidden className="size-4 text-teal transition-transform group-hover:translate-x-0.5" />
           </Link>
         </p>

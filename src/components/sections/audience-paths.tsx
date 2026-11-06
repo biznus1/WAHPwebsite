@@ -19,7 +19,7 @@ const paths: {
   {
     title: "Physicians",
     image: "physicianTealScrubs",
-    body: "Rent an equipped consulting room in Accra and keep your own practice, without building a clinic first.",
+    body: "Practise independently with flexible, fully equipped clinical space planned in Accra, without the cost of building your own facility.",
     cta: "See how it works",
     href: "/physicians",
     accent: { bar: "bg-teal", mark: "text-teal" },
@@ -27,7 +27,7 @@ const paths: {
   {
     title: "Diaspora physicians",
     image: "diasporaDoctor",
-    body: "See patients in Accra during your weeks home, mentor, or help us build. You set the pace.",
+    body: "A credible path to practise, partner, or both, back home.",
     cta: "Explore your options",
     href: "/diaspora-physicians",
     accent: { bar: "bg-navy", mark: "text-navy" },
@@ -35,7 +35,7 @@ const paths: {
   {
     title: "Investors",
     image: "investorLounge",
-    body: "Back a shared outpatient hub in Accra, built so the model can move to Kumasi and beyond.",
+    body: "Explore a scalable healthcare infrastructure platform designed for a large, rapidly growing West African market.",
     cta: "See the opportunity",
     href: "/investors",
     accent: { bar: "bg-navy-700", mark: "text-navy-700" },
@@ -43,7 +43,7 @@ const paths: {
   {
     title: "Partners",
     image: "partnersPresentation",
-    body: "Hospitals, labs, suppliers and health organisations who want to work with us.",
+    body: "Hospitals, labs, suppliers and health organisations exploring growth, expansion or strategic alignment with WAHP.",
     cta: "Discuss partnership",
     href: "/contact?type=partnership#schedule",
     accent: { bar: "bg-teal", mark: "text-teal" },
@@ -51,7 +51,7 @@ const paths: {
   {
     title: "Patients",
     image: "nurseChildWard",
-    body: "We are not open and are not seeing patients yet. Here is what we plan to offer.",
+    body: "We are not open and are not seeing patients yet. WAHP is designed to make healthcare feel less fragmented, more connected and more centred around the patient.",
     cta: "What's planned",
     href: "/patients",
     accent: { bar: "bg-space", mark: "text-navy" },

@@ -2,11 +2,11 @@ import { Check, Minus } from "lucide-react";
 
 type OptionId = "hospital" | "wahp" | "own";
 
-/** Columns in reading order: WAHP sits between the large hospital and going it alone, as the heading says. */
+/** Columns in reading order: WAHP sits between the large hospital and private practice, as the heading says. */
 const options: { id: OptionId; label: string; short: string }[] = [
   { id: "hospital", label: "In a large hospital", short: "Large hospital" },
   { id: "wahp", label: "Planned at WAHP", short: "WAHP" },
-  { id: "own", label: "On your own", short: "On your own" },
+  { id: "own", label: "In a private clinic", short: "Private clinic" },
 ];
 
 /** Each cell: the text, and whether it counts in the doctor's favour (check) or against (dash). */
@@ -16,46 +16,46 @@ const rows: { topic: string; cells: Record<OptionId, Cell> }[] = [
   {
     topic: "Premises",
     cells: {
-      hospital: { text: "Work in the hospital's building, on its terms", good: false },
-      wahp: { text: "Book a consulting room in the Accra hub", good: true },
-      own: { text: "Find, lease and fit out a building yourself", good: false },
+      hospital: { text: "The facility is built for the institution, not the doctor", good: false },
+      wahp: { text: "Fully equipped consultation rooms on flexible leases", good: true },
+      own: { text: "High capital burden to find and fit out premises", good: false },
     },
   },
   {
     topic: "Equipment",
     cells: {
-      hospital: { text: "Equipment is there, shared with the whole hospital", good: true },
-      wahp: { text: "Use rooms that are already fitted and maintained", good: true },
-      own: { text: "Buy and maintain every piece of equipment", good: false },
+      hospital: { text: "Infrastructure available, shared with the whole hospital", good: true },
+      wahp: { text: "Full infrastructure, shared across the hub", good: true },
+      own: { text: "No shared infrastructure, so you buy every piece of equipment", good: false },
     },
   },
   {
     topic: "Administration",
     cells: {
-      hospital: { text: "Follow the hospital's systems, rules and rotas", good: false },
-      wahp: { text: "Share one front desk, schedule and records system", good: true },
-      own: { text: "Hire your own receptionist and admin staff", good: false },
+      hospital: { text: "Bureaucratic systems and rigid schedules", good: false },
+      wahp: { text: "Shared reception, scheduling and EHR", good: true },
+      own: { text: "Operational friction and disconnected systems", good: false },
     },
   },
   {
     topic: "Diagnostics",
     cells: {
-      hospital: { text: "Lab and imaging are usually in the building", good: true },
-      wahp: { text: "An on site lab is planned for Phase 2", good: true },
-      own: { text: "Send patients across town for tests, then wait", good: false },
+      hospital: { text: "Diagnostics and imaging usually in the building", good: true },
+      wahp: { text: "Integrated diagnostics and imaging, planned for later phases", good: true },
+      own: { text: "Fragmented diagnostics, with patients sent across town for tests", good: false },
     },
   },
   {
     topic: "Focus",
     cells: {
-      hospital: { text: "Little say over your hours or how you practise", good: false },
-      wahp: { text: "More of your week goes on patients", good: true },
-      own: { text: "Half your week goes on running a business", good: false },
+      hospital: { text: "No physician autonomy and limited flexibility", good: false },
+      wahp: { text: "Complete physician autonomy, focused on patients, not paperwork", good: true },
+      own: { text: "Full physician autonomy, but you run every part of the business", good: false },
     },
   },
 ];
 
-const caption = "Practising in a large hospital, at WAHP and on your own, compared";
+const caption = "Practising in a large hospital, at WAHP and in a private clinic, compared";
 
 function Mark({ good, dark = false }: { good: boolean; dark?: boolean }) {
   return good ? (

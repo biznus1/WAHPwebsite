@@ -330,7 +330,7 @@ export function ClinicalFloorSchematic({ className = "" }: { className?: string 
             filter="url(#floor-glow)"
           />
           <text x="320" y={bottomY + 21} fill="#FFFFFF" fontSize="12" fontWeight="800" letterSpacing="1.2">
-            LABORATORY
+            ON SITE LAB
           </text>
           <text x="320" y={bottomY + 37} fill="#FFFFFF" fillOpacity="0.8" fontSize="11">
             Planned
@@ -500,7 +500,7 @@ export function ClinicalFloorSchematic({ className = "" }: { className?: string 
             strokeWidth="1.4"
           />
           <text x="474" y="278.5" textAnchor="middle" fill="#FFFFFF" fontSize="11.5" fontWeight="700">
-            Records &amp; scheduling
+            EHR &amp; scheduling
           </text>
         </g>
       </svg>
