@@ -4,6 +4,7 @@ const routes = [
   "/",
   "/platform",
   "/the-problem",
+  "/the-solution",
   "/physicians",
   "/diaspora-physicians",
   "/investors",
@@ -144,4 +145,26 @@ test("investors shows the market figures and the who may invest section", async 
     page.locator("#introduction").getByRole("heading", { name: /better healthcare delivery/ }),
   ).toBeAttached();
   await expect(page.locator("#introduction").getByText("Rule 506(c)")).toBeAttached();
+});
+
+test("The Problem leads to The Solution, which shows the example earnings as an example", async ({ page }) => {
+  await page.goto("/the-problem");
+  await page.getByRole("link", { name: "See the solution" }).click();
+  await expect(page).toHaveURL(/\/the-solution$/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("without building a clinic");
+  await expect(page.getByText("Example only, not final")).toBeVisible();
+  // Worked out from the inputs: (patients x fee - $100) x 6 sessions x 12 months.
+  for (const [role, yearly] of [
+    ["General practitioner", "$10,080"],
+    ["Paediatrician", "$18,720"],
+    ["Obstetrician and gynaecologist", "$15,840"],
+    ["Cardiologist", "$27,360"],
+  ]) {
+    const card = page.getByRole("listitem").filter({ has: page.getByRole("heading", { name: role }) });
+    await expect(card.locator("[data-countup]")).toHaveAttribute("data-countup", yearly);
+  }
+  await expect(page.getByText(/before other physician expenses and taxes/)).toBeVisible();
+  // House rules: no "coworking" wording, and no investment round on this page.
+  await expect(page.getByText(/co-?working/i)).toHaveCount(0);
+  await expect(page.getByText(/800,000/)).toHaveCount(0);
 });

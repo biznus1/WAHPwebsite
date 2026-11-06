@@ -237,6 +237,17 @@ export const claims: Claim[] = [
     note: "Owner's own study (see traction-research). Owner to keep the study on file.",
   },
   {
+    id: "earnings-examples",
+    text: "Example physician earnings under a proposed fee: six 4 hour sessions a month at $100 a session; GP 8 patients at $30 ($10,080 a year), paediatrician 12 at $30 ($18,720), OB/GYN 8 at $40 ($15,840), cardiologist 12 at $40 ($27,360), after WAHP session fees, before other expenses and tax",
+    source:
+      "Owner analysis shared 6 Nov 2026 ('The Economic Opportunity for Physicians'); arithmetic rechecked and computed in the page from the inputs",
+    status: "pending-review",
+    publicApproved: true,
+    lastVerified: "2026-11-06",
+    routes: ["/the-solution"],
+    note: "Published at the owner's request on The Solution page, marked 'Example only, not final' with the owner's own caveat. The $100 session fee and the consultation prices are assumptions, not WAHP pricing. Counsel to review before launch (earnings illustrations for prospective physicians).",
+  },
+  {
     id: "traction-lois",
     text: "20 physicians have signed Letters of Intent",
     source: "Owner confirmation 21 Oct 2026 (matches the latest WAHP site build)",

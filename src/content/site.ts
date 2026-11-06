@@ -91,7 +91,7 @@ export interface NavGroup {
 }
 
 /**
- * Phone menu, grouped as on the older WordPress build: About ▾, The Platform, The Problem, Who We Serve ▾,
+ * Phone menu, grouped as on the older WordPress build: About ▾, The Platform, The Problem, The Solution, Who We Serve ▾,
  * Contact. ("Team" there is Leadership here.)
  */
 export const mobileNav: (NavItem | NavGroup)[] = [
@@ -104,6 +104,7 @@ export const mobileNav: (NavItem | NavGroup)[] = [
   },
   { href: "/platform", label: "The Platform" },
   { href: "/the-problem", label: "The Problem" },
+  { href: "/the-solution", label: "The Solution" },
   {
     label: "Who We Serve",
     children: [
@@ -132,6 +133,7 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
     items: [
       { href: "/platform", label: "Platform" },
       { href: "/the-problem", label: "The problem" },
+      { href: "/the-solution", label: "The solution" },
       { href: "/about", label: "About WAHP" },
       { href: "/leadership", label: "Leadership" },
       { href: "/contact", label: "Contact" },

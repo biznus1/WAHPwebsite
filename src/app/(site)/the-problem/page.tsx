@@ -515,7 +515,7 @@ export default function TheProblemPage() {
           lead="WAHP is built to close"
           rest="the infrastructure gap."
           primary={call}
-          secondary={{ href: "/platform", label: "Discover the platform" }}
+          secondary={{ href: "/the-solution", label: "See the solution" }}
           greenAccent
         >
           <p>

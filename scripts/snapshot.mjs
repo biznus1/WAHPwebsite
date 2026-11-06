@@ -10,6 +10,7 @@ const routes = [
   "/",
   "/platform",
   "/the-problem",
+  "/the-solution",
   "/physicians",
   "/diaspora-physicians",
   "/investors",
