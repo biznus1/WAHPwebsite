@@ -30,7 +30,7 @@ export const pillars: PlatformPillar[] = [
       "Fully equipped consultation and treatment rooms in the Accra hub, planned on flexible leases. A physician walks in, sees patients and walks out. The shared practice model is designed to lower the capital barrier to independent practice to a monthly operating cost.",
     points: [
       "Designed to solve fragmented care and the high capital barrier",
-      "No facility management, no equipment procurement, no long term property commitments",
+      "No facility management. No equipment procurement. No long term property commitments",
       "For the physician: full clinical autonomy without the cost of building your own facility",
     ],
   },
@@ -43,7 +43,7 @@ export const pillars: PlatformPillar[] = [
     stage: "planned",
     stageLabel: "Phase 2 · planned",
     summary:
-      "The lab is planned as part of the platform, in the same building, and designed so each result reaches the physician's record digitally. Continuity of care is built into the workflow, not bolted on after the fact.",
+      "The lab is planned as part of the platform, in the same building. Once it opens, each result reaches the physician's record digitally. Continuity of care is built into the workflow, not bolted on after the fact.",
     points: [
       "Designed to solve delayed diagnostics and a fragmented patient journey",
       "Lab results will feed directly into the patient file",
@@ -96,26 +96,26 @@ export const roadmap: RoadmapPhase[] = [
     phase: "Phase 1",
     title: "Shared clinical suites",
     description:
-      "Fully equipped consultation rooms in Accra, shared reception and admin, and the core health records and scheduling tools.",
+      "Fully equipped consultation and treatment rooms on flexible leases, with shared reception, admin and the core digital tools.",
     stage: "in-development",
   },
   {
     phase: "Phase 2",
     title: "Integrated diagnostic lab",
     description:
-      "A lab in the same building, so physicians can order testing without having to coordinate across disconnected facilities.",
+      "The lab becomes part of the platform, so a physician can order laboratory testing without having to coordinate across multiple disconnected facilities.",
     stage: "planned",
   },
   {
     phase: "Phase 3",
     title: "Imaging services",
     description:
-      "Onsite diagnostic imaging, including CT, MRI, ultrasound and X ray, once the suites and lab are well used.",
+      "Onsite diagnostic imaging, including CT, MRI, ultrasound and X ray, within the same healthcare facility, once the suites and lab are well used.",
     stage: "future",
   },
   {
     phase: "Phase 4",
-    title: "Built to scale",
+    title: "Beyond Accra",
     description:
       "Future phases are designed to expand the model to Kumasi and other Ghanaian markets and, over time, across West Africa.",
     stage: "aspiration",

@@ -66,7 +66,7 @@ export default function PlatformPage() {
           id="spaces-heading"
           eyebrow="The patient experience"
           lead="One building. Complete care."
-          rest="How we picture the Accra hub."
+          rest="What the platform will look like from the patient's perspective."
         />
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           <SiteImage name="lobby" className="reveal" />
@@ -80,7 +80,7 @@ export default function PlatformPage() {
           id="phases-heading"
           eyebrow="In stages"
           lead="Four pillars,"
-          rest="added one phase at a time."
+          rest="built to scale across West Africa."
           dark
         >
           <p>We add the next pillar only when the one before it is open and working, starting with the suites.</p>
@@ -96,7 +96,10 @@ export default function PlatformPage() {
         primary={{ href: "/contact?type=partnership#schedule", label: "Discuss a partnership" }}
         secondary={{ href: "/physicians#register", label: "I am a physician" }}
       >
-        <p>Physicians, hospitals, labs and suppliers in Ghana: pick the path that matches you.</p>
+        <p>
+          Different next steps for different audiences, from physicians to hospitals, labs and suppliers in Ghana. Pick
+          the path that matches you.
+        </p>
       </CtaBand>
     </>
   );
