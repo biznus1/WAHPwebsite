@@ -164,20 +164,35 @@ test("The Problem leads to The Solution, which shows the example earnings as an 
     await expect(card.locator("[data-countup]")).toHaveAttribute("data-countup", yearly);
   }
   await expect(page.getByText(/before other physician expenses and taxes/)).toBeVisible();
-  // The yearly figures switch to cedis at the March 2024 rate (GH₵12.67 per US$); a toggle pauses them.
-  await expect(page.locator(".currency-flip .currency-second").filter({ hasText: /GH₵/ })).toHaveText([
-    "GH₵128K",
-    "about GH₵10,640 a month",
-    "GH₵237K",
-    "about GH₵19,770 a month",
-    "GH₵201K",
-    "about GH₵16,720 a month",
-    "GH₵347K",
-    "about GH₵28,890 a month",
-  ]);
+  // Every amount switches to cedis at the March 2024 rate (GH₵12.67 per US$): $100 → GH₵1,267, $30 → GH₵380,
+  // $40 → GH₵507, then each card is worked out in cedis so its arithmetic adds up. One toggle pauses them all.
+  const earnings = page.locator('section[aria-labelledby="earnings-heading"]');
+  await expect(earnings.locator("dd .currency-second").first()).toHaveText("GH₵1,267");
+  for (const [role, cedis] of [
+    ["General practitioner", ["GH₵380 each", "GH₵128K", "about GH₵10,640 a month", "GH₵3,040", "GH₵1,773"]],
+    ["Paediatrician", ["GH₵380 each", "GH₵237K", "about GH₵19,760 a month", "GH₵4,560", "GH₵3,293"]],
+    ["Obstetrician and gynaecologist", ["GH₵507 each", "GH₵201K", "about GH₵16,730 a month", "GH₵4,056", "GH₵2,789"]],
+    ["Cardiologist", ["GH₵507 each", "GH₵347K", "about GH₵28,900 a month", "GH₵6,084", "GH₵4,817"]],
+  ] as const) {
+    const card = earnings.getByRole("listitem").filter({ has: page.getByRole("heading", { name: role }) });
+    await expect(card.locator(".currency-second")).toHaveText([...cedis]);
+  }
+  // No dollar amount is left that does not switch.
+  const fixedDollars = await earnings.evaluate((el) => {
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const out: string[] = [];
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      const t = n.textContent ?? "";
+      if (/\$\d/.test(t) && !n.parentElement?.closest(".currency-flip, .sr-only")) out.push(t);
+    }
+    return out;
+  });
+  expect(fixedDollars).toEqual([]);
   const pause = page.getByRole("button", { name: "Pause the switch between US dollars and cedis" });
   await pause.click();
   await expect(pause).toHaveAttribute("aria-pressed", "true");
+  await expect(earnings.locator("[data-flip-paused]")).toHaveCount(1);
+  await expect(earnings.locator(".currency-flip > span").first()).toHaveCSS("animation-play-state", "paused");
   // House rules: no "coworking" wording, and no investment round on this page.
   await expect(page.getByText(/co-?working/i)).toHaveCount(0);
   await expect(page.getByText(/800,000/)).toHaveCount(0);

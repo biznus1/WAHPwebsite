@@ -387,3 +387,11 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 - **Green on light cards:** the brand green #8BC900 is under 2:1 on the light cards, so the cedi figures use `--color-green-ink` (#4F7A00, a deepened brand green, 4.7:1 on paper). Recorded in `BRAND_IMPLEMENTATION.md`.
 - Same `.currency-flip` CSS animation as The Problem's pay figure, so the preview runs it too. One pause toggle above the cards pauses all four (`CurrencyFlipGroup`); with reduced motion the dollar figures stay. "a year" now sits on its own line under the figure, so the cards do not jump between states.
 
+
+## 6 Nov 2026, The Solution: every amount in US dollars and cedis
+
+- At the owner's request every dollar amount in the earnings section now switches with cedis, not only the yearly and monthly figures: the session fee in the navy panel ($100 / GH₵1,267, light teal and green on navy), each card's consultation fee ($30 / GH₵380, $40 / GH₵507), and the per session working (consultations, after the session fee).
+- **Arithmetic in both currencies:** the two prices are converted at GH₵12.67 per US$ (March 2024 Bank of Ghana average) and rounded to whole cedis, then each card is worked out in cedis, so a reader can check it either way (e.g. 8 × GH₵380 = GH₵3,040, less GH₵1,267 = GH₵1,773 a session; × 72 sessions = GH₵127,656, shown as GH₵128K). Monthly cedis are rounded to the nearest GH₵10.
+- **Layout:** the fee panel now shows the session fee on its own line above "6 sessions a month" and "4 hours each", so the wider cedi figure fits; the intro sentence refers to "the example session fee shown" instead of repeating $100; "After the $100 session fee" became "After the session fee".
+- **In step:** all the amounts sit in one `CurrencyFlipGroup`, which now wraps the whole section; its note (the rate) and single pause toggle sit above the cards (`CurrencyFlipNote`). Figures in a group start with the page instead of waiting for their own scroll reveal, so the panel and the cards switch together. Inline amounts use the new server component `Flip` (`components/motion/flip.tsx`).
+- The e2e test checks every cedi amount on each card and that no dollar amount in the section is left unswitched.

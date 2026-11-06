@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore, type ReactNode } from "react";
+import { createContext, use, useMemo, useState, useSyncExternalStore, type ReactNode } from "react";
 import { Pause, Play } from "lucide-react";
 
 const noop = () => () => {};
@@ -41,27 +41,40 @@ function PauseToggle({
   );
 }
 
+const FlipGroupContext = createContext<{ paused: boolean; toggle: () => void } | null>(null);
+
 /**
- * Several `.currency-flip` figures that move together under one pause toggle, with a note beside it (e.g. the
- * exchange rate). The children are the figures; they can be server rendered.
+ * Wraps every `.currency-flip` figure of a section so they move in step under one pause toggle
+ * (`CurrencyFlipNote`). The children can be server rendered. Inside a group the figures do not wait for their own
+ * scroll reveal (see `[data-flip-group]` in globals.css), so figures revealed at different moments stay in phase.
  */
-export function CurrencyFlipGroup({ note, children }: { note: ReactNode; children: ReactNode }) {
+export function CurrencyFlipGroup({ children, className = "" }: { children: ReactNode; className?: string }) {
   const [paused, setPaused] = useState(false);
+  const value = useMemo(() => ({ paused, toggle: () => setPaused((p) => !p) }), [paused]);
+  return (
+    <FlipGroupContext value={value}>
+      <div className={className} data-flip-group data-flip-paused={paused ? "" : undefined}>
+        {children}
+      </div>
+    </FlipGroupContext>
+  );
+}
+
+/** A note for a `CurrencyFlipGroup` (e.g. the exchange rate) with the group's pause toggle beside it. */
+export function CurrencyFlipNote({ children, className = "" }: { children: ReactNode; className?: string }) {
+  const group = use(FlipGroupContext);
   const hydrated = useHydrated();
   return (
-    <div data-flip-paused={paused ? "" : undefined}>
-      <div className="flex items-center justify-between gap-4">
-        <p className="text-sm text-arsenic">{note}</p>
-        {hydrated && (
-          <PauseToggle
-            paused={paused}
-            onToggle={() => setPaused((p) => !p)}
-            label="Pause the switch between US dollars and cedis"
-            tone="light"
-          />
-        )}
-      </div>
-      {children}
+    <div className={`flex items-center justify-between gap-4 ${className}`}>
+      <p className="text-sm text-arsenic">{children}</p>
+      {hydrated && group && (
+        <PauseToggle
+          paused={group.paused}
+          onToggle={group.toggle}
+          label="Pause the switch between US dollars and cedis"
+          tone="light"
+        />
+      )}
     </div>
   );
 }

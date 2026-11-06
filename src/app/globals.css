@@ -458,7 +458,9 @@ details[open] > .menu-sub {
   opacity: 0;
   animation-name: currency-second;
 }
-.js .reveal:not(.is-visible) .currency-flip > span,
+/* A lone figure waits for its panel to reveal; figures in a [data-flip-group] all start with the page instead, so
+   ones revealed at different moments (a panel and the cards below it) stay in step. */
+.js .reveal:not(.is-visible) .currency-flip:not([data-flip-group] .currency-flip) > span,
 .currency-flip[data-paused] > span,
 [data-flip-paused] .currency-flip > span {
   animation-play-state: paused;

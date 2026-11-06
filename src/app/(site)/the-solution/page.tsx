@@ -13,7 +13,8 @@ import {
   Users,
 } from "lucide-react";
 import { CountUp } from "@/components/motion/count-up";
-import { CurrencyFlipGroup } from "@/components/motion/currency-flip";
+import { CurrencyFlipGroup, CurrencyFlipNote } from "@/components/motion/currency-flip";
+import { Flip } from "@/components/motion/flip";
 import { CtaBand } from "@/components/sections/cta-band";
 import { StickyCallBar } from "@/components/sections/sticky-call-bar";
 import { ButtonLink } from "@/components/ui/button";
@@ -36,32 +37,48 @@ const SESSION_HOURS = 4;
 const SESSION_FEE = 100;
 // The copy spells these out ("six sessions of four hours"); change it too if the example changes.
 
-/** The owner's four example physicians. Earnings are worked out here so the figures always match the inputs. */
+/** Bank of Ghana interbank month average, March 2024 (claim pay-usd-conversion), as on The Problem page. */
+const GHS_PER_USD = 12.67;
+/** A dollar price in whole cedis at that rate. */
+const toGhs = (dollars: number) => Math.round(dollars * GHS_PER_USD);
+const SESSION_FEE_GHS = toGhs(SESSION_FEE);
+
+/**
+ * The owner's four example physicians, worked out here so the figures always match the inputs. The cedi column
+ * converts the two prices (consultation and session fee) and is then worked out in cedis, so each card's
+ * arithmetic adds up in either currency.
+ */
 const examples = [
   { role: "General practitioner", patients: 8, fee: 30 },
   { role: "Paediatrician", patients: 12, fee: 30 },
   { role: "Obstetrician and gynaecologist", patients: 8, fee: 40 },
   { role: "Cardiologist", patients: 12, fee: 40 },
 ].map((e) => {
-  const perSession = e.patients * e.fee;
-  const afterFee = perSession - SESSION_FEE;
+  const work = (fee: number, sessionFee: number) => {
+    const perSession = e.patients * fee;
+    const afterFee = perSession - sessionFee;
+    return {
+      fee,
+      perSession,
+      afterFee,
+      monthly: afterFee * SESSIONS_PER_MONTH,
+      yearly: afterFee * SESSIONS_PER_MONTH * 12,
+    };
+  };
   return {
-    ...e,
-    perSession,
-    afterFee,
-    monthly: afterFee * SESSIONS_PER_MONTH,
-    yearly: afterFee * SESSIONS_PER_MONTH * 12,
+    role: e.role,
+    patients: e.patients,
+    usd: work(e.fee, SESSION_FEE),
+    ghs: work(toGhs(e.fee), SESSION_FEE_GHS),
   };
 });
 
 const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
-
-/** Bank of Ghana interbank month average, March 2024 (claim pay-usd-conversion), as on The Problem page. */
-const GHS_PER_USD = 12.67;
-/** Cedis a month, to the nearest GH₵10. */
-const cedis = (n: number) => `GH₵${(Math.round((n * GHS_PER_USD) / 10) * 10).toLocaleString("en-US")}`;
-/** Cedis a year, to the nearest thousand, in the site's "GH₵10K" style. */
-const cedisK = (n: number) => `GH₵${Math.round((n * GHS_PER_USD) / 1000)}K`;
+const ghs = (n: number) => `GH₵${n.toLocaleString("en-US")}`;
+/** Cedis to the nearest GH₵10, for "about … a month". */
+const ghs10 = (n: number) => ghs(Math.round(n / 10) * 10);
+/** Cedis to the nearest thousand, in the site's "GH₵10K" style. */
+const ghsK = (n: number) => `GH₵${Math.round(n / 1000)}K`;
 
 /** How a session works, as planned for the Accra hub. */
 const steps = [
@@ -269,7 +286,8 @@ export default function TheSolutionPage() {
 
       {earnings && (
         <section aria-labelledby="earnings-heading" className="bg-white py-20 md:py-28">
-          <div className="container-wahp">
+          {/* Every amount switches between US dollars and cedis at the March 2024 rate, in step (owner's request). */}
+          <CurrencyFlipGroup className="container-wahp">
             <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16">
               <div className="reveal">
                 <Eyebrow accent="navy">The economic opportunity for physicians</Eyebrow>
@@ -277,22 +295,32 @@ export default function TheSolutionPage() {
                   Start small. <span className="text-graphite">Grow as demand grows.</span>
                 </h2>
                 <p className="mt-6 text-lead text-arsenic">
-                  Consider four physicians, each reserving only six sessions of four hours a month under an example fee
-                  of {usd(SESSION_FEE)} per session. Here is the consultation revenue each could earn after the WAHP
-                  session fee, before other expenses and tax.
+                  Consider four physicians, each reserving only six sessions of four hours a month at the example
+                  session fee shown. Here is the consultation revenue each could earn after the WAHP session fee, before
+                  other expenses and tax.
                 </p>
               </div>
-              {/* The proposed fee, in a navy panel, green on navy as elsewhere on the site. */}
+              {/* The proposed fee, in a navy panel: the fee in light teal (dollars) and green (cedis) on navy. */}
               <div className="reveal grain on-dark relative overflow-hidden rounded-panel bg-navy p-8 text-white md:p-10">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <Eyebrow accent="green">Proposed fee structure</Eyebrow>
                   <StageBadge stage="planned" label="Example only, not final" dark />
                 </div>
-                <dl className="mt-8 grid grid-cols-3 gap-4">
+                <dl className="mt-8 grid grid-cols-2 gap-x-4 gap-y-6">
+                  <div className="col-span-2 flex flex-col">
+                    <dt className="order-2 mt-2 text-sm text-white/75">per session</dt>
+                    <dd className="order-1 text-[clamp(2.25rem,8vw,3rem)] leading-none font-bold tracking-tight whitespace-nowrap text-teal-300">
+                      <Flip
+                        first={usd(SESSION_FEE)}
+                        second={ghs(SESSION_FEE_GHS)}
+                        label={`${usd(SESSION_FEE)}, about ${ghs(SESSION_FEE_GHS)}`}
+                        secondClassName="text-green"
+                      />
+                    </dd>
+                  </div>
                   {[
                     { value: String(SESSIONS_PER_MONTH), label: "sessions a month" },
                     { value: String(SESSION_HOURS), label: "hours each" },
-                    { value: usd(SESSION_FEE), label: "per session" },
                   ].map((f) => (
                     <div key={f.label} className="flex flex-col">
                       <dt className="order-2 mt-2 text-sm text-white/75">{f.label}</dt>
@@ -305,69 +333,77 @@ export default function TheSolutionPage() {
               </div>
             </div>
 
-            {/* Figures switch between US dollars (navy) and cedis (green) at the March 2024 rate, owner's request. */}
-            <div className="mt-12">
-              <CurrencyFlipGroup
-                note={
-                  <>
-                    Figures switch between US dollars and Ghana cedis at the Bank of Ghana&apos;s average rate for March
-                    2024, GH₵{GHS_PER_USD} to the US dollar.
-                  </>
-                }
-              >
-                <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                  {examples.map((e, i) => (
-                    <li
-                      key={e.role}
-                      className="reveal flex flex-col rounded-card bg-paper p-6 ring-1 ring-inset ring-smoke md:p-7"
-                      style={{ transitionDelay: `${i * 80}ms` }}
-                    >
-                      <h3 className="text-xl font-semibold text-navy">{e.role}</h3>
-                      <p className="mt-2 text-sm text-arsenic">
-                        {e.patients} patients a session at {usd(e.fee)} each
-                      </p>
-                      <p className="mt-6 text-[2.25rem] leading-none font-bold tracking-tight whitespace-nowrap text-navy lg:text-[clamp(2rem,3.2vw,2.75rem)]">
-                        <span className="sr-only">
-                          {usd(e.yearly)} a year, about {cedisK(e.yearly)} at the March 2024 rate
-                        </span>
-                        <span aria-hidden className="currency-flip">
-                          <span className="currency-first">
-                            <CountUp value={usd(e.yearly)} delay={150 + i * 140} />
-                          </span>
-                          <span className="currency-second text-green-ink">{cedisK(e.yearly)}</span>
-                        </span>
-                      </p>
-                      <p className="mt-2 font-semibold text-arsenic">a year</p>
-                      <p className="mt-1 text-arsenic">
-                        <span className="sr-only">
-                          About {usd(e.monthly)} a month, or {cedis(e.monthly)}
-                        </span>
-                        <span aria-hidden className="currency-flip">
-                          <span className="currency-first">about {usd(e.monthly)} a month</span>
-                          <span className="currency-second font-semibold text-green-ink">
-                            about {cedis(e.monthly)} a month
-                          </span>
-                        </span>
-                      </p>
-                      <dl className="mt-6 grid gap-2 border-t border-smoke pt-5 text-sm text-arsenic">
-                        <div className="flex justify-between gap-3">
-                          <dt>Consultations per session</dt>
-                          <dd className="font-semibold text-navy tabular-nums">{usd(e.perSession)}</dd>
-                        </div>
-                        <div className="flex justify-between gap-3">
-                          <dt>After the {usd(SESSION_FEE)} session fee</dt>
-                          <dd className="font-semibold text-navy tabular-nums">{usd(e.afterFee)}</dd>
-                        </div>
-                        <div className="flex justify-between gap-3">
-                          <dt>Sessions a year</dt>
-                          <dd className="font-semibold text-navy tabular-nums">{SESSIONS_PER_MONTH * 12}</dd>
-                        </div>
-                      </dl>
-                    </li>
-                  ))}
-                </ul>
-              </CurrencyFlipGroup>
-            </div>
+            <CurrencyFlipNote className="mt-12">
+              All amounts switch between US dollars and Ghana cedis at the Bank of Ghana&apos;s average rate for March
+              2024, GH₵{GHS_PER_USD} to the US dollar.
+            </CurrencyFlipNote>
+            <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {examples.map((e, i) => (
+                <li
+                  key={e.role}
+                  className="reveal flex flex-col rounded-card bg-paper p-6 ring-1 ring-inset ring-smoke md:p-7"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
+                  <h3 className="text-xl font-semibold text-navy">{e.role}</h3>
+                  <p className="mt-2 text-sm text-arsenic">
+                    {e.patients} patients a session at{" "}
+                    <Flip
+                      first={`${usd(e.usd.fee)} each`}
+                      second={`${ghs(e.ghs.fee)} each`}
+                      label={`${usd(e.usd.fee)} each, about ${ghs(e.ghs.fee)}`}
+                      secondClassName="font-semibold text-green-ink"
+                    />
+                  </p>
+                  <p className="mt-6 text-[2.25rem] leading-none font-bold tracking-tight whitespace-nowrap text-navy lg:text-[clamp(2rem,3.2vw,2.75rem)]">
+                    <Flip
+                      first={<CountUp value={usd(e.usd.yearly)} delay={150 + i * 140} />}
+                      second={ghsK(e.ghs.yearly)}
+                      label={`${usd(e.usd.yearly)} a year, about ${ghsK(e.ghs.yearly)}`}
+                      secondClassName="text-green-ink"
+                    />
+                  </p>
+                  <p className="mt-2 font-semibold text-arsenic">a year</p>
+                  <p className="mt-1 text-arsenic">
+                    <Flip
+                      first={`about ${usd(e.usd.monthly)} a month`}
+                      second={`about ${ghs10(e.ghs.monthly)} a month`}
+                      label={`About ${usd(e.usd.monthly)} a month, or ${ghs10(e.ghs.monthly)}`}
+                      secondClassName="font-semibold text-green-ink"
+                    />
+                  </p>
+                  <dl className="mt-6 grid gap-2 border-t border-smoke pt-5 text-sm text-arsenic">
+                    <div className="flex justify-between gap-3">
+                      <dt>Consultations per session</dt>
+                      <dd className="font-semibold text-navy tabular-nums">
+                        <Flip
+                          first={usd(e.usd.perSession)}
+                          second={ghs(e.ghs.perSession)}
+                          label={`${usd(e.usd.perSession)}, about ${ghs(e.ghs.perSession)}`}
+                          secondClassName="text-green-ink"
+                          align="end"
+                        />
+                      </dd>
+                    </div>
+                    <div className="flex justify-between gap-3">
+                      <dt>After the session fee</dt>
+                      <dd className="font-semibold text-navy tabular-nums">
+                        <Flip
+                          first={usd(e.usd.afterFee)}
+                          second={ghs(e.ghs.afterFee)}
+                          label={`${usd(e.usd.afterFee)}, about ${ghs(e.ghs.afterFee)}`}
+                          secondClassName="text-green-ink"
+                          align="end"
+                        />
+                      </dd>
+                    </div>
+                    <div className="flex justify-between gap-3">
+                      <dt>Sessions a year</dt>
+                      <dd className="font-semibold text-navy tabular-nums">{SESSIONS_PER_MONTH * 12}</dd>
+                    </div>
+                  </dl>
+                </li>
+              ))}
+            </ul>
 
             <div className="reveal mt-10 grid gap-8 lg:grid-cols-2 lg:gap-16">
               <p className="text-lead text-arsenic">
@@ -382,7 +418,7 @@ export default function TheSolutionPage() {
                 pricing, clinical scheduling and utilisation.
               </p>
             </div>
-          </div>
+          </CurrencyFlipGroup>
         </section>
       )}
 
