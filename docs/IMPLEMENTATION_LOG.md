@@ -380,3 +380,10 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 - **Photos:** stock photos of Black doctors already in the site's library: the consulting room with a clinician taking a patient's blood pressure behind the hero (`clinic-bp-check`, CC BY-SA, credited on /terms), the physician at a laptop (`physician-laptop`, Pexels) and the doctor putting on her stethoscope (`doctor-stethoscope`, Unsplash). The first two were not used anywhere else. New stock downloads could not be fetched from here.
 - **Links:** The Problem's closing band now says "See the solution" (it said "Discover the platform"); The Solution's closing band links to the platform. Also in the phone menu, the footer, the sitemap and the preview. Not in the desktop menu, which has no room for another item.
 
+## 6 Nov 2026, The Solution: earnings in US dollars and cedis
+
+- At the owner's request each example earnings card on /the-solution now switches back and forth between US dollars (navy) and Ghana cedis (green): the yearly figure (e.g. $10,080 and GH₵128K) and the monthly line (about $840 and about GH₵10,640 a month), in step.
+- **Rate:** the same Bank of Ghana interbank month average for March 2024 as The Problem, GH₵12.67 to the US dollar (claim `pay-usd-conversion`). Yearly cedis are rounded to the nearest thousand (the site's "GH₵10K" style), monthly to the nearest GH₵10, and computed in the page from the dollar figures. A note above the cards states the rate.
+- **Green on light cards:** the brand green #8BC900 is under 2:1 on the light cards, so the cedi figures use `--color-green-ink` (#4F7A00, a deepened brand green, 4.7:1 on paper). Recorded in `BRAND_IMPLEMENTATION.md`.
+- Same `.currency-flip` CSS animation as The Problem's pay figure, so the preview runs it too. One pause toggle above the cards pauses all four (`CurrencyFlipGroup`); with reduced motion the dollar figures stay. "a year" now sits on its own line under the figure, so the cards do not jump between states.
+

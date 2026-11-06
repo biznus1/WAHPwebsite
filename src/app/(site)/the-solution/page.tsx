@@ -13,6 +13,7 @@ import {
   Users,
 } from "lucide-react";
 import { CountUp } from "@/components/motion/count-up";
+import { CurrencyFlipGroup } from "@/components/motion/currency-flip";
 import { CtaBand } from "@/components/sections/cta-band";
 import { StickyCallBar } from "@/components/sections/sticky-call-bar";
 import { ButtonLink } from "@/components/ui/button";
@@ -54,6 +55,13 @@ const examples = [
 });
 
 const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
+
+/** Bank of Ghana interbank month average, March 2024 (claim pay-usd-conversion), as on The Problem page. */
+const GHS_PER_USD = 12.67;
+/** Cedis a month, to the nearest GH₵10. */
+const cedis = (n: number) => `GH₵${(Math.round((n * GHS_PER_USD) / 10) * 10).toLocaleString("en-US")}`;
+/** Cedis a year, to the nearest thousand, in the site's "GH₵10K" style. */
+const cedisK = (n: number) => `GH₵${Math.round((n * GHS_PER_USD) / 1000)}K`;
 
 /** How a session works, as planned for the Accra hub. */
 const steps = [
@@ -297,38 +305,69 @@ export default function TheSolutionPage() {
               </div>
             </div>
 
-            <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {examples.map((e, i) => (
-                <li
-                  key={e.role}
-                  className="reveal flex flex-col rounded-card bg-paper p-6 ring-1 ring-inset ring-smoke md:p-7"
-                  style={{ transitionDelay: `${i * 80}ms` }}
-                >
-                  <h3 className="text-xl font-semibold text-navy">{e.role}</h3>
-                  <p className="mt-2 text-sm text-arsenic">
-                    {e.patients} patients a session at {usd(e.fee)} each
-                  </p>
-                  <p className="mt-6 text-[clamp(2.25rem,5vw,2.75rem)] leading-none font-bold tracking-tight text-navy">
-                    <CountUp value={usd(e.yearly)} delay={150 + i * 140} />
-                  </p>
-                  <p className="mt-2 font-semibold text-arsenic">a year, about {usd(e.monthly)} a month</p>
-                  <dl className="mt-6 grid gap-2 border-t border-smoke pt-5 text-sm text-arsenic">
-                    <div className="flex justify-between gap-3">
-                      <dt>Consultations per session</dt>
-                      <dd className="font-semibold text-navy tabular-nums">{usd(e.perSession)}</dd>
-                    </div>
-                    <div className="flex justify-between gap-3">
-                      <dt>After the {usd(SESSION_FEE)} session fee</dt>
-                      <dd className="font-semibold text-navy tabular-nums">{usd(e.afterFee)}</dd>
-                    </div>
-                    <div className="flex justify-between gap-3">
-                      <dt>Sessions a year</dt>
-                      <dd className="font-semibold text-navy tabular-nums">{SESSIONS_PER_MONTH * 12}</dd>
-                    </div>
-                  </dl>
-                </li>
-              ))}
-            </ul>
+            {/* Figures switch between US dollars (navy) and cedis (green) at the March 2024 rate, owner's request. */}
+            <div className="mt-12">
+              <CurrencyFlipGroup
+                note={
+                  <>
+                    Figures switch between US dollars and Ghana cedis at the Bank of Ghana&apos;s average rate for March
+                    2024, GH₵{GHS_PER_USD} to the US dollar.
+                  </>
+                }
+              >
+                <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                  {examples.map((e, i) => (
+                    <li
+                      key={e.role}
+                      className="reveal flex flex-col rounded-card bg-paper p-6 ring-1 ring-inset ring-smoke md:p-7"
+                      style={{ transitionDelay: `${i * 80}ms` }}
+                    >
+                      <h3 className="text-xl font-semibold text-navy">{e.role}</h3>
+                      <p className="mt-2 text-sm text-arsenic">
+                        {e.patients} patients a session at {usd(e.fee)} each
+                      </p>
+                      <p className="mt-6 text-[2.25rem] leading-none font-bold tracking-tight whitespace-nowrap text-navy lg:text-[clamp(2rem,3.2vw,2.75rem)]">
+                        <span className="sr-only">
+                          {usd(e.yearly)} a year, about {cedisK(e.yearly)} at the March 2024 rate
+                        </span>
+                        <span aria-hidden className="currency-flip">
+                          <span className="currency-first">
+                            <CountUp value={usd(e.yearly)} delay={150 + i * 140} />
+                          </span>
+                          <span className="currency-second text-green-ink">{cedisK(e.yearly)}</span>
+                        </span>
+                      </p>
+                      <p className="mt-2 font-semibold text-arsenic">a year</p>
+                      <p className="mt-1 text-arsenic">
+                        <span className="sr-only">
+                          About {usd(e.monthly)} a month, or {cedis(e.monthly)}
+                        </span>
+                        <span aria-hidden className="currency-flip">
+                          <span className="currency-first">about {usd(e.monthly)} a month</span>
+                          <span className="currency-second font-semibold text-green-ink">
+                            about {cedis(e.monthly)} a month
+                          </span>
+                        </span>
+                      </p>
+                      <dl className="mt-6 grid gap-2 border-t border-smoke pt-5 text-sm text-arsenic">
+                        <div className="flex justify-between gap-3">
+                          <dt>Consultations per session</dt>
+                          <dd className="font-semibold text-navy tabular-nums">{usd(e.perSession)}</dd>
+                        </div>
+                        <div className="flex justify-between gap-3">
+                          <dt>After the {usd(SESSION_FEE)} session fee</dt>
+                          <dd className="font-semibold text-navy tabular-nums">{usd(e.afterFee)}</dd>
+                        </div>
+                        <div className="flex justify-between gap-3">
+                          <dt>Sessions a year</dt>
+                          <dd className="font-semibold text-navy tabular-nums">{SESSIONS_PER_MONTH * 12}</dd>
+                        </div>
+                      </dl>
+                    </li>
+                  ))}
+                </ul>
+              </CurrencyFlipGroup>
+            </div>
 
             <div className="reveal mt-10 grid gap-8 lg:grid-cols-2 lg:gap-16">
               <p className="text-lead text-arsenic">

@@ -164,6 +164,20 @@ test("The Problem leads to The Solution, which shows the example earnings as an 
     await expect(card.locator("[data-countup]")).toHaveAttribute("data-countup", yearly);
   }
   await expect(page.getByText(/before other physician expenses and taxes/)).toBeVisible();
+  // The yearly figures switch to cedis at the March 2024 rate (GH₵12.67 per US$); a toggle pauses them.
+  await expect(page.locator(".currency-flip .currency-second").filter({ hasText: /GH₵/ })).toHaveText([
+    "GH₵128K",
+    "about GH₵10,640 a month",
+    "GH₵237K",
+    "about GH₵19,770 a month",
+    "GH₵201K",
+    "about GH₵16,720 a month",
+    "GH₵347K",
+    "about GH₵28,890 a month",
+  ]);
+  const pause = page.getByRole("button", { name: "Pause the switch between US dollars and cedis" });
+  await pause.click();
+  await expect(pause).toHaveAttribute("aria-pressed", "true");
   // House rules: no "coworking" wording, and no investment round on this page.
   await expect(page.getByText(/co-?working/i)).toHaveCount(0);
   await expect(page.getByText(/800,000/)).toHaveCount(0);

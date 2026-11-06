@@ -11,6 +11,61 @@ const useHydrated = () =>
     () => false,
   );
 
+/** The pause toggle for the currency animation (WCAG 2.2.2), on navy or on a light background. */
+function PauseToggle({
+  paused,
+  onToggle,
+  label,
+  tone,
+}: {
+  paused: boolean;
+  onToggle: () => void;
+  label: string;
+  tone: "dark" | "light";
+}) {
+  const colours =
+    tone === "dark"
+      ? "text-white/80 ring-white/25 hover:bg-white/10 hover:text-white"
+      : "text-navy ring-steel hover:bg-cloud";
+  return (
+    <button
+      type="button"
+      data-js-only
+      aria-pressed={paused}
+      aria-label={label}
+      onClick={onToggle}
+      className={`grid size-9 shrink-0 place-items-center rounded-full ring-1 transition-colors ring-inset motion-reduce:hidden ${colours}`}
+    >
+      {paused ? <Play aria-hidden className="size-4" /> : <Pause aria-hidden className="size-4" />}
+    </button>
+  );
+}
+
+/**
+ * Several `.currency-flip` figures that move together under one pause toggle, with a note beside it (e.g. the
+ * exchange rate). The children are the figures; they can be server rendered.
+ */
+export function CurrencyFlipGroup({ note, children }: { note: ReactNode; children: ReactNode }) {
+  const [paused, setPaused] = useState(false);
+  const hydrated = useHydrated();
+  return (
+    <div data-flip-paused={paused ? "" : undefined}>
+      <div className="flex items-center justify-between gap-4">
+        <p className="text-sm text-arsenic">{note}</p>
+        {hydrated && (
+          <PauseToggle
+            paused={paused}
+            onToggle={() => setPaused((p) => !p)}
+            label="Pause the switch between US dollars and cedis"
+            tone="light"
+          />
+        )}
+      </div>
+      {children}
+    </div>
+  );
+}
+
 /**
  * A figure that switches back and forth between two values, e.g. pay in cedis (green) and in US dollars (red).
  * The motion is the CSS `.currency-flip` animation in globals.css, so it also runs in the script-free preview.
@@ -49,16 +104,12 @@ export function CurrencyFlip({
       <div className="mt-3 flex items-center justify-between gap-4">
         <p className={captionClassName}>{caption}</p>
         {hydrated && (
-          <button
-            type="button"
-            data-js-only
-            aria-pressed={paused}
-            aria-label="Pause the switch between cedis and US dollars"
-            onClick={() => setPaused((p) => !p)}
-            className="grid size-9 shrink-0 place-items-center rounded-full text-white/80 ring-1 ring-white/25 transition-colors ring-inset hover:bg-white/10 hover:text-white motion-reduce:hidden"
-          >
-            {paused ? <Play aria-hidden className="size-4" /> : <Pause aria-hidden className="size-4" />}
-          </button>
+          <PauseToggle
+            paused={paused}
+            onToggle={() => setPaused((p) => !p)}
+            label="Pause the switch between cedis and US dollars"
+            tone="dark"
+          />
         )}
       </div>
     </>

@@ -35,6 +35,7 @@ The inline `<Logo>` component (`src/components/brand/logo.tsx`) renders the exac
 | `navy-700` | `#26507A` | Guideline covers | Watermark emblem only |
 | `teal-300` | `#7FD3E1` | Derived light tint of teal | Statement line of headings on navy (7.4:1 on navy), and checkmarks on navy |
 | `red` | `#FF6B6B` | **Not a brand colour** (owner request, 6 Nov 2026) | Only the US dollar pay figure on The Problem, on navy (4.5:1). Do not use it elsewhere |
+| `green-ink` | `#4F7A00` | Brand green deepened for text on light backgrounds (owner request, 6 Nov 2026) | The cedi earnings figures on The Solution (4.7:1 on paper, 5.1:1 on white). `#8BC900` itself is under 2:1 there |
 
 There are no gradients and no colours outside this list.
 

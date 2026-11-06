@@ -28,6 +28,9 @@
   --color-teal-300: #7fd3e1;
   /* Not a brand colour: red for the US dollar pay figure on The Problem (owner's request, 6 Nov 2026). 4.5:1 on navy. */
   --color-red: #ff6b6b;
+  /* Brand green deepened for text on light backgrounds, where #8BC900 is under 2:1: 4.7:1 on paper, 5.1:1 on
+     white. Used for the cedi earnings figures on The Solution (owner's request, 6 Nov 2026). */
+  --color-green-ink: #4f7a00;
 
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 
@@ -456,7 +459,8 @@ details[open] > .menu-sub {
   animation-name: currency-second;
 }
 .js .reveal:not(.is-visible) .currency-flip > span,
-.currency-flip[data-paused] > span {
+.currency-flip[data-paused] > span,
+[data-flip-paused] .currency-flip > span {
   animation-play-state: paused;
 }
 @keyframes currency-first {
