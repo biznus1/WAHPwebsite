@@ -22,12 +22,12 @@ const paths = [
   {
     label: "The practice path",
     title: "I want to practise.",
-    body: "A furnished consulting room and a front desk in Accra. Book clinics for the weeks you are already home, and add more when you are ready.",
+    body: "You did not build a career in medicine just to come home as a visitor. WAHP is building a ready path to practise in Ghana, with equipped consulting rooms and shared support in Accra, and a lab and imaging planned for later phases. Start during the weeks you are already home. Grow into more when you are ready, without the cost of building your own facility. Just the work you trained for, in the place you keep coming back to.",
   },
   {
     label: "The partner path",
-    title: "I want to help build.",
-    body: "Bring your networks, your advice or what you learned building departments abroad. If that is you, we would like to talk.",
+    title: "I want to be involved beyond the exam room.",
+    body: "There is more than one way to be useful here. Some of the people who will matter most to this work will contribute through networks, governance, and the experience of building institutions that hold up over time. If that describes you, we would welcome the introduction, with no agenda beyond a conversation.",
   },
 ];
 
@@ -64,13 +64,7 @@ export default function DiasporaPhysiciansPage() {
       </PageHero>
 
       <Section tone="paper" labelledBy="paths-heading">
-        <SectionIntro
-          id="paths-heading"
-          align="center"
-          eyebrow="Two paths"
-          lead="See patients, help us build,"
-          rest="or do both."
-        />
+        <SectionIntro id="paths-heading" align="center" eyebrow="Two paths" lead="Practise. Partner." rest="Or both." />
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           {paths.map((p, i) => (
             <div
@@ -88,26 +82,32 @@ export default function DiasporaPhysiciansPage() {
       </Section>
 
       <Section tone="white" labelledBy="how-heading">
-        <SectionIntro id="how-heading" eyebrow="How it works" lead="It starts with" rest="a phone call." />
+        <SectionIntro id="how-heading" eyebrow="How it works" lead="You do not need to move" rest="back tomorrow." />
         <div className="mt-14">
           <JourneySteps
-            note="Nobody is asking you to move home. You remain responsible for meeting Ghana's requirements to practise."
+            note="You do not need to quit your practice abroad, move back permanently, or make any irreversible decisions. You remain responsible for meeting Ghana's requirements to practise."
             steps={[
-              { title: "Talk to us", body: "Tell us where you work now and when you are usually in Ghana." },
               {
-                title: "Pick your path",
-                body: "Clinics during visits, mentoring, advice, or a bigger role over time.",
+                title: "Have a conversation",
+                body: "Schedule a call with the WAHP team. Tell us where you are, what interests you, and how you hope to engage. We will help you understand the pathways available.",
               },
-              { title: "Begin", body: "Start with one trip home and see how it fits around your life abroad." },
+              {
+                title: "Choose your path",
+                body: "Practise during visits, mentor, advise, support the mission, or explore a deeper role privately. WAHP meets you where you are.",
+              },
+              {
+                title: "Start building",
+                body: "Whether you begin clinically or strategically, you become part of a larger effort to strengthen healthcare delivery in West Africa.",
+              },
             ]}
           />
         </div>
       </Section>
 
-      <BookCallSection call="diaspora" lead="Talk to us" rest="before your next trip home.">
+      <BookCallSection call="diaspora" lead="You have been thinking" rest="about this for years.">
         <p>
-          A video call about seeing patients in Accra during your visits, mentoring, or a bigger role over time. Prefer
-          to write?{" "}
+          One 30 minute call is all it takes to turn that thought into a plan, whether you want to practise during your
+          visits, mentor, or explore a deeper role. Prefer to write?{" "}
           <a href="#register" className="font-semibold text-white underline decoration-white/40 underline-offset-4">
             Register your interest
           </a>{" "}
@@ -124,13 +124,16 @@ export default function DiasporaPhysiciansPage() {
               lead="Tell us where"
               rest="you practise now."
             >
-              <p>Please leave out any patient information. We only use your details to get back to you.</p>
+              <p>
+                Tell us what interests you and how you hope to engage. Please leave out any patient information. We only
+                use your details to get back to you.
+              </p>
             </SectionIntro>
             {approvedClaim("traction-lois") && (
               <div className="reveal mt-10 rounded-card bg-white p-6 ring-1 ring-inset ring-smoke">
                 <p className="text-headline font-semibold text-navy">20</p>
                 <p className="mt-1 text-arsenic">
-                  physicians have signed letters of intent to practise at our first hub in Accra.
+                  physicians have signed letters of intent to practise at the first WAHP hub in Accra.
                 </p>
               </div>
             )}
@@ -147,7 +150,7 @@ export default function DiasporaPhysiciansPage() {
 
       <Section tone="white" labelledBy="faq-heading">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
-          <SectionIntro id="faq-heading" eyebrow="Questions" lead="Questions from" rest="doctors abroad." />
+          <SectionIntro id="faq-heading" eyebrow="Questions" lead="Questions from" rest="diaspora physicians." />
           <Faq items={faqLists.diaspora} />
         </div>
       </Section>

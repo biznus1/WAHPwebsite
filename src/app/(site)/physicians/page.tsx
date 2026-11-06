@@ -22,20 +22,20 @@ export const metadata: Metadata = {
 
 const offer = [
   {
-    title: "Consulting rooms, ready to use",
-    body: "Furnished consultation and examination rooms in Accra that you book by the hour, the day or the month.",
+    title: "Your suite",
+    body: "A modern consultation and treatment room prepared for patient care, with essential furnishings and clinical equipment. We plan to offer it by the hour, the day or the month.",
   },
   {
-    title: "A front desk you share",
-    body: "Reception, scheduling and records run by the hub, so you are not hiring and managing your own staff.",
+    title: "Practice support",
+    body: "Shared reception, scheduling, records and day to day support for the clinical environment, so you can spend more of your time focused on patients and growing your practice.",
   },
   {
-    title: "Tests down the corridor",
-    body: "We plan a laboratory in the building for Phase 2, subject to approvals, so patients are not sent across town for bloods.",
+    title: "On site diagnostics",
+    body: "Laboratory testing within the WAHP facility is planned for Phase 2, subject to approvals, giving you and your patients a more connected path from consultation to testing without sending them to a separate location. Imaging is planned for a later phase.",
   },
   {
-    title: "Your practice, your name",
-    body: "Your patients stay your patients. You make the clinical decisions and you keep your own name on the door.",
+    title: "Your practice. Your patients. Your future.",
+    body: "Your patients stay your patients and you make the clinical decisions. Commit less capital to setup, spend less time managing operations and keep more of your attention on practice growth.",
   },
 ];
 
@@ -68,9 +68,9 @@ export default function PhysiciansPage() {
         <div className="grid items-end gap-10 lg:grid-cols-2 lg:gap-16">
           <SectionIntro
             id="offer-heading"
-            eyebrow="The proposition"
-            lead="What you would get"
-            rest="at the Accra hub."
+            eyebrow="The practice advantage"
+            lead="Lower overhead. More control."
+            rest="Greater potential."
           />
           <SiteImage name="physicianStethoscopeGreen" className="reveal" aspect="aspect-[16/10]" />
         </div>
@@ -105,8 +105,10 @@ export default function PhysiciansPage() {
             className="reveal group relative flex flex-col gap-4 overflow-hidden rounded-card bg-navy p-7 text-white transition-transform duration-500 ease-soft hover:-translate-y-0.5 sm:flex-row sm:items-center sm:justify-between md:p-9"
           >
             <span>
-              <span className="eyebrow text-steel">Practising abroad?</span>
-              <span className="mt-2 block text-title font-medium">We have a separate path for doctors abroad.</span>
+              <span className="eyebrow text-steel">For diaspora physicians</span>
+              <span className="mt-2 block text-title font-medium">
+                You&apos;ve thought about going back. WAHP gives you a credible path forward.
+              </span>
             </span>
             <span className="inline-flex items-center gap-2 font-semibold">
               See the diaspora path
@@ -120,38 +122,34 @@ export default function PhysiciansPage() {
         <SectionIntro
           id="journey-heading"
           eyebrow="How it works"
-          lead="From your first message"
+          lead="From first conversation"
           rest="to your first patient."
         />
         <div className="mt-14">
           <JourneySteps
-            note="This is how we expect it to run. We will confirm the details as the Accra hub gets closer to opening."
+            note="Getting started with WAHP is designed to be simple and straightforward. We will confirm the details as the Accra hub gets closer to opening."
             steps={[
               {
-                title: "Register interest",
-                body: "Tell us your specialty, where you practise now and what you need.",
+                title: "Schedule a call",
+                body: "Start with a 30 minute conversation about your practice, specialty and goals. We will introduce the WAHP model, the planned suites and next steps.",
               },
               {
-                title: "A conversation",
-                body: "One of our physicians calls you to talk through your practice and how WAHP fits.",
+                title: "Choose your suite",
+                body: "When bookings open, select the suite and schedule that best fit how you want to practise, with options that can support your needs as your practice grows.",
               },
               {
-                title: "Planning your rooms",
-                body: "We plan room bookings around the physicians who have signed up.",
-              },
-              {
-                title: "Getting set up",
-                body: "You meet the front desk team and learn the booking and records systems before your first clinic.",
+                title: "Start practising",
+                body: "When the hub opens, bring your patients and begin practising in a ready to use clinical setting, with access to WAHP services and digital tools as they come online.",
               },
             ]}
           />
         </div>
       </Section>
 
-      <BookCallSection call="physician" lead="Talk to our team." rest="Book a 30 minute call.">
+      <BookCallSection call="physician" lead="Your practice" rest="could start here.">
         <p>
-          A video call about renting a consulting room at the Accra hub, what is shared, and how it would fit your
-          practice. Prefer to write?{" "}
+          Schedule a 30 minute video call with our team to see what your practice could look like at the Accra hub.
+          Prefer to write?{" "}
           <a href="#register" className="font-semibold text-white underline decoration-white/40 underline-offset-4">
             Register your interest
           </a>{" "}
@@ -162,14 +160,22 @@ export default function PhysiciansPage() {
       <Section tone="paper" id="register" labelledBy="register-heading" className="scroll-mt-20">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
           <div>
-            <SectionIntro id="register-heading" eyebrow="Register interest" lead="Tell us about" rest="your practice.">
-              <p>Please leave out any patient information. We only use your details to get back to you.</p>
+            <SectionIntro
+              id="register-heading"
+              eyebrow="Take the first step"
+              lead="Tell us about"
+              rest="your practice."
+            >
+              <p>
+                Explore a new way to build and grow your practice with WAHP. Please leave out any patient information.
+                We only use your details to get back to you.
+              </p>
             </SectionIntro>
             {approvedClaim("traction-lois") && (
               <div className="reveal mt-10 rounded-card bg-white p-6 ring-1 ring-inset ring-smoke">
                 <p className="text-headline font-semibold text-navy">20</p>
                 <p className="mt-1 text-arsenic">
-                  physicians have signed letters of intent to practise at our first hub in Accra.
+                  physicians have already signed letters of intent to practise at the first WAHP hub in Accra.
                 </p>
               </div>
             )}

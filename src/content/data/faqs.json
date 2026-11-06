@@ -2,23 +2,23 @@
   "physicians": [
     {
       "q": "Who is WAHP for?",
-      "a": "Independent physicians and specialists who see outpatients. That includes doctors already practising in Accra and Ghanaian doctors abroad who want to practise at home."
+      "a": "Independent physicians and specialists who see outpatients, whether you are ready to establish your own practice, grow your patient base or add another location. That includes doctors already practising in Accra and Ghanaian doctors abroad who want to practise at home."
     },
     {
       "q": "Is WAHP open yet?",
-      "a": "No. The Accra hub is still being built. Registering interest helps us plan the rooms and support around real doctors. It is not a booking and it does not commit you to anything."
+      "a": "No. The Accra hub is still being built. Registering interest helps us plan the suites and practice support around real physicians. It is not a booking and it does not commit you to anything."
     },
     {
       "q": "Which specialties can join?",
-      "a": "Any outpatient specialty that works from a consultation and examination room. We will settle the mix as planning goes on, so tell us yours when you register."
+      "a": "Any outpatient specialty that works from a consultation and examination room. We will settle the mix as planning goes on, so tell us about your practice, specialty and goals when you register."
     },
     {
       "q": "What will it cost, and how will booking work?",
-      "a": "We plan to let you book rooms by the hour, the day or the month. Rates and terms are not published yet. Registered physicians will hear them from us first."
+      "a": "We plan to let you choose the suite and schedule that best fit how you want to practise, by the hour, the day or the month. Rates and terms are not published yet. Registered physicians will hear them from us first."
     },
     {
-      "q": "What do I get besides the room?",
-      "a": "Reception, scheduling, administrative help and shared standards for the building. A laboratory is planned for a later phase, subject to approvals."
+      "q": "What do I get besides the suite?",
+      "a": "Shared services and day to day support for the clinical environment: reception, scheduling, administrative help and shared standards for the building, so you can spend more of your time focused on patients. A laboratory is planned for a later phase, subject to approvals."
     },
     {
       "q": "Is WAHP licensed?",
@@ -26,7 +26,7 @@
     },
     {
       "q": "What happens after I register?",
-      "a": "Someone on our team reads your details and emails you to learn about your practice. We then keep you updated as the Accra hub takes shape."
+      "a": "Someone on our team reads your details and emails you to learn about your practice, specialty and goals. We will introduce the WAHP model and keep you updated as the Accra hub takes shape."
     }
   ],
   "patients": [
@@ -50,7 +50,7 @@
   "diaspora": [
     {
       "q": "Do I need to move back to Ghana?",
-      "a": "No. You can start with clinics during the weeks you are already home and build from there. Nothing here asks you to give up your work abroad."
+      "a": "No. You do not need to quit your practice abroad, move back permanently, or make any irreversible decisions. You can start with clinics during the weeks you are already home and grow into more when you are ready."
     },
     {
       "q": "Can I practise in Ghana with a licence from abroad?",
@@ -58,11 +58,11 @@
     },
     {
       "q": "What does the partner path involve?",
-      "a": "Helping through your networks, your advice or your experience building institutions. Any formal role is agreed privately, one person at a time. Investment questions go through the investor page, and nothing on this site is an offer of securities."
+      "a": "Contributing through your networks, governance and the experience of building institutions that hold up over time. Any formal role is agreed privately, one person at a time. Investment questions go through the investor page, and nothing on this site is an offer of securities."
     },
     {
       "q": "Is WAHP open yet?",
-      "a": "No. The Accra hub is still being built. Registering interest helps us plan around real doctors. It is not a booking and it does not commit you to anything."
+      "a": "No. The Accra hub is still being built. Registering interest helps us plan around real physicians. It is not a booking and it does not commit you to anything."
     }
   ]
 }
