@@ -15,18 +15,21 @@ export function BookCallSection({
   lead,
   rest,
   children,
+  tone = "navy",
 }: {
   call: CallTypeId;
   lead: ReactNode;
   rest: ReactNode;
   children?: ReactNode;
+  /** White where a navy band sits next to it (Investors). */
+  tone?: "navy" | "white";
 }) {
   const booking = callTypes.find((c) => c.id === call);
   if (!booking) return null;
   return (
-    <Section tone="navy" id={BOOK_CALL_ID} labelledBy="book-call-heading" className="scroll-mt-20">
+    <Section tone={tone} id={BOOK_CALL_ID} labelledBy="book-call-heading" className="scroll-mt-20">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
-        <SectionIntro id="book-call-heading" eyebrow="Book a call" lead={lead} rest={rest} dark>
+        <SectionIntro id="book-call-heading" eyebrow="Book a call" lead={lead} rest={rest} dark={tone === "navy"}>
           {children}
         </SectionIntro>
         <CallBooking call={booking} />

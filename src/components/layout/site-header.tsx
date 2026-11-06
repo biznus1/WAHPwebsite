@@ -122,11 +122,11 @@ export function SiteHeader() {
               {primaryNav.map((item) => {
                 const active = isActive(pathname, item.href);
                 return (
-                  <li key={item.href}>
+                  <li key={item.href} className={item.wideOnly ? "max-xl:hidden" : undefined}>
                     <Link
                       href={item.href}
                       aria-current={active ? "page" : undefined}
-                      className={`relative rounded-full px-3 py-2 text-[0.95rem] font-medium transition-colors duration-500 xl:px-4 ${
+                      className={`relative rounded-full px-2 py-2 text-[0.95rem] font-medium whitespace-nowrap transition-colors duration-500 min-[1120px]:px-3 xl:px-4 ${
                         blend
                           ? active
                             ? "text-white"
@@ -139,7 +139,7 @@ export function SiteHeader() {
                       {item.label}
                       <span
                         aria-hidden
-                        className={`absolute inset-x-3 -bottom-0.5 xl:inset-x-4 h-0.5 rounded-full bg-teal transition-transform duration-300 ${
+                        className={`absolute inset-x-2 -bottom-0.5 min-[1120px]:inset-x-3 xl:inset-x-4 h-0.5 rounded-full bg-teal transition-transform duration-300 ${
                           active ? "scale-x-100" : "scale-x-0"
                         }`}
                       />

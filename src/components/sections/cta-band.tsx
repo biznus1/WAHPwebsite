@@ -9,12 +9,15 @@ export function CtaBand({
   children,
   primary = { href: "/contact", label: "Get in touch" },
   secondary,
+  greenAccent = false,
 }: {
   lead?: ReactNode;
   rest?: ReactNode;
   children?: ReactNode;
   primary?: { href: string; label: string };
   secondary?: { href: string; label: string };
+  /** The older build's green highlight, on the pages ported from it. */
+  greenAccent?: boolean;
 }) {
   return (
     <section className="bg-paper py-16 md:py-24">
@@ -22,7 +25,7 @@ export function CtaBand({
         <div className="reveal grain on-dark relative overflow-hidden rounded-panel bg-navy px-6 py-14 text-white md:px-14 md:py-20">
           <LogoMark className="pointer-events-none absolute -top-24 -right-24 size-[26rem] text-navy-700/60 md:size-[32rem]" />
           <div className="relative max-w-2xl">
-            <SplitHeading lead={lead} rest={rest} dark />
+            <SplitHeading lead={lead} rest={rest} dark greenAccent={greenAccent} />
             {children && <div className="mt-6 text-lead text-white/75">{children}</div>}
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={primary.href} size="lg" arrow>

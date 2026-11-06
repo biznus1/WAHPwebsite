@@ -70,10 +70,13 @@ export interface NavItem {
   href: string;
   label: string;
   description?: string;
+  /** Desktop menu: only from 1280px, where the extra item fits on one line. */
+  wideOnly?: boolean;
 }
 
 export const primaryNav: NavItem[] = [
   { href: "/platform", label: "Platform", description: "Rooms, operations, lab and tools" },
+  { href: "/the-problem", label: "The Problem", description: "Why doctors leave", wideOnly: true },
   { href: "/physicians", label: "Physicians", description: "For doctors practising in Ghana" },
   { href: "/diaspora-physicians", label: "Diaspora", description: "Practise or help build at home" },
   { href: "/investors", label: "Investors", description: "Why we are building the hub" },
@@ -89,7 +92,7 @@ export interface NavGroup {
 
 /**
  * Phone menu, grouped as on the older WordPress build: About ▾, The Platform, The Problem, Who We Serve ▾,
- * Contact. ("Team" there is Leadership here; "The Problem" is the infrastructure gap section on About.)
+ * Contact. ("Team" there is Leadership here.)
  */
 export const mobileNav: (NavItem | NavGroup)[] = [
   {
@@ -100,7 +103,7 @@ export const mobileNav: (NavItem | NavGroup)[] = [
     ],
   },
   { href: "/platform", label: "The Platform" },
-  { href: "/about#the-problem", label: "The Problem" },
+  { href: "/the-problem", label: "The Problem" },
   {
     label: "Who We Serve",
     children: [
@@ -128,6 +131,7 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
     heading: "Company",
     items: [
       { href: "/platform", label: "Platform" },
+      { href: "/the-problem", label: "The problem" },
       { href: "/about", label: "About WAHP" },
       { href: "/leadership", label: "Leadership" },
       { href: "/contact", label: "Contact" },

@@ -37,15 +37,21 @@ export function Eyebrow({
   dark = false,
   as: Tag = "p",
   id,
+  accent,
 }: {
   children: ReactNode;
   dark?: boolean;
   as?: "p" | "h2" | "h3";
   id?: string;
+  /** The older build's eyebrows: green on navy (6.3:1), or navy on light backgrounds. */
+  accent?: "green" | "navy";
 }) {
+  const text =
+    accent === "green" ? "text-green" : accent === "navy" ? "text-navy" : dark ? "text-steel" : "text-arsenic";
+  const rule = accent === "green" ? "w-12 bg-green" : accent === "navy" ? "w-8 bg-navy" : "w-8 bg-teal";
   return (
-    <Tag id={id} className={`eyebrow flex items-center gap-3 ${dark ? "text-steel" : "text-arsenic"}`}>
-      <span aria-hidden className="h-0.5 w-8 rounded-full bg-teal" />
+    <Tag id={id} className={`eyebrow flex items-center gap-3 ${text}`}>
+      <span aria-hidden className={`h-0.5 rounded-full ${rule}`} />
       {children}
     </Tag>
   );
@@ -56,6 +62,7 @@ export function Eyebrow({
  * ("Lockup / Logo."): a muted grey first line, then the statement in full colour.
  * On navy the first line is white and the statement is light teal, as in the Home hero. This keeps the older
  * site's highlighted phrases (it used green) while green stays reserved for CTAs (owner questionnaire).
+ * `greenAccent` (on navy only) uses the older build's green instead, on the pages ported from it.
  */
 export function SplitHeading({
   lead,
@@ -65,6 +72,7 @@ export function SplitHeading({
   size = "headline",
   className = "",
   id,
+  greenAccent = false,
 }: {
   lead: ReactNode;
   rest: ReactNode;
@@ -73,6 +81,7 @@ export function SplitHeading({
   size?: "display" | "headline" | "title";
   className?: string;
   id?: string;
+  greenAccent?: boolean;
 }) {
   const sizeCls =
     size === "display"
@@ -83,7 +92,7 @@ export function SplitHeading({
   return (
     <Tag id={id} className={`${sizeCls} ${dark ? "text-white" : "text-navy"} ${className}`}>
       <span className={`block ${dark ? "text-white" : "text-graphite"}`}>{lead}</span>
-      <span className={`block ${dark ? "text-teal-300" : ""}`}>{rest}</span>
+      <span className={`block ${dark ? (greenAccent ? "text-green" : "text-teal-300") : ""}`}>{rest}</span>
     </Tag>
   );
 }

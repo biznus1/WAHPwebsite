@@ -11,7 +11,7 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "format": "prettier --write .",
-    "shots": "node scripts/shoot.mjs http://localhost:3000 docs/screenshots / /platform /physicians /investors /patients /about /leadership /contact"
+    "shots": "node scripts/shoot.mjs http://localhost:3000 docs/screenshots / /platform /the-problem /physicians /investors /patients /about /leadership /contact"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.2.8",

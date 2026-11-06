@@ -67,11 +67,20 @@
 
 | File | Origin | Rights / approval | Notes |
 | --- | --- | --- | --- |
-| `public/images/photos/hospital-corridor.webp` | Older build upload `2026/04/file_000000002a04720b98457feae843b609.png`; appears AI-generated (ChatGPT naming). Restored from this repo's own 21 Oct copy | Owner-supplied; **owner to confirm usage rights** | About page, "The infrastructure gap". Badged "Illustrative image". Not a WAHP facility; its signs (laboratory, X-ray) belong to the pictured hospital, not to WAHP |
+| `public/images/photos/hospital-corridor.webp` | Older build upload `2026/04/file_000000002a04720b98457feae843b609.png`; appears AI-generated (ChatGPT naming). Restored from this repo's own 21 Oct copy | Owner-supplied; **owner to confirm usage rights** | About page, "The infrastructure gap" (since 6 Nov: The Problem hero background). Badged "Illustrative image". Not a WAHP facility; its signs (laboratory, X-ray) belong to the pictured hospital, not to WAHP |
 | `public/images/photos/doctor-window.webp` | Older build upload `2026/04/file_00000000fbc0720b8324a0c010bfaace.png` (1536×1024); appears AI-generated | As above | About page emigration card. Decoded and re-encoded from the WordPress export. Badged "Illustrative image" |
 | `public/images/photos/partners-presentation.webp` | Older build upload `2026/04/file_00000000f17872089c870b44cdd56662.png` (1448×1086, the "Capital Partners" card); appears AI-generated | As above | Home Partners card, titled "Partners" (not "Capital Partners", owner instruction). The on-screen amounts, percentages and dates were blurred so they cannot be read as WAHP investment figures; the chart shapes and legend labels remain. Badged "Illustrative image" |
 
 `community-bp-screening.webp` (the previous Partners card photo) was removed with its Terms credit, as it is no longer used.
+
+**The Problem page and Investors sections (6 Nov 2026).** At the owner's request, from the older build's The Problem and For Investors pages. Both decoded and re-encoded from the clean copy of the export (no metadata kept):
+
+| File | Origin | Rights / approval | Notes |
+| --- | --- | --- | --- |
+| `public/images/photos/physician-migration.webp` | Older build upload `2026/08/72.jpg` (1429×1071): a doctor at his desk watching a plane take off, a passport on the desk; appears AI-generated | Owner-supplied; **owner to confirm usage rights** | The Problem page, "Physician migration". Not on Home (owner instruction) |
+| `public/images/photos/investors-lobby.webp` | Older build upload `2026/08/CTA-Image-Investor.jpg` (1431×449): two doctors with a tablet in a modern lobby; appears AI-generated | As above | Investors, "Who may invest". Alt text does not present it as the WAHP hub |
+
+Moves on the same day: `hospital-corridor` is now the (dimmed, decorative) background of The Problem hero, and `doctor-window` illustrates the infrastructure gap section, which moved from About to The Problem. `team-laptop-celebration` is no longer shown (its Investors strip was replaced by the lobby banner). The older build's two stock backgrounds on The Problem (`2026/06/26825.jpg`, `49652.jpg`, Freepik style) were **not** used: their licence is unknown.
 
 **Badges removed (5 Nov 2026).** At the owner's request, images no longer carry the "Illustrative image" or "Concept rendering" badges, and the Home lobby video no longer carries its "Concept rendering of the planned hub" label. Where this file says an image is "badged" or "shown with a badge", read it as history. Concept renders keep their caption below the image, the lobby card says the reception is a concept, and `/terms#images` now states that other photos are illustrative and that people and places shown are not WAHP staff, patients or facilities unless named.
 

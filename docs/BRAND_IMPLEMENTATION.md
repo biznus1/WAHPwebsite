@@ -27,7 +27,7 @@ The inline `<Logo>` component (`src/components/brand/logo.tsx`) renders the exac
 | Token | Hex | Source | Website role |
 | --- | --- | --- | --- |
 | `paper` | `#F5F6FC` | Primary 01 | Page / section background |
-| `green` | `#8BC900` | Primary 02 | **CTA buttons only** (owner directive) and the logo. Exception (owner mockups, 5 Nov 2026): small accents inside the Platform diagram icons and its active number, the plants in the Home floor plan, the turning arc of the page loading screen (after the older build's green loader), and in the phone menu the current page, an open group and hover rows (after the older build's menu; navy text) |
+| `green` | `#8BC900` | Primary 02 | **CTA buttons only** (owner directive) and the logo. Exception (owner mockups, 5 Nov 2026): small accents inside the Platform diagram icons and its active number, the plants in the Home floor plan, the turning arc of the page loading screen (after the older build's green loader), in the phone menu the current page, an open group and hover rows (after the older build's menu; navy text), and in the sections ported from the older build (The Problem page; Investors "Why Ghana, why now" and "Who may invest") the highlighted words, eyebrows and figures on navy (6.3:1) |
 | `navy` | `#003366` | Primary 03 | Headings, dark sections, primary brand surface |
 | `teal` | `#00879E` | Primary 04 | Accent icons, rules, diagram lines, focus rings |
 | `cloud` … `phantom` | `#EDEFF7` `#D3D6E0` `#BCBFCC` `#9DA2B3` `#6E7180` `#40424D` `#1E1E24` | Grayscale 01–07 | Surfaces, borders, text |
@@ -42,7 +42,7 @@ There are no gradients and no colours outside this list.
 - **Green buttons use navy text**, not white. White on `#8BC900` is about 2.0:1 and fails WCAG AA; navy on green is about 6.1:1. The guideline mock-ups show white text, so this is the one intentional deviation.
 - **Teal is not used for small text.** `#00879E` on white is 4.2:1, below the 4.5:1 needed for body text. It is used for icons, rules and large numerals (≥ 24px) only.
 - The guideline's two-tone heading device ("Lockup / Logo.") uses Space grey `#9DA2B3`, which is too light for text on white. Headings use Graphite `#6E7180` (large text, ≥ 3:1) on light backgrounds.
-- On navy, headings set the first line in white and the statement line in `teal-300`, as the Home hero does (changed 5 Nov 2026). The older WordPress build highlighted these phrases in green; green stays reserved for CTAs, and teal itself is under 3:1 on navy.
+- On navy, headings set the first line in white and the statement line in `teal-300`, as the Home hero does (changed 5 Nov 2026). Exception (owner request, 6 Nov 2026): the sections ported from the older build keep its green highlights on navy (`Eyebrow accent="green"`, `SplitHeading greenAccent`, `StatCards`). Green text on navy is 6.3:1, so it passes AA; only white text on green fails. The older WordPress build highlighted these phrases in green; green stays reserved for CTAs, and teal itself is under 3:1 on navy.
 
 ## Typography
 

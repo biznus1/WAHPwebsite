@@ -20,6 +20,8 @@ import teamLaptopCelebration from "../../../public/images/photos/team-laptop-cel
 import hospitalCorridor from "../../../public/images/photos/hospital-corridor.webp";
 import doctorWindow from "../../../public/images/photos/doctor-window.webp";
 import partnersPresentation from "../../../public/images/photos/partners-presentation.webp";
+import physicianMigration from "../../../public/images/photos/physician-migration.webp";
+import investorsLobby from "../../../public/images/photos/investors-lobby.webp";
 
 /**
  * Every image on the site, with its kind:
@@ -144,6 +146,19 @@ const images = {
     src: hospitalCorridor,
     kind: "illustrative",
     alt: "A crowded hospital corridor: patients wait on benches and beds line the wall while a doctor walks through.",
+  },
+  physicianMigration: {
+    src: physicianMigration,
+    kind: "illustrative",
+    position: "60% 40%",
+    alt: "A doctor in a white coat sits at his desk, chin in hand, watching a plane take off outside the window. A passport lies on the desk.",
+  },
+  investorsLobby: {
+    src: investorsLobby,
+    kind: "illustrative",
+    // Phones crop this wide banner to 16:9; keep both doctors (right of centre) in frame.
+    position: "74% 50%",
+    alt: "Two doctors in white coats look at a tablet together in a bright, modern clinic lobby.",
   },
   doctorWindow: {
     src: doctorWindow,

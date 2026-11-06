@@ -29,7 +29,7 @@ test("mobile menu opens the current page's group and marks the page", async ({ p
   await expect(current).toHaveAttribute("aria-current", "page");
   await expect(dialog.getByRole("link", { name: "Leadership" })).toBeHidden();
   await dialog.getByRole("link", { name: "The Problem" }).click();
-  await expect(page).toHaveURL(/\/about#the-problem$/);
+  await expect(page).toHaveURL(/\/the-problem$/);
   await expect(page.getByRole("dialog")).toBeHidden();
 });
 

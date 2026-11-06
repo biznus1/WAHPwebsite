@@ -3,6 +3,7 @@ import { expect, test } from "@playwright/test";
 const routes = [
   "/",
   "/platform",
+  "/the-problem",
   "/physicians",
   "/diaspora-physicians",
   "/investors",
@@ -91,4 +92,37 @@ test("home links to the overview video on YouTube in a new tab", async ({ page }
   await expect(link).toHaveAttribute("href", "https://www.youtube.com/watch?v=CBGQphpdUyk");
   await expect(link).toHaveAttribute("target", "_blank");
   await expect(link).toHaveAttribute("rel", /noopener/);
+});
+
+test("the problem page cites the migration study, shows the window photo and pins a call bar on phones", async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto("/the-problem");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("a broken system alone");
+  await expect(page.getByRole("link", { name: /Wutor et al/ })).toHaveAttribute(
+    "href",
+    "https://doi.org/10.1186/s12913-024-11977-y",
+  );
+  await expect(page.getByRole("img", { name: /watching a plane take off/ })).toBeAttached();
+  const bar = page.locator("[data-sticky-call]");
+  if (isMobile) {
+    await expect(bar.getByRole("link", { name: /Schedule a call|Get in touch/ })).toBeVisible();
+    await page.locator("footer").scrollIntoViewIfNeeded();
+    await expect(bar).toBeHidden();
+  } else {
+    await expect(bar).toBeHidden();
+  }
+});
+
+test("investors shows the market figures and the who may invest section", async ({ page }) => {
+  await page.goto("/investors");
+  await expect(page.getByRole("heading", { name: /demand, talent and regional reach/ })).toBeAttached();
+  for (const v of ["$1.21B", "42%", "36.7%", "$214M"]) {
+    await expect(page.locator(`[data-countup="${v}"]`)).toHaveCount(1);
+  }
+  await expect(
+    page.locator("#introduction").getByRole("heading", { name: /better healthcare delivery/ }),
+  ).toBeAttached();
+  await expect(page.locator("#introduction").getByText("Rule 506(c)")).toBeAttached();
 });

@@ -3,9 +3,10 @@ import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { ExpansionMap } from "@/components/graphics/expansion-map";
 import { BOOK_CALL_ID, BookCallSection } from "@/components/sections/book-call";
 import { PageHero } from "@/components/sections/page-hero";
+import { StatCards, type StatCard } from "@/components/sections/stat-cards";
 import { ButtonLink } from "@/components/ui/button";
 import { Notice } from "@/components/ui/notice";
-import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
+import { Eyebrow, Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
 import { approvedClaim } from "@/content/claims";
 import { SiteImage } from "@/components/ui/site-image";
 import { callTypes, site } from "@/content/site";
@@ -74,6 +75,34 @@ const thesis = [
   },
 ];
 
+/** Market figures from the older build's investors page ("Why Ghana, why now"). Each shows only while its claim is approved. */
+const market: (StatCard & { claim: string })[] = [
+  {
+    claim: "market-ghana-curative",
+    value: "$1.21B",
+    label: "Estimated Ghana curative and ancillary healthcare market",
+    source: "WAHP estimate · Ghana Ministry of Health, 2023",
+  },
+  {
+    claim: "stat-physicians-accra",
+    value: "42%",
+    label: "Of Ghana's physicians are concentrated in Accra",
+    source: "WHO Ghana",
+  },
+  {
+    claim: "stat-private-expenditure",
+    value: "36.7%",
+    label: "Of Ghana's health expenditure occurs in private facilities",
+    source: "Ghana Ministry of Health, 2023",
+  },
+  {
+    claim: "market-accra-sam",
+    value: "$214M",
+    label: "Estimated Greater Accra serviceable market",
+    source: "WAHP estimate, using Greater Accra's share of the population",
+  },
+];
+
 const canBook = callTypes.some((c) => c.id === "investor");
 
 export default function InvestorsPage() {
@@ -103,7 +132,7 @@ export default function InvestorsPage() {
           id="thesis-heading"
           eyebrow="Why we are building this"
           lead="Why shared clinics,"
-          rest="and why Ghana now."
+          rest="and why they work."
         />
         <ol className="mt-14 grid gap-px overflow-hidden rounded-panel bg-smoke ring-1 ring-inset ring-smoke md:grid-cols-2 lg:grid-cols-3">
           {thesis.map((t, i) => (
@@ -134,6 +163,45 @@ export default function InvestorsPage() {
           </ButtonLink>
         </div>
       </Section>
+
+      {/* Why Ghana, why now: after the older build's section of the same name, in its navy and green. */}
+      <section
+        aria-labelledby="ghana-heading"
+        className="grain on-dark relative overflow-hidden bg-navy py-20 text-white md:py-28"
+      >
+        <div className="container-wahp">
+          <div className="reveal mx-auto max-w-3xl text-center [&_.eyebrow]:justify-center">
+            <Eyebrow accent="green">Why Ghana, why now</Eyebrow>
+            <h2 id="ghana-heading" className="mt-6 text-headline font-bold text-white">
+              Launching in a market with <span className="text-green">demand, talent and regional reach.</span>
+            </h2>
+            <p className="mt-6 text-lead text-white/80">
+              WAHP plans to launch in Ghana, where urban growth, a concentration of physicians, rising demand for
+              private care and the need for more efficient outpatient infrastructure make a compelling first market.
+            </p>
+          </div>
+          <StatCards
+            items={market.filter((m) => approvedClaim(m.claim))}
+            sourceTone="green"
+            className="mt-14 sm:grid-cols-2 lg:grid-cols-4"
+          />
+          <div className="reveal mx-auto mt-14 max-w-3xl space-y-5 text-lead text-white/80">
+            <p>
+              Greater Accra and Ashanti are major centres of population, clinical activity and private healthcare
+              demand. WAHP&apos;s research also found persistent gaps in diagnostic availability, private practice
+              infrastructure, regulatory consistency and service delivery.
+            </p>
+            <p>
+              Ghana gives WAHP the chance to prove the model in a sophisticated West African healthcare market before
+              expanding selectively into other cities with high demand.
+            </p>
+          </div>
+          <p className="mx-auto mt-8 max-w-3xl text-center text-sm text-white/70">
+            Market sizes are WAHP estimates built from public data. They are forecasts, not guarantees: please read the
+            important notice at the end of this page.
+          </p>
+        </div>
+      </section>
 
       <Section tone="white" labelledBy="model-heading">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
@@ -234,54 +302,74 @@ export default function InvestorsPage() {
         )}
       </Section>
 
-      <BookCallSection call="investor" lead="Meet the founders." rest="Book a 30 minute call.">
+      <BookCallSection call="investor" lead="Meet the founders." rest="Book a 30 minute call." tone="white">
         <p>
           An introductory video call about the Accra hub and how it is planned, phase by phase. Prefer to write?{" "}
-          <a href="#introduction" className="font-semibold text-white underline decoration-white/40 underline-offset-4">
-            Request an introduction
+          <a
+            href="#introduction"
+            className="font-semibold text-navy underline decoration-teal decoration-2 underline-offset-4"
+          >
+            Register your interest
           </a>{" "}
           instead.
         </p>
-        <p className="mt-4 text-base text-white/70">
+        <p className="mt-4 text-base">
           A call is not an offer to sell securities. Please read the important notice below.
         </p>
       </BookCallSection>
 
-      <section aria-label="Image" className="bg-paper pt-16 md:pt-24">
+      {/* Who may invest: after the older build's section of the same name, in its navy and green. */}
+      <section
+        id="introduction"
+        aria-labelledby="intro-heading"
+        className="grain on-dark relative scroll-mt-20 overflow-hidden border-b border-white/10 bg-navy py-20 text-white md:py-28"
+      >
         <div className="container-wahp">
+          <div className="reveal mx-auto max-w-3xl text-center [&_.eyebrow]:justify-center">
+            <Eyebrow accent="green">Who may invest</Eyebrow>
+            <h2 id="intro-heading" className="mt-6 text-headline font-bold text-white">
+              Help build the infrastructure behind <span className="text-green">better healthcare delivery.</span>
+            </h2>
+          </div>
           <SiteImage
-            name="teamLaptopCelebration"
-            className="reveal"
-            aspect="aspect-[16/7] md:aspect-[16/5]"
+            name="investorsLobby"
+            className="reveal reveal-media mt-12"
+            aspect="aspect-[16/9] md:aspect-[16/5]"
+            dark
             sizes="(min-width: 1280px) 1200px, 100vw"
           />
+          <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
+            <div>
+              <div className="reveal rounded-[1.25rem] bg-white/[0.06] p-6 ring-1 ring-white/15 ring-inset md:p-8">
+                <h3 className="text-title font-semibold text-white">Register your interest</h3>
+                <p className="mt-4 text-lead text-white/80">
+                  Share your details and our team will follow up with next steps and verification instructions. This
+                  does not create any obligation to invest.
+                </p>
+                <p className="mt-4 font-semibold text-green">Accredited investors only. Verification required.</p>
+              </div>
+              <div className="mt-8">
+                <Notice title="Important notice">
+                  <span className="block">
+                    This page is for information only. It is not an offer to sell securities, or a request for an offer
+                    to buy them. Any offering will be made only through formal offering and subscription documents, and
+                    only to people verified as accredited investors under{" "}
+                    {/* Manrope's contextual alternates would turn "(c)" into a copyright sign. */}
+                    <span className="whitespace-nowrap [font-feature-settings:'calt'_0,'liga'_0]">Rule 506(c)</span> of
+                    Regulation D.
+                  </span>
+                  <span className="mt-3 block">
+                    An investment in WAHP is speculative and high risk, and you could lose all of it. What we say here
+                    about the future, including expansion and market size, is a forecast and carries real risks and
+                    uncertainty. This website does not collect financial documents.
+                  </span>
+                </Notice>
+              </div>
+            </div>
+            <EnquiryForm defaultType="investor" lockType contactEmail={site.contactEmail} />
+          </div>
         </div>
       </section>
-
-      <Section tone="paper" id="introduction" labelledBy="intro-heading" className="scroll-mt-20">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
-          <div>
-            <SectionIntro id="intro-heading" eyebrow="Introduction" lead="Arrange a" rest="conversation.">
-              <p>Tell us a little about you or your organisation. One of our cofounders will reply by email.</p>
-            </SectionIntro>
-            <div className="mt-8">
-              <Notice title="Important notice">
-                <span className="block">
-                  This page is for information only. It is not an offer to sell securities, or a request for an offer to
-                  buy them. Any offering will be made only through formal offering and subscription documents, and only
-                  to people verified as accredited investors under Rule 506(c) of Regulation D.
-                </span>
-                <span className="mt-3 block">
-                  An investment in WAHP is speculative and high risk, and you could lose all of it. What we say here
-                  about the future, including expansion and market size, is a forecast and carries real risks and
-                  uncertainty. This website does not collect financial documents.
-                </span>
-              </Notice>
-            </div>
-          </div>
-          <EnquiryForm defaultType="investor" lockType contactEmail={site.contactEmail} />
-        </div>
-      </Section>
     </>
   );
 }

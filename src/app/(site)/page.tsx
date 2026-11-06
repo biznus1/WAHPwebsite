@@ -185,6 +185,13 @@ export default function HomePage() {
                 Opening a private practice here means finding premises, buying equipment and hiring staff on your own.
                 Patients still cross town for tests. We want staying to be the easier choice.
               </p>
+              <Link
+                href="/the-problem"
+                className="group mt-6 inline-flex items-center gap-2 text-base font-semibold text-teal-300 hover:text-white"
+              >
+                Why doctors leave
+                <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
             </SectionIntro>
             <SiteImage
               name="doctorsMeeting"

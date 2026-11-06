@@ -9,6 +9,7 @@ const [base, out] = process.argv.slice(2);
 const routes = [
   "/",
   "/platform",
+  "/the-problem",
   "/physicians",
   "/diaspora-physicians",
   "/investors",

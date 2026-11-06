@@ -15,7 +15,7 @@ const stats = [
     claim: "stat-migration-intent",
     value: "71.8%",
     label: "Of doctors surveyed in Ghana said they intend to work abroad",
-    source: "Published survey of doctors working in Ghana",
+    source: "Wutor et al., BMC Health Services Research, 2024",
   },
   {
     claim: "stat-registered-doctors",

@@ -4,6 +4,7 @@ import { site } from "@/content/site";
 const routes = [
   "",
   "/platform",
+  "/the-problem",
   "/physicians",
   "/diaspora-physicians",
   "/investors",
