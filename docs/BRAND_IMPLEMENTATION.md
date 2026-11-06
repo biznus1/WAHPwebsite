@@ -27,7 +27,7 @@ The inline `<Logo>` component (`src/components/brand/logo.tsx`) renders the exac
 | Token | Hex | Source | Website role |
 | --- | --- | --- | --- |
 | `paper` | `#F5F6FC` | Primary 01 | Page / section background |
-| `green` | `#8BC900` | Primary 02 | **CTA buttons only** (owner directive) and the logo. Exception (owner mockups, 5 Nov 2026): small accents inside the Platform diagram icons and its active number, the plants in the Home floor plan, and the turning arc of the page loading screen (after the older build's green loader) |
+| `green` | `#8BC900` | Primary 02 | **CTA buttons only** (owner directive) and the logo. Exception (owner mockups, 5 Nov 2026): small accents inside the Platform diagram icons and its active number, the plants in the Home floor plan, the turning arc of the page loading screen (after the older build's green loader), and in the phone menu the current page, an open group and hover rows (after the older build's menu; navy text) |
 | `navy` | `#003366` | Primary 03 | Headings, dark sections, primary brand surface |
 | `teal` | `#00879E` | Primary 04 | Accent icons, rules, diagram lines, focus rings |
 | `cloud` … `phantom` | `#EDEFF7` `#D3D6E0` `#BCBFCC` `#9DA2B3` `#6E7180` `#40424D` `#1E1E24` | Grayscale 01–07 | Surfaces, borders, text |

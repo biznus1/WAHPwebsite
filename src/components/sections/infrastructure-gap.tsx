@@ -13,7 +13,11 @@ import { approvedClaim } from "@/content/claims";
 export function InfrastructureGap({ above = "text-paper", below = "text-white" }: { above?: string; below?: string }) {
   const migration = approvedClaim("stat-migration-intent");
   return (
-    <section aria-labelledby="infra-gap-heading" className="grain on-dark relative overflow-hidden bg-navy text-white">
+    <section
+      id="the-problem"
+      aria-labelledby="infra-gap-heading"
+      className="grain on-dark relative scroll-mt-20 overflow-hidden bg-navy text-white"
+    >
       <Wave flip className={`-mt-px ${above}`} />
       <div className="container-wahp py-16 md:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">

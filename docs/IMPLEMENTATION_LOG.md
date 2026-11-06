@@ -315,3 +315,11 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 
 - At the owner's request the Home hero has a "Watch the overview / On YouTube" link with a play button, under the main buttons. It opens WAHP's "West African Health Partners Overview" video (https://www.youtube.com/watch?v=CBGQphpdUyk, on the WAHP channel) in a new tab. The tracking parameter from the shared link is left off.
 - It is a link, not an embedded player, so YouTube sets no cookies on this site and the privacy notice and CSP are unchanged. Registered as the `overview-video` claim; set to null there and the link disappears.
+
+## 6 Nov 2026, phone menu in the older build's style
+
+- At the owner's request the phone menu (under 1024px) now looks like the older WordPress build's: a white panel dropping from under the header (the page stays visible below it; tapping there closes it), rows divided by a faint rule, Manrope 16px bold in navy with 10px × 20px padding, sub-items set in a further 8px, all taken from that build's stylesheet. The full-screen navy menu with descriptions, the Privacy link and the menu's own call button are gone (Privacy stays in the footer; the header keeps "Book a call", and "Contact" is in the menu).
+- Same grouping as the older build: About ▾ (About WAHP, Leadership; "Team" there), The Platform, The Problem (the infrastructure gap section on About, `/about#the-problem`), Who We Serve ▾ (For Physicians, For Diaspora, For Investors, and For Patients, which the older build did not have), Contact.
+- As there, the current page and an open group are filled with brand green, and the group holding the current page starts open. One deliberate difference: the text on green stays navy, because white on this green is about 2:1 and hard to read (the same rule as the green buttons). The chevron turns when a group opens.
+- Groups are native disclosure elements, so they work before the page's script loads and in the static preview. Escape, the focus trap and closing on navigation are unchanged. The desktop menu is unchanged.
+

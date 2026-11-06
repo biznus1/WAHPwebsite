@@ -82,6 +82,37 @@ export const primaryNav: NavItem[] = [
   { href: "/leadership", label: "Leadership", description: "The people behind WAHP" },
 ];
 
+export interface NavGroup {
+  label: string;
+  children: NavItem[];
+}
+
+/**
+ * Phone menu, grouped as on the older WordPress build: About ▾, The Platform, The Problem, Who We Serve ▾,
+ * Contact. ("Team" there is Leadership here; "The Problem" is the infrastructure gap section on About.)
+ */
+export const mobileNav: (NavItem | NavGroup)[] = [
+  {
+    label: "About",
+    children: [
+      { href: "/about", label: "About WAHP" },
+      { href: "/leadership", label: "Leadership" },
+    ],
+  },
+  { href: "/platform", label: "The Platform" },
+  { href: "/about#the-problem", label: "The Problem" },
+  {
+    label: "Who We Serve",
+    children: [
+      { href: "/physicians", label: "For Physicians" },
+      { href: "/diaspora-physicians", label: "For Diaspora" },
+      { href: "/investors", label: "For Investors" },
+      { href: "/patients", label: "For Patients" },
+    ],
+  },
+  { href: "/contact", label: "Contact" },
+];
+
 export const footerNav: { heading: string; items: NavItem[] }[] = [
   {
     heading: "Audiences",

@@ -11,8 +11,25 @@ test("mobile menu opens, traps focus, closes on Escape and navigates", async ({ 
   await expect(dialog).toBeHidden();
   await expect(toggle).toBeFocused();
   await toggle.click();
-  await dialog.getByRole("link", { name: /Physicians/ }).click();
+  // Grouped as on the older build: "Who We Serve" opens to the audience pages.
+  await expect(dialog.getByRole("link", { name: "For Physicians" })).toBeHidden();
+  await dialog.getByText("Who We Serve").click();
+  await dialog.getByRole("link", { name: "For Physicians" }).click();
   await expect(page).toHaveURL(/\/physicians$/);
+  await expect(page.getByRole("dialog")).toBeHidden();
+});
+
+test("mobile menu opens the current page's group and marks the page", async ({ page, isMobile }) => {
+  test.skip(!isMobile, "mobile only");
+  await page.goto("/investors");
+  await page.getByRole("button", { name: "Open menu" }).click();
+  const dialog = page.getByRole("dialog", { name: "Site menu" });
+  const current = dialog.getByRole("link", { name: "For Investors" });
+  await expect(current).toBeVisible();
+  await expect(current).toHaveAttribute("aria-current", "page");
+  await expect(dialog.getByRole("link", { name: "Leadership" })).toBeHidden();
+  await dialog.getByRole("link", { name: "The Problem" }).click();
+  await expect(page).toHaveURL(/\/about#the-problem$/);
   await expect(page.getByRole("dialog")).toBeHidden();
 });
 

@@ -391,6 +391,27 @@ html.js:has(#wahp-preloader:not([data-state="done"])) :is(.hero-in, .hero-line) 
   animation-play-state: paused;
 }
 
+/* Phone menu: drops down from under the header; a group's items ease in as it opens. */
+.menu-drop {
+  transform-origin: top;
+  animation: menu-drop 0.24s var(--ease-soft) both;
+}
+details[open] > .menu-sub {
+  animation: menu-sub 0.24s var(--ease-soft) both;
+}
+@keyframes menu-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scaleY(0.96);
+  }
+}
+@keyframes menu-sub {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
 /* Hero entrance on first paint (CSS only). The headline moves but never fades, so it still paints immediately (LCP). */
 .hero-in {
   animation: hero-in 1.2s var(--ease-soft) both;
