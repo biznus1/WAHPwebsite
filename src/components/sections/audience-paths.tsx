@@ -45,7 +45,7 @@ const paths: {
     image: "partnersPresentation",
     body: "Hospitals, labs, suppliers and health organisations who want to work with us.",
     cta: "Discuss partnership",
-    href: "/contact?type=partnership",
+    href: "/contact?type=partnership#schedule",
     accent: { bar: "bg-teal", mark: "text-teal" },
   },
   {

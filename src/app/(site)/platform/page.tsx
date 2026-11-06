@@ -86,7 +86,7 @@ export default function PlatformPage() {
       <CtaBand
         lead="Help us build"
         rest="the Accra hub."
-        primary={{ href: "/contact?type=partnership", label: "Discuss a partnership" }}
+        primary={{ href: "/contact?type=partnership#schedule", label: "Discuss a partnership" }}
         secondary={{ href: "/physicians#register", label: "Physician interest" }}
       >
         <p>Physicians, hospitals, labs and suppliers in Ghana: tell us how you would like to work with us.</p>

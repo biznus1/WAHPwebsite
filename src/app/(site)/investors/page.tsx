@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { ExpansionMap } from "@/components/graphics/expansion-map";
+import { BOOK_CALL_ID, BookCallSection } from "@/components/sections/book-call";
 import { PageHero } from "@/components/sections/page-hero";
 import { ButtonLink } from "@/components/ui/button";
 import { Notice } from "@/components/ui/notice";
 import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
 import { approvedClaim } from "@/content/claims";
 import { SiteImage } from "@/components/ui/site-image";
-import { site } from "@/content/site";
+import { callTypes, site } from "@/content/site";
 import { pageHeaders } from "@/content/editable";
 
 export const metadata: Metadata = {
@@ -73,6 +74,8 @@ const thesis = [
   },
 ];
 
+const canBook = callTypes.some((c) => c.id === "investor");
+
 export default function InvestorsPage() {
   return (
     <>
@@ -88,8 +91,8 @@ export default function InvestorsPage() {
       >
         <p>{pageHeaders.investors.intro}</p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-          <ButtonLink href="#introduction" size="lg" arrow>
-            Request an introduction
+          <ButtonLink href={canBook ? `#${BOOK_CALL_ID}` : "#introduction"} size="lg" arrow>
+            {canBook ? "Book a call" : "Request an introduction"}
           </ButtonLink>
           <p className="text-sm text-white/70">Accredited investors only. Verification required.</p>
         </div>
@@ -230,6 +233,19 @@ export default function InvestorsPage() {
           </div>
         )}
       </Section>
+
+      <BookCallSection call="investor" lead="Meet the founders." rest="Book a 30 minute call.">
+        <p>
+          An introductory video call about the Accra hub and how it is planned, phase by phase. Prefer to write?{" "}
+          <a href="#introduction" className="font-semibold text-white underline decoration-white/40 underline-offset-4">
+            Request an introduction
+          </a>{" "}
+          instead.
+        </p>
+        <p className="mt-4 text-base text-white/70">
+          A call is not an offer to sell securities. Please read the important notice below.
+        </p>
+      </BookCallSection>
 
       <section aria-label="Image" className="bg-paper pt-16 md:pt-24">
         <div className="container-wahp">

@@ -56,3 +56,22 @@ test("?call= deep link pre-selects the booking", async ({ page }) => {
     "https://calendly.com/westahp-info/diaspora-physcians",
   );
 });
+
+for (const [route, slug] of [
+  ["/physicians", "physician-call"],
+  ["/diaspora-physicians", "diaspora-physcians"],
+  ["/investors", "investor-call"],
+] as const) {
+  test(`${route} books its own Calendly call from the hero`, async ({ page }) => {
+    await page.goto(route);
+    await page.locator("main").getByRole("link", { name: "Book a call" }).first().click();
+    await expect(page).toHaveURL(/#book-a-call$/);
+    const booking = page.locator("#book-a-call");
+    await expect(booking.getByRole("link", { name: /Open in Calendly/ })).toHaveAttribute(
+      "href",
+      `https://calendly.com/westahp-info/${slug}`,
+    );
+    await booking.getByRole("button", { name: "Show available times" }).click();
+    await expect(booking.locator("iframe")).toHaveAttribute("src", new RegExp(`/westahp-info/${slug}\\?`));
+  });
+}

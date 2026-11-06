@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
+import { BOOK_CALL_ID, BookCallSection } from "@/components/sections/book-call";
 import { Faq } from "@/components/sections/faq";
 import { JourneySteps } from "@/components/sections/journey-steps";
 import { PageHero } from "@/components/sections/page-hero";
@@ -8,7 +9,7 @@ import { SiteImage } from "@/components/ui/site-image";
 import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
 import { approvedClaim } from "@/content/claims";
 import { faqLists, pageHeaders } from "@/content/editable";
-import { site } from "@/content/site";
+import { callTypes, site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "For diaspora physicians",
@@ -29,6 +30,8 @@ const paths = [
     body: "Bring your networks, your advice or what you learned building departments abroad. If that is you, we would like to talk.",
   },
 ];
+
+const canBook = callTypes.some((c) => c.id === "diaspora");
 
 export default function DiasporaPhysiciansPage() {
   const hero = pageHeaders.diaspora;
@@ -51,8 +54,8 @@ export default function DiasporaPhysiciansPage() {
       >
         <p>{hero.intro}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href="#register" size="lg" arrow>
-            Register interest
+          <ButtonLink href={canBook ? `#${BOOK_CALL_ID}` : "#register"} size="lg" arrow>
+            {canBook ? "Book a call" : "Register interest"}
           </ButtonLink>
           <ButtonLink href="/platform" size="lg" variant="light">
             See the platform
@@ -100,6 +103,17 @@ export default function DiasporaPhysiciansPage() {
           />
         </div>
       </Section>
+
+      <BookCallSection call="diaspora" lead="Talk to us" rest="before your next trip home.">
+        <p>
+          A video call about seeing patients in Accra during your visits, mentoring, or a bigger role over time. Prefer
+          to write?{" "}
+          <a href="#register" className="font-semibold text-white underline decoration-white/40 underline-offset-4">
+            Register your interest
+          </a>{" "}
+          instead.
+        </p>
+      </BookCallSection>
 
       <Section tone="paper" id="register" labelledBy="register-heading" className="scroll-mt-20">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">

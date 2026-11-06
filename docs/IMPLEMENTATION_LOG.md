@@ -299,3 +299,11 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 - It is decorative: hidden from screen readers and never blocks clicks. Without script it never appears; with reduced motion it does not spin or beat, and the between pages version is skipped.
 - `scripts/shoot.mjs` waits for it to lift; the static preview shows it on each page.
 
+## 6 Nov 2026, Calendly booking on each audience page
+
+- At the owner's request the Calendly booking is on the pages it belongs to, not only on Contact. The Physicians, Diaspora and Investors pages each have a navy "Book a call" section (`#book-a-call`) with their own call (Physicians Call, Diaspora Physicians, Investors Call) ready to book, with no "I am a…" step. It sits just before each page's written form and links to it for anyone who prefers to write.
+- Each page's main hero button is now "Book a call" and jumps to that section. The second hero button is unchanged. If the scheduling links are ever withdrawn, the buttons go back to "Register interest" / "Request an introduction" and the sections disappear.
+- Investors: the section adds "A call is not an offer to sell securities. Please read the important notice below." above the existing Rule 506(c) notice.
+- Partners have no page of their own, so "For partners" (footer), the Home Partners card and "Discuss a partnership" (Platform) now open Contact with the Partners Call selected (`/contact?type=partnership#schedule`). Patients have no call type, so their page is unchanged.
+- The booking card is one shared component (`call-booking.tsx`) used by these sections and by the Contact page picker. Inside navy sections it keeps teal focus rings, so keyboard focus stays visible on the white card.
+

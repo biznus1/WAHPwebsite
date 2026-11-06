@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
+import { BOOK_CALL_ID, BookCallSection } from "@/components/sections/book-call";
 import { Faq } from "@/components/sections/faq";
 import { JourneySteps } from "@/components/sections/journey-steps";
 import { PageHero } from "@/components/sections/page-hero";
@@ -9,7 +10,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { SiteImage } from "@/components/ui/site-image";
 import { Section, SectionIntro, StageBadge } from "@/components/ui/primitives";
 import { approvedClaim } from "@/content/claims";
-import { site } from "@/content/site";
+import { callTypes, site } from "@/content/site";
 import { faqLists, pageHeaders } from "@/content/editable";
 
 export const metadata: Metadata = {
@@ -38,6 +39,8 @@ const offer = [
   },
 ];
 
+const canBook = callTypes.some((c) => c.id === "physician");
+
 export default function PhysiciansPage() {
   return (
     <>
@@ -52,8 +55,8 @@ export default function PhysiciansPage() {
       >
         <p>{pageHeaders.physicians.intro}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href="#register" size="lg" arrow>
-            Register interest
+          <ButtonLink href={canBook ? `#${BOOK_CALL_ID}` : "#register"} size="lg" arrow>
+            {canBook ? "Book a call" : "Register interest"}
           </ButtonLink>
           <ButtonLink href="/platform" size="lg" variant="light">
             How the platform works
@@ -144,6 +147,17 @@ export default function PhysiciansPage() {
           />
         </div>
       </Section>
+
+      <BookCallSection call="physician" lead="Talk to our team." rest="Book a 30 minute call.">
+        <p>
+          A video call about renting a consulting room at the Accra hub, what is shared, and how it would fit your
+          practice. Prefer to write?{" "}
+          <a href="#register" className="font-semibold text-white underline decoration-white/40 underline-offset-4">
+            Register your interest
+          </a>{" "}
+          instead.
+        </p>
+      </BookCallSection>
 
       <Section tone="paper" id="register" labelledBy="register-heading" className="scroll-mt-20">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">

@@ -75,7 +75,7 @@ export const claims: Claim[] = [
     status: "verified",
     publicApproved: true,
     lastVerified: "2026-11-05",
-    routes: ["/contact", "header", "/"],
+    routes: ["/contact", "header", "/", "/physicians", "/diaspora-physicians", "/investors"],
     note: "Owner's preferred primary CTA is 'Schedule a call'. All four links checked live on 5 Nov 2026: each is a 30 minute Zoom call (Physicians Call, Diaspora Physicians, Investors Call, Partners Call). The diaspora slug keeps the live misspelling 'diaspora-physcians'; the correctly spelled slug returns 404.",
   },
   {

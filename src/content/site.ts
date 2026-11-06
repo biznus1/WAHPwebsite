@@ -88,7 +88,7 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
       { href: "/diaspora-physicians", label: "For diaspora physicians" },
       { href: "/investors", label: "For investors" },
       { href: "/patients", label: "For patients" },
-      { href: "/contact?type=partnership", label: "For partners" },
+      { href: "/contact?type=partnership#schedule", label: "For partners" },
     ],
   },
   {
