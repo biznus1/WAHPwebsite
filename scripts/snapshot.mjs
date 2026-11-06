@@ -85,6 +85,8 @@ for (const route of routes) {
       // Reveals were forced visible for capture; reset them so the preview's own observer animates them in.
       main.querySelectorAll(".reveal.is-visible").forEach((e) => e.classList.remove("is-visible"));
       main.querySelectorAll("script, next-route-announcer, nextjs-portal, [data-js-only]").forEach((e) => e.remove());
+      // Count ups may still be running when captured: keep their final figure.
+      main.querySelectorAll("[data-countup]").forEach((el) => (el.textContent = el.getAttribute("data-countup")));
       // The loading screen had lifted when captured; the preview shows it again on each page.
       main.querySelector("#wahp-preloader")?.setAttribute("data-state", "loading");
       const imgs = [];
