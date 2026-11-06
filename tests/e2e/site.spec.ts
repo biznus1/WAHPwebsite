@@ -100,10 +100,13 @@ test("the problem page cites the migration study, shows the window photo and pin
 }) => {
   await page.goto("/the-problem");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("a broken system alone");
-  await expect(page.getByRole("link", { name: /Wutor et al/ })).toHaveAttribute(
-    "href",
-    "https://doi.org/10.1186/s12913-024-11977-y",
-  );
+  // Cited twice: the pay section and the migration section.
+  const study = page.getByRole("link", { name: /Wutor et al/ });
+  await expect(study).toHaveCount(2);
+  for (const link of await study.all()) {
+    await expect(link).toHaveAttribute("href", "https://doi.org/10.1186/s12913-024-11977-y");
+  }
+  await expect(page.getByText("GH₵10K to 15K")).toBeVisible();
   await expect(page.getByRole("img", { name: /watching a plane take off/ })).toBeAttached();
   const bar = page.locator("[data-sticky-call]");
   if (isMobile) {
