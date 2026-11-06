@@ -28,14 +28,14 @@ const headline: (StatCard & { claim: string })[] = [
   {
     claim: "stat-physician-income",
     value: "51%",
-    label: "Of surveyed doctors reported earning GH₵10,000 to 15,000 a month",
-    source: "Wutor et al., 2024 (641 doctors)",
+    label: "Of doctors surveyed reported earning GH₵10,000 to 15,000 a month",
+    source: "Wutor et al., 2024 (survey of 641 doctors)",
   },
   { claim: "stat-doctor-density", value: "1.43", label: "Doctors per 10,000 people in Ghana", source: "WHO, 2022" },
   {
     claim: "stat-facility-internet",
     value: "28%",
-    label: "Of assessed health facilities had a computer with internet",
+    label: "Of the 1,421 health facilities assessed had a computer with internet",
     source: "Ghana Harmonized Health Facility Assessment, 2022",
   },
   {
@@ -119,12 +119,12 @@ export default function TheProblemPage() {
             {/* The figure in a navy panel, green on navy as on the older build's stat cards. */}
             <div className="reveal grain on-dark relative overflow-hidden rounded-panel bg-navy p-8 text-white md:p-10">
               <Eyebrow accent="green">Physician compensation</Eyebrow>
-              <p className="mt-8 text-[clamp(2.75rem,8vw,4.25rem)] leading-none font-bold tracking-tight text-green">
+              <p className="mt-8 text-[clamp(2.25rem,9vw,3rem)] leading-none font-bold tracking-tight whitespace-nowrap text-green">
                 GH₵10K to 15K
               </p>
               <p className="mt-3 text-xl font-semibold text-white">a month</p>
               <p className="mt-6 text-lead text-white/85">
-                51% of physicians surveyed in Ghana reported monthly incomes within this range.
+                51% of the 641 physicians surveyed in Ghana in March 2024 reported monthly incomes within this range.
               </p>
               <p className="mt-6 text-sm text-white/70">
                 Source:{" "}

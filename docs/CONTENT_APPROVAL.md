@@ -61,6 +61,9 @@ The decisions below block or shape public launch. The machine-readable register 
 | Canonical domain: westahp.com vs westafricanhealthpartners.com | UI doc vs blueprint | `NEXT_PUBLIC_SITE_URL` defaults to westahp.com. Confirm |
 | Instagram / X | Brand guide mock-ups | Not used. No confirmed handles; blueprint says no X |
 
+| Physician pay: 51% of 641 doctors surveyed reported GH₵10,000 to 15,000 a month | Wutor et al. 2024, Table 1 (verified 6 Nov 2026) | Used on /the-problem. Self-reported band, convenience sample: never present as Ghana's average salary |
+| 28% of 1,421 health facilities assessed had a computer with internet | Ghana HHFA 2022-2023 national report, Annex Table 2.1.1.1 (verified 6 Nov 2026) | Used on /the-problem |
+| Physician earnings scenarios (GP $10,080 … cardiologist $27,360 a year after the WAHP fee) | Owner analysis, 6 Nov 2026 | **Not used.** Projections; if ever published, frame as "revenue after the WAHP session fee, before other costs and tax", show lower volumes, and have counsel review |
 | Site copy in the older build's wording (6 Nov 2026, owner request) | Older WordPress build, all pages | About 75% of the words on Home, Platform, The Problem, Physicians, Diaspora, Investors, About and Contact now come from it (see `IMPLEMENTATION_LOG.md`). **Please check:** Physicians heading "Lower overhead. More control. Greater potential."; About mission ending "at their highest level, at home"; Investors hero "Building the infrastructure for Africa's next healthcare revolution" |
 
 ## C. Confidential material deliberately excluded

@@ -109,9 +109,32 @@ export const claims: Claim[] = [
     note: "Full citation found 6 Nov 2026 (the older build only said 'a recent study'). Its homepage's '72% … Ghana Medical Association surveys' is not used.",
   },
   {
+    id: "stat-physician-income",
+    text: "51% (327 of 641) of doctors surveyed in Ghana reported a monthly income of GH₵10,000 to 15,000",
+    source:
+      "Wutor BM et al., BMC Health Serv Res 2024;24:1493, doi:10.1186/s12913-024-11977-y, Table 1 'Monthly income' (GHȻ 10,000–15,000: n = 327, 51.0%) and Results: 'Most doctors (51.0%, n = 327) had a monthly income ranging between GHȻ10,000 and GHȻ 15,000.'",
+    status: "verified",
+    publicApproved: true,
+    lastVerified: "2026-11-06",
+    routes: ["/the-problem"],
+    note: "Self-reported income band ('What is your monthly income in cedis?'), not defined as net or gross; online convenience sample shared in doctors' WhatsApp and Telegram groups, March 2024. Present as reported income, never as Ghana's average physician salary.",
+  },
+  {
+    id: "stat-facility-internet",
+    text: "28% of health facilities assessed in Ghana had a computer with internet",
+    source:
+      "Ghana Health Service, Ministry of Health and WHO, Ghana Harmonized Health Facility Assessment 2022-2023, national report (June 2023), Executive Summary p.16 and Annex Table 2.1.1.1 ('Computer with internet', National 28%, n = 1,421). https://ghs.gov.gh/facts-and-figures/NATIONAL_HARMONISED_HEALTH_FACILITY_ASSESSMENT_REPORT_GHHFA_SIGNED.pdf",
+    status: "verified",
+    publicApproved: true,
+    lastVerified: "2026-11-06",
+    routes: ["/the-problem"],
+    note: "Main service area; 1,421 facilities assessed (tertiary excluded, hospitals and polyclinics included on purpose, no weights described). Say 'of facilities assessed', not 'of all facilities'. Government facilities 12%, CHPS 2%.",
+  },
+  {
     id: "migration-factors",
     text: "Push factors: economic challenges, lack of a conducive working environment, slow career progression, excessive workload, poor postgraduate training. Pull factors: better working conditions, remuneration, quality of life and postgraduate training abroad.",
-    source: "Same study as stat-migration-intent (Wutor et al., BMC Health Serv Res 2024), as quoted on the older build's The Problem page",
+    source:
+      "Same study as stat-migration-intent (Wutor et al., BMC Health Serv Res 2024), as quoted on the older build's The Problem page",
     status: "verified",
     publicApproved: true,
     lastVerified: "2026-11-06",
