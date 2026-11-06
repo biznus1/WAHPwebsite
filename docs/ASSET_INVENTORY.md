@@ -37,7 +37,7 @@
 | `midwives-newborn.webp` | Owner-supplied AI-edited adaptation (21 Oct 2026) of Wikimedia Commons, "US, Ghana midwives team up in maternity ward at African Lion 2025" | Public domain (U.S. Government) | U.S. Army, 1st Lt. Katherine Sibilla |
 | `nurse-child-ward.webp` | Owner-supplied AI-edited adaptation (21 Oct 2026) of Pexels 34185202 | Pexels licence | Speak Media Uganda |
 | `doctor-clinic-kinshasa.webp` | Owner-supplied AI-edited adaptation (21 Oct 2026) of Pexels 18844981 (Kinshasa) | Pexels licence | Carmel Nsenga |
-| `doctor-stethoscope.webp` | Unsplash 9aBsCd9Fvgc, supplied by the owner from westahp.com (Squarespace CDN) | Unsplash licence | Unsplash contributor (name to confirm) |
+| `doctor-stethoscope.webp` | Unsplash 9aBsCd9Fvgc, supplied by the owner from westahp.com (Squarespace CDN). Since 6 Nov 2026 an owner-supplied retouched version (brighter, sharper, cropped to 4:3; a navy frame baked into the file was trimmed off, 18px a side; 1409×1052) | Unsplash licence (edits are allowed) | Unsplash contributor (name to confirm) |
 | `patient-portrait.webp` | Unsplash gi3Jox2cdrI, supplied by the owner from westahp.com; re-encoded from the 2500px original | Unsplash licence | Unsplash contributor (name to confirm) |
 | `village-hospital-yard.webp` | Pexels 4483669 | Pexels licence | Pexels contributor (name to confirm) |
 | `community-outreach.webp` | Pexels 4483695 | Pexels licence | Pexels contributor (name to confirm) |

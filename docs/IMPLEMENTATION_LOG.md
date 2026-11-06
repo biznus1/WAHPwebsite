@@ -307,3 +307,7 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 - Partners have no page of their own, so "For partners" (footer), the Home Partners card and "Discuss a partnership" (Platform) now open Contact with the Partners Call selected (`/contact?type=partnership#schedule`). Patients have no call type, so their page is unchanged.
 - The booking card is one shared component (`call-booking.tsx`) used by these sections and by the Contact page picker. Inside navy sections it keeps teal focus rings, so keyboard focus stays visible on the white card.
 
+## 6 Nov 2026, retouched photo in the Diaspora hero
+
+- At the owner's request the Diaspora page hero uses the owner's retouched version of the same photo (the doctor putting on her stethoscope): brighter, sharper and cropped to 4:3, which is the hero's own shape. The file came with a thin navy rounded frame drawn into it; 18px was trimmed from each side so only the site's own rounded corners show. Saved over `doctor-stethoscope.webp` (1409×1052, 77 KB), so nothing else changed. Alt text unchanged.
+
