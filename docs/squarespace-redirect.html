@@ -1,0 +1,61 @@
+<!-- WAHP: send visitors from the old Squarespace site to the new website. Delete this block to switch it off. -->
+<script>
+  (function () {
+    var NEW_SITE = "https://wahp-website.vercel.app";
+    var loc = window.location;
+
+    // Stay on the old site in the Squarespace editor and previews, on its built-in squarespace.com address,
+    // on the login page, and when the link ends in ?stay (to look at the old site on purpose).
+    try {
+      if (window.self !== window.top) return;
+    } catch (e) {
+      return;
+    }
+    if (/\.squarespace\.com$/i.test(loc.hostname)) return;
+    if (/^\/config/i.test(loc.pathname)) return;
+    if (/[?&]stay(=|&|$)/i.test(loc.search)) return;
+
+    // Old pages and where each now lives.
+    var MOVED = {
+      "/": "/",
+      "/home": "/",
+      "/home-1": "/",
+      "/home-2": "/",
+      "/home-3": "/",
+      "/home-1-1": "/",
+      "/about": "/about",
+      "/about-1": "/about",
+      "/about-6-1": "/platform#phases",
+      "/about-6-1-1": "/platform#phases",
+      "/founders": "/leadership",
+      "/founders-1": "/leadership",
+      "/contact-us": "/contact",
+      "/contact-us-1": "/contact",
+      "/invest": "/investors",
+      "/take-action": "/contact"
+    };
+    // New pages typed straight onto the old address keep their path.
+    var NEW_PAGES = [
+      "/platform", "/the-problem", "/the-solution", "/physicians", "/diaspora-physicians",
+      "/investors", "/patients", "/leadership", "/contact", "/privacy", "/terms"
+    ];
+
+    var path = loc.pathname.replace(/\/+$/, "").toLowerCase() || "/";
+    var target = MOVED[path] || (NEW_PAGES.indexOf(path) > -1 ? path : "/");
+    var hash = "";
+    var cut = target.indexOf("#");
+    if (cut > -1) {
+      hash = target.slice(cut);
+      target = target.slice(0, cut);
+    }
+    if (loc.hash) hash = loc.hash;
+
+    // Hide the old page while the new one loads (shown again if the move ever fails).
+    document.documentElement.style.visibility = "hidden";
+    setTimeout(function () {
+      document.documentElement.style.visibility = "";
+    }, 4000);
+    loc.replace(NEW_SITE + target + loc.search + hash);
+  })();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=https://wahp-website.vercel.app/"></noscript>

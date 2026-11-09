@@ -26,6 +26,7 @@ No domain, DNS or Squarespace setting has been changed.
 - [x] Choose a host (e.g. Vercel) and create the project (`wahp-website`, staging only, see above)
 - [ ] Set `NEXT_PUBLIC_SITE_URL` and the canonical domain
 - [ ] Set `NEXT_PUBLIC_ALLOW_INDEXING=true` **only** for production
+- [ ] Interim (9 Nov 2026): paste `docs/squarespace-redirect.html` into Squarespace's Header code injection so westahp.com visitors are sent to the new site, each old page to its new equivalent. It skips the Squarespace editor, the site's squarespace.com address, `/config` and any link ending in `?stay`. Remove it once DNS points to Vercel (the Squarespace page will no longer be served anyway)
 - [ ] Point DNS for westahp.com; keep the Squarespace site until DNS cut-over is verified
 - [ ] Redirects: `/founders` → `/leadership`, `/contact-us` → `/contact` (configured in `next.config.ts`; add any other legacy URLs)
 - [ ] Re-run Lighthouse on the live URL; submit the sitemap in Google Search Console
