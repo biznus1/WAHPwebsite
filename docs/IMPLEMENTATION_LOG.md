@@ -395,3 +395,9 @@ Both redrawn as inline SVG after the owner's mockups, so they stay sharp, keep t
 - **Layout:** the fee panel now shows the session fee on its own line above "6 sessions a month" and "4 hours each", so the wider cedi figure fits; the intro sentence refers to "the example session fee shown" instead of repeating $100; "After the $100 session fee" became "After the session fee".
 - **In step:** all the amounts sit in one `CurrencyFlipGroup`, which now wraps the whole section; its note (the rate) and single pause toggle sit above the cards (`CurrencyFlipNote`). Figures in a group start with the page instead of waiting for their own scroll reveal, so the panel and the cards switch together. Inline amounts use the new server component `Flip` (`components/motion/flip.tsx`).
 - The e2e test checks every cedi amount on each card and that no dollar amount in the section is left unswitched.
+
+## 18 Nov 2026, team admin page and Ghana trip hub
+
+- "Admin" in the footer now opens `/admin`, a page without the public site chrome that offers two options: the site editor (`/keystatic`) and the Ghana trip hub. `/admin` no longer redirects to `/keystatic`.
+- The trip hub option asks for a team password and then opens the trip's to-do list and expense log, which is hosted in Claude. The password and the address come from `TRIP_HUB_PASSWORD` and `TRIP_HUB_URL` on the host, because this repository is public. Guesses are rate limited.
+- `/admin` is `noindex`, listed in `robots.txt` and served with `no-store`.

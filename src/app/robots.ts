@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
   const allow = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
   return {
     rules: allow
-      ? { userAgent: "*", allow: "/", disallow: ["/keystatic", "/api/"] }
+      ? { userAgent: "*", allow: "/", disallow: ["/admin", "/keystatic", "/api/"] }
       : { userAgent: "*", disallow: "/" },
     sitemap: `${site.url}/sitemap.xml`,
   };

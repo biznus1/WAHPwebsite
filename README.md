@@ -35,6 +35,7 @@ Next.js 16 (App Router, Turbopack, Cache Components), React 19, TypeScript stric
 
 ```text
 src/app/(site)/          public routes: / platform physicians investors patients about leadership contact privacy terms
+src/app/admin/           team admin page: links to the site editor and the password-protected trip hub
 src/app/keystatic/       site admin UI; src/app/api/keystatic/ is its API
 src/app/actions/         server action for the enquiry form
 src/components/brand/    official logo (paths from the owner's SVG files)
@@ -56,7 +57,7 @@ See `.env.example`. Without a delivery integration the form **does not pretend t
 
 ## Site admin
 
-"Admin" in the footer opens `/keystatic`, where page headers, the leadership team and FAQs can be edited. Run `npm run dev` and open http://localhost:3000/keystatic to edit locally. On a deployed site it stays switched off until GitHub sign-in is configured: see `docs/ADMIN.md`.
+"Admin" in the footer opens `/admin`, a team page with two options. The site editor (`/keystatic`) changes page headers, the leadership team and FAQs: run `npm run dev` and open http://localhost:3000/keystatic to edit locally; on a deployed site it stays switched off until GitHub sign-in is configured. The Ghana trip hub asks for a team password and then opens the trip's to-do list and expense log, which is hosted in Claude. See `docs/ADMIN.md`.
 
 ## Content rules
 

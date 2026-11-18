@@ -54,7 +54,6 @@ const nextConfig: NextConfig = {
       { source: "/founders", destination: "/leadership", permanent: true },
       { source: "/contact-us", destination: "/contact", permanent: true },
       { source: "/what-we-do", destination: "/platform", permanent: true },
-      { source: "/admin", destination: "/keystatic", permanent: false },
       { source: "/diaspora", destination: "/diaspora-physicians", permanent: true },
     ];
   },
@@ -76,6 +75,13 @@ const nextConfig: NextConfig = {
         source: "/keystatic/:path*",
         headers: [
           { key: "Content-Security-Policy", value: adminCsp },
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "Cache-Control", value: "no-store" },
+        ],
+      },
+      {
+        source: "/admin",
+        headers: [
           { key: "X-Robots-Tag", value: "noindex, nofollow" },
           { key: "Cache-Control", value: "no-store" },
         ],
