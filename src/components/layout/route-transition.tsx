@@ -19,7 +19,8 @@ function isPageLink(e: MouseEvent): boolean {
   if (a.target && a.target !== "_self") return false;
   const url = new URL(a.href, window.location.href);
   if (url.origin !== window.location.origin || url.pathname === window.location.pathname) return false;
-  return !url.pathname.startsWith("/keystatic") && !url.pathname.startsWith("/api");
+  // The admin pages render without the site chrome, so nothing there would lift the loading screen.
+  return !["/admin", "/keystatic", "/api"].some((p) => url.pathname.startsWith(p));
 }
 
 /**

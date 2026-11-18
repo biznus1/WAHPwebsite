@@ -79,8 +79,8 @@ export function SiteFooter() {
           </p>
           <p className="md:text-right">
             © {year} West African Health Partners. All rights reserved.
-            {/* Discreet entry to the site admin; not prefetched, so visitors never download the admin app. */}
-            <Link href="/keystatic" prefetch={false} rel="nofollow" className="ml-3 hover:text-white hover:underline">
+            {/* Discreet entry to the team admin page (site editor and trip hub); not prefetched. */}
+            <Link href="/admin" prefetch={false} rel="nofollow" className="ml-3 hover:text-white hover:underline">
               Admin
             </Link>
           </p>

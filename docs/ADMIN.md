@@ -1,6 +1,8 @@
 # Site admin
 
-The website has a built-in editor at **`/keystatic`**, linked discreetly as "Admin" at the bottom right of every page footer. It is built on [Keystatic](https://keystatic.com), an open-source editor that saves content as files in this repository. There is no database and no extra service to pay for.
+"Admin" at the bottom right of every page footer opens **`/admin`**, a team page with two options: the site editor and the Ghana trip hub (see the end of this page).
+
+The website has a built-in editor at **`/keystatic`**, opened from that page. It is built on [Keystatic](https://keystatic.com), an open-source editor that saves content as files in this repository. There is no database and no extra service to pay for.
 
 ## What can be edited
 
@@ -44,5 +46,19 @@ This needs owner sign-off. Like the rest of the launch, nothing here has been de
 
 ## Notes
 - The admin route has its own Content Security Policy (`next.config.ts`). It allows Google Fonts for the editor's interface and GitHub's API for sign-in and saving. Public pages keep the strict policy.
-- `/keystatic` is excluded from search engines (`noindex` header and `robots.txt`). The footer link is never prefetched, so visitors don't download the editor.
+- `/admin` and `/keystatic` are excluded from search engines (`noindex` header and `robots.txt`). The footer link is never prefetched, so visitors don't download the editor.
 - `npm audit` reports a high-severity advisory in `braces` via `chokidar`, used by `@keystatic/next` for file watching in development. It doesn't run on the live site's request path. Re-check when Keystatic updates.
+
+## Ghana trip hub
+
+The second option on `/admin` opens the team's to-do list and expense log for the Accra visit. That page is not part of this website: it is hosted in Claude, and each person still signs in to Claude with their own account after the password.
+
+| Variable | What it is |
+| --- | --- |
+| `TRIP_HUB_PASSWORD` | The shared team password typed on `/admin`. Letter case and surrounding spaces are ignored |
+| `TRIP_HUB_URL` | The address the password opens. Must be `https` |
+
+- Both are set on the host (Vercel, Settings, Environment Variables), never in this repository, which is public. Redeploy after changing either.
+- Without both, the form answers "The trip hub isn't set up on this site yet" and opens nothing; `tests/e2e/admin.spec.ts` checks this.
+- The password is checked on the server (`src/app/actions/trip-hub.ts`). Wrong guesses are limited to five per connection every ten minutes, per server instance.
+- The password only hides the address. What protects the data is who the page is shared with in Claude, so keep that list to the team.

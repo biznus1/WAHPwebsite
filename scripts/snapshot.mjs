@@ -114,7 +114,7 @@ for (const route of routes) {
           if (v && v.startsWith("/video/")) el.setAttribute(attr, v.slice(1));
         }
       });
-      main.querySelectorAll('a[href="/keystatic"]').forEach((a) => {
+      main.querySelectorAll('a[href="/keystatic"], a[href="/admin"]').forEach((a) => {
         a.setAttribute("href", "#");
         a.setAttribute("data-preview-admin", "");
       });
